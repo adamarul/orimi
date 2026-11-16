@@ -101,6 +101,12 @@ position = Vector3(-1.600, 18.000, -51.200)
 [node name="M_EndView" type="Marker3D" parent="."]
 position = Vector3(2.000, 58.000, -40.000)
 
+[node name="M_TitleView" type="Marker3D" parent="."]
+position = Vector3(20.000, 18.000, 48.000)
+
+[node name="M_TitleLook" type="Marker3D" parent="."]
+position = Vector3(-12.000, 18.000, -30.000)
+
 [node name="M_Moss_M1" type="Marker3D" parent="."]
 position = Vector3(0.100, 7.900, -39.000)
 

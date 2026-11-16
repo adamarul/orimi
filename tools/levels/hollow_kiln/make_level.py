@@ -112,7 +112,7 @@ def main():
         L += ['[sub_resource type="BoxShape3D" id="ledge_%s"]' % name, "size = Vector3(3.0, 0.4, %.3f)" % (math.dist(lo, hi) + 0.6), ""]
     node(L, "HollowKiln", "Node3D", None, ext="level", props=[
         'level_id = &"hollow_kiln"', 'display_name = "The Hollow Kiln"', 'chapter = "What the Vat Kept"',
-        "intro_text = " + s(INTRO), "start_gloom = 1.0", 'title_marker = "M_VatChamber"'])
+        "intro_text = " + s(INTRO), "start_gloom = 1.0"])
     node(L, "Set", None, ".", instance="set", groups=["level_ground"])
     node(L, "Markers", None, ".", instance="markers")
 
@@ -174,8 +174,10 @@ def main():
         node(L, "MossLedge_" + name, "StaticBody3D", ".", pos=(cx, cy, cz), props=["rotation = Vector3(%.6f, 0, 0)" % tilt, "collision_layer = 0", "collision_mask = 0"])
         node(L, "Shape", "CollisionShape3D", "MossLedge_" + name, props=['shape = SubResource("ledge_%s")' % name])
 
-    # the indoor camera: looking up the flue; in the vat chamber behind Orimi and wide (the Dregs sits high on the vat);
-    # TieCam looks north across the vat at both pillar rings while the Dregs climbs (hollow_kiln.gd turns the two on and off)
+    # the indoor camera: looking up the flue; in the vat chamber behind Orimi, wide and tilted up so the Dregs' head
+    # (5.9 m over the vat rim) stays in the picture; ArenaDoorCam at the door turns her to the vat from low in the passage
+    # for the first sight of it whole; TieCam looks north and higher across the vat at both pillar rings while the
+    # Dregs climbs (hollow_kiln.gd turns VatCam and TieCam on and off)
     fx, fz = K.FLUE["x"], K.FLUE["z"]
     node(L, "FlueCam", "Node3D", ".", ext="camzone", pos=((fx[0] + fx[1]) / 2, (K.FLUE["base"] + K.FLUE["roof"]) / 2, (fz[0] + fz[1]) / 2),
          props=["size = Vector3(%.1f, %.1f, %.1f)" % (fx[1] - fx[0], K.FLUE["roof"] - K.FLUE["base"], fz[1] - fz[0]),
@@ -183,10 +185,15 @@ def main():
     cx, cy, cz = K.DRUM_C
     node(L, "VatCam", "Node3D", ".", ext="camzone", pos=(cx, cy + 6.0, cz),
          props=["size = Vector3(%.1f, 14.0, %.1f)" % (2 * K.DRUM_R + 2, 2 * K.DRUM_R + 2), 'mode = "follow"', "priority = 1",
-                "distance = 3.6", "pivot_raise = 0.5", "fov = 80.0"])
+                "distance = 4.5", "pivot_raise = 1.0", "fov = 80.0", "lock_pitch = true", "pitch_deg = 4.0"])
     node(L, "TieCam", "Node3D", ".", ext="camzone", pos=(cx, cy + 6.0, cz),
          props=["size = Vector3(%.1f, 14.0, %.1f)" % (2 * K.DRUM_R + 2, 2 * K.DRUM_R + 2), 'mode = "follow"', "priority = 2",
-                "distance = 3.6", "pivot_raise = 0.5", "fov = 80.0", "lock_yaw = true", "yaw_deg = 0.0", "lock_pitch = true", "pitch_deg = 3.0"])
+                "distance = 4.5", "pivot_raise = 1.0", "fov = 90.0", "lock_yaw = true", "yaw_deg = 0.0", "lock_pitch = true", "pitch_deg = 22.0"])
+    ex, _ey, ez = K.MARKERS["M_Arena_Entry"]
+    vx, vz = K.VAT["c"]
+    node(L, "ArenaDoorCam", "Node3D", ".", ext="camzone", pos=(ex, K.Y_VAT + 2.0, ez + 1.25),
+         props=["size = Vector3(3.6, 6.0, 4.5)", 'mode = "follow"', "priority = 3", "distance = 3.0", "pivot_raise = 0.8", "fov = 80.0",
+                "lock_yaw = true", "yaw_deg = %.1f" % math.degrees(math.atan2(-(vx - ex), -(vz - ez))), "lock_pitch = true", "pitch_deg = 8.0"])
 
     # verse-stones; the fourth comes up with the tree's roots (hollow_kiln.gd shows it)
     for n in range(1, 5):

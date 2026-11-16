@@ -47,7 +47,6 @@ intro_text = "The Ink-maker's works stand at the river's head, under a kiln with
 
 All the black came down from here. Climb to the vat."
 start_gloom = 1.0
-title_marker = "M_VatChamber"
 
 [node name="Set" parent="." instance=ExtResource("set") groups=["level_ground"]]
 
@@ -331,9 +330,11 @@ script = ExtResource("camzone")
 size = Vector3(30.0, 14.0, 30.0)
 mode = "follow"
 priority = 1
-distance = 3.6
-pivot_raise = 0.5
+distance = 4.5
+pivot_raise = 1.0
 fov = 80.0
+lock_pitch = true
+pitch_deg = 4.0
 
 [node name="TieCam" type="Node3D" parent="."]
 position = Vector3(2.000, 24.000, -64.000)
@@ -341,13 +342,27 @@ script = ExtResource("camzone")
 size = Vector3(30.0, 14.0, 30.0)
 mode = "follow"
 priority = 2
-distance = 3.6
-pivot_raise = 0.5
-fov = 80.0
+distance = 4.5
+pivot_raise = 1.0
+fov = 90.0
 lock_yaw = true
 yaw_deg = 0.0
 lock_pitch = true
-pitch_deg = 3.0
+pitch_deg = 22.0
+
+[node name="ArenaDoorCam" type="Node3D" parent="."]
+position = Vector3(-0.600, 20.000, -51.250)
+script = ExtResource("camzone")
+size = Vector3(3.6, 6.0, 4.5)
+mode = "follow"
+priority = 3
+distance = 3.0
+pivot_raise = 0.8
+fov = 80.0
+lock_yaw = true
+yaw_deg = -12.7
+lock_pitch = true
+pitch_deg = 8.0
 
 [node name="VerseStone_1" type="StaticBody3D" parent="."]
 position = Vector3(-4.500, 0.000, 47.000)

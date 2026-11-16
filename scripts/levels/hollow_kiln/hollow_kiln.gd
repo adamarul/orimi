@@ -4,8 +4,10 @@ extends Level
 ## sets the drained look of the set's props and water, plays the models of the kit's Kindle and
 ## glyph targets (bellows blow, moss blooms and its MossLedge ramp turns solid), darkens the hall, the flue and
 ## the vat chamber with render's light pools (level.json "dark_places") so lit lamps and mouths open
-## pools, plays the level's music (the Dregs' own track from dregs_started until it unravels), keeps the camera behind Orimi in the vat chamber (VatCam) until the Dregs unravels and frames both pillar rings (TieCam) while it climbs, lifts the counterweight door when it is tied, runs the finale (the tree, the clear river)
-## and the ending (Pell, the valley), and has one QA hook:
+## pools, warms each restored place (level.json "restored_places": the grey lifts a step, warm pools, embers in the
+## yard's stoke mouths), plays the level's music (the Dregs' own track from dregs_started until it unravels), keeps the camera behind Orimi and tilted up to the Dregs in the vat chamber (VatCam) while the Dregs is awake and frames both pillar rings (TieCam) while it climbs, lifts the counterweight door when it is tied, runs the finale (the tree, the clear river)
+## and the ending (Pell, the valley), sets the title's backdrop (the kiln over the yard, restored once the
+## level is done), and has one QA hook:
 ##   hk_start=<name>  start at level.json "qa_starts"[name] (flue, arena, dregs_lash, dregs_climb,
 ##                    dregs_bound) with everything before it done, and play only that start's
 ##                    autoplay route. The dregs_* starts wake the Dregs in that part.
@@ -18,6 +20,7 @@ const AUDIO_DIR := "res://audio/levels/hollow_kiln/"
 var pools := LightPools.new()
 var _dark := 0.0
 var _cam_sizes := {}
+var _title_restored := false
 
 
 func _build(_progress: Callable) -> void:
@@ -49,11 +52,86 @@ func _build(_progress: Callable) -> void:
 	flag_changed.connect(_on_flag)
 	if get_flag(&"counterweight_tied"):
 		_on_flag(&"counterweight_tied", true)
+	for place: Dictionary in data.get("restored_places", []):
+		if get_flag(StringName("restored_" + String(place["zone"]))):
+			_warm_place(place, 0.0)
+	Events.zone_restore_started.connect(_on_zone_restore_started)
+	if Game.state == Game.STATE_TITLE and Game.is_level_completed(level_id):
+		level_built.connect(_set_title_restored.bind(true), CONNECT_DEFERRED | CONNECT_ONE_SHOT)
+		Events.game_state_changed.connect(_on_game_state)
 
 
 func _exit_tree() -> void:
 	super._exit_tree()
 	Audio.set_level_music(&"")
+
+
+## Behind the title: from over the gate across the yard to the hall and the dome, the kiln right of
+## the title card, swaying slowly.
+func title_camera(t: float) -> Transform3D:
+	var a := t * 0.035
+	var pos := marker("M_TitleView") + Vector3(sin(a) * 3.0, cos(a) * 0.8, 0.0)
+	return Transform3D.IDENTITY.translated(pos).looking_at(marker("M_TitleLook"), Vector3.UP)
+
+
+## The title after the level is done shows it restored (the tree through the dome, colour, the clear
+## river), once the build has handed out the curse slots; the level is the same instance Continue
+## plays, so leaving the title puts the drained state back.
+func _set_title_restored(on: bool) -> void:
+	_title_restored = on
+	CurseField.set_valley_gloom(0.0 if on else start_gloom, 0.0)
+	for z: Node in get_tree().get_nodes_in_group(Layers.GROUP_CURSED_ZONE):
+		var slot := int(z.get(&"curse_slot"))
+		if slot < 0:
+			continue
+		if on:
+			CurseField.set_zone(slot, (z as Node3D).global_position, float(z.get(&"radius")), 0.0)
+		else:
+			z.call(&"curse_assigned", slot)
+	_set_water(CLEAR_WATER if on else INK_WATER)
+	var tree := find_child("VatTree", true, false) as Node3D
+	if tree != null:
+		tree.visible = on
+		var ap := tree.find_child("AnimationPlayer", true, false) as AnimationPlayer
+		if on and ap != null and ap.has_animation(&"grow"):
+			ap.play(&"grow")
+			ap.seek(ap.current_animation_length, true)
+	var pool := get_node(^"Set").find_child("InkPool", true, false) as Node3D
+	if pool != null:
+		pool.visible = not on
+
+
+func _on_game_state(state: StringName) -> void:
+	if _title_restored and state != Game.STATE_TITLE:
+		_set_title_restored(false)
+
+
+func _on_zone_restore_started(zone_id: StringName, _center: Vector3, _radius: float) -> void:
+	for place: Dictionary in data.get("restored_places", []):
+		if StringName(place["zone"]) == zone_id:
+			_warm_place(place, 2.5)
+
+
+## A restored place warms up over duration seconds (0: at once): the valley's grey lifts to the
+## place's gloom (never back up), its warm pools open, and its embers catch as the front reaches them.
+func _warm_place(place: Dictionary, duration: float) -> void:
+	if CurseField.valley_gloom > float(place["gloom"]):
+		CurseField.set_valley_gloom(float(place["gloom"]), duration)
+	var lights: Array = place.get("lights", [])
+	for i in lights.size():
+		var l: Array = lights[i]
+		var id := StringName("%s_%d" % [place["zone"], i])
+		var c: Array = l[4]
+		var at := Vector3(l[0], l[1], l[2])
+		if duration > 0.0:
+			pools.light_up(id, at, float(l[3]), Color(c[0], c[1], c[2]), float(l[5]), duration)
+		else:
+			pools.set_light(id, at, float(l[3]), Color(c[0], c[1], c[2]), float(l[5]))
+	if duration <= 0.0 or place.get("embers", []).is_empty():
+		return
+	await get_tree().create_timer(duration * 0.6, false).timeout
+	for e: Array in place["embers"]:
+		Vfx.play(&"kindle_catch", Vector3(e[0], e[1], e[2]), {"kind": "brazier"})
 
 
 ## The Dregs' track while it is awake (the director keeps it through deaths and zones), else the
@@ -65,10 +143,13 @@ func _set_music() -> void:
 		Audio.set_level_music(&"hollow_kiln_cursed", &"hollow_kiln_restored")
 
 
-## VatCam (behind Orimi) until the Dregs unravels: after that the plain camera, so the finale's Bloom
-## on the vat is seen from the floor. TieCam (both pillar rings and the vat) only while it climbs.
+## VatCam (behind Orimi, tilted up to the Dregs' head) only while the Dregs is awake: before it the
+## plain camera, so the third verse-stone at Orimi's feet can be seen, and after it unravels, so the
+## finale's Bloom on the vat is seen from the floor. TieCam (both pillar rings and the vat) only while
+## it climbs. ArenaDoorCam at the door is always on.
 func _set_cams() -> void:
-	(get_node(^"VatCam") as CameraZone).size = Vector3.ZERO if get_flag(&"dregs_unravelled") else _cam_sizes["VatCam"]
+	var fighting := get_flag(&"dregs_started") and not get_flag(&"dregs_unravelled")
+	(get_node(^"VatCam") as CameraZone).size = _cam_sizes["VatCam"] if fighting else Vector3.ZERO
 	var climbing := get_flag(&"dregs_arms_cut") and not get_flag(&"dregs_bound")
 	(get_node(^"TieCam") as CameraZone).size = _cam_sizes["TieCam"] if climbing else Vector3.ZERO
 
@@ -155,6 +236,7 @@ func _on_flag(flag: StringName, on: bool) -> void:
 			if cw != null:
 				_play(cw, &"open")
 		&"dregs_started":
+			_set_cams()
 			_set_music()
 		&"dregs_arms_cut", &"dregs_bound":
 			_set_cams()
@@ -189,8 +271,12 @@ func run_finale(zone: CursedZone) -> void:
 	set_flag(&"vat_bloomed")
 	Events.valley_restored.emit()
 	_set_verse_4(true)
+	var to_tree := vat - player.global_position
+	player.rotation.y = atan2(-to_tree.x, -to_tree.z)
 	camera.release()
 	camera.snap_behind(player)
+	camera.pitch = deg_to_rad(12.0)
+	camera.snap()
 	player.control_enabled = true
 	Game.set_state(Game.STATE_PLAYING)
 
