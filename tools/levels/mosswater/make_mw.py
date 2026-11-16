@@ -736,7 +736,7 @@ def build_dam():
 
 # ----------------------------------------------------------------------------- the willow
 def build_willow():
-    """The old willow whose roots hold the spring: Mosswater Wood's guardian tree, tied with a
+    """The old willow whose roots hold the spring: Mosswater Wood's oldest tree, tied with a
     vermilion cord like the Camphor. Withered it is a black trunk hung with bare whips; Bloom
     hangs green leaf-streamers and pale catkins along every whip.
     Animations: withered (loop), bloom (the streamers drop in from the crown down, 36 frames)."""

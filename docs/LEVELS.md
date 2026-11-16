@@ -121,7 +121,7 @@ their doorways. The ferry cannot cross in the dark.
 A wide windy plain of sedge and standing stones between the village and the wood. The Spill
 lies in three hollows. Packs drift across the open ground.
 
-- **Goal:** bloom the guardian sapling on the central knoll and restore the plain.
+- **Goal:** bloom the Knoll sapling on the central knoll and restore the plain.
 - **Shape:** about 120 by 100 m, gently rolling. A dry gully runs east to west across the
   middle with two broken rope bridges. Three cursed hollows; the largest surrounds the knoll.
   Entry from the south (raft landing), exit to the north-west (the edge of the wood).
