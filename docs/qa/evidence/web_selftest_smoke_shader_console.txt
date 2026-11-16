@@ -1,46 +1,46 @@
 # 40 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_selftest_smoke_shader_console.txt
-   0.64 # url http://127.0.0.1:61807/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&defect=shader
-  10.18 [error] SHADER ERROR: Unknown identifier in expression: 'undefined_symbol'.
-  10.18 [error] ERROR: Shader compilation failed.
+   0.54 # url http://127.0.0.1:60818/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&defect=shader
+   9.76 [error] SHADER ERROR: Unknown identifier in expression: 'undefined_symbol'.
+   9.76 [error] ERROR: Shader compilation failed.
 # ...
-   0.64 # url http://127.0.0.1:61807/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&defect=shader
-   0.64 # chrome Chrome/157.0.8103.51 viewport 1280x720 
-   5.23 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-   8.86 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
-   9.12 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
-   9.80 [log] ORIMI_BOOT t=4.66s options={"defect":"shader","scene":"res://tests/qa/qa_host.tscn","target":"res://tests/fixtures/qa_fixture.tscn"}
-   9.82 [log] QAPROBE:{"t":4681,"tag":"probe_ready","web":true}
-  10.12 [log] ORIMI_FIRST_FRAME t=4.98s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
-  10.12 [log] QAPROBE:{"t":4986,"tag":"target","target":"res://tests/fixtures/qa_fixture.tscn"}
-  10.18 [log] --Main Shader--
-  10.18 [log]     1 | shader_type spatial;
-  10.18 [log] E   2-> void fragment() { ALBEDO = vec3(1.0) + undefined_symbol; }
-  10.18 [log]     3 | 
-  10.18 [error] SHADER ERROR: Unknown identifier in expression: 'undefined_symbol'.
-  10.18 [error]    at: (null) (:2)
-  10.18 [error] ERROR: Shader compilation failed.
-  10.18 [error]    at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
-  10.22 [log] ORIMI_AUDIO music=title fade=2.0
-  10.39 [log] QAPROBE:{"args":["title"],"name":"game_state_changed","t":5248,"tag":"evt"}
-  14.21 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-  18.66 [log] ORIMI_AUDIO music=vale_cursed fade=2.0
-  18.81 [log] QAPROBE:{"args":["playing"],"name":"game_state_changed","t":13674,"tag":"evt"}
-  18.81 [log] QA:{"data":{"state":"playing"},"tag":"state"}
-  18.82 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":2.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false," [cut]
-  19.31 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":46.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false, [cut]
-  19.81 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":46.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false, [cut]
-  20.32 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  20.83 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  21.34 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  21.84 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  22.35 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  22.86 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  23.36 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  23.87 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  24.38 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  25.13 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  25.39 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  25.90 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  26.40 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  26.91 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+   0.54 # url http://127.0.0.1:60818/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&defect=shader
+   0.54 # chrome Chrome/157.0.8103.51 viewport 1280x720 
+   5.13 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+   8.45 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+   8.70 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+   9.40 [log] ORIMI_BOOT t=4.35s options={"defect":"shader","scene":"res://tests/qa/qa_host.tscn","target":"res://tests/fixtures/qa_fixture.tscn"}
+   9.42 [log] QAPROBE:{"t":4378,"tag":"probe_ready","web":true}
+   9.71 [log] ORIMI_FIRST_FRAME t=4.66s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+   9.71 [log] QAPROBE:{"t":4665,"tag":"target","target":"res://tests/fixtures/qa_fixture.tscn"}
+   9.76 [log] --Main Shader--
+   9.76 [log]     1 | shader_type spatial;
+   9.76 [log] E   2-> void fragment() { ALBEDO = vec3(1.0) + undefined_symbol; }
+   9.76 [log]     3 | 
+   9.76 [error] SHADER ERROR: Unknown identifier in expression: 'undefined_symbol'.
+   9.76 [error]    at: (null) (:2)
+   9.76 [error] ERROR: Shader compilation failed.
+   9.76 [error]    at: set_code (drivers/gles3/storage/material_storage.cpp:3119)
+   9.81 [log] ORIMI_AUDIO music=title fade=2.0
+   9.97 [log] QAPROBE:{"args":["title"],"name":"game_state_changed","t":4922,"tag":"evt"}
+  13.02 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+  17.05 [log] ORIMI_AUDIO music=vale_cursed fade=2.0
+  17.19 [log] QAPROBE:{"args":["playing"],"name":"game_state_changed","t":12149,"tag":"evt"}
+  17.19 [log] QA:{"data":{"state":"playing"},"tag":"state"}
+  17.20 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":2.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false," [cut]
+  17.70 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":1.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false," [cut]
+  18.21 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":122.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  18.71 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":122.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  19.23 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  19.73 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  20.24 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":143.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  20.75 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":143.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  21.25 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  21.76 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  22.27 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  22.77 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  23.47 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  23.79 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  24.30 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  24.80 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  25.31 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]

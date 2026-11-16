@@ -58,7 +58,7 @@ function parseArgs(argv) {
     else { console.error('unknown argument ' + a); process.exit(2); }
   }
   o.name = o.name || o.mode;
-  o.timeout = o.timeout || ({ full: 1200, level: 600, resume: 600 }[o.mode] || 150);
+  o.timeout = o.timeout || ({ full: 2000, level: 900, resume: 900 }[o.mode] || 150);
   return o;
 }
 
@@ -188,11 +188,12 @@ class Session {
     return [(xx * p[0] + yx * p[1] + ox) * s, (xy * p[0] + yy * p[1] + oy) * s];
   }
 
-  async shot(file) {
+  async shot(file, publish = true) {
     const full = fullOf(file);
     fs.mkdirSync(path.dirname(full), { recursive: true });
     await this.page.screenshot({ path: full });
     const r = rel(file);
+    if (!publish) return rel(full);
     if (r.startsWith('docs/screenshots/')) { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.copyFileSync(full, file); return r; }
     if (this.opts.name.startsWith('selftest')) return rel(full);
     const jpg = file.replace(/\.png$/, '.jpg');
@@ -471,6 +472,7 @@ async function modeFull(s, o, crit, ev) {
   const prefix = real ? 'web_' : 'web_' + o.name + '_';
   const old = new RegExp('^' + prefix + '[0-9]{2}_.*\\.(png|jpg)$');
   if (fs.existsSync(stackDir)) for (const f of fs.readdirSync(stackDir)) if (old.test(f)) fs.rmSync(path.join(stackDir, f));
+  if (real) { fs.mkdirSync(LOGS, { recursive: true }); fs.writeFileSync(path.join(LOGS, 'web_full_started'), new Date().toISOString() + '\n'); }
   const r = await openProbe(s, o, [['autoplay', '1']]);
   if (r.notYet) { ev.notYet = r.notYet; return; }
   const t0 = Date.now();
@@ -529,7 +531,7 @@ async function modeLevel(s, o, crit, ev) {
   while (Date.now() < t0 + o.timeout * 1000 && !(end = qa('autoplay_end')[0])) {
     for (const st of qa('stage')) {
       const name = String((st.data && (st.data.name || st.data.stage)) || '').replace(/[^a-z0-9_]+/gi, '_');
-      if (name && !shotFor.has(name) && shotFor.size < 12) { shotFor.add(name); ev.shots.push(await s.shot(path.join(EVIDENCE, 'web_' + o.name + '_' + name + '.png'))); }
+      if (name && !shotFor.has(name) && shotFor.size < 12) { ev.shots.push(await s.shot(path.join(EVIDENCE, 'web_' + o.name + '_' + name + '.png'), shotFor.size % 3 === 0)); shotFor.add(name); }
     }
     await sleep(250);
   }
@@ -547,10 +549,16 @@ async function modeLevel(s, o, crit, ev) {
 
 async function modeResume(s, o, crit, ev) {
   const book = bookLevels();
-  if (book.length < 2) { ev.notYet = 'the book has fewer than two levels'; return; }
-  const [first, second] = book;
+  const first = (o.query.find(([k]) => k === 'after') || [])[1] || book[0];
+  const second = book[book.indexOf(first) + 1];
+  if (!second) { ev.notYet = 'no book level after ' + first; return; }
   const r = await openProbe(s, o, [['autoplay', '1'], ['level', first]]);
   if (r.notYet) { ev.notYet = r.notYet; return; }
+  const before = book.slice(0, book.indexOf(first));
+  if (before.length) {
+    const seeded = await s.cmd('completed:' + before.join(','), 'completed_set');
+    s.log('# earlier book levels marked completed, as after a play from the start: ' + JSON.stringify(seeded.completed));
+  }
   const saved = await s.until(() => s.qa.find((q) => q.tag === 'progress_saved' && q.data && (q.data.completed || []).includes(first)), o.timeout * 1000);
   crit(first + ' played through and progress saved', !!saved, saved ? 'progress_saved ' + JSON.stringify(saved.data).slice(0, 200) : 'no progress_saved listing ' + first + ' within ' + o.timeout + ' s');
   if (!saved) return;
@@ -600,7 +608,7 @@ async function modeResume(s, o, crit, ev) {
   const snap = await startGame(s, () => {});
   const g = snap.game || {};
   crit('Continue starts ' + second, g.level === second, 'level ' + g.level + ', state ' + snap.game_state);
-  crit('Continue keeps the bead from ' + first, g.beads === 1, 'beads ' + g.beads + ', ink_max ' + g.ink_max);
+  crit('Continue keeps the ' + (before.length + 1) + ' beads earned up to ' + first, g.beads === before.length + 1, 'beads ' + g.beads + ', ink_max ' + g.ink_max);
   ev.shots.push(await s.shot(path.join(EVIDENCE, 'web_' + o.name + '_continued.png')));
 }
 
@@ -687,6 +695,15 @@ async function modePerf(s, o, crit, ev) {
   if (r.notYet) { ev.notYet = r.notYet; return; }
   await startGame(s, () => {});
   const kindle = o.query.some(([k, v]) => k === 'kindle' && v === '1');
+  const walk = Number((o.query.find(([k]) => k === 'walk') || [])[1] || 0);
+  const expectQa = (o.query.find(([k]) => k === 'expect_qa') || [])[1];
+  const walkIn = async (ss) => { if (walk > 0) { await ss.page.keyboard.down('KeyW'); await sleep(walk * 1000); await ss.page.keyboard.up('KeyW'); await sleep(1500); } };
+  await walkIn(s);
+  if (expectQa) {
+    const seen = await s.until(() => s.qa.find((q) => q.tag === expectQa), 15000);
+    crit('measured during ' + expectQa + ' (the fight is running)', !!seen, seen ? expectQa + ' ' + JSON.stringify(seen.data).slice(0, 120) : 'no ' + expectQa + ' within 15 s of walking in');
+    ev.shots.push(await s.shot(path.join(EVIDENCE, 'web_' + o.name + '_fight.png')));
+  }
   if (kindle) {
     const k = await s.cmd('kindle_all', 'kindled_all');
     crit('every lamp lit before measuring (kindle_all)', k.total > 0 && k.lit === k.total, k.lit + ' of ' + k.total + ' kindle targets lit');
@@ -702,6 +719,7 @@ async function modePerf(s, o, crit, ev) {
     await openProbe(s2, o, [['god', '1'], ...warp], { extraArgs: ['--disable-frame-rate-limit', '--disable-gpu-vsync'] });
     await startGame(s2, () => {});
     if (kindle) { await s2.cmd('kindle_all', 'kindled_all'); await sleep(1500); }
+    await walkIn(s2);
     for (const size of [[1280, 720], [1920, 1080]]) ev.perf.push(await measure(s2, 'uncapped', size));
   } finally {
     s.lines.push(...s2.lines); s.problems.push(...s2.problems);
