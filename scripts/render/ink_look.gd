@@ -17,6 +17,9 @@ const NOISE_TEX := preload("res://assets/textures/render/ink_noise.png")
 const STREAK_TEX := preload("res://assets/textures/render/dry_streak.png")
 const SACRED_SUFFIX := "_sacred"
 const SOURCE_META := &"ink_source_materials"
+## A textured mesh wider than this (metres) is ground: its painted dark marks are drawn as crisp
+## ink that lightens once the place is restored (ink_toon's ground_marks).
+const GROUND_SIZE := 30.0
 
 ## Line and band presets. "world": heavy pure-black one-sided strokes (1.5 to 4 %H).
 ## "character": softer warm-grey line (0.5 to 1.2 %H), broken in places.
@@ -131,12 +134,14 @@ func _apply_mesh(mi: MeshInstance3D) -> void:
 				return
 		mi.set_meta(SOURCE_META, sources)
 	mi.material_override = null
+	var size := mi.mesh.get_aabb().size * mi.global_transform.basis.get_scale()
+	var ground := maxf(size.x, size.z) > GROUND_SIZE
 	for i in count:
 		var src: Material = sources[i]
 		var has_vc := false
 		if mi.mesh is ArrayMesh:
 			has_vc = ((mi.mesh as ArrayMesh).surface_get_format(i) & Mesh.ARRAY_FORMAT_COLOR) != 0
-		var toon := _shared_material(src, has_vc)
+		var toon := _shared_material(src, has_vc, ground)
 		mi.set_surface_override_material(i, toon)
 		_surfaces.append({"mesh": mi, "index": i, "toon": toon, "outline": toon.next_pass})
 
@@ -145,7 +150,7 @@ func _is_ours(m: Material) -> bool:
 	return m is ShaderMaterial and (m as ShaderMaterial).shader == TOON_SHADER
 
 
-func _shared_material(src: Material, has_vc: bool) -> ShaderMaterial:
+func _shared_material(src: Material, has_vc: bool, ground: bool) -> ShaderMaterial:
 	var color := Color(Palette.IVORY)
 	var tex: Texture2D = null
 	var sacred := false
@@ -156,13 +161,15 @@ func _shared_material(src: Material, has_vc: bool) -> ShaderMaterial:
 		sacred = src.resource_name.ends_with(SACRED_SUFFIX)
 	var style: StringName = line_style if STYLES.has(line_style) else &"world"
 	var keep := _light_keep()
-	var key := "%s|%d|%s|%s|%s|%s|%s|%.3f|%s|%.2f" % [
+	var marks := ground and tex != null
+	var key := "%s|%d|%s|%s|%s|%s|%s|%.3f|%s|%.2f|%s" % [
 		color.to_html(), tex.get_instance_id() if tex else 0, style, sacred, accent, cursable,
-		wind, outline_width, has_vc, keep]
+		wind, outline_width, has_vc, keep, marks]
 	if _shared.has(key) and is_instance_valid(_shared[key]):
 		return _shared[key]
 	var mat := _build(color, tex, sacred, style, has_vc)
 	mat.set_shader_parameter(&"light_keep", keep)
+	mat.set_shader_parameter(&"ground_marks", marks)
 	if mat.next_pass:
 		(mat.next_pass as ShaderMaterial).set_shader_parameter(&"light_keep", keep)
 	_shared[key] = mat
