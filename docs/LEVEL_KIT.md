@@ -594,15 +594,15 @@ the camera blends in and out over `blend_time` (0.6 s).
 | - | - | - |
 | follow | The usual camera with overrides: closer in a corridor, looking up a shaft. | distance (0 keeps 4.9), lock_pitch + pitch_deg (negative looks down, positive looks up), lock_yaw + yaw_deg (world), pivot_raise, fov |
 | fixed | A set view from a marker. | view (a Marker3D), look_at_player |
-| frame | A boss arena: looks along view's -Z and backs off until Orimi and every frame_targets node fit, with margin metres to spare (also kept out of walls). | view, frame_targets, margin, max_distance (backs off no farther than this; 0 no limit), stay_inside (never backs out of the zone's box), max_pitch_deg (65: a view tipped steeper is held to this) |
+| frame | A boss arena: looks along view's -Z and backs off until Orimi and every frame_targets node fit, with margin metres to spare (also kept out of walls). | view, frame_targets, margin, max_distance (backs off no farther than this from the framed centre, so Orimi on the far side can be a little farther; 0 no limit), stay_inside (never backs out of the zone's box), max_pitch_deg (65: a view tipped steeper is held to this) |
 
 **Roofs need colliders.** The camera only stops at what it can hit: a room's ceiling with no
 collision lets the frame and follow cameras back up through it, and `stay_inside` is the only
 other guard. Give every roof and ceiling a body (or put it under `level_ground`).
 
 Example: `TunnelCam` (follow, distance 2.6, pitch locked at -6) and `KnotCam` (frame on the
-sealed fight, max_distance 12, stay_inside; stage `knot_view`, whose QA line carries the
-camera's distance to Orimi) in scenes/levels/example/example.tscn. For a shaft, lock the pitch at about +30
+sealed fight, max_distance 12, stay_inside; stages `ring_rise` and `fight_won`, whose QA
+lines carry the camera's zone and distance to Orimi) in scenes/levels/example/example.tscn. For a shaft, lock the pitch at about +30
 and shorten the distance so the camera looks up past Orimi.
 
 **Fading props.** Put a prop (its body or any ancestor of it) in the group `camera_fade` and the
