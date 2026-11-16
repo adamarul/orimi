@@ -473,18 +473,20 @@ func set_beads(colors: Array[Color]) -> void:
 		var bead := MeshInstance3D.new()
 		bead.name = "CordBead%d" % i
 		var s := SphereMesh.new()
-		s.radius = 0.024
-		s.height = 0.048
+		s.radius = 0.04
+		s.height = 0.08
 		s.radial_segments = 8
 		s.rings = 4
 		bead.mesh = s
 		var m := StandardMaterial3D.new()
 		m.albedo_color = colors[i]
-		m.roughness = 0.6
+		m.roughness = 0.45
+		m.emission_enabled = true
+		m.emission = colors[i] * 0.35
 		bead.material_override = m
 		bead.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		var side := -1.0 if i % 2 == 0 else 1.0
-		bead.position = base + Vector3(side * 0.05 * (i / 2 + 1), -0.012 * (i / 2), 0)
+		bead.position = base + Vector3(side * 0.075 * (i / 2 + 1), -0.02 * (i / 2), 0)
 		anchor.add_child(bead)
 
 

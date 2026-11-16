@@ -96,6 +96,15 @@ func read_options() -> void:
 		reset_progress(false)
 	else:
 		load_progress()
+	# completed=<id>,<id>: a save that has finished those levels, for checking the title and the beads.
+	var done := String(Boot.opt("completed", ""))
+	if done != "":
+		progress["completed"] = Array(done.split(",", false))
+		progress["current"] = String(LevelRegistry.next_after(StringName(progress["completed"].back())))
+		if progress["current"] == "":
+			progress["current"] = progress["completed"].back()
+		save_progress()
+		apply_beads()
 
 
 func _process(_delta: float) -> void:
