@@ -12,7 +12,7 @@ through the pass in the north-west (-X, -Z).
     the Seam         a dry gully, 5 m deep, east to west across the middle, closed at both ends
                      by the hills; two broken rope bridges (Tie)
     three hollows    basins of the Spill. Each holds raised causeways and islands of clean ground.
-                     The largest, the Mere, rings the Knoll with the guardian sapling.
+                     The largest, the Mere, rings the Knoll with the sapling on its top.
     the hills        steep on the west, north and east; a pass in the north-west leads to the wood
 """
 import math
@@ -25,7 +25,7 @@ PLAIN_Z = (-50.0, 50.0)
 FLOOR_X = (-72.0, 72.0)          # fine ground tiles (1 m grid) and the 2K ground texture
 FLOOR_Z = (-64.0, 80.0)
 FLOOR_STEP = 1.0
-TILES = (4, 4)                   # ground tiles along X and Z
+TILES = (6, 6)                   # ground tiles along X and Z
 OUTER_X = (-232.0, 232.0)        # coarse hills ring
 OUTER_Z = (-240.0, 248.0)
 OUTER_STEP = 8.0

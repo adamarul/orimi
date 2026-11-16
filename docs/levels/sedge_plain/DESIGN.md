@@ -26,7 +26,7 @@ corner.
   it, and the second at x = -26.
 - **The Mere.** The largest hollow, 21 m to its rim, centred at (2, -30). The Knoll rises out of
   it as a smooth dome whose flat top is 5.6 m across and stands 4.7 m above the plain. The
-  guardian sapling and the second verse-stone are on the top. Two false spurs of old causeway
+  Knoll sapling and the second verse-stone are on the top. Two false spurs of old causeway
   run into the Mere from the south and the east and stop in the black.
 - **Kettle Hollow (east) and Ladle Hollow (west).** Each is 12 m to the rim and 2.5 m deep. A
   soot-buried causeway leads to an island of clean ground in each one, and a map leaf lies on
@@ -75,7 +75,7 @@ The table lists the markers the route uses. The authority is `MARKERS` in
 | `M_Tie_Break_A` / `_B` | -10.9 / -9.6 | 1.23 / 1.36 | -24.2 / -28.9 | Tie posts across the break in the causeway |
 | `M_Knoll_Ramp` | -6.9 | 1.51 | -28.9 | Foot of the spiral ramp up the Knoll |
 | `M_Knoll` | 2.0 | 4.74 | -30.0 | Top of the Knoll |
-| `M_Sapling` | 1.6 | 4.73 | -30.6 | Guardian sapling (Level 1's sapling at 4.5x) |
+| `M_Sapling` | 1.6 | 4.73 | -30.6 | Knoll sapling (Level 1's sapling at 4.5x) |
 | `M_Verse_2` | 5.2 | 4.42 | -33.0 | Verse-stone 2 |
 | `M_Exit` | -56.0 | 0.37 | -45.2 | LevelExit, on the bank of the brook's pool |
 | `M_Exit_Raft` | -61.0 | -0.60 | -48.5 | Pell's raft in the pool |

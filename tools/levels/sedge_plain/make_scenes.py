@@ -6,7 +6,7 @@
                                                  not cursable, no outline), river (vfx water), and
                                                  every M_* marker as a Marker3D under Markers
   scenes/levels/sedge_plain/props/<name>.tscn    one wrapper per prop: the glb plus an InkLook
-  scenes/levels/sedge_plain/props/guardian_sapling.tscn   Level 1's sapling at 4.5 x scale
+  scenes/levels/sedge_plain/props/knoll_sapling.tscn      Level 1's sapling at 4.5 x scale
   scenes/levels/sedge_plain/dressing.tscn        every prop placement in layout.props()
 """
 import math
@@ -75,10 +75,10 @@ def sapling_wrapper():
     text = "\n".join([
         '[gd_scene load_steps=2 format=3]', '',
         '[ext_resource type="PackedScene" path="res://scenes/models/sapling.tscn" id="1"]', '',
-        '[node name="GuardianSapling" type="Node3D"]', '',
+        '[node name="KnollSapling" type="Node3D"]', '',
         '[node name="Sapling" parent="." instance=ExtResource("1")]',
         "transform = %s" % xform(0, 0, 0, 0, 4.5), ""])
-    write(SCENES / "props" / "guardian_sapling.tscn", text)
+    write(SCENES / "props" / "knoll_sapling.tscn", text)
 
 
 def terrain_scene():
