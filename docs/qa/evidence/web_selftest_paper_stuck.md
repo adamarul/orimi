@@ -2,7 +2,7 @@
 
 url query: scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&god=1&paper=light&warp=M_Spawn&defect=paper_stuck
 chrome: Chrome/157.0.8103.51; webgl: {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-first frame: ORIMI_FIRST_FRAME t=4.55s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (9173 ms)
+first frame: ORIMI_FIRST_FRAME t=4.55s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (8963 ms)
 
 
 | result | criterion | detail |
@@ -12,7 +12,7 @@ first frame: ORIMI_FIRST_FRAME t=4.55s scene=res://tests/qa/qa_host.tscn rendere
 | ok | paper normal selected in game (O key) | Settings.paper_intensity 1 |
 | FAIL | paper heavy selected in game (O key) | Settings.paper_intensity 1 |
 | FAIL | Light, Normal, Heavy differ in the expected direction | ok all three differ; NOT tooth Heavy > Normal; NOT tooth Heavy > Light; NOT vignette Light < Normal; NOT vignette Normal < Heavy; ok saturation Heavy < Normal |
-| ok | no console/page errors | 51 console lines |
+| ok | no console/page errors | 50 console lines |
 
 screenshots: .userdata/qa/full/docs/qa/evidence/web_selftest_paper_stuck_light.png, .userdata/qa/full/docs/qa/evidence/web_selftest_paper_stuck_normal.png, .userdata/qa/full/docs/qa/evidence/web_selftest_paper_stuck_heavy.png
 console log: docs/qa/evidence/web_selftest_paper_stuck_console.txt
@@ -31,7 +31,7 @@ image statistics:
  },
  "metrics": {
   "light": {
-   "tooth": 0.0179,
+   "tooth": 0.01789,
    "vignette": 1.1018,
    "saturation": 0.1459
   },

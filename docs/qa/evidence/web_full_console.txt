@@ -1,55 +1,53 @@
-# 6187 console lines. Marker and problem lines first, then the last 40 lines.
+# 6116 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_full_console.txt
-   1.38 # url http://127.0.0.1:50538/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn&autoplay=1
-  26.47 [log] QA:{"data":{"completed":[],"current":"","stats":{},"taught":["move"]},"tag":"progress_saved"}
-  36.08 [log] QA:{"data":{"completed":[],"current":"","stats":{},"taught":["move","jump"]},"tag":"progress_saved"}
-  39.74 [log] QA:{"data":{"completed":[],"current":"","stats":{},"taught":["move","jump","fight"]},"tag":"progress_saved"}
- 102.58 [log] QA:{"data":{"completed":["hazewater"],"current":"tallowford","stats":{"hazewater":{"deaths":1,"kills":16,"time":92}},"taught":["move","jump","fight"]},"tag":"progress_saved"}
- 251.69 [log] QA:{"data":{"completed":["hazewater","tallowford"],"current":"sedge_plain","stats":{"hazewater":{"deaths":1,"kills":16,"time":92},"tallowford":{"deaths":0,"kills":7,"time":134}},"taught":["move","jump","fight"]},"tag":"progress_saved"}
- 450.21 [log] QA:{"data":{"completed":["hazewater","tallowford","sedge_plain"],"current":"mosswater","stats":{"hazewater":{"deaths":1,"kills":16,"time":92},"sedge_plain":{"deaths":0,"kills":22,"time":188},"tallowford":{"deaths":0,"kills":7,"time":134}},"taught":["move","jump","fight"]},"tag":"progre [cut]
- 557.81 [log] QA:{"data":{"level":"mosswater","snapshot":{"autoplay":true,"beads":3,"camera":{"to_player":5.47,"zone":"StairCam"},"checkpoint":[2.33,5.1,9.96],"deaths":0,"enemies_alive":4,"fps":108.0,"god":false,"hp":4,"ink":160.0,"ink_max":160.0,"kills":3,"level":"mosswater","max_hp":5,"player_pos" [cut]
- 658.85 [log] QA:{"data":{"completed":["hazewater","tallowford","sedge_plain","mosswater"],"current":"hollow_kiln","stats":{"hazewater":{"deaths":1,"kills":16,"time":92},"mosswater":{"deaths":0,"kills":12,"time":198},"sedge_plain":{"deaths":0,"kills":22,"time":188},"tallowford":{"deaths":0,"kills":7 [cut]
- 999.67 [log] QA:{"data":{"completed":["hazewater","tallowford","sedge_plain","mosswater","hollow_kiln"],"current":"hollow_kiln","stats":{"hazewater":{"deaths":1,"kills":16,"time":92},"hollow_kiln":{"deaths":1,"kills":11,"time":330},"mosswater":{"deaths":0,"kills":12,"time":198},"sedge_plain":{"deat [cut]
-1010.86 [log] QA:{"data":{"casts":[{"glyph":"bloom","hit":true,"r_px":63.0,"recognised":"bloom","screen":[640.0,308.0],"target":"VerseStone","targets":1},{"glyph":"slash","hit":true,"r_px":172.0,"recognised":"slash","screen":[640.0,254.0],"target":"ThornGate","targets":4},{"glyph":"slash","hit":true [cut]
-1010.86 [log] QA_AUTOPLAY_FAILED
+   0.86 # url http://127.0.0.1:49187/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn&autoplay=1
+  24.76 [log] QA:{"data":{"completed":[],"current":"","stats":{},"taught":["move"]},"tag":"progress_saved"}
+  34.36 [log] QA:{"data":{"completed":[],"current":"","stats":{},"taught":["move","jump"]},"tag":"progress_saved"}
+  38.03 [log] QA:{"data":{"completed":[],"current":"","stats":{},"taught":["move","jump","fight"]},"tag":"progress_saved"}
+ 103.64 [log] QA:{"data":{"completed":["hazewater"],"current":"tallowford","stats":{"hazewater":{"deaths":1,"kills":16,"time":94}},"taught":["move","jump","fight"]},"tag":"progress_saved"}
+ 255.53 [log] QA:{"data":{"completed":["hazewater","tallowford"],"current":"sedge_plain","stats":{"hazewater":{"deaths":1,"kills":16,"time":94},"tallowford":{"deaths":0,"kills":7,"time":137}},"taught":["move","jump","fight"]},"tag":"progress_saved"}
+ 457.81 [log] QA:{"data":{"completed":["hazewater","tallowford","sedge_plain"],"current":"mosswater","stats":{"hazewater":{"deaths":1,"kills":16,"time":94},"sedge_plain":{"deaths":0,"kills":22,"time":191},"tallowford":{"deaths":0,"kills":7,"time":137}},"taught":["move","jump","fight"]},"tag":"progre [cut]
+ 623.98 [log] QA:{"data":{"completed":["hazewater","tallowford","sedge_plain","mosswater"],"current":"hollow_kiln","stats":{"hazewater":{"deaths":1,"kills":16,"time":94},"mosswater":{"deaths":0,"kills":11,"time":156},"sedge_plain":{"deaths":0,"kills":22,"time":191},"tallowford":{"deaths":0,"kills":7 [cut]
+ 961.46 [log] QA:{"data":{"completed":["hazewater","tallowford","sedge_plain","mosswater","hollow_kiln"],"current":"hollow_kiln","stats":{"hazewater":{"deaths":1,"kills":16,"time":94},"hollow_kiln":{"deaths":1,"kills":11,"time":327},"mosswater":{"deaths":0,"kills":11,"time":156},"sedge_plain":{"deat [cut]
+ 972.64 [log] QA:{"data":{"casts":[{"glyph":"bloom","hit":true,"r_px":63.0,"recognised":"bloom","screen":[640.0,308.0],"target":"VerseStone","targets":1},{"glyph":"slash","hit":true,"r_px":172.0,"recognised":"slash","screen":[640.0,254.0],"target":"ThornGate","targets":4},{"glyph":"slash","hit":true [cut]
 # ...
-1006.71 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":144.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
-1006.73 [log] QAPROBE:{"args":[197.650331111114,200.0],"name":"ink_changed","t":1001469,"tag":"evt"}
-1006.93 [log] QAPROBE:{"args":[198.153803333336,200.0],"name":"ink_changed","t":1001670,"tag":"evt"}
-1007.13 [log] QAPROBE:{"args":[198.657275555558,200.0],"name":"ink_changed","t":1001871,"tag":"evt"}
-1007.22 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":144.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
-1007.33 [log] QAPROBE:{"args":[199.160747777781,200.0],"name":"ink_changed","t":1002073,"tag":"evt"}
-1007.33 [log] QA:{"data":{"state":"ended"},"tag":"state"}
-1007.33 [log] QAPROBE:{"args":["ended"],"name":"game_state_changed","t":1002074,"tag":"evt"}
-1007.36 [log] QA:{"data":{"font_size":22,"height":508,"room":680},"tag":"card_fit"}
-1007.36 [log] QA:{"data":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0,"footer":false,"fps":144.0,"god":false,"hp":5,"ink":199.2,"ink_max":200.0,"kills":11,"level":"hollow_kiln","max_hp":5,"player_pos":[6.7,18.02,-53.35] [cut]
-1007.54 [log] QAPROBE:{"args":[199.661035873019,200.0],"name":"ink_changed","t":1002282,"tag":"evt"}
-1007.68 [log] QAPROBE:{"args":[200.0,200.0],"name":"ink_changed","t":1002420,"tag":"evt"}
-1007.73 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":144.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
-1008.24 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":144.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
-1008.75 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":142.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
-1008.95 [log] QA:{"data":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"elapsed":986.2,"enemies_alive":0,"fps":142.0,"god":false,"hp":5,"ink":200.0,"ink_max":200.0,"kills":11,"level":"hollow_kiln","max_hp":5,"player_pos":[6.7,18.02,-53.35 [cut]
-1009.30 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":142.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
-1009.35 [log] QA:{"data":{"state":"title"},"tag":"state"}
-1009.35 [log] ORIMI_AUDIO music=title fade=2.0
-1009.47 [log] QAPROBE:{"args":["title"],"name":"game_state_changed","t":1004210,"tag":"evt"}
-1009.66 [log] QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
-1009.80 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-14.869784568434,"pos":[1.294,2.384,54.529],"yaw":15.9453942211912},"fps":144.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":5.26,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9, [cut]
-1009.84 [log] QA:{"data":{"enemies":9,"level":"hazewater","markers":13},"tag":"level_built"}
-1009.84 [log] QA:{"data":{"flag":"gate_a_cut","level":"hazewater","value":true},"tag":"flag"}
-1009.84 [log] QA:{"data":{"index":0,"level":"hazewater","text":"Cut through the thorns on the path"},"tag":"objective"}
-1009.84 [log] QA:{"data":{"flag":"gate_b_cleared","level":"hazewater","value":true},"tag":"flag"}
-1009.84 [log] QA:{"data":{"index":2,"level":"hazewater","text":"Blow the soot from the terrace ramp"},"tag":"objective"}
-1009.84 [log] QA:{"data":{"flag":"restored_zone_a","level":"hazewater","value":true},"tag":"flag"}
-1009.84 [log] QA:{"data":{"index":1,"level":"hazewater","text":"Wake the sapling in the Reed Shallows"},"tag":"objective"}
-1009.84 [log] QA:{"data":{"flag":"restored_zone_b","level":"hazewater","value":true},"tag":"flag"}
-1009.85 [log] QA:{"data":{"index":3,"level":"hazewater","text":"Wake the sapling on the Soot Terrace"},"tag":"objective"}
-1009.85 [log] QA:{"data":{"flag":"restored_tree","level":"hazewater","value":true},"tag":"flag"}
-1009.85 [log] QA:{"data":{"index":4,"level":"hazewater","text":"Wake the great camphor"},"tag":"objective"}
-1009.85 [log] QA:{"data":{"beads":5,"first":"Book One complete: Chapters"},"tag":"title_menu"}
-1009.85 [log] QA:{"data":{"level":"hazewater","t":1004.59},"tag":"title_ready"}
-1010.31 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-9.81328112020499,"pos":[4.112,9.5,65.0],"yaw":18.9938613270242},"fps":89.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":18.21,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":0,"fp [cut]
-1010.81 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-9.80468191203994,"pos":[4.235,9.5,64.998],"yaw":19.1473015267285},"fps":89.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":18.23,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":0," [cut]
-1010.86 [log] QA:{"data":{"autoplay":true,"beads":5,"camera":{"to_player":18.24,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"elapsed":988.2,"enemies_alive":0,"fps":89.0,"god":false,"hp":5,"ink":200.0,"ink_max":200.0,"kills":0,"level":"hazewater","max_hp":5,"player_pos":[0.0,0.04,50.0],"restor [cut]
-1010.86 [log] QA:{"data":{"casts":[{"glyph":"bloom","hit":true,"r_px":63.0,"recognised":"bloom","screen":[640.0,308.0],"target":"VerseStone","targets":1},{"glyph":"slash","hit":true,"r_px":172.0,"recognised":"slash","screen":[640.0,254.0],"target":"ThornGate","targets":4},{"glyph":"slash","hit":true [cut]
-1010.86 [log] QA_AUTOPLAY_FAILED
+ 968.31 [log] QAPROBE:{"args":[197.144583015875,200.0],"name":"ink_changed","t":963706,"tag":"evt"}
+ 968.51 [log] QAPROBE:{"args":[197.65294777778,200.0],"name":"ink_changed","t":963908,"tag":"evt"}
+ 968.61 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":143.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
+ 968.71 [log] QAPROBE:{"args":[198.15638777778,200.0],"name":"ink_changed","t":964109,"tag":"evt"}
+ 968.91 [log] QAPROBE:{"args":[198.65982777778,200.0],"name":"ink_changed","t":964310,"tag":"evt"}
+ 969.11 [log] QAPROBE:{"args":[199.16326777778,200.0],"name":"ink_changed","t":964512,"tag":"evt"}
+ 969.12 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":143.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
+ 969.13 [log] QA:{"data":{"state":"ended"},"tag":"state"}
+ 969.13 [log] QAPROBE:{"args":["ended"],"name":"game_state_changed","t":964527,"tag":"evt"}
+ 969.16 [log] QA:{"data":{"font_size":22,"height":508,"room":680},"tag":"card_fit"}
+ 969.16 [log] QA:{"data":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0,"footer":false,"fps":143.0,"god":false,"hp":5,"ink":199.2,"ink_max":200.0,"kills":11,"level":"hollow_kiln","max_hp":5,"player_pos":[6.7,18.02,-53.35] [cut]
+ 969.33 [log] QAPROBE:{"args":[199.66673777778,200.0],"name":"ink_changed","t":964727,"tag":"evt"}
+ 969.47 [log] QAPROBE:{"args":[200.0,200.0],"name":"ink_changed","t":964866,"tag":"evt"}
+ 969.64 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":142.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
+ 970.14 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":142.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
+ 970.65 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-29.357747901886,"pos":[2.0,62.0,-50.0],"yaw":180.000005008956},"fps":144.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"enemies_alive":0," [cut]
+ 970.75 [log] QA:{"data":{"autoplay":true,"beads":5,"camera":{"to_player":44.36,"zone":""},"checkpoint":[1.96,22.5,-61.5],"deaths":1,"elapsed":949.7,"enemies_alive":0,"fps":144.0,"god":false,"hp":5,"ink":200.0,"ink_max":200.0,"kills":11,"level":"hollow_kiln","max_hp":5,"player_pos":[6.7,18.02,-53.35 [cut]
+ 971.14 [log] QA:{"data":{"state":"title"},"tag":"state"}
+ 971.14 [log] ORIMI_AUDIO music=title fade=2.0
+ 971.26 [log] QAPROBE:{"args":["title"],"name":"game_state_changed","t":966659,"tag":"evt"}
+ 971.28 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"fps":144.0,"game":{"autoplay":true,"beads":5,"checkpoint":[0.0,0.0,0.0],"deaths":0,"enemies_alive":0,"fps":144.0,"god":false,"hp":0,"ink":200.0,"ink_max":200.0,"kills":0,"level":"","max_hp":0,"player_pos":[],"restored_zones":[],"state" [cut]
+ 971.44 [log] QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
+ 971.62 [log] QA:{"data":{"enemies":9,"level":"hazewater","markers":13},"tag":"level_built"}
+ 971.62 [log] QA:{"data":{"flag":"gate_a_cut","level":"hazewater","value":true},"tag":"flag"}
+ 971.62 [log] QA:{"data":{"index":0,"level":"hazewater","text":"Cut through the thorns on the path"},"tag":"objective"}
+ 971.62 [log] QA:{"data":{"flag":"gate_b_cleared","level":"hazewater","value":true},"tag":"flag"}
+ 971.62 [log] QA:{"data":{"index":2,"level":"hazewater","text":"Blow the soot from the terrace ramp"},"tag":"objective"}
+ 971.62 [log] QA:{"data":{"flag":"restored_zone_a","level":"hazewater","value":true},"tag":"flag"}
+ 971.62 [log] QA:{"data":{"index":1,"level":"hazewater","text":"Wake the sapling in the Reed Shallows"},"tag":"objective"}
+ 971.62 [log] QA:{"data":{"flag":"restored_zone_b","level":"hazewater","value":true},"tag":"flag"}
+ 971.62 [log] QA:{"data":{"index":3,"level":"hazewater","text":"Wake the sapling on the Soot Terrace"},"tag":"objective"}
+ 971.62 [log] QA:{"data":{"flag":"restored_tree","level":"hazewater","value":true},"tag":"flag"}
+ 971.62 [log] QA:{"data":{"index":4,"level":"hazewater","text":"Wake the great camphor"},"tag":"objective"}
+ 971.63 [log] QA:{"data":{"beads":5,"first":"Book One complete: Chapters"},"tag":"title_menu"}
+ 971.63 [log] QA:{"data":{"level":"hazewater","t":967.03},"tag":"title_ready"}
+ 971.79 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-9.81851731397745,"pos":[4.039,9.5,65.0],"yaw":18.901711829837},"fps":92.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":18.19,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":0,"fps [cut]
+ 972.29 [log] QAPROBE:{"brush_enabled":false,"brush_open":false,"cam":{"fov":57.0,"pitch":-9.80983016712684,"pos":[4.161,9.5,64.999],"yaw":19.0551178785954},"fps":92.0,"game":{"autoplay":true,"beads":5,"camera":{"to_player":18.22,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":0," [cut]
+ 972.63 [log] QA:{"data":{"autoplay":true,"beads":5,"camera":{"to_player":18.24,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"elapsed":951.6,"enemies_alive":0,"fps":143.0,"god":false,"hp":5,"ink":200.0,"ink_max":200.0,"kills":0,"level":"hazewater","max_hp":5,"player_pos":[0.0,0.04,50.0],"resto [cut]
+ 972.64 [log] QA:{"data":{"casts":[{"glyph":"bloom","hit":true,"r_px":63.0,"recognised":"bloom","screen":[640.0,308.0],"target":"VerseStone","targets":1},{"glyph":"slash","hit":true,"r_px":172.0,"recognised":"slash","screen":[640.0,254.0],"target":"ThornGate","targets":4},{"glyph":"slash","hit":true [cut]
+ 972.64 [log] QA_AUTOPLAY_PASSED

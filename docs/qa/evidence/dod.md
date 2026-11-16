@@ -1,8 +1,8 @@
 # Definition-of-done gate
 
-Checkout: ws branch at d0685c3, run 2026-11-16T14:16Z. Command: tools/qa/dod.sh 
+Checkout: ws branch at 312543b, run 2026-11-16T17:39Z. Command: tools/qa/dod.sh 
 
-Browser build tested: export of d0685c3
+Browser build tested: export of 312543b
 
 | DoD | check | what it proves | result | evidence |
 | - | - | - | - | - |
@@ -26,13 +26,13 @@ Browser build tested: export of d0685c3
 | 3 | web_paper | browser: Light / Normal / Heavy captures move in the style-guide direction | **PASS** | docs/qa/evidence/web_paper.md |
 | 3 | paper_desktop | desktop: Light / Normal / Heavy captures move in the style-guide direction | **PASS** | docs/qa/evidence/paper_desktop.md |
 | 4 | web_brush | browser brush: freeze, sepia, circle/line/loop recognised, ink drains, world resumes | **PASS** | docs/qa/evidence/web_brush.md |
-| 5 | web_full | browser autoplay of the whole book: Level 1 enemies, zones and finale, every book level completes with its bead, end card | **FAIL** | docs/qa/evidence/web_full.md |
+| 5 | web_full | browser autoplay of the whole book: Level 1 enemies, zones and finale, every book level completes with its bead, end card | **PASS** | docs/qa/evidence/web_full.md |
 | 5 | web_level_tallowford | browser autoplay of level=tallowford: every route step passes, level_complete | **PASS** | docs/qa/evidence/web_level_tallowford.md |
 | 5 | web_level_sedge_plain | browser autoplay of level=sedge_plain: every route step passes, level_complete | **PASS** | docs/qa/evidence/web_level_sedge_plain.md |
 | 5 | web_level_mosswater | browser autoplay of level=mosswater: every route step passes, level_complete | **PASS** | docs/qa/evidence/web_level_mosswater.md |
 | 5 | web_level_hollow_kiln | browser autoplay of level=hollow_kiln: every route step passes, the Dregs, level_complete | **PASS** | docs/qa/evidence/web_level_hollow_kiln.md |
 | 5 | web_level | browser autoplay of the kit example level (level=example): every route step passes, level_complete | **PASS** | docs/qa/evidence/web_level_example.md |
-| 3 | stack | rendering-stack captures from the full run (visual sign-off in STATUS.md) | **FAIL** | docs/qa/stack |
+| 3 | stack | rendering-stack captures from the full run (visual sign-off in STATUS.md) | **PASS** | docs/qa/stack |
 | 6 | tris | every glTF model <= 5000 triangles (counted from the glTF data) | **PASS** | docs/qa/evidence/tris.txt |
 | 6 | provenance | every model, texture and audio file tied to a generator script by hash | **PASS** | docs/qa/evidence/provenance.txt |
 | 6,7 | licences | fonts and third-party files carry their licence | **PASS** | docs/qa/evidence/licences.txt |
@@ -44,40 +44,40 @@ Browser build tested: export of d0685c3
 
 ## Details
 
-- **check** (PASS, 45s): tools/check.sh passed
-- **desktop** (PASS, 213s): fresh clone d0685c3 imports, checks and runs windowed with no script or shader errors
-- **desktop_scenes** (PASS, 72s): 6 scene(s) ran windowed with no errors
-- **packed_exports** (PASS, 1s): 124 script(s), no exported Packed*Array with a literal default
-- **export** (PASS, 177s): fresh web export of d0685c3 written to build/web (61M)
+- **check** (PASS, 32s): tools/check.sh passed
+- **desktop** (PASS, 215s): fresh clone 312543b imports, checks and runs windowed with no script or shader errors
+- **desktop_scenes** (PASS, 70s): 6 scene(s) ran windowed with no errors
+- **packed_exports** (PASS, 0s): 124 script(s), no exported Packed*Array with a literal default
+- **export** (PASS, 140s): fresh web export of 312543b written to build/web (61M)
 - **web_smoke_main** (PASS, 31s): 3 criteria ok
 - **web_smoke_demos** (PASS, 151s): 5 demo(s) load clean in the browser
-- **web_input** (PASS, 47s): 16 criteria ok
-- **web_manual** (PASS, 38s): 7 criteria ok
-- **web_perf** (PASS, 86s): 6 criteria ok
+- **web_input** (PASS, 46s): 16 criteria ok
+- **web_manual** (PASS, 37s): 7 criteria ok
+- **web_perf** (PASS, 85s): 6 criteria ok
 - **web_perf_tallowford** (PASS, 88s): 7 criteria ok
 - **web_perf_sedge_plain** (PASS, 98s): 6 criteria ok
-- **web_perf_mosswater** (PASS, 93s): 7 criteria ok
-- **web_perf_kiln** (PASS, 100s): 7 criteria ok
-- **web_resume** (PASS, 122s): 7 criteria ok
+- **web_perf_mosswater** (PASS, 94s): 7 criteria ok
+- **web_perf_kiln** (PASS, 98s): 7 criteria ok
+- **web_resume** (PASS, 121s): 7 criteria ok
 - **web_resume_tallowford** (PASS, 180s): 7 criteria ok
-- **web_resume_mosswater** (PASS, 203s): 7 criteria ok
-- **web_paper** (PASS, 35s): 6 criteria ok
-- **paper_desktop** (PASS, 49s): Light < Normal < Heavy on desktop
-- **web_brush** (PASS, 45s): 11 criteria ok
-- **web_full** (FAIL, 1014s): 1 failing; first: book autoplay passed (no failed step): failures: ["could not reach [-2.7, 6.98, 6.4]"], 115 stages
-- **web_level_tallowford** (PASS, 222s): 4 criteria ok
-- **web_level_sedge_plain** (PASS, 292s): 4 criteria ok
-- **web_level_mosswater** (PASS, 252s): 4 criteria ok
-- **web_level_hollow_kiln** (PASS, 381s): 4 criteria ok
-- **web_level** (PASS, 177s): 4 criteria ok
-- **stack** (FAIL, 1s): the last full run did not pass, so its captures are not a finished stack (docs/qa/evidence/web_full.md)
-- **tris** (PASS, 1s): 144 model(s) within 5000 tris; largest: assets/levels/hollow_kiln/models/kiln.glb 4956
+- **web_resume_mosswater** (PASS, 194s): 7 criteria ok
+- **web_paper** (PASS, 36s): 6 criteria ok
+- **paper_desktop** (PASS, 50s): Light < Normal < Heavy on desktop
+- **web_brush** (PASS, 43s): 11 criteria ok
+- **web_full** (PASS, 977s): 12 criteria ok
+- **web_level_tallowford** (PASS, 223s): 4 criteria ok
+- **web_level_sedge_plain** (PASS, 280s): 4 criteria ok
+- **web_level_mosswater** (PASS, 243s): 4 criteria ok
+- **web_level_hollow_kiln** (PASS, 378s): 4 criteria ok
+- **web_level** (PASS, 179s): 4 criteria ok
+- **stack** (PASS, 1s): 12 web captures from the full run; visual sign-off is in docs/qa/STATUS.md
+- **tris** (PASS, 0s): 144 model(s) within 5000 tris; largest: assets/levels/hollow_kiln/models/kiln.glb 4956
 - **provenance** (PASS, 1s): 346 media file(s) all tied to a generator script by hash
 - **licences** (PASS, 1s): 0 font/third-party file(s), each with a licence beside it
-- **terms** (PASS, 20s): 1983 files, 10 build files, 39 commits clean
+- **terms** (PASS, 19s): 1983 files, 10 build files, 48 commits clean
 - **originality** (PASS, 1s): signed audit verdict PASS
 - **docs** (PASS, 0s): README, SHADERS.md and screenshots present (18 items)
 - **shader_docs** (PASS, 1s): all 279 uniform(s) in 21 shader(s) documented
-- **contract** (PASS, 5s): API conforms to the stubs; every contract scene present and well-formed
+- **contract** (PASS, 4s): API conforms to the stubs; every contract scene present and well-formed
 
-FAIL: 2, NOT YET / NOT RUN: 0
+FAIL: 0, NOT YET / NOT RUN: 0

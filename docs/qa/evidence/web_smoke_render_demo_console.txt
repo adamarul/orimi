@@ -1,23 +1,23 @@
 # 19 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_smoke_render_demo_console.txt
-   1.00 # url http://127.0.0.1:51013/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Frender_demo.tscn
+   1.06 # url http://127.0.0.1:64641/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Frender_demo.tscn
 # ...
-   1.00 # url http://127.0.0.1:51013/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Frender_demo.tscn
-   1.00 # chrome Chrome/157.0.8103.51 viewport 1280x720 
-   4.94 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-   8.22 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
-   8.45 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
-   9.02 [log] ORIMI_BOOT t=4.16s options={"scene":"res://scenes/dev/render_demo.tscn"}
-  13.92 [log] ORIMI_FIRST_FRAME t=9.06s scene=res://scenes/dev/render_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
-  13.99 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-  14.65 [log] ORIMI_FPS fps=106
-  15.65 [log] ORIMI_FPS fps=144
-  16.65 [log] ORIMI_FPS fps=144
-  17.66 [log] ORIMI_FPS fps=144
-  18.67 [log] ORIMI_FPS fps=144
-  19.67 [log] ORIMI_FPS fps=144
-  20.68 [log] ORIMI_FPS fps=144
-  21.69 [log] ORIMI_FPS fps=144
-  22.77 [log] ORIMI_FPS fps=144
-  23.70 [log] ORIMI_FPS fps=144
-  24.71 [log] ORIMI_FPS fps=144
+   1.06 # url http://127.0.0.1:64641/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Frender_demo.tscn
+   1.06 # chrome Chrome/157.0.8103.51 viewport 1280x720 
+   5.01 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+   8.07 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+   8.30 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+   8.86 [log] ORIMI_BOOT t=3.93s options={"scene":"res://scenes/dev/render_demo.tscn"}
+  13.67 [log] ORIMI_FIRST_FRAME t=8.74s scene=res://scenes/dev/render_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  13.72 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+  14.40 [log] ORIMI_FPS fps=107
+  15.39 [log] ORIMI_FPS fps=143
+  16.40 [log] ORIMI_FPS fps=144
+  17.41 [log] ORIMI_FPS fps=144
+  18.41 [log] ORIMI_FPS fps=144
+  19.42 [log] ORIMI_FPS fps=144
+  20.42 [log] ORIMI_FPS fps=144
+  21.42 [log] ORIMI_FPS fps=144
+  22.51 [log] ORIMI_FPS fps=144
+  23.43 [log] ORIMI_FPS fps=144
+  24.43 [log] ORIMI_FPS fps=144

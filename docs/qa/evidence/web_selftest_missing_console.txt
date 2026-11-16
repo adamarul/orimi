@@ -1,14 +1,14 @@
 # 10 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_selftest_missing_console.txt
-   0.79 # url http://127.0.0.1:54200/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fdoes_not_exist.tscn&god=1
+   0.75 # url http://127.0.0.1:56435/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fdoes_not_exist.tscn&god=1
 # ...
-   0.79 # url http://127.0.0.1:54200/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fdoes_not_exist.tscn&god=1
-   0.79 # chrome Chrome/157.0.8103.51 viewport 1280x720 
-   4.55 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-   7.89 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
-   8.12 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
-   8.72 [log] ORIMI_BOOT t=4.24s options={"god":"1","scene":"res://tests/qa/qa_host.tscn","target":"res://scenes/game/does_not_exist.tscn"}
-   8.74 [log] QAPROBE:{"t":4263,"tag":"probe_ready","web":true}
-   9.00 [log] ORIMI_FIRST_FRAME t=4.53s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
-   9.00 [log] QAPROBE:{"t":4529,"tag":"target_missing","target":"res://scenes/game/does_not_exist.tscn"}
-   9.06 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+   0.75 # url http://127.0.0.1:56435/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fdoes_not_exist.tscn&god=1
+   0.75 # chrome Chrome/157.0.8103.51 viewport 1280x720 
+   5.40 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+   8.73 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+   8.97 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+   9.56 [log] ORIMI_BOOT t=4.23s options={"god":"1","scene":"res://tests/qa/qa_host.tscn","target":"res://scenes/game/does_not_exist.tscn"}
+   9.58 [log] QAPROBE:{"t":4249,"tag":"probe_ready","web":true}
+   9.84 [log] ORIMI_FIRST_FRAME t=4.51s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+   9.84 [log] QAPROBE:{"t":4514,"tag":"target_missing","target":"res://scenes/game/does_not_exist.tscn"}
+   9.85 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}

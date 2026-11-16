@@ -2,7 +2,7 @@
 
 url query: scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn&god=1
 chrome: Chrome/157.0.8103.51; webgl: {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-first frame: ORIMI_FIRST_FRAME t=4.54s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (10337 ms)
+first frame: ORIMI_FIRST_FRAME t=4.51s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (9335 ms)
 
 
 | result | criterion | detail |
@@ -11,8 +11,8 @@ first frame: ORIMI_FIRST_FRAME t=4.54s scene=res://tests/qa/qa_host.tscn rendere
 | ok | click captures the mouse | pointerLockElement true, Input.mouse_mode 2 |
 | ok | KeyW moves the player +fwd | moved 5.78 m, 5.78 m along the camera fwd axis |
 | ok | KeyS moves the player -fwd | moved 5.78 m, 5.78 m along the camera fwd axis |
-| ok | KeyA moves the player -right | moved 5.77 m, 5.77 m along the camera right axis |
-| ok | KeyD moves the player +right | moved 5.78 m, 5.78 m along the camera right axis |
+| ok | KeyA moves the player -right | moved 5.66 m, 5.66 m along the camera right axis |
+| ok | KeyD moves the player +right | moved 5.89 m, 5.89 m along the camera right axis |
 | ok | Game.debug_snapshot() reports the player position and it changes | position changed in 4 of 4 moves |
 | ok | mouse motion orbits the camera | yaw 15.9 -> -28.7 |
 | ok | Space jumps | height 0.05 -> peak 0.41 |
