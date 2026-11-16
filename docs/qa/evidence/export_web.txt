@@ -19,14 +19,14 @@
 [  98% ] savepack | Storing File: res://project.binary
 [ DONE ] savepack
 
-total 61736
--rw-r--r-- 1 User 197121    37492 Nov 17 01:07 index.apple-touch-icon.png
--rw-r--r-- 1 User 197121     2973 Nov 17 01:07 index.audio.position.worklet.js
--rw-r--r-- 1 User 197121     7298 Nov 17 01:07 index.audio.worklet.js
--rw-r--r-- 1 User 197121     5455 Nov 17 01:07 index.html
--rw-r--r-- 1 User 197121    23612 Nov 17 01:07 index.icon.png
--rw-r--r-- 1 User 197121   279815 Nov 17 01:07 index.js
--rw-r--r-- 1 User 197121 23302332 Nov 17 01:07 index.pck
--rw-r--r-- 1 User 197121    21443 Nov 17 01:07 index.png
--rw-r--r-- 1 User 197121 39514754 Nov 17 01:07 index.wasm
+total 61760
+-rw-r--r-- 1 User 197121    37492 Nov 17 02:32 index.apple-touch-icon.png
+-rw-r--r-- 1 User 197121     2973 Nov 17 02:32 index.audio.position.worklet.js
+-rw-r--r-- 1 User 197121     7298 Nov 17 02:32 index.audio.worklet.js
+-rw-r--r-- 1 User 197121     5455 Nov 17 02:32 index.html
+-rw-r--r-- 1 User 197121    23612 Nov 17 02:32 index.icon.png
+-rw-r--r-- 1 User 197121   279815 Nov 17 02:32 index.js
+-rw-r--r-- 1 User 197121 23326796 Nov 17 02:32 index.pck
+-rw-r--r-- 1 User 197121    21443 Nov 17 02:32 index.png
+-rw-r--r-- 1 User 197121 39514754 Nov 17 02:32 index.wasm
 EXPORT OK: build/web/index.html (log: build/export_web.log)

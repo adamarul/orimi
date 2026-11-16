@@ -2,15 +2,15 @@
 
 url query: scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn&autoplay=1&level=example
 chrome: Chrome/157.0.8103.51; webgl: {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-first frame: ORIMI_FIRST_FRAME t=4.75s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (10363 ms)
+first frame: ORIMI_FIRST_FRAME t=6.01s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (10785 ms)
 
 
 | result | criterion | detail |
 | - | - | - |
-| ok | autoplay reaches its end | after 155 s |
+| ok | autoplay reaches its end | after 159 s |
 | ok | autoplay passed (no failed step) | passed true; failures: [] |
 | ok | level example completes (level_complete) | level_complete: example |
-| ok | no console/page errors | 907 console lines |
+| ok | no console/page errors | 903 console lines |
 
 screenshots: docs/qa/evidence/web_level_example_example_spawn.jpg, .userdata/qa/full/docs/qa/evidence/web_level_example_talked.png, .userdata/qa/full/docs/qa/evidence/web_level_example_verse_stone.png, docs/qa/evidence/web_level_example_bellows.jpg, .userdata/qa/full/docs/qa/evidence/web_level_example_thorns.png, .userdata/qa/full/docs/qa/evidence/web_level_example_knot_view.png, docs/qa/evidence/web_level_example_ring_rise.jpg, .userdata/qa/full/docs/qa/evidence/web_level_example_fight_won.png, .userdata/qa/full/docs/qa/evidence/web_level_example_island.png, docs/qa/evidence/web_level_example_lamp_lit.jpg, .userdata/qa/full/docs/qa/evidence/web_level_example_fruit_lit.png, .userdata/qa/full/docs/qa/evidence/web_level_example_boulder_pulled.png, docs/qa/evidence/web_level_example_end.jpg
 console log: docs/qa/evidence/web_level_example_console.txt
@@ -59,7 +59,7 @@ image statistics:
   "end_card",
   "title_again"
  ],
- "duration": 142.8,
+ "duration": 143.4,
  "simulated_casts": []
 }
 ```

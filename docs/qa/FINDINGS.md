@@ -2,22 +2,21 @@
 
 One entry per finding. Severity: blocker (a DoD line cannot pass), high, medium, low.
 Status: open until the lead closes it. Gate run these come from: docs/qa/evidence/dod.md (the
-final gate on ws/qa with main 2f8ed3e merged; browser build exported from the commit it names).
-Every finding below was re-judged on 2026-11-16 from that gate's fresh browser captures and QA log.
-Level-row stage shots named below but not in docs/qa/evidence (the gate publishes every third) are
-full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/.
+final gate on d0685c3, ws/qa with main 887d424 merged; browser build exported from that commit).
+Every finding below was re-judged on 2026-11-16 from fresh browser captures and QA logs (the gates
+on 2f8ed3e and 05e935a/d0685c3). Level-row stage shots named below but not in docs/qa/evidence (the
+gate publishes every third) are full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/.
 
 ## Open, by owner
 
 | Owner | Findings |
 | - | - |
-| render | F-028 render_demo logs four engine errors on desktop and in the browser (blocks DoD 1 and 2) |
-| Mosswater | F-023 a: the camera behind rocks at the waterwheel |
+| Mosswater (with gameplay's autoplay) | F-029 the route step at PondMid and the stair tree fails about half the time (fails DoD 5's book row, and with it DoD 3's stack row); F-023 a: the camera behind rocks at the waterwheel |
 | Sedge Plain (or render) | F-021: low views of the path still smear the tuft marks into soft dark streaks |
 | gameplay | F-022: after a reload, Continue shows the WASD card again |
 
 Closed on 2026-11-16 after re-judging: F-015, F-016, F-017, F-018, F-019, F-020, F-023 b to d,
-F-024, F-025, F-026, F-027.
+F-024, F-025, F-026, F-027, F-028.
 
 ## F-015 Clouds read close to the reference game's signature cloud (closed 2026-11-16 by QA: redrawn by vfx in c5ff452, seen in the 940acaa gate; DoD 7, visual)
 
@@ -121,7 +120,7 @@ F-024, F-025, F-026, F-027.
   (game.gd reset_run), so the last level's numbers read as the book's.
 - **Owner:** gameplay (book totals on the last card, or label them as the Kiln's).
 
-## F-028 render_demo logs engine errors on desktop and in the browser (open, blocker; DoD 1 and 2)
+## F-028 render_demo logged engine errors on desktop and in the browser (closed 2026-11-16; DoD 1 and 2)
 
 - **What:** desktop_scenes and web_smoke_demos fail on render_demo only: four times
   'ERROR: Condition "!is_inside_tree()" is true. Returning: Transform3D()' at
@@ -136,6 +135,26 @@ F-024, F-025, F-026, F-027.
   QA tried the first form on this checkout without committing it: desktop_scenes then ran 6 of 6
   scenes windowed with no errors.
 - **Owner:** render.
+- **Re-judged:** fixed in 887d424 with that form; desktop_scenes (6 of 6) and web_smoke_demos (5 of 5) pass on 05e935a and d0685c3.
+
+## F-029 Mosswater: the autoplay route fails at PondMid and the stair tree about half the time (open, high; DoD 5, and DoD 3 through it)
+
+- **What:** web_level_mosswater and the book run's Mosswater part sometimes end a route step with
+  "could not reach": [-2.53, 5.45, -3.29] and [-0.35, 6.68, -4.6] by PondMid, or [-2.7, 6.98, 6.4]
+  by the stair tree. The level still completes (exit_reached, bead), but the gate requires no failed
+  step. Before failing, Orimi is down to 1 of 5 petals with 4 enemies alive and is sent back from
+  PondMid's deep water up to 130 times in one run.
+- **Runs:** on the F-028 build (05e935a and d0685c3): web_level_mosswater failed 4 of 6, web_full
+  failed 2 of 2. With the old ink_look line (2f8ed3e, and twice on 05e935a with only that line
+  reverted locally): 4 of 4 passed. The changed line only picks which meshes get ground marks, which
+  is visual, so the link is not proven and the failures look like a route on a knife edge. The
+  lead's own book run on 887d424 passed.
+- **Evidence:** docs/qa/evidence/web_full.md and its console (the d0685c3 gate); autoplay_fail and
+  deep_water_return lines in the Mosswater consoles.
+- **Ask:** make the route steps there robust (wait for the Sootflits to be dealt with, or path round
+  PondMid's deep edge), and check whether a player meets the same trap: repeated deep-water returns
+  while flyers dive is the hardest stretch in the book's captures.
+- **Owner:** Mosswater, with gameplay (autoplay).
 
 ## F-016 Progress reaches IndexedDB a few seconds after progress_saved (closed 2026-11-16; DoD 2)
 

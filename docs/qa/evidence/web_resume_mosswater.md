@@ -2,18 +2,18 @@
 
 url query: scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn
 chrome: Chrome/157.0.8103.51; webgl: {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-first frame: ORIMI_FIRST_FRAME t=0.67s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (10183 ms)
+first frame: ORIMI_FIRST_FRAME t=0.65s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (9356 ms)
 
 
 | result | criterion | detail |
 | - | - | - |
-| ok | mosswater played through and progress saved | progress_saved {"completed":["hazewater","tallowford","sedge_plain","mosswater"],"current":"hollow_kiln","stats":{"mosswater":{"deaths":0,"kills":11,"time":179}},"taught":["move","jump","fight"]} |
-| ok | saved progress loads after a page reload | progress_loaded {"completed":["hazewater","tallowford","sedge_plain","mosswater"],"current":"hollow_kiln","from":"localStorage","stats":{"mosswater":{"deaths":0,"kills":11,"time":179}},"taught":["move","jump","fight" |
+| ok | mosswater played through and progress saved | progress_saved {"completed":["hazewater","tallowford","sedge_plain","mosswater"],"current":"hollow_kiln","stats":{"mosswater":{"deaths":0,"kills":11,"time":175}},"taught":["move","jump","fight"]} |
+| ok | saved progress loads after a page reload | progress_loaded {"completed":["hazewater","tallowford","sedge_plain","mosswater"],"current":"hollow_kiln","from":"localStorage","stats":{"mosswater":{"deaths":0,"kills":11,"time":175}},"taught":["move","jump","fight" |
 | ok | the title shows hollow_kiln behind it | title_ready level hollow_kiln |
 | ok | the title offers Continue | buttons: Continue: The Hollow Kiln, Chapters, Begin anew |
 | ok | Continue starts hollow_kiln | level hollow_kiln, state playing |
 | ok | Continue keeps the 4 beads earned up to mosswater | beads 4, ink_max 180 |
-| ok | no console/page errors | 1479 console lines |
+| ok | no console/page errors | 1428 console lines |
 
 screenshots: docs/qa/evidence/web_resume_mosswater_title.jpg, docs/qa/evidence/web_resume_mosswater_continued.jpg
 console log: docs/qa/evidence/web_resume_mosswater_console.txt

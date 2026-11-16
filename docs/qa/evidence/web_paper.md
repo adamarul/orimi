@@ -2,7 +2,7 @@
 
 url query: scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn&god=1&paper=light&warp=M_Spawn
 chrome: Chrome/157.0.8103.51; webgl: {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-first frame: ORIMI_FIRST_FRAME t=4.52s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (9098 ms)
+first frame: ORIMI_FIRST_FRAME t=4.45s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (10591 ms)
 
 
 | result | criterion | detail |
@@ -12,7 +12,7 @@ first frame: ORIMI_FIRST_FRAME t=4.52s scene=res://tests/qa/qa_host.tscn rendere
 | ok | paper normal selected in game (O key) | Settings.paper_intensity 1 |
 | ok | paper heavy selected in game (O key) | Settings.paper_intensity 2 |
 | ok | Light, Normal, Heavy differ in the expected direction | ok all three differ; ok tooth Heavy > Normal; ok tooth Heavy > Light; ok vignette Light < Normal; ok vignette Normal < Heavy; ok saturation Heavy < Normal |
-| ok | no console/page errors | 58 console lines |
+| ok | no console/page errors | 55 console lines |
 
 screenshots: docs/screenshots/valley_light_web.png, docs/screenshots/valley_normal_web.png, docs/screenshots/valley_heavy_web.png
 console log: docs/qa/evidence/web_paper_console.txt
@@ -31,25 +31,25 @@ image statistics:
  },
  "metrics": {
   "light": {
-   "tooth": 0.02138,
-   "vignette": 0.9456,
+   "tooth": 0.02139,
+   "vignette": 0.9454,
    "saturation": 0.1506
   },
   "normal": {
-   "tooth": 0.02774,
-   "vignette": 1.0617,
-   "saturation": 0.1438
+   "tooth": 0.02808,
+   "vignette": 1.0591,
+   "saturation": 0.1456
   },
   "heavy": {
-   "tooth": 0.03727,
-   "vignette": 1.1917,
-   "saturation": 0.1356
+   "tooth": 0.03747,
+   "vignette": 1.1985,
+   "saturation": 0.1355
   }
  },
  "pair_diffs": {
-  "light-normal": 0.049,
-  "normal-heavy": 0.0808,
-  "light-heavy": 0.1155
+  "light-normal": 0.0493,
+  "normal-heavy": 0.05,
+  "light-heavy": 0.0851
  },
  "summary": "ok all three differ; ok tooth Heavy > Normal; ok tooth Heavy > Light; ok vignette Light < Normal; ok vignette Normal < Heavy; ok saturation Heavy < Normal"
 }

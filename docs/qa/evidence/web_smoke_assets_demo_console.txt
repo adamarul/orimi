@@ -1,14 +1,14 @@
 # 10 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_smoke_assets_demo_console.txt
-   0.56 # url http://127.0.0.1:52959/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fassets_demo.tscn
+   0.84 # url http://127.0.0.1:51019/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fassets_demo.tscn
 # ...
-   0.56 # url http://127.0.0.1:52959/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fassets_demo.tscn
-   0.56 # chrome Chrome/157.0.8103.51 viewport 1280x720 
-   4.67 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-   7.92 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
-   8.16 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
-   8.74 [log] ORIMI_BOOT t=4.15s options={"scene":"res://scenes/dev/assets_demo.tscn"}
-  16.27 [log] ORIMI_FIRST_FRAME t=11.67s scene=res://scenes/dev/assets_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
-  16.29 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-  18.81 [log] ORIMI_AUDIO music=title fade=0.5
-  19.81 [log] ORIMI_AUDIO_DEMO after_click music=title players_playing=1
+   0.84 # url http://127.0.0.1:51019/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fassets_demo.tscn
+   0.84 # chrome Chrome/157.0.8103.51 viewport 1280x720 
+   4.65 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+   8.01 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+   8.25 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+   8.85 [log] ORIMI_BOOT t=4.28s options={"scene":"res://scenes/dev/assets_demo.tscn"}
+  16.30 [log] ORIMI_FIRST_FRAME t=11.73s scene=res://scenes/dev/assets_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  16.32 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+  18.82 [log] ORIMI_AUDIO music=title fade=0.5
+  19.82 [log] ORIMI_AUDIO_DEMO after_click music=title players_playing=1

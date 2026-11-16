@@ -6,7 +6,7 @@ with "game". The banned-term scan (the lead's list, passed at run time) is a sep
 
 Verdict: PASS
 
-Signed by QA on 2026-11-16 for the whole five-level Book One, re-checked at main 2f8ed3e. No name a
+Signed by QA on 2026-11-16 for the whole five-level Book One, re-checked at main 887d424. No name a
 player sees collides with the reference game, and the built cast, enemies, boss and sets of all
 five levels are our own shapes (sign-off for Levels 3 to 5 below, from the final gate's fresh
 browser captures). The new clouds (F-015) are torn wash bands with no spiral. The one borrowed phrase
