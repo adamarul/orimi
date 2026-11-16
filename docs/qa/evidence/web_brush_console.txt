@@ -1,44 +1,45 @@
-# 177 console lines. Marker and problem lines first, then the last 40 lines.
+# 178 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_brush_console.txt
-   0.89 # url http://127.0.0.1:54412/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn&god=1
+   0.98 # url http://127.0.0.1:53200/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn&god=1
+  25.15 [log] QA:{"data":{"completed":[],"current":"","stats":{},"taught":["move"]},"tag":"progress_saved"}
 # ...
-  37.24 [log] QAPROBE:{"args":[64.2738179516852,100.0],"name":"ink_changed","t":32397,"tag":"evt"}
-  37.30 [log] QAPROBE:{"args":[63.7693693391542,100.0],"name":"ink_changed","t":32459,"tag":"evt"}
-  37.38 [log] QAPROBE:{"args":[63.1595887229237,100.0],"name":"ink_changed","t":32543,"tag":"evt"}
-  37.48 [log] QAPROBE:{"args":[62.4395588655002,100.0],"name":"ink_changed","t":32633,"tag":"evt"}
-  37.54 [log] QAPROBE:{"args":[61.900329366531,100.0],"name":"ink_changed","t":32695,"tag":"evt"}
-  37.55 [log] QAPROBE:{"brush_enabled":true,"brush_open":true,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":144.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":144.0,"god":true,"hp":5,"ink":61 [cut]
-  37.59 [log] QAPROBE:{"args":[61.3170301800364,100.0],"name":"ink_changed","t":32744,"tag":"evt"}
-  37.65 [log] QAPROBE:{"args":[60.6935236869978,100.0],"name":"ink_changed","t":32806,"tag":"evt"}
-  37.70 [log] QAPROBE:{"args":[60.0343815636695,100.0],"name":"ink_changed","t":32855,"tag":"evt"}
-  37.75 [log] QAPROBE:{"args":[59.3447390548448,100.0],"name":"ink_changed","t":32904,"tag":"evt"}
-  37.79 [log] QAPROBE:{"args":[58.6301834204522,100.0],"name":"ink_changed","t":32945,"tag":"evt"}
-  37.84 [log] QAPROBE:{"args":[57.8966436537167,100.0],"name":"ink_changed","t":32994,"tag":"evt"}
-  37.88 [log] QAPROBE:{"args":[57.1503109288275,100.0],"name":"ink_changed","t":33043,"tag":"evt"}
-  37.95 [log] QAPROBE:{"args":[56.3975399486283,100.0],"name":"ink_changed","t":33105,"tag":"evt"}
-  38.06 [log] QAPROBE:{"brush_enabled":true,"brush_open":true,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":144.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":144.0,"god":true,"hp":5,"ink":56 [cut]
-  38.15 [log] QA:{"data":{"glyph":"gust","ink":56.4,"score":0.94,"targets":["Splotchet_Splotchet_1","Splotchet_Splotchet_2","Splotchet_Splotchet_3","Splotchet_Splotchet_0"]},"tag":"glyph_cast"}
-  38.15 [log] QAPROBE:{"args":["gust",{"duration":1.6659,"glyph":"gust","ink_cost":17.1074478891161,"score":0.941129775708167,"screen_center":[639.944274902344,418.101379394531],"screen_points":[[495.0,488.0],[497.761657714844,487.960235595703],[500.526428222656,487.937438964844],[503.28955078125,48 [cut]
-  38.45 [log] QAPROBE:{"args":[],"name":"brush_closed","t":33607,"tag":"evt"}
-  38.57 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":144.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":144.0,"god":true,"hp":5,"ink":5 [cut]
-  38.65 [log] QAPROBE:{"args":[56.9010121708507,100.0],"name":"ink_changed","t":33807,"tag":"evt"}
-  38.85 [log] QAPROBE:{"args":[57.404484393073,100.0],"name":"ink_changed","t":34008,"tag":"evt"}
-  38.91 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":142.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":142.0,"god":true,"hp":5,"ink":5 [cut]
-  39.05 [log] QAPROBE:{"args":[57.9079566152953,100.0],"name":"ink_changed","t":34209,"tag":"evt"}
-  39.08 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":142.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":142.0,"god":true,"hp":5,"ink":5 [cut]
-  39.25 [log] QAPROBE:{"args":[58.4114288375176,100.0],"name":"ink_changed","t":34411,"tag":"evt"}
-  39.47 [log] QAPROBE:{"args":[58.915893123232,100.0],"name":"ink_changed","t":34622,"tag":"evt"}
-  39.59 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":142.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":142.0,"god":true,"hp":5,"ink":5 [cut]
-  39.66 [log] QAPROBE:{"args":[59.4158931232321,100.0],"name":"ink_changed","t":34814,"tag":"evt"}
-  39.87 [log] QAPROBE:{"args":[59.9220297129387,100.0],"name":"ink_changed","t":35030,"tag":"evt"}
-  40.07 [log] QAPROBE:{"args":[60.436539948629,100.0],"name":"ink_changed","t":35230,"tag":"evt"}
-  40.10 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":141.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":141.0,"god":true,"hp":5,"ink":6 [cut]
-  40.43 [log] QAPROBE:{"args":[60.9434180967771,100.0],"name":"ink_changed","t":35426,"tag":"evt"}
-  40.67 [log] QAPROBE:{"args":[61.459519948629,100.0],"name":"ink_changed","t":35630,"tag":"evt"}
-  40.67 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":141.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":141.0,"god":true,"hp":5,"ink":6 [cut]
-  40.68 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":141.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":141.0,"god":true,"hp":5,"ink":6 [cut]
-  41.33 [log] QAPROBE:{"args":[61.9596032819623,100.0],"name":"ink_changed","t":35847,"tag":"evt"}
-  41.34 [log] QAPROBE:{"args":[62.475269948629,100.0],"name":"ink_changed","t":36036,"tag":"evt"}
-  41.34 [log] QAPROBE:{"args":[62.9786866152957,100.0],"name":"ink_changed","t":36237,"tag":"evt"}
-  41.34 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":122.0,"game":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9,"fps":122.0,"god":true,"hp":5,"ink":6 [cut]
-  41.34 [log] QAPROBE:{"args":[63.492506826936,100.0],"name":"ink_changed","t":36448,"tag":"evt"}
+  36.78 [log] QAPROBE:{"args":[64.8614025746085,100.0],"name":"ink_changed","t":31308,"tag":"evt"}
+  36.83 [log] QAPROBE:{"brush_enabled":true,"brush_open":true,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":144.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9, [cut]
+  36.87 [log] QAPROBE:{"args":[64.3130304913684,100.0],"name":"ink_changed","t":31398,"tag":"evt"}
+  36.94 [log] QAPROBE:{"args":[63.8085818788374,100.0],"name":"ink_changed","t":31460,"tag":"evt"}
+  37.01 [log] QAPROBE:{"args":[63.1988012626069,100.0],"name":"ink_changed","t":31537,"tag":"evt"}
+  37.08 [log] QAPROBE:{"args":[62.4787714051834,100.0],"name":"ink_changed","t":31599,"tag":"evt"}
+  37.12 [log] QAPROBE:{"args":[61.9395419062142,100.0],"name":"ink_changed","t":31648,"tag":"evt"}
+  37.17 [log] QAPROBE:{"args":[61.3562427197196,100.0],"name":"ink_changed","t":31696,"tag":"evt"}
+  37.23 [log] QAPROBE:{"args":[60.7327362266809,100.0],"name":"ink_changed","t":31752,"tag":"evt"}
+  37.28 [log] QAPROBE:{"args":[60.0735941033526,100.0],"name":"ink_changed","t":31801,"tag":"evt"}
+  37.33 [log] QAPROBE:{"args":[59.383951594528,100.0],"name":"ink_changed","t":31849,"tag":"evt"}
+  37.33 [log] QAPROBE:{"brush_enabled":true,"brush_open":true,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":144.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9, [cut]
+  37.39 [log] QAPROBE:{"args":[58.6693959601353,100.0],"name":"ink_changed","t":31909,"tag":"evt"}
+  37.42 [log] QAPROBE:{"args":[57.9358561933998,100.0],"name":"ink_changed","t":31941,"tag":"evt"}
+  37.48 [log] QAPROBE:{"args":[57.1895234685107,100.0],"name":"ink_changed","t":32002,"tag":"evt"}
+  37.51 [log] QAPROBE:{"args":[56.4367524883115,100.0],"name":"ink_changed","t":32037,"tag":"evt"}
+  37.73 [log] QA:{"data":{"glyph":"gust","ink":56.4,"score":0.94,"targets":["Splotchet_Splotchet_1","Splotchet_Splotchet_2","Splotchet_Splotchet_3","Splotchet_Splotchet_0"]},"tag":"glyph_cast"}
+  37.73 [log] QAPROBE:{"args":["gust",{"duration":1.5982,"glyph":"gust","ink_cost":17.1074478891161,"score":0.941129775708167,"screen_center":[639.944274902344,418.101379394531],"screen_points":[[495.0,488.0],[497.761657714844,487.960235595703],[500.526428222656,487.937438964844],[503.28955078125,48 [cut]
+  37.84 [log] QAPROBE:{"brush_enabled":true,"brush_open":true,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":142.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9, [cut]
+  38.00 [log] QAPROBE:{"args":[],"name":"brush_closed","t":32525,"tag":"evt"}
+  38.20 [log] QAPROBE:{"args":[56.9400047105337,100.0],"name":"ink_changed","t":32725,"tag":"evt"}
+  38.34 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":142.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9 [cut]
+  38.40 [log] QAPROBE:{"args":[57.4433380438671,100.0],"name":"ink_changed","t":32927,"tag":"evt"}
+  38.48 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":140.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9 [cut]
+  38.60 [log] QAPROBE:{"args":[57.9468102660894,100.0],"name":"ink_changed","t":33128,"tag":"evt"}
+  38.80 [log] QAPROBE:{"args":[58.4502824883117,100.0],"name":"ink_changed","t":33328,"tag":"evt"}
+  38.85 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":140.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9 [cut]
+  39.01 [log] QAPROBE:{"args":[58.953754710534,100.0],"name":"ink_changed","t":33535,"tag":"evt"}
+  39.22 [log] QAPROBE:{"args":[59.4572269327563,100.0],"name":"ink_changed","t":33738,"tag":"evt"}
+  39.36 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":140.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9 [cut]
+  39.42 [log] QAPROBE:{"args":[59.9606991549787,100.0],"name":"ink_changed","t":33940,"tag":"evt"}
+  39.62 [log] QAPROBE:{"args":[60.464171377201,100.0],"name":"ink_changed","t":34141,"tag":"evt"}
+  39.98 [log] QAPROBE:{"args":[60.9676435994233,100.0],"name":"ink_changed","t":34349,"tag":"evt"}
+  39.98 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":143.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9 [cut]
+  40.17 [log] QAPROBE:{"args":[61.4711158216456,100.0],"name":"ink_changed","t":34551,"tag":"evt"}
+  40.18 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":143.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9 [cut]
+  40.77 [log] QAPROBE:{"args":[61.9745880438679,100.0],"name":"ink_changed","t":34753,"tag":"evt"}
+  40.77 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":57.0,"pitch":-10.0356626880705,"pos":[1.293,1.951,54.526],"yaw":15.9453925136439},"fps":143.0,"game":{"autoplay":false,"beads":0,"camera":{"to_player":5.17,"zone":""},"checkpoint":[0.0,0.08,50.0],"deaths":0,"enemies_alive":9 [cut]
+  40.77 [log] QAPROBE:{"args":[62.4780602660902,100.0],"name":"ink_changed","t":34954,"tag":"evt"}
+  40.77 [log] QAPROBE:{"args":[62.9815324883125,100.0],"name":"ink_changed","t":35156,"tag":"evt"}

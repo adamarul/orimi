@@ -1,23 +1,22 @@
 # QA findings
 
 One entry per finding. Severity: blocker (a DoD line cannot pass), high, medium, low.
-Status: open until the lead closes it. Gate run these come from: docs/qa/evidence/dod.md
-(940acaa = main aa3946b plus the harness; browser build exported from that commit). F-021 to F-027
-come from looking at that run's captures (and the book run's QA log), in the order a player meets them.
-Level-row stage shots named below but not in docs/qa/evidence (the gate publishes every third) are
-full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/, and as JPEGs in commit 084faa5.
+Status: open until the lead closes it. Gate run these come from: docs/qa/evidence/dod.md (the
+final gate on d0685c3, ws/qa with main 887d424 merged; browser build exported from that commit).
+Every finding below was re-judged on 2026-11-16 from fresh browser captures and QA logs (the gates
+on 2f8ed3e and 05e935a/d0685c3). Level-row stage shots named below but not in docs/qa/evidence (the
+gate publishes every third) are full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/.
 
 ## Open, by owner
 
 | Owner | Findings |
 | - | - |
-| Sedge Plain | F-019 terrain tiles over 5,000 triangles (blocks DoD 6); F-018 "guardian sapling" name; F-020 a hitch in the first seconds at the Knoll |
-| Hollow Kiln | F-019 kiln.glb over 5,000 triangles (blocks DoD 6); F-024 "colour restored" with no colour; F-025 the Dregs out of frame at the arena door; F-026 the title backdrop after the Kiln |
-| Mosswater | F-023 camera inside rocks and inside Orimi; the arrival backdrop; lantern-fruit that do not read as lit |
-| gameplay | F-016 progress reaches IndexedDB a few seconds after the save; F-022 control prompts repeat in every level; F-027 the book's end card shows the Kiln's numbers |
-| render or vfx (not traced) | F-021 blurred dark smudges over the ground |
-| lead | F-018 the LEVELS.md line |
-| QA / machine | F-017 static server stalls under load (no stall in the 940acaa gate) |
+| Mosswater (with gameplay's autoplay) | F-029 the route step at PondMid and the stair tree fails about half the time (fails DoD 5's book row, and with it DoD 3's stack row); F-023 a: the camera behind rocks at the waterwheel |
+| Sedge Plain (or render) | F-021: low views of the path still smear the tuft marks into soft dark streaks |
+| gameplay | F-022: after a reload, Continue shows the WASD card again |
+
+Closed on 2026-11-16 after re-judging: F-015, F-016, F-017, F-018, F-019, F-020, F-023 b to d,
+F-024, F-025, F-026, F-027, F-028.
 
 ## F-015 Clouds read close to the reference game's signature cloud (closed 2026-11-16 by QA: redrawn by vfx in c5ff452, seen in the 940acaa gate; DoD 7, visual)
 
@@ -27,52 +26,60 @@ full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/, and as JP
   eye; docs/qa/ORIGINALITY.md.
 - **Owner:** vfx (shaders/env/sky.gdshader and its cloud texture).
 
-## F-018 "Guardian sapling" is the reference game's own term (open, medium; DoD 7, names)
+## F-018 Sedge Plain's sapling carried the reference game's own name for it (closed 2026-11-16; DoD 7, names)
 
-- **What:** Sedge Plain's docs and files call the sapling on the Knoll the "guardian sapling"
-  (docs/levels/sedge_plain/DESIGN.md lines 29 and 78, docs/LEVELS.md line 124,
-  scenes/levels/sedge_plain/props/guardian_sapling.tscn and its node GuardianSapling,
-  scripts/levels/sedge_plain/lookdev.gd). That is the reference game's exact English name for the
-  saplings its hero blooms to lift the curse from an area, with the same mechanic. The game's text
-  never shows it (level.json: "Wake the sapling on the Knoll"), so players do not see it.
-- **Ask:** call it something of ours in docs and file names, for example "the Knoll sapling" or "the
-  mere sapling"; add it to LEVELS.md "Names that changed".
-- **Owner:** the Sedge Plain workstream (DESIGN.md, the prop scene, lookdev.gd); the lead (LEVELS.md).
+- **What:** Sedge Plain's docs and files named the sapling on the Knoll with the reference game's
+  exact two-word English name for the saplings its hero blooms to lift a curse from an area (a word
+  for a protector, then "sapling"), with the same mechanic. Players never saw it; the game's text
+  says "the sapling on the Knoll".
+- **Fixed:** c41b45f and 59b54a9 renamed it the Knoll sapling (scenes/levels/sedge_plain/props/knoll_sapling.tscn,
+  DESIGN.md, LEVELS.md "Names that changed"). Re-judged: no tracked file holds the old word
+  (git grep, case-insensitive).
+- **Owner:** Sedge Plain; the lead (LEVELS.md).
 
-## F-019 Seventeen models over the 5,000-triangle budget (open, blocker; DoD 6)
+## F-019 Seventeen models over the 5,000-triangle budget (closed 2026-11-16; DoD 6)
 
+- **Re-judged:** tris passes on the final gate: every glTF within 5,000 (Sedge Plain is now 36 tiles under 2,720 each; kiln.glb 4,956).
 - **What:** tools/qa/qa.sh tris counts from the glTF data. assets/levels/sedge_plain/terrain/ground_{00..33}.glb:
   16 tiles at 5,480 to 5,792 triangles; assets/levels/hollow_kiln/models/kiln.glb: 5,468.
 - **Evidence:** docs/qa/evidence/tris.txt.
 - **Owner:** Sedge Plain (split the terrain into more tiles or decimate each by about 15 %); Hollow
   Kiln (take about 470 triangles out of the kiln model or split it).
 
-## F-020 Sedge Plain: a hitch in the first seconds at the Knoll (open, low; DoD 2)
+## F-020 Sedge Plain: a hitch in the first seconds at the Knoll (closed 2026-11-16; DoD 2)
 
+- **Re-judged:** web_perf_sedge_plain's first window now runs 134 fps (vsync) and 152 (uncapped) at 1280x720, longest frame 48 ms, process time 7 ms; the fights and zones are drawn once behind the loading screen (2b3f6ed).
 - **What:** web_perf_sedge_plain's first window (1280x720, starting 3 s after arriving at M_Knoll)
   runs at 74 to 76 fps by requestAnimationFrame against 140 elsewhere, with frames up to 145 ms and
   Godot's process time reading about 2.9 s; the second window is smooth. Same on two runs. Still
   "playable", but something heavy runs after arrival.
 - **Owner:** Sedge Plain.
 
-## F-021 Blurred dark smudges over the ground (open, medium; visual)
+## F-021 Blurred dark smudges over the ground (open, low; visual; narrowed to Sedge Plain)
 
+- **Re-judged:** Hazewater's ground marks are now crisp ink flecks and lighten where restored (stack web_01 to web_09, the six paper screenshots). On Sedge Plain the low path views still show soft, smeared dark streaks along the road (web_level_sedge_plain_west, _sedge_plain_spawn, _east).
 - **What:** soft, motion-blurred black blots lie over the ground in nearly every outdoor capture of
   Hazewater and Sedge Plain (docs/qa/stack/web_01 to web_09; web_level_sedge_plain_*), also after a
   zone is restored. They read as dirt on the screen rather than ink in the world. Not traced to a
   file.
 - **Owner:** render or vfx (whichever draws ground decals or soot flecks).
 
-## F-022 The control prompts come back in every level (open, low; gameplay)
+## F-022 The control prompts come back in every level (open, low; gameplay; narrowed to Continue)
 
+- **Re-judged:** in one sitting each control prompt now shows once in the whole book (move, jump and fight once each in the book run's QA log). After a page reload, Continue shows the "WASD to run" card again at the start of the level although the loaded save lists taught: move, jump, fight (web_resume_tallowford_continued.jpg, web_resume_mosswater_continued.jpg; progress_loaded in their consoles).
 - **What:** in the book run the "move" (WASD), "jump" (Space to leap) and "fight" prompts each show 5
   times, once per level (QA log, web_full console). "Space to leap" also stays up through the first
   minute of Level 1's fights (stack web_03 to web_06) and shows during the Dregs fight
   (web_perf_kiln_fight.jpg).
 - **Owner:** gameplay (show each control prompt once per save).
 
-## F-023 Mosswater: camera, arrival backdrop, lantern-fruit (open, medium; visual)
+## F-023 Mosswater: camera, arrival backdrop, lantern-fruit (a open; b, c, d closed 2026-11-16; visual)
 
+- **Re-judged:** (a) the gully foot is fixed (Orimi framed on the ledge), but at the waterwheel the
+  camera still looks through a heap of grey rock shapes that fill two thirds of the screen
+  (web_level_mosswater_wheel). (b) the first view now shows the wood and the hill, no white plane.
+  (c) lit lantern-fruit glow amber and the hollow brightens (web_perf_mosswater_lit.jpg). (d) the
+  sealed-fight screens are grey-tan washed paper and read as screens.
 - **What:** at the waterwheel the camera sits behind rocks and the screen is grey blobs
   (web_level_mosswater_wheel); at the gully foot it is inside
   Orimi's head (web_level_mosswater_gully_foot). The first view has a large flat white plane across
@@ -80,37 +87,78 @@ full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/, and as JP
   hollow does not get warmer when all 15 are lit (web_perf_mosswater_lit.jpg).
 - **Owner:** Mosswater (camera zones or occluder fade, the backdrop, the fruit's lit look).
 
-## F-024 The Kiln: "colour restored" and the space stays grey (open, medium; visual)
+## F-024 The Kiln: "colour restored" and the space stays grey (closed 2026-11-16; visual)
 
+- **Re-judged:** the restored yard turns warm tan with terracotta pots, and the restored hall shows its red, blue and yellow cloths on a warm floor (web_level_hollow_kiln_hk_yard_restored, _hk_hall_restored).
 - **What:** the banners "The Kiln Yard / colour restored" and "The Drying Hall / colour restored" show
   while the yard and hall stay grey (web_level_hollow_kiln_hk_yard_restored,
   web_level_hollow_kiln_hk_hall_restored). In Levels 1 to 4 the same banner comes with green and
   flowers.
 - **Owner:** Hollow Kiln.
 
-## F-025 The Kiln: the Dregs out of frame at the arena door (open, medium; visual)
+## F-025 The Kiln: the Dregs out of frame at the arena door (closed 2026-11-16; visual)
 
+- **Re-judged:** in web_perf_kiln_fight.jpg the Dregs' body, arms and both pillar rings are in frame above the vat. The capture stands Orimi against the vat after a 2 s run, so its eyes sit just above the top edge there; from anywhere on the ring floor that is not the case.
 - **What:** two seconds after M_Arena_Entry, with the fight running (dregs_part veil), the view is
   the vat wall filling the screen; the Dregs is above the frame (web_perf_kiln_fight.jpg). DESIGN.md
   says VatCam keeps both in view.
 - **Owner:** Hollow Kiln (VatCam pitch or follow distance).
 
-## F-026 The title after the Kiln shows a blurred wall (open, low; visual)
+## F-026 The title after the Kiln shows a blurred wall (closed 2026-11-16; visual)
 
+- **Re-judged:** with Level 5 current, the title shows the dome and the works over the gorge (web_resume_mosswater_title.jpg); after the whole book it shows Hazewater restored.
 - **What:** with Level 5 as the current level (Continue after Level 4, and after the end of the book)
   the title's backdrop is a blurred close-up of a soot wall (web_resume_mosswater_title.jpg,
   web_level_hollow_kiln_end).
 - **Owner:** Hollow Kiln (its title camera marker), or gameplay.
 
-## F-027 The End of Book One card shows the Kiln's numbers (open, low; gameplay)
+## F-027 The End of Book One card shows the Kiln's numbers (closed 2026-11-16; gameplay)
 
+- **Re-judged:** the book run's end card reads "The whole book, 5 levels: Time 14:54, Ink-spawn undone 67, Falls 2, Beads 5" (stack web_12_end_card.jpg).
 - **What:** the card reads "Five beads on Orimi's cord" beside "Time 5:42, Ink-spawn undone 11"
   (stack web_12_end_card.jpg); the book run took 975 s and undid 67. Stats reset per level
   (game.gd reset_run), so the last level's numbers read as the book's.
 - **Owner:** gameplay (book totals on the last card, or label them as the Kiln's).
 
-## F-016 Progress reaches IndexedDB a few seconds after progress_saved (open, low; DoD 2)
+## F-028 render_demo logged engine errors on desktop and in the browser (closed 2026-11-16; DoD 1 and 2)
 
+- **What:** desktop_scenes and web_smoke_demos fail on render_demo only: four times
+  'ERROR: Condition "!is_inside_tree()" is true. Returning: Transform3D()' at
+  scene/3d/node_3d.cpp get_global_transform, from scripts/render/ink_look.gd:137 (_apply_mesh reads
+  mi.global_transform) via ink_look.gd:87 apply, scripts/render/render_demo.gd:221 _build_world (it
+  calls look.apply() before add_child(body)), render_demo.gd:34 _ready. New with 9890982 (ground
+  marks sized from the mesh's world scale). The game itself is clean (web_full: no console errors).
+- **Evidence:** docs/qa/evidence/desktop_scenes.txt, web_smoke_render_demo.md and its console.
+- **Ask:** in ink_look.gd use the local transform when the mesh is not in the tree yet (for example
+  mi.global_transform if mi.is_inside_tree() else mi.transform), or add the body to the tree before
+  look.apply() in render_demo.gd.
+  QA tried the first form on this checkout without committing it: desktop_scenes then ran 6 of 6
+  scenes windowed with no errors.
+- **Owner:** render.
+- **Re-judged:** fixed in 887d424 with that form; desktop_scenes (6 of 6) and web_smoke_demos (5 of 5) pass on 05e935a and d0685c3.
+
+## F-029 Mosswater: the autoplay route fails at PondMid and the stair tree about half the time (open, high; DoD 5, and DoD 3 through it)
+
+- **What:** web_level_mosswater and the book run's Mosswater part sometimes end a route step with
+  "could not reach": [-2.53, 5.45, -3.29] and [-0.35, 6.68, -4.6] by PondMid, or [-2.7, 6.98, 6.4]
+  by the stair tree. The level still completes (exit_reached, bead), but the gate requires no failed
+  step. Before failing, Orimi is down to 1 of 5 petals with 4 enemies alive and is sent back from
+  PondMid's deep water up to 130 times in one run.
+- **Runs:** on the F-028 build (05e935a and d0685c3): web_level_mosswater failed 4 of 6, web_full
+  failed 2 of 2. With the old ink_look line (2f8ed3e, and twice on 05e935a with only that line
+  reverted locally): 4 of 4 passed. The changed line only picks which meshes get ground marks, which
+  is visual, so the link is not proven and the failures look like a route on a knife edge. The
+  lead's own book run on 887d424 passed.
+- **Evidence:** docs/qa/evidence/web_full.md and its console (the d0685c3 gate); autoplay_fail and
+  deep_water_return lines in the Mosswater consoles.
+- **Ask:** make the route steps there robust (wait for the Sootflits to be dealt with, or path round
+  PondMid's deep edge), and check whether a player meets the same trap: repeated deep-water returns
+  while flyers dive is the hardest stretch in the book's captures.
+- **Owner:** Mosswater, with gameplay (autoplay).
+
+## F-016 Progress reaches IndexedDB a few seconds after progress_saved (closed 2026-11-16; DoD 2)
+
+- **Re-judged:** the browser save goes to localStorage before save_progress returns (d3d94ad); the three resume rows pass and progress_loaded says "from": "localStorage".
 - **What:** in the browser, a reload 2 s after `progress_saved` found no saved file (no
   `progress_loaded`, title offered Begin); a reload 6 s after found it, and Continue opened Tallowford
   with the bead. Godot writes user:// to IndexedDB asynchronously. A player who closes the tab on the
@@ -120,8 +168,9 @@ full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/, and as JP
 - **Owner:** gameplay (for example, hold the raft card until the sync has had time, or save earlier
   in the finale).
 
-## F-017 The static server stalls under load on this machine (open, low; harness)
+## F-017 The static server stalls under load on this machine (closed 2026-11-16; harness)
 
+- **Re-judged:** no stall and no retry in the last two full gates; the runner keeps its one retry.
 - **What:** with other workstreams' builds running, index.html sometimes does not load within 30 s.
   The runner retries once on a fresh server (logged as `# retry`); in the dc902a5 gate the retry
   also timed out for render_demo and vfx_demo, so web_smoke_demos failed. Rerun on the same commit

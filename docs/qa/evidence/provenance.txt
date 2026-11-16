@@ -1,6 +1,6 @@
 # Provenance of models, textures and audio
 manifests: 25 (assets/characters/folk/provenance.json, assets/characters/provenance.json, assets/environment/provenance.json, assets/levels/hollow_kiln/folk/provenance.json, assets/levels/hollow_kiln/provenance.json, assets/levels/mosswater/folk/provenance.json, assets/levels/mosswater/provenance.json, assets/levels/sedge_plain/folk/provenance.json, assets/levels/sedge_plain/provenance.json, assets/levels/tallowford/folk/provenance.json, assets/levels/tallowford/provenance.json, assets/phase0/provenance.json, assets/props/provenance.json, assets/textures/painted/folk/provenance.json, assets/textures/painted/provenance.json, assets/textures/render/provenance.json, assets/textures/vfx/provenance.json, audio/levels/hollow_kiln/provenance.json, audio/levels/mosswater/provenance.json, audio/levels/sedge_plain/provenance.json, audio/levels/tallowford/provenance.json, audio/music/provenance.json, audio/phase0/provenance.json, audio/sfx/provenance.json, ui/icon.provenance.json)
-media files: 326, covered: 326
+media files: 346, covered: 346
 
 ok       assets/characters/folk/folk_dyer.glb                       <- tools/blender/make_folk.py
 ok       assets/characters/folk/folk_lampmaker.glb                  <- tools/blender/make_folk.py
@@ -131,18 +131,38 @@ ok       assets/levels/sedge_plain/terrain/ground_00.glb            <- tools/lev
 ok       assets/levels/sedge_plain/terrain/ground_01.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_02.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_03.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_04.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_05.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_10.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_11.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_12.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_13.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_14.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_15.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_20.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_21.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_22.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_23.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_24.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_25.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_30.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_31.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_32.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/ground_33.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_34.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_35.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_40.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_41.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_42.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_43.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_44.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_45.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_50.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_51.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_52.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_53.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_54.glb            <- tools/levels/sedge_plain/make_terrain.py
+ok       assets/levels/sedge_plain/terrain/ground_55.glb            <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/hills.glb                <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/river.glb                <- tools/levels/sedge_plain/make_terrain.py
 ok       assets/levels/sedge_plain/terrain/safe.glb                 <- tools/levels/sedge_plain/make_terrain.py

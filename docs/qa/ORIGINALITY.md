@@ -6,13 +6,13 @@ with "game". The banned-term scan (the lead's list, passed at run time) is a sep
 
 Verdict: PASS
 
-Signed by QA on 2026-11-16 at main aa3946b, the five-level Book One. No name a player sees collides
-with the reference game, and the built cast, enemies, boss and sets are our own shapes. The new
-clouds (F-015) are torn wash bands with no spiral, so that finding is closed. One borrowed phrase is
-left in our own docs and file names, not in the game's text: "guardian sapling" (F-018, below). It
-is the reference game's exact English term for the tree the hero blooms to lift a curse from an
-area, so the rename is asked; the player only ever reads "the sapling on the Knoll". The Ink-maker
-stays by the lead's decision. If the lead wants F-018 fixed before signing, set this line to OPEN.
+Signed by QA on 2026-11-16 for the whole five-level Book One, re-checked at main 887d424. No name a
+player sees collides with the reference game, and the built cast, enemies, boss and sets of all
+five levels are our own shapes (sign-off for Levels 3 to 5 below, from the final gate's fresh
+browser captures). The new clouds (F-015) are torn wash bands with no spiral. The one borrowed phrase
+this audit found, the reference game's own name for Sedge Plain's sapling (F-018), has been renamed
+the Knoll sapling in every file, and no tracked file holds the old word. The Ink-maker stays by the
+lead's decision.
 
 ## Name search
 
@@ -44,7 +44,7 @@ stays by the lead's decision. If the lead wants F-018 fixed before signing, set 
 | lamp gold (Tallowford's bead) | Plain description | None | - |
 | Wenna (Hollow Kiln kiln-keeper) | A given name. Two World of Warcraft NPCs (Wenna, Wenna Silkbeard), a Spruted fan character, a quest item in Monsters and Memories; none a kiln-keeper or a main character | Common name, minor NPCs elsewhere | Low |
 | the Sootflit (Mosswater flyer) | No hits beyond name-generator pages | None | - |
-| guardian sapling (Sedge Plain: DESIGN.md, LEVELS.md, props/guardian_sapling.tscn) | The reference game's exact English term for the saplings the hero blooms to restore a cursed area, with its own wiki page and soundtrack track. In the game text ours is only "the sapling on the Knoll" (level.json) | Same words for the same mechanic, in docs and file names only | Medium (F-018) |
+| the Knoll sapling (Sedge Plain; F-018, renamed) | The old name was the reference game's exact two-word English name (a word for a protector, then "sapling") for the saplings its hero blooms to lift a curse, with the same mechanic. Renamed in c41b45f and 59b54a9; "Knoll sapling" finds nothing in games | None now | Closed (F-018) |
 | The Waking, The Lamps of Tallowford, The Mapmaker's Road, The Three Still Ponds, What the Vat Kept (chapter titles) | "The Waking" is a common chapter phrase (a tabletop rulebook chapter, not a game level). "The Mapmaker's Road Under the Water" is a 2026 short story on a horror fiction site. The other three: no game, book or level of that name | No game collision | Low |
 | Leaning Stones, the Mere, the Seam, the Knoll, Kettle Hollow, Ladle Hollow (Sedge Plain places) | "Leaning stone" is a furniture item in Animal Crossing and a scene name in an interactive-fiction site; Kettle Hollow is a real place and ranch name; Ladle Hollow only finds kitchen ladles. The Mere, the Seam, the Knoll are everyday words | No game collision | Low |
 | Lily Reach, Wheel Pond, Willow Pool (Mosswater places) | Real fishing ponds and a pool in a park; "Willow Pool" is a book and a scene in a dating game (a character named Willow at a pool) | No game collision | Low |
@@ -117,11 +117,12 @@ and the browser captures in docs/qa/stack/ and docs/screenshots/.
 - [x] Wenna (keeper.jpg), Tamsin, Fenn: folk-generator figures (blocky robe, apron, bucket), grey until
   woken, as in Levels 1 and 2. No resemblance to the reference's villagers beyond being folk.
 - [x] Sedge Plain set pieces: map leaves blown by wind, a mapmaker's camp, two broken rope bridges
-  mended with Tie, soot causeways blown clear, standing stones over a mere. None is a reference
-  location. Concept note: the level's goal, "bloom the sapling on the Knoll and the whole plain is
-  restored", is the reference's area-restoring sapling loop (see F-018 for the name). The brief asks
-  for the bloom gesture, and Level 1 already does the same with its great tree.
-- [x] Mosswater set pieces (the gate's web_perf_mosswater_lit.jpg): a dark wood lit by lantern-fruit,
+  mended with Tie, soot causeways blown clear, standing stones over a mere (fresh captures
+  web_level_sedge_plain_*). None is a reference location. Concept note: the level's goal, "bloom the
+  sapling on the Knoll and the whole plain is restored", is the reference's area-restoring sapling
+  loop; the name is now ours (F-018 closed). The brief asks for the bloom gesture, and Level 1
+  already does the same with its great tree.
+- [x] Mosswater set pieces (the final gate's web_perf_mosswater_lit.jpg and web_level_mosswater_*): a dark wood lit by lantern-fruit,
   three ponds stepped by a weir, a dam and a waterwheel, a charcoal-burner's hut, a soot-winged flyer
   that circles, dives and is knocked down. Lighting lamps in the dark with a fire glyph is a common
   puzzle (Zelda torches, the reference's fire technique); the fruit, the ponds and the wheel are ours.

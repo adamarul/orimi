@@ -1,6 +1,6 @@
 == import
 == load every script, scene and resource inside the running game
-ORIMI_CHECK_DONE files=442 failed=0
+ORIMI_CHECK_DONE files=443 failed=0
 ok   load check
 == boot main scene headless (quit_after=3)
 ok   boot run

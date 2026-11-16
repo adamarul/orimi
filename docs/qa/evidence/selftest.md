@@ -5,7 +5,7 @@ written to tests/_plant/ (untracked) and deleted afterwards. Run: tools/qa/selft
 
 | case | input | expected | got | | detail |
 | - | - | - | - | - | - |
-| terms_clean | nothing planted | PASS | PASS | ok | 1939 files, 10 build files, 431 commits clean |
+| terms_clean | nothing planted | PASS | PASS | ok | 1983 files, 10 build files, 39 commits clean |
 | terms_plant | term #1 in upper case in a scratch file | FAIL | FAIL | ok | 1 finding(s), first: tests/_plant/term.txt:1: banned term #1 |
 | abspath_plant | this checkout's absolute path in a scratch file | FAIL | FAIL | ok | 3 finding(s), first: tests/_plant/abs.txt:1: absolute path (drive path) |
 | abspath_generic | a generic user-folder drive path | FAIL | FAIL | ok | 2 finding(s), first: tests/_plant/abs2.txt:1: absolute path (drive path) |
@@ -20,7 +20,7 @@ written to tests/_plant/ (untracked) and deleted afterwards. Run: tools/qa/selft
 | docs_missing_shot | README embeds only two of three levels | FAIL | FAIL | ok | 1 of 18 item(s) missing; first: README embeds an existing tests/_plant/shots/ image for Heavy paper |
 | docs_ok | complete README, screenshots, SHADERS.md | PASS | PASS | ok | README, SHADERS.md and screenshots present (18 items) |
 | docs_glyph_unshaped | README names Gust without the shape to draw | FAIL | FAIL | ok | 1 of 18 item(s) missing; first: README: glyph guide (Bloom, Slash and Gust each with the shape to draw); no shape given for gust |
-| packed_clean | real scripts | PASS | PASS | ok | 123 script(s), no exported Packed*Array with a literal default |
+| packed_clean | real scripts | PASS | PASS | ok | 124 script(s), no exported Packed*Array with a literal default |
 | packed_inline | @export var x: PackedStringArray = [...] on one line | FAIL | FAIL | ok | 1 export(s) with a literal default; first: tests/_plant/packed_inline.gd:2: @export var tags: PackedStringArray = ["a"] |
 | packed_above | @export on the line above the var | FAIL | FAIL | ok | 1 export(s) with a literal default; first: tests/_plant/packed_above.gd:4: var ids: PackedInt32Array = [] |
 | packed_ok | constructor default; an unexported literal | PASS | PASS | ok | 1 script(s), no exported Packed*Array with a literal default |
