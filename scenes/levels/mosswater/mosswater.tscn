@@ -527,6 +527,38 @@ view = NodePath("View")
 [node name="View" type="Marker3D" parent="Curse/FinaleCam"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 4.5, 12.5)
 
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="GullyCam" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 10, -1.5)
+script = ExtResource("17")
+size = Vector3(9, 7, 10)
+distance = 5.5
+lock_pitch = true
+pitch_deg = -10
+lock_yaw = true
+yaw_deg = 45
+
+[node name="DamCam" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.98, 13.5, -18.17)
+script = ExtResource("17")
+size = Vector3(10, 5, 10)
+distance = 6.5
+lock_pitch = true
+pitch_deg = -30
+lock_yaw = true
+yaw_deg = 45
+
+[node name="StairCam" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 7.6, 9.4)
+script = ExtResource("17")
+size = Vector3(4, 3, 3.5)
+distance = 5
+lock_pitch = true
+pitch_deg = -25
+lock_yaw = true
+yaw_deg = 180
+
 [node name="Checkpoints" type="Node3D" parent="."]
 
 [node name="CP_Brazier" parent="Checkpoints" instance=ExtResource("20")]

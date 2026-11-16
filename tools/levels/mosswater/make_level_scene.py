@@ -25,6 +25,15 @@ POND_NODES = {"low": "PondLow", "mid": "PondMid", "high": "PondHigh"}
 INK_NODES = {"low": "InkLow", "mid": "InkMid", "high": "InkHigh"}
 FINALE_CAM_AT = [-24.0, 13.0, -32.0]    # centre of the finale CameraZone's box
 FINALE_VIEW = [-9.5, 17.5, -19.5]       # where its fixed camera stands: over the dam crest
+# Follow-camera overrides where the camera would otherwise be pushed into rock or bark: under the
+# moss shelves and the first ledge at the gully foot and against the parapet bank on the dam crest
+# (both look north-west at the wall from the open side), and against the stair tree's trunk on its
+# top shelves (from the bank top to the north, the trunk beyond Orimi). name: centre, size, pitch, distance, yaw
+CAMERA_ZONES = {
+    "GullyCam": ([-16.5, 10.0, -1.5], (9, 7, 10), -10.0, 5.5, 45.0),
+    "DamCam": ([-8.98, 13.5, -18.17], (10, 5, 10), -30.0, 6.5, 45.0),
+    "StairCam": ([-0.3, 7.6, 9.4], (4, 3, 3.5), -25.0, 5.0, 180.0),
+}
 WATER_SINK = 0.1        # feet this far under the surface count as in the water; the kit counts feet up to 0.05 m over it as in at sink 0, and the open pads and Lily Reach's north-west shore sit 0.05 m over it
 WATER_BANK_HEIGHT = 0.03  # ground inside the box this far over the surface is bank: the island (0.17 m) and an open pad (0.05 m)
 
@@ -280,6 +289,10 @@ def main():
     sc.node("FinaleCam", parent="Curse", type_="Node3D", transform=xform(FINALE_CAM_AT), script=("ext", "camera_zone"),
             size=("v3", 28, 14, 28), mode="fixed", priority=1, blend_time=1.5, view=("path", "View"))
     sc.node("View", parent="Curse/FinaleCam", type_="Marker3D", transform=xform([FINALE_VIEW[i] - FINALE_CAM_AT[i] for i in range(3)]))
+    sc.node("Cameras", type_="Node3D")
+    for name, (at, size, pitch, dist, yaw) in CAMERA_ZONES.items():
+        sc.node(name, parent="Cameras", type_="Node3D", transform=xform(at), script=("ext", "camera_zone"), size=("v3",) + size,
+                distance=dist, lock_pitch=True, pitch_deg=pitch, lock_yaw=True, yaw_deg=yaw)
 
     # --- checkpoints and the exit -------------------------------------------------------------
     used |= {"checkpoint", "exit"}

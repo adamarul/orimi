@@ -31,6 +31,7 @@ def xz_st(x, z):
 T0_NEAR, T1, T2 = 1.1, 7.0, 13.0          # ground of the three tiers (tier 0 rises from the river)
 RIVER_S = -57.0                            # the Lull runs across the foot of the wood
 RIVER_WATER_Y, RIVER_BED_Y = -0.35, -1.8
+FAR_BANK = 8.0                             # the Lull's far bank rises this high, wooded, so the landing looks across at trees
 SQUARE = 45.0                              # the level is the square |x|, |z| <= 45 (90 x 90 m)
 
 
@@ -205,9 +206,11 @@ def height_st(s, t):
     notch_bed = (T2 - 1.4) + 0.5 * smoothstep(c2, DAM_S, s)
     h = np.where(inside_notch * across > 0.0, h + (np.minimum(h, notch_bed) - h) * inside_notch * across, h)
 
-    # the river at the foot of the wood
+    # the river at the foot of the wood, and its wooded far bank
     rs = s - RIVER_S
-    h = np.where(rs < 4.5, np.minimum(h, RIVER_BED_Y + (h - RIVER_BED_Y) * smoothstep(1.2, 4.5, rs)), h)
+    far = np.maximum(-rs - 2.5, 0.0)
+    h = np.where(rs < 0.0, 0.25 + FAR_BANK * (1.0 - np.exp(-far / 4.0)) * (1.0 + 0.2 * fbm(x, z, 8.0, 31, 4)), h)
+    h = np.where(np.abs(rs) < 4.5, np.minimum(h, RIVER_BED_Y + (h - RIVER_BED_Y) * smoothstep(1.2, 4.5, np.abs(rs))), h)
     return h
 
 
@@ -467,6 +470,22 @@ def trees(seed=4):
         y = float(height(x, z))
         placed.append({"model": variant, "pos": (round(float(x), 2), round(y - 0.15, 2), round(float(z), 2)),
                        "yaw": round(float(rng.uniform(0, 360)), 1), "scale": round(float(rng.uniform(0.85, 1.18)), 3)})
+    # the far bank of the Lull, from its own generator so the wood's scatter is unchanged
+    far = np.random.default_rng(seed + 100)
+    for _ in range(12000):
+        if len(placed) >= 290:
+            break
+        x, z = far.uniform(-66, 66), far.uniform(-66, 66)
+        s, t = xz_st(x, z)
+        if not RIVER_S - 24.0 < s < RIVER_S - 6.0:
+            continue
+        if any((x - px) ** 2 + (z - pz) ** 2 < 4.2 ** 2 for px, pz in pts):
+            continue
+        pts.append((x, z))
+        r = far.random()
+        variant = TRUNK_VARIANTS[0 if r < 0.4 else 1 if r < 0.75 else 2]
+        placed.append({"model": variant, "pos": (round(float(x), 2), round(float(height(x, z)) - 0.15, 2), round(float(z), 2)),
+                       "yaw": round(float(far.uniform(0, 360)), 1), "scale": round(float(far.uniform(0.95, 1.25)), 3)})
     return placed
 
 
