@@ -228,6 +228,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
 script = ExtResource("11_kindle")
 
+[node name="IslandFruit" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1.3, 2.2)
+script = ExtResource("11_kindle")
+kind = "lantern_fruit"
+
 [node name="BoulderTie" parent="." instance=ExtResource("13_pair")]
 
 [node name="PostA" parent="BoulderTie"]

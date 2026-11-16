@@ -294,6 +294,16 @@ func run_finale(zone: CursedZone) -> void:
 	complete()
 
 
+## The finished book's title: gates gone, every zone and the great tree in colour, no gloom.
+func show_restored() -> void:
+	for gate: Variant in [gate_a, gate_b]:
+		if is_instance_valid(gate):
+			gate.remove_silently()
+	for z: CursedZone in zones.values():
+		z.restore_silently()
+	CurseField.set_valley_gloom(0.0, 0.0)
+
+
 ## Start at a marker with everything before it done (QA hook warp=<marker>).
 func apply_warp(marker_name: String) -> bool:
 	var index := ROUTE.find(marker_name)

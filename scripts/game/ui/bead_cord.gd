@@ -54,6 +54,13 @@ func _draw() -> void:
 			draw_circle(c, r * 0.62, Palette.IVORY)
 			draw_arc(c, r * 0.62, 0.0, TAU, 20, UiKit.INK_FAINT, maxf(1.2, r * 0.16), true)
 			continue
-		draw_circle(c, r, slots[i])
-		draw_arc(c, r, 0.0, TAU, 24, Palette.INK, maxf(1.5, r * 0.2), true)
-		draw_circle(c + Vector2(-r * 0.32, -r * 0.34), r * 0.24, Color(1, 1, 1, 0.55))
+		draw_bead(self, c, r, slots[i])
+
+
+## An earned bead: a soft shadow, the colour (a pale bead a shade deeper, so it never reads as the
+## paper showing through an empty ring), an ink outline and a highlight.
+static func draw_bead(ci: CanvasItem, c: Vector2, r: float, color: Color) -> void:
+	ci.draw_circle(c + Vector2(r * 0.16, r * 0.22), r * 1.04, Color(Palette.SEPIA, 0.35))
+	ci.draw_circle(c, r, color.darkened(0.14) if color.get_luminance() > 0.8 else color)
+	ci.draw_arc(c, r, 0.0, TAU, 24, Palette.INK, maxf(1.5, r * 0.2), true)
+	ci.draw_circle(c + Vector2(-r * 0.32, -r * 0.34), r * 0.24, Color(1, 1, 1, 0.55))

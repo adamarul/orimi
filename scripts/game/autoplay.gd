@@ -6,7 +6,8 @@ extends Node
 ## it through the real systems: Orimi steered by the player's AI inputs, real tail swipes,
 ## glyphs drawn as strokes through Brush.inject_stroke. Prints a QA line at every stage and a
 ## summary at the end. Options: shots=<dir> (desktop: a screenshot per stage),
-## autoplay_quit=1 (quit when done, exit code 1 on failure). Owner: gameplay.
+## autoplay_quit=1 (quit when done, exit code 1 on failure), fight_shots=1 (a stage
+## <fight>_ring as each sealed fight starts, where the route names no start_stage). Owner: gameplay.
 
 const STAGE_TIMEOUT := 150.0
 
@@ -264,7 +265,8 @@ func _step(s: Dictionary) -> void:
 	elif s.has("talk"):
 		await _talk(_target(s["talk"]))
 	elif s.has("fight"):
-		await _fight(_target(s["fight"]), bool(s.get("finish", false)), String(s.get("start_stage", "")))
+		await _fight(_target(s["fight"]), bool(s.get("finish", false)), String(s.get("start_stage",
+			"%s_ring" % s["fight"] if String(Boot.opt("fight_shots", "0")) == "1" else "")))
 	elif s.has("bloom_zone"):
 		await _bloom_zone(_target(s["bloom_zone"]) as CursedZone)
 	elif s.has("wait_flag"):
@@ -623,7 +625,9 @@ func _probe_cursed(ground: CursedGround, toward: Vector3) -> void:
 	await _wait_until(func() -> bool: return ground.is_safe(_player.global_position), CursedGround.STUCK_TIME + 1.5)
 	var hurt := ground.hurts > before
 	var safe := ground.is_safe(_player.global_position)
-	Game.qa_log("cursed_probe", {"ground": String(ground.name), "hurt": hurt, "back_on_safe_ground": safe})
+	var kept: Vector3 = ground.get(&"_last_safe")
+	Game.qa_log("cursed_probe", {"ground": String(ground.name), "hurt": hurt, "back_on_safe_ground": safe,
+		"kept": Game._v(kept) if kept != Vector3.INF else [], "kept_inside_margin": kept != Vector3.INF and ground.is_safe(kept, CursedGround.SAFE_MARGIN)})
 	if not hurt:
 		_fail("cursed ground %s did not hurt" % ground.name)
 	if not safe:

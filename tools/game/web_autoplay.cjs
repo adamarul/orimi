@@ -8,7 +8,8 @@
 // --reload-on: once the QA line TAG appears, wait MS (default 1000), close the tab and open the game
 // in a new tab without autoplay; the run ends at the title (title_ready), so qa.jsonl shows what
 // the reload found, with a shot of the title (title.png) and of its chapter list (chapters.png).
-// --title-only: open the game without autoplay and take those two shots.
+// --title-only: open the game without autoplay and take those two shots. --title-keys K1,K2: the
+// keys pressed on the title before the second shot (default ArrowDown,Enter).
 //
 // Writes DIR/console.txt (sanitised), DIR/qa.jsonl (the QA lines), DIR/NN_<stage>.png and
 // DIR/summary.json. Exit 0 only if autoplay reported PASSED with no console errors.
@@ -22,7 +23,7 @@ const toolsDir = process.env.ORIMI_TOOLS_DIR;
 const puppeteer = require(path.join(toolsDir, 'node', 'node_modules', 'puppeteer-core'));
 
 function parseArgs(argv) {
-  const opts = { out: path.join(projectRoot, 'build', 'game', 'web_autoplay'), timeout: 600, headed: false, reloadOn: '', reloadDelay: 1000, titleOnly: false, query: new URLSearchParams() };
+  const opts = { out: path.join(projectRoot, 'build', 'game', 'web_autoplay'), timeout: 600, headed: false, reloadOn: '', reloadDelay: 1000, titleOnly: false, titleKeys: ['ArrowDown', 'Enter'], query: new URLSearchParams() };
   opts.query.append('scene', 'res://scenes/game/main.tscn');
   opts.query.append('autoplay', '1');
   for (let i = 0; i < argv.length; i++) {
@@ -32,6 +33,7 @@ function parseArgs(argv) {
     else if (a === '--headed') opts.headed = true;
     else if (a === '--reload-on') opts.reloadOn = argv[++i];
     else if (a === '--title-only') opts.titleOnly = true;
+    else if (a === '--title-keys') opts.titleKeys = argv[++i].split(',');
     else if (a === '--reload-delay') opts.reloadDelay = Number(argv[++i]);
     else if (a.includes('=')) { const eq = a.indexOf('='); opts.query.set(a.slice(0, eq), a.slice(eq + 1)); }
     else { console.error('unknown argument: ' + a); process.exit(2); }
@@ -146,14 +148,16 @@ async function main() {
         await page.goto(server.url + 'index.html?scene=' + encodeURIComponent(opts.query.get('scene')), { waitUntil: 'load' });
       }
       if (titleAt) {
-        // The title as a player finds it, then its chapter list (Down to Chapters, Enter).
+        // The title as a player finds it, then its chapter list (--title-keys, default Down to
+        // Chapters and Enter).
         await sleep(1800);
         await page.screenshot({ path: path.join(opts.out, 'title.png') });
         shots.push('title.png');
         await page.evaluate(() => { const c = document.querySelector('canvas'); if (c) c.focus(); });
-        await page.keyboard.press('ArrowDown');
-        await sleep(250);
-        await page.keyboard.press('Enter');
+        for (const key of opts.titleKeys) {
+          await page.keyboard.press(key);
+          await sleep(250);
+        }
         await sleep(900);
         await page.screenshot({ path: path.join(opts.out, 'chapters.png') });
         shots.push('chapters.png');

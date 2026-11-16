@@ -16,6 +16,7 @@ const RING_HEIGHT := 1.6
 const RISE_TIME := 0.7
 const SCREENS := 10
 const KEEP_IN := 0.5
+const SCREEN_PAPER := Color("968b74")
 
 ## Unique in the level; used for the default flag and QA lines.
 @export var fight_id: StringName = &"fight"
@@ -289,7 +290,7 @@ func _make_ring() -> void:
 		var holder := ModelKit.node(screens, "Screen%d" % i, Vector3(cos(a), 0.0, sin(a)) * (radius + 0.2))
 		holder.rotation_degrees = Vector3(0, -rad_to_deg(a) + 90.0, (i % 3 - 1) * 4.0)
 		holder.add_to_group(GameCamera.FADE_GROUP)
-		var s := ModelKit.part(holder, "Paper", ModelKit.box(Vector3(1.0, h, 0.04)), Palette.PARCHMENT, Vector3.UP * h * 0.5)
+		var s := ModelKit.part(holder, "Paper", ModelKit.box(Vector3(1.0, h, 0.04)), SCREEN_PAPER, Vector3.UP * h * 0.5)
 		ModelKit.part(s, "Stroke", ModelKit.box(Vector3(0.12, h * 0.7, 0.05)), Palette.INK, Vector3(-0.2 + 0.1 * (i % 4), -0.05, 0.0))
 		var body := StaticBody3D.new()
 		body.collision_layer = GameCamera.FADE_LAYER

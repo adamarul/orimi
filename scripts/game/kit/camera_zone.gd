@@ -40,6 +40,9 @@ extends Node3D
 ## frame: the camera never backs out of this zone's box (the room it frames), whatever the picture
 ## needs. Roofs need colliders as well, or the collision check cannot stop the camera at them.
 @export var stay_inside: bool = false
+## frame: the steepest the camera may look up or down, degrees (a view node tipped too far is
+## held to this).
+@export_range(0.0, 89.0) var max_pitch_deg: float = 65.0
 
 
 func _ready() -> void:
