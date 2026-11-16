@@ -81,7 +81,7 @@ The same options work on desktop after the script name and in the browser as a q
 
 | Option | Meaning |
 | - | - |
-| `level=<id>` | Start in a level: `hazewater`, `example`, or a level still in progress |
+| `level=<id>` | Start in a level: `hazewater`, `tallowford`, `sedge_plain`, `mosswater`, `hollow_kiln`, or the test level `example` |
 | `paper=light\|normal\|heavy` | Paper intensity at start |
 | `warp=<marker>` | Start at a marker of the level, for example `warp=M_ZoneA` in Hazewater Vale |
 | `god=1` | Orimi takes no damage |
