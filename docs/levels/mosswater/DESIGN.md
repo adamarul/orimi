@@ -50,7 +50,8 @@ side is shown for story only and is blocked at both ends by rock.
    1 m apart: five jumps to the bank top. Fenn calls from the far shore, his light 23 m away
    across black water. The still water is deep and will not hold Orimi. Three lily buds lie in a
    line toward the island; Bloom opens each into a 2.4 m leaf platform. Two Sootflits circle 4 m
-   over the island and dive at Orimi on the pads; a Gust drops them, a Slash finishes them. The old
+   over the island and dive at Orimi on the island and the shore by the pads, never on a pad or
+   mid-jump; a Gust drops them, a Slash finishes them. The old
    footbridge log is jammed in the weir: a Tie between the post on the island and the post on the
    north shore swings it across into a bridge, the weir runs, and Lily Reach moves. On the north
    shore Fenn tells the story of the Ink-maker's charcoal.
@@ -89,15 +90,18 @@ side is shown for story only and is blocked at both ends by rock.
 | - | - | - | - |
 | hollow | M_DarkHollow, r 4 m | sealed ambush, starts when LF03 is lit | 3 Splotchets |
 | shore | shore path below the stair tree | roaming | 2 Splotchets |
-| island | over the island, r 4.5 m | roaming, airborne | 2 Sootflits |
-| dam | M_DamFight, r 5 m | sealed, needs tied_gap | wave 1: 4 Splotchets, 1 Sootflit; wave 2: 2 Sootflits, 1 Reedwraith |
+| island | over the island, r 4.5 m; they go for Orimi only within 9 m of their markers (the island and the shore by the pads, not the stair tree's top, where a dive could knock her back down onto the shelves) | roaming, airborne | 2 Sootflits |
+| dam | M_DamFight, r 4 m | sealed, needs tied_gap | wave 1: 4 Splotchets, 1 Sootflit; wave 2: 2 Sootflits, 1 Reedwraith |
 
 Spawn positions are in the layout JSON (`fights`).
 
 ### The Sootflit (new enemy)
 
 A drop of ink that grew soot wings, about 0.9 m across the wings. It circles out of reach at about
-4 m, and every few seconds dives at Orimi along a shallow curve, then climbs back. A Gust anywhere
+4 m, and every few seconds dives at Orimi along a shallow curve, then climbs back. It dives only
+at Orimi on her feet on solid ground: never mid-jump, and never within 1.6 m of a lily pad's
+centre (group `mw_lily_pad`), where she stands still over deep water to Bloom the next bud and a
+hit could only throw her in. A Gust anywhere
 on it knocks it out of the air: it falls (`fall`), lies stunned for about 3 s (`downed`, a feeble
 flap), and can be hit; if left, it lifts off again. Model `assets/levels/mosswater/mw_sootflit.glb`
 (288 tris, 512 px atlas), wrapper `scenes/levels/mosswater/models/mw_sootflit.tscn`, stepped
@@ -142,7 +146,7 @@ dark off with his fire.
   CameraZones with a locked yaw): at the gully foot the camera was pushed in under the moss
   shelves and the first ledge, into Orimi's head; on the crest it was pinned against the parapet
   bank during the fight; on the stair tree's top shelves it was pushed against the trunk. The
-  first two look north-west at the wall from the open side (yaw 45; pitch -10 at 5.5 m, -30 at
+  first two look north-west at the wall from the open side (yaw 45; pitch -22 at 5 m, high enough to clear the shelves as she jumps between them, and -30 at
   6.5 m), the third from the bank top to the north with the trunk beyond Orimi (yaw 180, pitch
   -25 at 5 m).
 - **Nothing between the camera and Orimi.** Bush cards have no collision, so the camera cannot

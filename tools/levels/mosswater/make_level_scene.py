@@ -30,10 +30,14 @@ FINALE_VIEW = [-9.5, 17.5, -19.5]       # where its fixed camera stands: over th
 # (both look north-west at the wall from the open side), and against the stair tree's trunk on its
 # top shelves (from the bank top to the north, the trunk beyond Orimi). name: centre, size, pitch, distance, yaw
 CAMERA_ZONES = {
-    "GullyCam": ([-16.5, 10.0, -1.5], (9, 7, 10), -10.0, 5.5, 45.0),
+    "GullyCam": ([-16.5, 10.0, -1.5], (9, 7, 10), -22.0, 5.0, 45.0),
     "DamCam": ([-8.98, 13.5, -18.17], (10, 5, 10), -30.0, 6.5, 45.0),
     "StairCam": ([-0.3, 7.6, 9.4], (4, 3, 3.5), -25.0, 5.0, 180.0),
 }
+# The island Sootflits harass Orimi on the lily pads and the island only: within this distance of
+# their markers (Lily_1 is 8.5 m from the nearer one; the stair tree's top, 9.8 m, is outside, so a
+# dive cannot knock her back off the bank onto the shelves).
+ISLAND_TERRITORY = 9.0
 WATER_SINK = 0.1        # feet this far under the surface count as in the water; the kit counts feet up to 0.05 m over it as in at sink 0, and the open pads and Lily Reach's north-west shore sit 0.05 m over it
 WATER_BANK_HEIGHT = 0.03  # ground inside the box this far over the surface is bank: the island (0.17 m) and an open pad (0.05 m)
 
@@ -263,6 +267,8 @@ def main():
     for fid in ("shore", "island"):
         for i, (kind, at) in enumerate(fights[fid]["enemies"]):
             props = {"enemy_scene": ("ext", "sootflit")} if kind == "sootflit" else {"kind": ("sn", kind)}
+            if fid == "island":
+                props["territory_radius"] = ISLAND_TERRITORY
             sc.node("Roam_%s_%d" % (fid.capitalize(), i), parent="Fights", type_="Marker3D", transform=xform(at),
                     script=("ext", "spawn"), **props)
 

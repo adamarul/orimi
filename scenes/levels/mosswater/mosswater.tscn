@@ -449,11 +449,13 @@ kind = &"splotchet"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.182, 4.95, -7.425)
 script = ExtResource("10")
 enemy_scene = ExtResource("11")
+territory_radius = 9
 
 [node name="Roam_Island_1" type="Marker3D" parent="Fights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.475, 4.95, -1.768)
 script = ExtResource("10")
 enemy_scene = ExtResource("11")
+territory_radius = 9
 
 [node name="Water" type="Node3D" parent="."]
 
@@ -533,9 +535,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 4.5, 12.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 10, -1.5)
 script = ExtResource("17")
 size = Vector3(9, 7, 10)
-distance = 5.5
+distance = 5
 lock_pitch = true
-pitch_deg = -10
+pitch_deg = -22
 lock_yaw = true
 yaw_deg = 45
 
