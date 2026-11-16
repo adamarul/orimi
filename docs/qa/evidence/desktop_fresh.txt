@@ -1,11 +1,11 @@
-# Fresh clone of HEAD (940acaa): first import, tools/check.sh, windowed run of the main scene
+# Fresh clone of HEAD (2f8ed3e): first import, tools/check.sh, windowed run of the main scene
 Uncommitted changes are not part of this test.
 
 ## tools/check.sh in the fresh clone (imports from nothing)
 # ... last 20 lines (full log: .userdata/qa/fresh_check.out)
 == import
 == load every script, scene and resource inside the running game
-ORIMI_CHECK_DONE files=442 failed=0
+ORIMI_CHECK_DONE files=443 failed=0
 ok   load check
 == boot main scene headless (quit_after=3)
 ok   boot run
@@ -17,10 +17,11 @@ CHECK PASSED
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3080
 
-ORIMI_BOOT t=4.12s options={"screenshot":"<project>/.userdata/shot.png","shot_after":"5"}
-ORIMI_FIRST_FRAME t=5.30s scene=res://scenes/game/main.tscn renderer=forward_plus driver=vulkan adapter=NVIDIA GeForce RTX 3080 api=1.4.351 display=Windows
+ORIMI_BOOT t=3.93s options={"screenshot":"<project>/.userdata/shot.png","shot_after":"5"}
+ORIMI_FIRST_FRAME t=5.25s scene=res://scenes/game/main.tscn renderer=forward_plus driver=vulkan adapter=NVIDIA GeForce RTX 3080 api=1.4.351 display=Windows
 QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
 QA:{"data":{"enemies":9,"level":"hazewater","markers":13},"tag":"level_built"}
-QA:{"data":{"level":"hazewater","t":6.5},"tag":"title_ready"}
+QA:{"data":{"beads":0,"first":"Begin: Hazewater Vale"},"tag":"title_menu"}
+QA:{"data":{"level":"hazewater","t":7.17},"tag":"title_ready"}
 ORIMI_SCREENSHOT path=<project>/.userdata/shot.png size=1280x720
 SCREENSHOT OK: .userdata/shot.png (log: .userdata/shot.log)

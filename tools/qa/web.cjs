@@ -597,7 +597,7 @@ async function modeResume(s, o, crit, ev) {
   crit('the title shows ' + second + ' behind it', !!(title && title.data.level === second), title ? 'title_ready level ' + title.data.level : 'no title_ready');
   await sleep(1500);
   const items = (await s.cmd('controls', 'controls')).items;
-  const cont = items.find((i) => /^continue$/i.test(i.text.trim()));
+  const cont = items.find((i) => /^continue\b/i.test(i.text.trim()));
   crit('the title offers Continue', !!cont, 'buttons: ' + items.map((i) => i.text).join(', '));
   ev.shots.push(await s.shot(path.join(EVIDENCE, 'web_' + o.name + '_title.png')));
   if (!cont) return;

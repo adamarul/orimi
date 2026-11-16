@@ -1,6 +1,6 @@
 # Shader uniform documentation
 docs present: docs/SHADERS.md, docs/SHADERS_VFX.md, docs/BRUSH.md; absent: none
-shaders: 21, uniforms: 271, undocumented: 0
+shaders: 21, uniforms: 279, undocumented: 0
 
 ok        shaders/brush/brush_view.gdshader: screen_tex
 ok        shaders/brush/brush_view.gdshader: fade
@@ -110,6 +110,10 @@ ok        shaders/render/ink_common.gdshaderinc: curse_zone_2
 ok        shaders/render/ink_common.gdshaderinc: curse_zone_3
 ok        shaders/render/ink_common.gdshaderinc: curse_amount
 ok        shaders/render/ink_common.gdshaderinc: valley_gloom
+ok        shaders/render/ink_common.gdshaderinc: curse_restored_0
+ok        shaders/render/ink_common.gdshaderinc: curse_restored_1
+ok        shaders/render/ink_common.gdshaderinc: curse_restored_2
+ok        shaders/render/ink_common.gdshaderinc: curse_restored_3
 ok        shaders/render/ink_common.gdshaderinc: wind
 ok        shaders/render/ink_common.gdshaderinc: light_field
 ok        shaders/render/ink_common.gdshaderinc: light_shade
@@ -169,6 +173,10 @@ ok        shaders/render/ink_outline.gdshader: light_keep
 ok        shaders/render/ink_toon.gdshader: albedo_color
 ok        shaders/render/ink_toon.gdshader: albedo_tex
 ok        shaders/render/ink_toon.gdshader: use_texture
+ok        shaders/render/ink_toon.gdshader: ground_marks
+ok        shaders/render/ink_toon.gdshader: mark_cut
+ok        shaders/render/ink_toon.gdshader: mark_halo
+ok        shaders/render/ink_toon.gdshader: restored_marks
 ok        shaders/render/ink_toon.gdshader: has_vertex_color
 ok        shaders/render/ink_toon.gdshader: light_dir
 ok        shaders/render/ink_toon.gdshader: band_high_cut

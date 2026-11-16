@@ -1,6 +1,6 @@
 # Banned-term and absolute-path scan
 terms supplied: 27 substring, 10 whole-word (the lead's list, passed at run time)
-files scanned: 1940 project files, 10 build/web files, 431 commit messages
+files scanned: 1983 project files, 10 build/web files, 35 commit messages
 findings: 2
 
 tests/_plant/abs2.txt:1: absolute path (drive path)
