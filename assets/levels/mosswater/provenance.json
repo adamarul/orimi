@@ -81,7 +81,7 @@
   },
   {
    "path": "assets/levels/mosswater/mw_terrain.glb",
-   "sha256": "39bd590a37e6978c69df6a8e9a9b0eca9049d1c7c18ef0dc6426a0bb474dbc49",
+   "sha256": "15a04f6b9efa401dde0f650067cf25d4c27c65ab2f8a758ef06aac70b28623f1",
    "generator": "tools/levels/mosswater/make_mw.py",
    "command": "tools/levels/mosswater/gen.sh terrain"
   },
@@ -159,7 +159,7 @@
   },
   {
    "path": "assets/levels/mosswater/textures/mw_ground.png",
-   "sha256": "597391cbe8aa8cab857114634c830a07b37a9ec174f340241548bd1db2a4fc88",
+   "sha256": "a947630161a4a76d00ddaafb338fed9f507f269e09863b5ac1568d9c620db121",
    "generator": "tools/levels/mosswater/paint_mw.py",
    "command": "tools/levels/mosswater/gen.sh terrain"
   },

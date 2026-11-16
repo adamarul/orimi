@@ -17,12 +17,28 @@ const WILLOW_GLOW_RADIUS := 16.0
 const POND_STEP := 1.6
 const FINALE_CAM_HOLD := 5.0
 const BEAD_DELAY := 3.0
+## The wood lifts with the lantern-fruit: each one lit takes a share of DARK_EASE off the darkness
+## and warms its shade toward SHADE_WARM, and the last one takes DARK_ALL_LIT more.
+const DARK_EASE := 0.45
+const DARK_ALL_LIT := 0.2
+const SHADE_WARM := Color(0.5, 0.41, 0.31)
+## A lit fruit keeps all its colour in the dark and glows: a warm halo round its core.
+const GLOW_SIZE := 2.2
+const GLOW_COLOR := Color(1.0, 0.72, 0.34, 1.0)
 
 var layout: Dictionary
 var props: Dictionary = {}
 var water: Node3D
 var dark: LightPools
 var _lanterns: Array[KindleTarget] = []
+var _finale := false
+var _shade_cold := Color()
+var _glow_mat: StandardMaterial3D
+## Autoplay only: bush cards (centre and radius), for the camera check in _check_camera().
+var _bushes := PackedVector4Array()
+var _bushes_read := false
+var _cam_wait := 0.0
+var _cam_logged := {}
 
 
 func _build(progress: Callable) -> void:
@@ -48,6 +64,7 @@ func _build(progress: Callable) -> void:
 	MwBuilder.build_mist(self, layout)
 	_add_raft()
 	dark = MwBuilder.make_darkness(self)
+	_shade_cold = dark.shade_color
 	_light(&"brazier", marker_or(&"M_Brazier") + Vector3.UP * 0.8, MwBuilder.BRAZIER_RADIUS, 0.9)
 	for n: Node in find_children("*", "KindleTarget", true, false):
 		var lf := n as KindleTarget
@@ -56,6 +73,7 @@ func _build(progress: Callable) -> void:
 		_lanterns.append(lf)
 		lf.kindled.connect(_on_kindled.bind(lf))
 		_show_lantern(lf, lf.lit, false)
+	_ease_dark(0.0)
 	for n: Node in find_children("Lily_*", "GlyphTarget", true, false):
 		MwBuilder.anim((n as GlyphTarget).model, "bud")
 	var log_node := _prop("log")
@@ -66,6 +84,12 @@ func _build(progress: Callable) -> void:
 		willow.model.visible = false
 	# The ponds' ink is drawn without the Spill's black-mass walls (as in lookdev).
 	CurseField.walls_enabled = false
+	# Soot banks are brush targets, so the camera's sweep does not stop at them and could sit inside
+	# the soot; the camera passes through and they fade instead (LEVEL_KIT.md, camera_fade).
+	for id: String in ["WheelSoot", "SootBank"]:
+		var soot := node(id)
+		if soot != null:
+			soot.add_to_group(GameCamera.FADE_GROUP)
 	_finale_cam(false)
 	flag_changed.connect(_on_flag)
 
@@ -76,9 +100,62 @@ func _exit_tree() -> void:
 	super._exit_tree()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if dark != null and is_instance_valid(player):
 		MwBuilder.light_follow(dark, player.visual)
+	if Game.autoplay:
+		_check_camera(delta)
+
+
+## QA lines while autoplay runs: the camera pulled in close to Orimi (something with collision
+## behind her), or a bush card between it and her (cards have no collision, so the camera cannot
+## keep out of them).
+func _check_camera(delta: float) -> void:
+	_cam_wait -= delta
+	var cam := get_viewport().get_camera_3d()
+	if _cam_wait > 0.0 or cam == null or not is_instance_valid(player):
+		return
+	_cam_wait = 0.25
+	if not _bushes_read:
+		_bushes_read = true
+		for f: Node in find_children("Foliage*", "Node3D", false, false):
+			var mmi: MultiMeshInstance3D = f.get(&"multimesh_instance")
+			if mmi == null or mmi.multimesh == null:
+				continue
+			var buf := mmi.multimesh.buffer
+			for i in mmi.multimesh.instance_count:
+				var o := i * 16
+				if int(buf[o + 12]) % 4 != 2:
+					continue
+				var c := mmi.global_transform * Vector3(buf[o + 3], buf[o + 7] + buf[o + 5] * 0.5, buf[o + 11])
+				_bushes.append(Vector4(c.x, c.y, c.z, minf(buf[o], buf[o + 5]) * 0.4))
+		Game.qa_log("mw_camera_bushes", {"cards": _bushes.size()})
+	var eye := cam.global_position
+	var pivot := player.global_position + Vector3.UP * GameCamera.PIVOT_HEIGHT
+	var d := eye.distance_to(pivot)
+	var where := {"at": _round3(player.global_position), "camera": _round3(eye), "distance": snappedf(d, 0.01)}
+	if d < 2.0:
+		_cam_qa("close", where)
+	var cards := 0
+	for b in _bushes:
+		var c := Vector3(b.x, b.y, b.z)
+		if c.distance_to(eye) < d + b.w and Geometry3D.get_closest_point_to_segment(c, eye, pivot).distance_to(c) < b.w:
+			cards += 1
+	if cards > 0:
+		where["cards"] = cards
+		_cam_qa("screened", where)
+
+
+func _cam_qa(kind: String, data: Dictionary) -> void:
+	var t := Time.get_ticks_msec()
+	if t - int(_cam_logged.get(kind, -10000)) < 1000:
+		return
+	_cam_logged[kind] = t
+	Game.qa_log("mw_camera_" + kind, data)
+
+
+func _round3(v: Vector3) -> Array:
+	return [snappedf(v.x, 0.01), snappedf(v.y, 0.01), snappedf(v.z, 0.01)]
 
 
 func marker_or(name_: StringName) -> Vector3:
@@ -97,6 +174,17 @@ func _light(id: StringName, at: Vector3, radius: float, power: float = 1.0, grow
 
 func _show_lantern(lf: KindleTarget, lit: bool, animate: bool) -> void:
 	MwBuilder.anim(lf.model, ("catch" if animate else "lit") if lit else "unlit")
+	var look := ModelKit.ink_look(lf.model)
+	if look != null:
+		look.light_keep = 1.0 if lit else 0.6
+		look.apply()
+	var glow := _lantern_glow(lf)
+	glow.visible = lit
+	if lit and animate:
+		glow.scale = Vector3.ONE * 0.05
+		create_tween().tween_property(glow, "scale", Vector3.ONE * GLOW_SIZE, 0.8).set_trans(Tween.TRANS_SINE)
+	else:
+		glow.scale = Vector3.ONE * GLOW_SIZE
 	var at := lf.global_position + Vector3.DOWN * 0.5
 	if lit:
 		_light(StringName(lf.name), at, MwBuilder.LANTERN_RADIUS, MwBuilder.LANTERN_POWER, animate)
@@ -106,6 +194,63 @@ func _show_lantern(lf: KindleTarget, lit: bool, animate: bool) -> void:
 
 func _on_kindled(lf: KindleTarget) -> void:
 	_show_lantern(lf, true, true)
+	_ease_dark(1.5)
+
+
+## The warm halo on a lantern-fruit's core: an unshaded card facing the camera, beside the model
+## rather than under it so its InkLook leaves it alone.
+func _lantern_glow(lf: KindleTarget) -> MeshInstance3D:
+	var glow := lf.get_node_or_null(^"Glow") as MeshInstance3D
+	if glow != null:
+		return glow
+	if _glow_mat == null:
+		var grad := Gradient.new()
+		grad.set_color(0, Color(1, 1, 1, 1))
+		grad.set_color(1, Color(1, 1, 1, 0))
+		grad.add_point(0.35, Color(1, 1, 1, 0.55))
+		var tex := GradientTexture2D.new()
+		tex.gradient = grad
+		tex.fill = GradientTexture2D.FILL_RADIAL
+		tex.fill_from = Vector2(0.5, 0.5)
+		tex.fill_to = Vector2(1.0, 0.5)
+		_glow_mat = StandardMaterial3D.new()
+		_glow_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		_glow_mat.billboard_mode = BaseMaterial3D.BILLBOARD_ENABLED
+		_glow_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		_glow_mat.blend_mode = BaseMaterial3D.BLEND_MODE_ADD
+		_glow_mat.albedo_color = GLOW_COLOR
+		_glow_mat.albedo_texture = tex
+		_glow_mat.disable_fog = true
+		_glow_mat.no_depth_test = true
+		_glow_mat.distance_fade_mode = BaseMaterial3D.DISTANCE_FADE_PIXEL_ALPHA
+		_glow_mat.distance_fade_min_distance = 34.0
+		_glow_mat.distance_fade_max_distance = 22.0
+	glow = MeshInstance3D.new()
+	glow.name = "Glow"
+	var quad := QuadMesh.new()
+	quad.size = Vector2.ONE
+	glow.mesh = quad
+	glow.material_override = _glow_mat
+	glow.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	glow.position = lf.model.position if lf.model != null else Vector3.ZERO
+	lf.add_child(glow)
+	return glow
+
+
+## The darkness for the lantern-fruit lit so far (thinner over the gully once the gap is tied).
+func _ease_dark(duration: float) -> void:
+	if dark == null or _finale or _lanterns.is_empty():
+		return
+	var lit := _lanterns.filter(func(lf: KindleTarget) -> bool: return lf.lit).size()
+	var k := float(lit) / _lanterns.size()
+	var target := (0.7 if get_flag(&"tied_gap") else 1.0) - DARK_EASE * k - (DARK_ALL_LIT if lit == _lanterns.size() else 0.0)
+	dark.set_darkness(target, duration)
+	var shade := _shade_cold.lerp(SHADE_WARM, k)
+	dark.warmth = lerpf(0.6, 0.9, k)
+	if duration <= 0.0:
+		dark.shade_color = shade
+	else:
+		create_tween().tween_property(dark, "shade_color", shade, duration)
 
 
 func _prop(prefix: String) -> Node3D:
@@ -137,8 +282,7 @@ func _on_flag(flag: StringName, on: bool) -> void:
 			_pond_light("mid")
 		&"tied_gap":
 			# Over the gully the canopy opens above Willow Pool: the dark thins.
-			if dark != null:
-				dark.set_darkness(0.7, 4.0)
+			_ease_dark(4.0)
 		&"fight_dam":
 			var dam := _prop("dam")
 			if dam != null:
@@ -176,6 +320,7 @@ func _pond_light(key: String) -> void:
 ## pond by pond down the slope, each pond's ink clearing and its light coming up as it moves. A
 ## fixed camera over Willow Pool watches it. Pell's raft waits on Willow Pool (the LevelExit).
 func run_finale(zone: CursedZone) -> void:
+	_finale = true
 	_finale_cam(true)
 	var willow := _prop("willow")
 	if willow != null:

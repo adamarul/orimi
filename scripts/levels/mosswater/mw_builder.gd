@@ -10,11 +10,13 @@ const MODEL_DIR := "res://scenes/levels/mosswater/models/"
 const FOLIAGE_SCENE := "res://scenes/env/foliage_scatter.tscn"
 const MIST_SCENE := "res://scenes/env/mist.tscn"
 ## Lantern-fruit pool radius and strength once lit.
-const LANTERN_RADIUS := 7.5
-const LANTERN_POWER := 1.0
+const LANTERN_RADIUS := 9.0
+const LANTERN_POWER := 1.3
 ## The faint pool that travels with Orimi.
 const FOLLOW_RADIUS := 3.4
 const FOLLOW_POWER := 0.5
+## Bush cards keep this far off the paths and markers (the follow camera is 4.9 m behind Orimi).
+const BUSH_CLEAR := 4.0
 ## Fenn's brazier, always burning: it is how he kept the dark off.
 const BRAZIER_RADIUS := 5.0
 
@@ -158,24 +160,7 @@ static func set_lantern(dark: LightPools, lanterns: Dictionary, id: String, lit:
 static func build_foliage(root: Node3D, data: Dictionary) -> Node3D:
 	if not ResourceLoader.exists(FOLIAGE_SCENE):
 		return null
-	var f := (load(FOLIAGE_SCENE) as PackedScene).instantiate() as Node3D
-	f.name = "Foliage"
-	f.set(&"area_size", Vector2(96.0, 96.0))
-	f.set(&"count", 1700)
-	f.set(&"seed", 404)
-	f.set(&"kind_weights", Vector4(0.1, 0.5, 0.4, 0.0))
-	f.set(&"bush_height", Vector2(0.8, 1.4))
-	f.set(&"avoid_valley_paths", false)
 	var clear := PackedVector3Array()
-	for k: String in data.get("paths", {}):
-		var pts: Array = data.paths[k]
-		for j in pts.size() - 1:
-			var a := Vector2(pts[j][0], pts[j][1])
-			var b := Vector2(pts[j + 1][0], pts[j + 1][1])
-			var steps := maxi(1, int(a.distance_to(b) / 1.2))
-			for s in steps + 1:
-				var p := a.lerp(b, float(s) / steps)
-				clear.append(Vector3(p.x, p.y, 1.7))
 	for key: String in data.get("ponds", {}):
 		var pd: Dictionary = data.ponds[key]
 		var c := MwLayout.v3(pd.center)
@@ -184,6 +169,36 @@ static func build_foliage(root: Node3D, data: Dictionary) -> Node3D:
 		if String(fight.kind) == "sealed":
 			var c := MwLayout.v3(fight.center)
 			clear.append(Vector3(c.x, c.z, float(fight.radius)))
+	var low := clear.duplicate()
+	for k: String in data.get("paths", {}):
+		var pts: Array = data.paths[k]
+		for j in pts.size() - 1:
+			var a := Vector2(pts[j][0], pts[j][1])
+			var b := Vector2(pts[j + 1][0], pts[j + 1][1])
+			var steps := maxi(1, int(a.distance_to(b) / 1.2))
+			for s in steps + 1:
+				var p := a.lerp(b, float(s) / steps)
+				low.append(Vector3(p.x, p.y, 1.7))
+				clear.append(Vector3(p.x, p.y, BUSH_CLEAR))
+	for m: String in data.get("markers", {}):
+		var at := MwLayout.v3(data.markers[m])
+		clear.append(Vector3(at.x, at.z, BUSH_CLEAR))
+	_scatter(root, "Foliage", 1020, 404, Vector4(0.1, 0.5, 0.0, 0.0), low)
+	return _scatter(root, "FoliageBushes", 680, 405, Vector4(0.0, 0.0, 1.0, 0.0), clear)
+
+
+## One foliage scatter over the wood: grass and reeds may come up to a path's edge, but bush
+## cards (which have no collision, so the camera cannot keep out of them) stay BUSH_CLEAR off
+## every path and marker.
+static func _scatter(root: Node3D, name_: String, count: int, seed_: int, weights: Vector4, clear: PackedVector3Array) -> Node3D:
+	var f := (load(FOLIAGE_SCENE) as PackedScene).instantiate() as Node3D
+	f.name = name_
+	f.set(&"area_size", Vector2(96.0, 96.0))
+	f.set(&"count", count)
+	f.set(&"seed", seed_)
+	f.set(&"kind_weights", weights)
+	f.set(&"bush_height", Vector2(0.8, 1.4))
+	f.set(&"avoid_valley_paths", false)
 	f.set(&"keep_clear", clear)
 	place(root, f, Vector3.ZERO)
 	return f

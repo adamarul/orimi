@@ -19,7 +19,8 @@ the readable copy of the words is [SCRIPT.md](SCRIPT.md).
 
 Godot metres, X east, Y up, Z south. The slope rises from south-east to north-west. The level is
 the 90 x 90 m square |x|, |z| <= 45; the river runs along the south-east corner, and the ground
-outside the square rises into a wooded bowl that closes the view.
+outside the square rises into a wooded bowl that closes the view. Across the river the far bank
+rises 8 m with its own stand of trunks, so the landing looks across the Lull at trees, not sky.
 
 | Tier | Ground | Pond | Water | Size |
 | - | - | - | - | - |
@@ -137,6 +138,19 @@ dark off with his fire.
   and Fenn's light on the far shore.
 - **Dam crest** (M_DamFight): down the slope over Lily Reach and Wheel Pond, and across Willow Pool
   to the willow.
+- **Gully foot, dam crest and stair tree top** (`Cameras/GullyCam`, `DamCam`, `StairCam`, follow
+  CameraZones with a locked yaw): at the gully foot the camera was pushed in under the moss
+  shelves and the first ledge, into Orimi's head; on the crest it was pinned against the parapet
+  bank during the fight; on the stair tree's top shelves it was pushed against the trunk. The
+  first two look north-west at the wall from the open side (yaw 45; pitch -10 at 5.5 m, -30 at
+  6.5 m), the third from the bank top to the north with the trunk beyond Orimi (yaw 180, pitch
+  -25 at 5 m).
+- **Nothing between the camera and Orimi.** Bush cards have no collision, so the camera cannot
+  keep out of them: they are a scatter of their own (`FoliageBushes`) kept 4 m off every path and
+  marker, while grass and reeds still come to the path's edge. The soot banks are brush targets,
+  which the camera's sweep ignores, so they are in `camera_fade` and fade instead of filling the
+  screen. Under autoplay the level logs `mw_camera_close` (camera within 2 m of Orimi) and
+  `mw_camera_screened` (a bush card on the line to her).
 - **Finale** (`Curse/FinaleCam`, a fixed CameraZone switched on when the willow blooms and off
   5 s after `water_runs`; the bead narration comes 3 s after it): from 4.5 m above the dam crest,
   over the open sluice and Willow Pool to Orimi, small on the far shore, and the willow.
@@ -145,8 +159,11 @@ dark off with his fire.
 
 The dark is render's shared light pools (`LightPools`, docs/SHADERS.md "Light pools") with
 `set_darkness(1.0)` (`MwBuilder.make_darkness`). Mosswater feeds it lights: lit lantern-fruit
-(7.5 m), the brazier (5 m), Orimi's own faint glow (3.4 m) and each moving pond. Over the gully
-(`tied_gap`) the dark thins to 0.7. The ponds' black ink is three `MwPondInk` areas
+(9 m), the brazier (5 m), Orimi's own faint glow (3.4 m) and each moving pond. The wood lifts with
+the lantern-fruit: each one lit takes a share of 0.45 off the darkness and warms its shade and the
+pools' warmth, and the fifteenth takes 0.2 more (darkness 0.35 at 15 of 15; over the gully, once
+`tied_gap` is set, everything starts from 0.7 instead of 1). A lit fruit keeps all its colour
+(InkLook `light_keep` 1, 0.6 while unlit) and glows: a warm halo card round its core. The ponds' black ink is three `MwPondInk` areas
 (`Curse/InkLow`, `InkMid`, `InkHigh`, scripts/levels/mosswater/mw_pond_ink.gd) that share
 CurseField's slots with the spring's CursedZone through the kit's CurseSlots, drawn without the
 Spill's walls.
