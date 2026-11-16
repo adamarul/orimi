@@ -412,7 +412,8 @@ def model(name, pm_path, out_dir):
 
 WASH = {
     "bark": "201e1c", "cord": "d5402b", "gold": "d9a441", "blossom": "f0b4be", "leaf": "8fa76b", "canopy": "7f9a5c",
-    "canopy_under": "5f7748", "blossom_red": "d5402b", "paper": "ece3cd", "paper_grey": "c9c4b6", "stone": "8c8a80", "stone_top": "a19e92",
+    "canopy_under": "5f7748", "blossom_red": "d5402b", "paper": "ece3cd", "paper_grey": "c9c4b6",
+    "paper_indigo": "5f7299", "paper_madder": "c4644c", "paper_ochre": "d4a54e", "stone": "8c8a80", "stone_top": "a19e92",
     "stone_dark": "5e5c55", "wood": "5a4a3c", "wood_pale": "a08868", "iron": "3b3936", "brass": "b08a42",
     "leather": "6e4b36", "clay": "a67c5b", "clay_dark": "6f5446", "glaze": "4f5b58", "rope": "b19a6f", "ink": "1e1c20",
     "soot": "2a2829", "moss": "6f8a4f", "moss_dry": "3c3a33", "flame": "e8a23a", "flame_core": "f6dc8a",
@@ -464,7 +465,7 @@ def prop(pmod, pm, size, out, seed):
                 for k in range(1, 4):
                     rr = min(w, h) * 0.12 * k
                     c.stroke([(cx + math.cos(a) * rr, cy + math.sin(a) * rr) for a in np.linspace(0, 5.8, 12)], 1.2 * s, H("6a5240"), 0.6, taper=(0.1, 0.3), dry=0.3)
-    pmod.paint_creases(c, pm, size, {"paper", "paper_grey", "stone", "stone_top", "wood", "wood_pale", "clay", "leather"}, ip.mix(INK_BROWN, H("ece2cb"), 0.1), 2.2 * s, 0.55, rng, alpha=0.75)
+    pmod.paint_creases(c, pm, size, {"paper", "paper_grey", "paper_indigo", "paper_madder", "paper_ochre", "stone", "stone_top", "wood", "wood_pale", "clay", "leather"}, ip.mix(INK_BROWN, H("ece2cb"), 0.1), 2.2 * s, 0.55, rng, alpha=0.75)
     pmod.finish(c, used, out)
 
 

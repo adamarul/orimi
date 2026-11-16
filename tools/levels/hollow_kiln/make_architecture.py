@@ -308,7 +308,7 @@ def build_yard(model, out_glb):
         brick.append(L.cylinder(13.7, zc, 0.55, Y + 2.2, Y + 4.4, 6, r_top=0.42))
         stone.append(L.gbox(12.8, 14.6, Y + 0.2, Y + 1.0, zc - 0.5, zc + 0.5))
     # stoke mouths on the yard side of the tunnel (dark openings painted as soot)
-    for zc in (8.0, 12.5, 17.0, 21.5, 25.0):
+    for zc in K.STOKE_MOUTHS:
         timber.append(L.gbox(11.85, 12.05, Y + 0.1, Y + 0.95, zc - 0.5, zc + 0.5))
     objects = [
         part("YardWalls", "M_hk_plaster", plaster, 0.04, 1),
@@ -505,34 +505,35 @@ def build_kiln(model, out_glb):
     openings = [(ent_a % 360.0, 4.0, Y + K.VAT_PASSAGE["h"])]
     for name, (mx, mz, a) in K.KILN_MOUTHS.items():
         openings.append((a % 360.0, 3.2, Y + 3.4))
-    breaks = set(float(a) for a in range(0, 360, 10))
     spans = []
     for a, w, top in openings:
         half = math.degrees(w / 2 / R)
         spans.append(((a - half) % 360.0, (a + half) % 360.0, top))
-        breaks.add((a - half) % 360.0)
-        breaks.add((a + half) % 360.0)
-    breaks = sorted(breaks)
-    for i, a0 in enumerate(breaks):
-        a1 = breaks[(i + 1) % len(breaks)] + (360.0 if i == len(breaks) - 1 else 0.0)
-        mid = ((a0 + a1) / 2) % 360.0
-        opening = None
-        for s0, s1, top in spans:
-            inside = (s0 <= mid <= s1) if s0 <= s1 else (mid >= s0 or mid <= s1)
-            if inside:
-                opening = top
-        if opening is None:
-            seg = L.ring_segment(cx, cz, R, R + T, a0, a1, Y - 0.6, spring)
-            brick.append(seg)
-            col.append(seg)
-        else:
-            seg = L.ring_segment(cx, cz, R, R + T, a0, a1, opening, spring)
-            brick.append(seg)
-            col.append(seg)
+
+    def drum_arcs(step):
+        """(a0, a1, bottom) arcs of the drum wall every step degrees, broken at the openings."""
+        breaks = sorted(set(float(a) for a in range(0, 360, step)) | {s for s0, s1, _top in spans for s in (s0, s1)})
+        arcs = []
+        for i, a0 in enumerate(breaks):
+            a1 = breaks[(i + 1) % len(breaks)] + (360.0 if i == len(breaks) - 1 else 0.0)
+            mid = ((a0 + a1) / 2) % 360.0
+            bottom = Y - 0.6
+            for s0, s1, top in spans:
+                if (s0 <= mid <= s1) if s0 <= s1 else (mid >= s0 or mid <= s1):
+                    bottom = top
+            arcs.append((a0, a1, bottom))
+        return arcs
+
+    for a0, a1, bottom in drum_arcs(10):
+        brick.append(L.ring_segment(cx, cz, R, R + T, a0, a1, bottom, spring))
         stone.append(L.ring_segment(cx, cz, R - 0.25, R + T + 0.3, a0, a1, spring - 0.1, spring + 0.6))
+    # the collider is coarser (the triangle budget); its outer face is pushed out so each chord
+    # still covers the drawn wall
+    for a0, a1, bottom in drum_arcs(20):
+        col.append(L.ring_segment(cx, cz, R, (R + T) / math.cos(math.radians(a1 - a0) / 2), a0, a1, bottom, spring + 0.6))
     # dome and its crown ring
     plaster.append(L.dome_shell(cx, spring + 0.6, cz, R, R + T, K.OCULUS_R, sides=36, rings=10, rise=K.DOME_RISE))
-    col.append(L.dome_shell(cx, spring + 0.6, cz, R, R + T, K.OCULUS_R, sides=18, rings=6, rise=K.DOME_RISE))
+    col.append(L.dome_shell(cx, spring + 0.6, cz, R, R + T, K.OCULUS_R, sides=12, rings=5, rise=K.DOME_RISE))
     top = spring + 0.6 + K.DOME_RISE + T
     stone.append(L.cylinder(cx, cz, K.OCULUS_R + 1.2, top - 1.6, top + 0.6, 12, r_top=K.OCULUS_R + 0.9, y_cap=False))
     stone.append(L.cylinder(cx, cz, K.OCULUS_R + 0.15, top - 1.6, top + 0.6, 12, y_cap=False))
@@ -546,9 +547,8 @@ def build_kiln(model, out_glb):
             pts.append((cx + math.sin(a) * rr, spring + 0.6 + (K.DOME_RISE + T + 0.15) * math.sin(e), cz - math.cos(a) * rr))
         brick.append(L.gtube(pts, [0.55] * 8 + [0.3], 4))
     # floor and the ring of firing floor round the vat
-    floor = L.cylinder(cx, cz, R + 0.2, Y - 0.6, Y, 36)
-    stone.append(floor)
-    col.append(floor)
+    stone.append(L.cylinder(cx, cz, R + 0.2, Y - 0.6, Y, 36))
+    col.append(L.cylinder(cx, cz, (R + 0.2) / math.cos(math.pi / 16), Y - 0.6, Y, 16))
     # fireboxes behind the three mouths
     for name, (mx, mz, a) in K.KILN_MOUTHS.items():
         local = [L.gbox(-2.1, 2.1, Y - 0.6, Y + 0.05, -(R + T + 3.2), -(R - 0.1)),

@@ -239,7 +239,7 @@
 		"talk": "ending",
 		"card": "End of Book One."
 	},
-	"end_text": "[font_size=34]End of Book One[/font_size]\n\nThe Ink-maker's last stone gives his answer: colour stays by coming back.\n\nFive beads on Orimi's cord: ivory, lamp gold, sedge green, water indigo, kiln vermilion.\n\nThe Lull runs clear from the tree's roots, down through every place it greyed.",
+	"end_text": "[font_size=34]End of Book One[/font_size]\n\nThe Ink-maker's last stone gives his answer: colour stays by coming back.\n\nThe kiln's vermilion bead goes last on Orimi's cord.\n\nThe Lull runs clear from the tree's roots, down through every place it greyed.",
 	"warps": {
 		"M_Yard": {
 			"flags": [
@@ -2325,6 +2325,143 @@
 			],
 			"darkness": 0.45,
 			"until": "vat_bloomed"
+		}
+	],
+	"restored_places": [
+		{
+			"zone": "yard",
+			"gloom": 0.2,
+			"lights": [
+				[
+					0.0,
+					3.0,
+					18.0,
+					18.0,
+					[
+						1.0,
+						0.84,
+						0.6
+					],
+					0.8
+				],
+				[
+					11.4,
+					2.6,
+					8.0,
+					2.4,
+					[
+						1.0,
+						0.55,
+						0.25
+					],
+					1.0
+				],
+				[
+					11.4,
+					2.6,
+					12.5,
+					2.4,
+					[
+						1.0,
+						0.55,
+						0.25
+					],
+					1.0
+				],
+				[
+					11.4,
+					2.6,
+					17.0,
+					2.4,
+					[
+						1.0,
+						0.55,
+						0.25
+					],
+					1.0
+				],
+				[
+					11.4,
+					2.6,
+					21.5,
+					2.4,
+					[
+						1.0,
+						0.55,
+						0.25
+					],
+					1.0
+				],
+				[
+					11.4,
+					2.6,
+					25.0,
+					2.4,
+					[
+						1.0,
+						0.55,
+						0.25
+					],
+					1.0
+				]
+			],
+			"embers": [
+				[
+					11.7,
+					2.5,
+					8.0
+				],
+				[
+					11.7,
+					2.5,
+					12.5
+				],
+				[
+					11.7,
+					2.5,
+					17.0
+				],
+				[
+					11.7,
+					2.5,
+					21.5
+				],
+				[
+					11.7,
+					2.5,
+					25.0
+				]
+			]
+		},
+		{
+			"zone": "hall",
+			"gloom": 0.1,
+			"lights": [
+				[
+					-8.0,
+					6.8,
+					-8.0,
+					11.0,
+					[
+						1.0,
+						0.84,
+						0.6
+					],
+					0.6
+				],
+				[
+					8.0,
+					6.8,
+					-18.0,
+					11.0,
+					[
+						1.0,
+						0.84,
+						0.6
+					],
+					0.6
+				]
+			]
 		}
 	]
 }

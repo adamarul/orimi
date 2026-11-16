@@ -227,14 +227,30 @@ Dregs has no health bar; progress is visible in the body (veil, arms, height, cr
 **Timing.** About 20 s for the veil, 25 s for the arms, 15 s for the binding, 20 s for the
 mouths: about 1.5 minutes for a player who reads it first time, 2.5 with a death.
 
-**The camera in the chamber.** VatCam (a follow CameraZone over the drum: 3.6 m back, pivot raised
-0.5 m, FOV 80) keeps the usual camera behind Orimi, looking across at the vat. The Dregs sits on a
-4.5 m rim in a 14 m drum, so with Orimi at a readable size (8 % of the screen or more) it and Orimi
-only fit together at a pitch of about -5 to -15 degrees; steeper views lose the Dregs' body. While it
-climbs (`dregs_arms_cut` until `dregs_bound`) TieCam takes over (follow, yaw locked north, pitch +3)
-so both pillar rings, 16 m apart, are on screen for the Tie. Both switch off when the Dregs
-unravels, so the finale's Bloom on the vat is seen with the plain camera. The dome has a collider,
-so no camera leaves the chamber. hollow_kiln.gd switches them (`_set_cams`).
+**The camera in the chamber.** The Dregs sits on a 4.5 m rim with its head 5.9 m above that, so a
+camera at Orimi's height looking level or down loses its head (QA F-025). ArenaDoorCam (a follow
+CameraZone over the doorway only, so the third verse-stone just west of it is read with the plain
+camera; priority 3: 3 m back, pivot raised 0.8 m, FOV 80, yaw locked toward the vat, pitch +8) is the
+first sight of it: from low in the passage, looking up through the door at the vat
+and the whole Dregs, with Orimi in the doorway. Further in, VatCam (over the drum, from
+`dregs_started` until it unravels: 4.5 m back, pivot raised 1 m, FOV 80, pitch locked at +4) keeps
+the camera behind Orimi and tilted up enough that its head and eyes stay in the picture from
+anywhere on the floor. While it climbs (`dregs_arms_cut` until `dregs_bound`) TieCam takes over
+(yaw locked north, pitch +22, FOV 90) so both pillar rings, 16 m apart, and the climbing body are on
+screen for the Tie. Before the fight and after it the plain camera runs, so the third verse-stone at
+Orimi's feet and the finale's Bloom on the vat are seen from the floor. The dome has a collider, so
+no camera leaves the chamber. hollow_kiln.gd switches them (`_set_cams`).
+
+**Restored places.** The level starts in full gloom. When the yard or the hall starts to restore,
+the valley's grey lifts a step (to 0.2, then 0.1; the finale takes it to 0), warm light pools open
+in it, and in the yard embers catch in the soot tunnel's five stoke mouths (level.json
+"restored_places", hollow_kiln.gd `_warm_place`). The drying racks hold indigo, madder and ochre
+paper, grey only while the hall is drained.
+
+**Title.** Behind the title the camera looks from over the gate across the yard to the hall and the
+dome (M_TitleView, M_TitleLook), the kiln right of the title card. Once the level is done the title
+shows it restored (the tree through the dome, colour, the clear river); leaving the title puts the
+drained state back, since Continue plays that same level instance.
 
 **Testing the Dregs on its own.** `hk_start=<part>` boots at the top of the flue with everything
 before the chamber done and the Dregs waking in that part (dregs.gd `_resume_part` reads the flags

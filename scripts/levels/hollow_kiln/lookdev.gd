@@ -50,6 +50,7 @@ const VIEWS := {
 	"vat_up": [Vector3(-6.0, 19.0, -58.0), Vector3(2.0, 40.0, -64.0)],
 	"ending": [Vector3(2.0, 58.0, -40.0), Vector3(2.0, 10.0, 40.0)],
 	"ending_tree": [Vector3(34.0, 56.0, -26.0), Vector3(2.0, 50.0, -64.0)],
+	"title": [Vector3(20.0, 18.0, 48.0), Vector3(-12.0, 18.0, -30.0)],
 	"play_landing": [Vector3(0.0, 0.0, 46.0), 0.0],
 	"play_yard": [Vector3(0.0, 2.0, 22.0), 0.0],
 	"play_hall": [Vector3(-6.0, 5.3, -5.0), -90.0],
@@ -62,7 +63,7 @@ const VIEWS := {
 }
 const TOUR := ["arrival", "pell", "gate", "keeper", "yard", "play_yard", "yard_high", "hall_entry", "play_hall", "hall_back", "play_hall_back",
 	"hall_high", "flue_low", "play_flue", "play_flue_mid", "flue_high", "play_flue_top", "vat", "play_vat", "vat_high", "vat_up",
-	"play_vat_side", "ending", "ending_tree"]
+	"play_vat_side", "ending", "ending_tree", "title"]
 
 var restored := false
 var camera: Camera3D

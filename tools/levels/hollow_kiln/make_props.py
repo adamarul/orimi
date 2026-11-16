@@ -49,7 +49,7 @@ def tagged(o, fn):
 def default_col(co, n, tag):
     if tag in ("flame", "flame_core"):
         return (0.15, 0.0, 0.6)
-    if tag in ("paper", "paper_grey"):
+    if tag.startswith("paper"):
         return (0.35, 0.35 * max(0.0, 1.0 - co[1] / 2.5), 0.6)
     if tag in ("moss", "moss_dry"):
         return (0.55, 0.2, 0.6)
@@ -319,14 +319,22 @@ def build_drying_rack(out_glb, out_map):
         frame.append(L.gbox(-2.4, 2.4, y, y + 0.08, -0.05, 0.05))
     rack = obj("Rack", L.merged(*frame), "wood", "M_drying_rack")
     sheets = []
-    for y_top in (1.2, 2.6):
+    dyes = []   # (x0, x1, y_top, tag): the hall dries dyed paper, grey only while the hall is drained
+    for row, y_top in enumerate((1.2, 2.6)):
         x = -2.15
         while x < 2.0:
             w = rnd.uniform(0.6, 0.85)
             h = rnd.uniform(0.75, 1.05)
             sheets.append(L.rotated_y(L.gbox(x, x + w, y_top - h, y_top, -0.015, 0.015), rnd.uniform(-5, 5), x + w / 2, 0.0))
+            dyes.append((x - 0.05, x + w + 0.05, y_top, ("paper_indigo", "paper", "paper_madder", "paper_ochre")[(len(dyes) + row) % 4]))
             x += w + rnd.uniform(0.08, 0.2)
-    paper = obj("Paper", L.merged(*sheets), "paper_grey", "M_drying_rack", parent=rack)
+
+    def dye(c, n):
+        for x0, x1, y_top, tag in dyes:
+            if x0 <= c[0] <= x1 and y_top - 1.2 <= c[1] <= y_top + 0.05:
+                return tag
+        return "paper"
+    paper = tagged(obj("Paper", L.merged(*sheets), "paper", "M_drying_rack", parent=rack), dye)
     col = L.gmake("RackCollider-convcolonly", L.gbox(-2.4, 2.4, 0, 2.7, -0.45, 0.45))
     finish("drying_rack", out_glb, out_map, [rack, paper, col], 512)
 

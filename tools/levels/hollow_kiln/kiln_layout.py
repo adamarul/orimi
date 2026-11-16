@@ -27,6 +27,7 @@ WATER_Y = -0.4
 
 # ------------------------------------------------------------------ the four spaces
 YARD = {"x": (-16.0, 16.0), "z": (2.0, 32.0), "y": Y_YARD, "wall_h": 4.5, "wall_t": 1.0}
+STOKE_MOUTHS = (8.0, 12.5, 17.0, 21.5, 25.0)   # z of the soot tunnel's stoke mouths on the yard's east side (x = 12)
 GATE = {"x": (-3.0, 3.0), "z": 32.0, "h": 4.6}                     # opening in the south yard wall
 GATE_STAIR = {"x": (-4.0, 4.0), "z": (40.0, 35.5), "y": (Y_LANDING, Y_YARD)}
 GATE_APRON = {"x": (-8.0, 8.0), "z": (32.5, 35.5), "y": Y_YARD}       # stone apron in front of the gate
@@ -125,6 +126,8 @@ MARKERS = {
     "M_Verse_4": (9.5, Y_VAT, -55.5),
     "M_Pell_End": (-1.6, Y_VAT, -51.2),
     "M_EndView": (2.0, 58.0, -40.0),
+    "M_TitleView": (20.0, 18.0, 48.0),     # behind the title: over the gate and the yard to the hall and the dome,
+    "M_TitleLook": (-12.0, 18.0, -30.0),   # the kiln right of the title card
 }
 CURSE_ZONES = [   # CurseField slot, centre, radius: what the drained look covers
     (0, (0.0, Y_YARD, 17.0), 19.0),

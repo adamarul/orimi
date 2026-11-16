@@ -82,7 +82,7 @@
   },
   {
    "path": "assets/levels/hollow_kiln/models/kiln.glb",
-   "sha256": "b3adf8ac32d36c854766324fb7f5bf71e1e0c6355dcbf72d550075747d827562",
+   "sha256": "5bf22904f9d24323b6569d7c0ea26df25a12c84cf5c999440e9ffab8bd9c4353",
    "generator": "tools/levels/hollow_kiln/make_architecture.py",
    "command": "tools/levels/hollow_kiln/gen.sh kiln"
   },
@@ -184,7 +184,7 @@
   },
   {
    "path": "assets/levels/hollow_kiln/textures/drying_rack.png",
-   "sha256": "10135ada1052e1789c1dbbcff9d92d590b0bc5f9248b7b1f5bf03bc324f9c8c6",
+   "sha256": "89af268e9564ebaecbbce0a9f810dc5e8659ef85eb9b3df36fca3cdd03bc0b20",
    "generator": "tools/levels/hollow_kiln/paint_kiln.py",
    "command": "tools/levels/hollow_kiln/gen.sh drying_rack"
   },
