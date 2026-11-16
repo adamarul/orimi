@@ -623,7 +623,9 @@ func _probe_cursed(ground: CursedGround, toward: Vector3) -> void:
 	await _wait_until(func() -> bool: return ground.is_safe(_player.global_position), CursedGround.STUCK_TIME + 1.5)
 	var hurt := ground.hurts > before
 	var safe := ground.is_safe(_player.global_position)
-	Game.qa_log("cursed_probe", {"ground": String(ground.name), "hurt": hurt, "back_on_safe_ground": safe})
+	var kept: Vector3 = ground.get(&"_last_safe")
+	Game.qa_log("cursed_probe", {"ground": String(ground.name), "hurt": hurt, "back_on_safe_ground": safe,
+		"kept": Game._v(kept) if kept != Vector3.INF else [], "kept_inside_margin": kept != Vector3.INF and ground.is_safe(kept, CursedGround.SAFE_MARGIN)})
 	if not hurt:
 		_fail("cursed ground %s did not hurt" % ground.name)
 	if not safe:

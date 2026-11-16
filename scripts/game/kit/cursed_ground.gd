@@ -14,6 +14,10 @@ signal hurt(at: Vector3)
 ## Seconds of standing on bad ground (pushed or not) before Orimi is put back where she last
 ## stood safely.
 const STUCK_TIME := 1.6
+## Orimi must stand this long on safe ground, and this far inside it, before the spot is kept as
+## the place to put her back: never the very edge she stepped off, nor a spot she only brushed.
+const SAFE_HOLD := 0.35
+const SAFE_MARGIN := 0.5
 const PUSH_SPEED := 6.0
 const SAFE_COLOR := Color("efe6d2")
 
@@ -35,6 +39,7 @@ var hurts := 0
 var _shapes: Array = []
 var _last_safe := Vector3.INF
 var _bad_time := 0.0
+var _safe_time := 0.0
 var _clear_end := 0.0
 var _set_up := false
 
@@ -106,11 +111,12 @@ func _on_flag(flag: StringName, value: bool) -> void:
 
 
 ## True when a world point is clean: outside the radius, or on a safe shape that is open.
-func is_safe(p: Vector3) -> bool:
+## margin: only when it is that far inside the clean ground (metres).
+func is_safe(p: Vector3, margin: float = 0.0) -> bool:
 	if is_clear:
 		return true
 	var q := Vector2(p.x - global_position.x, p.z - global_position.z)
-	if q.length() >= radius or p.y - global_position.y > max_height:
+	if q.length() >= radius + margin or p.y - global_position.y > max_height + margin:
 		return true
 	var at := Vector2(p.x, p.z)
 	for s: Dictionary in _shapes:
@@ -120,15 +126,23 @@ func is_safe(p: Vector3) -> bool:
 			"path":
 				var pts: PackedVector2Array = s["points"]
 				for i in range(1, pts.size()):
-					if at.distance_to(Geometry2D.get_closest_point_to_segment(at, pts[i - 1], pts[i])) <= float(s["half"]):
+					if at.distance_to(Geometry2D.get_closest_point_to_segment(at, pts[i - 1], pts[i])) <= float(s["half"]) - margin:
 						return true
 			"circle":
-				if at.distance_to(s["center"]) <= float(s["radius"]):
+				if at.distance_to(s["center"]) <= float(s["radius"]) - margin:
 					return true
 			"polygon":
-				if Geometry2D.is_point_in_polygon(at, s["points"]):
+				var poly: PackedVector2Array = s["points"]
+				if Geometry2D.is_point_in_polygon(at, poly) and _edge_distance(at, poly) >= margin:
 					return true
 	return false
+
+
+func _edge_distance(at: Vector2, poly: PackedVector2Array) -> float:
+	var best := INF
+	for i in poly.size():
+		best = minf(best, at.distance_to(Geometry2D.get_closest_point_to_segment(at, poly[i], poly[(i + 1) % poly.size()])))
+	return best
 
 
 ## Standing on a body in the group "safe_ground" (a Tie rope bridge, a level's own planks) is
@@ -159,11 +173,14 @@ func _physics_process(delta: float) -> void:
 	if Vector2(pos.x - global_position.x, pos.z - global_position.z).length() > radius + 2.0:
 		_bad_time = 0.0
 		return
-	if is_safe(pos) or _on_safe_body(p):
-		if p.is_on_floor():
+	var on_body := _on_safe_body(p)
+	if is_safe(pos) or on_body:
+		_safe_time = _safe_time + delta if p.is_on_floor() else 0.0
+		if _safe_time >= SAFE_HOLD and (on_body or is_safe(pos, SAFE_MARGIN)):
 			_last_safe = pos
 		_bad_time = 0.0
 		return
+	_safe_time = 0.0
 	_bad_time += delta
 	var back := (_last_safe - pos) if _last_safe != Vector3.INF else (pos - global_position)
 	back.y = 0.0
