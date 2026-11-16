@@ -62,6 +62,7 @@ Rules:
 | start_gloom | float 0..1 | 1.0 | Valley-wide grey at the start (1 = drained). |
 | auto_collision | bool | true | Collision for the `level_ground` group. |
 | title_marker | String | | The title camera orbits this marker when this level is behind the title. |
+| ground_overhead | float | 40 | `ground_at` looks for the ground from high above; a floor found more than this far above the point asked about is a roof, and the floor under the point is used instead. Indoors (a tunnel, a hall with a roof) set it to about 1. Outdoors leave 40. |
 
 ### Level signals and methods
 
@@ -70,13 +71,16 @@ Rules:
 | flag_changed(flag: StringName, value: bool) | Any flag set or cleared. Listen to it for scripted moments. |
 | objective_completed(index: int, text: String) | An objective's flags are all set. |
 | level_completed | The level is complete (rewards and the raft follow). |
+| level_built | Built: ground collision made, markers read, Orimi spawned. |
 
 | Method | Use |
 | - | - |
 | set_flag(flag, value = true) / get_flag(flag) / all_flags(list) | Named flags (below). |
 | marker(name) -> Vector3, has_marker(name) | Marker positions (any node by name works). |
 | node(name) -> Node | A node anywhere in the level by name. |
-| ground_at(p, ignore = null) -> Vector3 | The ground under p (brush targets ignored). |
+| ground_at(p, ignore = null) -> Vector3 | The ground under p (brush targets ignored). Under a roof, see `ground_overhead`. |
+| ready_to_settle() | `await Game.level.ready_to_settle()` in a node's `_ready` before calling `ground_at`: it returns once the level is built (at once if it is). A node that settles earlier finds no ground, or the roof. The kit's checkpoints, people and fight rings do this. |
+| show_restored() | Override: the level as the player left it (restored, no events). The title shows the first level this way once the book is finished; Hazewater's removes its gates and colours its zones and tree. |
 | lines(talk_id) -> Array, has_lines(talk_id) | Conversations from the data file. |
 | current_objective() -> String | Text of the first objective not yet met. |
 | complete() | Finish the level now. Safe to call twice. |
@@ -233,6 +237,7 @@ Script `res://scripts/game/kit/enemy_spawn.gd`, a Marker3D where an enemy appear
 | enemy_scene | | Your own enemy: a scene whose root script extends `EnemyBase` (below). Overrides kind. |
 | wave | 0 | Under a CursedZone: 0 at load, 1+ the zone's final wave pulses. Under a SealedFight: the fight's waves in order. |
 | aggro | false | Start hunting Orimi. |
+| territory_radius | 0 | Metres across the ground from the spawn point. Above 0 the enemy ignores Orimi while she is farther than this from it (an ink-spawn penned in a yard does not chase her across the level), and drops the chase when she leaves. 0: no limit. Example: `Penned` (radius 3), autoplay `{"expect_calm": "Splotchet_Penned"}`. |
 
 On its own (not under a zone or fight) it spawns once when the level is built and roams near itself.
 
@@ -366,7 +371,12 @@ cleared_flag it is). Open safe shapes are marked with a pale wash on the ground;
 | draw_curse | true | Draw the Spill over the radius. |
 | show_safe | true | The pale wash on safe shapes. |
 
-Signal `cleared`; methods `is_safe(point)`, `clear()`; property `hurts`. Autoplay:
+Where she is put back is a spot she stood on for at least 0.35 s (`SAFE_HOLD`) and at least
+0.5 m (`SAFE_MARGIN`) inside clean ground: inside a safe shape by 0.5 m, 0.5 m outside the radius
+or 0.5 m above `max_height`. A rope bridge or other `safe_ground` body counts as it is. So she is
+never put back on the very edge she stepped off, nor on a spot she only brushed in a jump.
+
+Signal `cleared`; methods `is_safe(point, margin = 0)`, `clear()`; property `hurts`. Autoplay:
 `{"probe_cursed": "Mire", "toward": point}` steps off the safe ground on purpose and fails unless
 it hurts and pushes Orimi back (or, in a hollow, puts her back after `CursedGround.STUCK_TIME`). The render curse is a circle, so the Spill is still drawn
 under a causeway; the wash (or your own planks and stones) is what shows the way.
@@ -395,6 +405,20 @@ lands on it. `glyph = slash` is a thorn gate, `gust` a soot bank.
 | clears | [] | Other nodes cleared with it (a GlyphObstacle clears as if hit; anything with clear() has it called; anything else is freed). |
 
 Signal `cleared_by_glyph`. If cleared_flag is set some other way (a warp), it removes itself at once.
+
+### Reach: no glyph through walls
+
+Every kit target (GlyphTarget, GlyphObstacle, KindleTarget, VerseStone, TiePost) answers a glyph
+only when no solid wall stands between the view and it (`GlyphReach.clear`): a line from the
+camera, or from Orimi, to the target's glyph anchor on the WORLD layer. Only a solid wall counts.
+These are looked through: the target's own colliders and children, anything the anchor sits
+inside, other glyph targets, props in `camera_fade` or `ink_skip` (trees, foliage, water, soot
+banks, effects), and triggers. A hit within the target's glyph radius plus 0.6 m of its anchor
+counts as the target's own surroundings (soot packed in a wheel, a lamp in a niche). A refusal
+logs `glyph_blocked` with the wall's name and where it was hit. So a target the player can see
+is never refused, and a bellows in the next room is. Example: `HiddenBellows` behind `BlindWall`,
+autoplay `{"cast_blocked": "gust", "target": "HiddenBellows", "flag": "gust_hidden_bellows"}`
+(stage `glyph_blocked`).
 
 ### GlyphTarget: any glyph, your own reaction
 
@@ -434,6 +458,7 @@ it: the flame shows, a warm light comes up, and its flag is set. The brush calls
 | model_scene | | Your own look: a node named `Flame` is shown when lit; a node named `Wick` is where the dab lands. |
 | start_lit | false | |
 | light_color, light_range, light_energy | warm, 7, 1.6 | The light when lit. |
+| light_keep | -1 | How much of its own colour the model keeps in a dark or drained place (its InkLook's `light_keep`, 0 follows the place, 1 untouched). -1 = automatic: 0.6 for a lantern-fruit, so it still reads on its branch in the dark; lamps and braziers keep the ink look's default. Example: `IslandFruit` (stage `fruit_lit`). |
 
 Signal `kindled`; property `lit`; methods `kindle(instant = false)`, `put_out()`. Autoplay:
 `{"cast": "kindle", "target": "IslandLamp", "flag": "lit_island_lamp"}`.
@@ -569,10 +594,15 @@ the camera blends in and out over `blend_time` (0.6 s).
 | - | - | - |
 | follow | The usual camera with overrides: closer in a corridor, looking up a shaft. | distance (0 keeps 4.9), lock_pitch + pitch_deg (negative looks down, positive looks up), lock_yaw + yaw_deg (world), pivot_raise, fov |
 | fixed | A set view from a marker. | view (a Marker3D), look_at_player |
-| frame | A boss arena: looks along view's -Z and backs off until Orimi and every frame_targets node fit, with margin metres to spare (also kept out of walls). | view, frame_targets, margin |
+| frame | A boss arena: looks along view's -Z and backs off until Orimi and every frame_targets node fit, with margin metres to spare (also kept out of walls). | view, frame_targets, margin, max_distance (backs off no farther than this; 0 no limit), stay_inside (never backs out of the zone's box), max_pitch_deg (65: a view tipped steeper is held to this) |
+
+**Roofs need colliders.** The camera only stops at what it can hit: a room's ceiling with no
+collision lets the frame and follow cameras back up through it, and `stay_inside` is the only
+other guard. Give every roof and ceiling a body (or put it under `level_ground`).
 
 Example: `TunnelCam` (follow, distance 2.6, pitch locked at -6) and `KnotCam` (frame on the
-sealed fight) in scenes/levels/example/example.tscn. For a shaft, lock the pitch at about +30
+sealed fight, max_distance 12, stay_inside; stage `knot_view`, whose QA line carries the
+camera's distance to Orimi) in scenes/levels/example/example.tscn. For a shaft, lock the pitch at about +30
 and shorten the distance so the camera looks up past Orimi.
 
 **Fading props.** Put a prop (its body or any ancestor of it) in the group `camera_fade` and the
@@ -645,11 +675,28 @@ the example level, a pull pair with overridden children and an extra marker (sta
 ## 9. Beads, ink and progress
 
 Finishing a level for the first time adds its registry bead to Orimi's cord, raises maximum ink
-by 20 (base 100) and saves progress (`user://progress.json`, IndexedDB in the browser). The title
-offers Continue and the level list. Pell's raft (the `raft` data) carries Orimi to the next level.
+by 20 (base 100) and saves progress (`user://progress.json`; in the browser also localStorage,
+written before the save returns). The beads show on Orimi's cord, in the HUD, on the pause
+screen and on the title. Progress also keeps the control prompts already shown (each once per
+save) and each level's time, ink-spawn undone and falls. Pell's raft (the `raft` data) carries
+Orimi to the next level.
+
+The title's first button names its level ("Continue: Sedge Plain"); Chapters lists every level
+with its chapter, its bead once earned, and the locked ones greyed. Once the whole book is
+finished it reads "Book One complete: Chapters" over the first level shown restored.
+
+The end card shows after the last level (and after a dev level played with `level=`): the
+level's `end_text`, or its name, chapter and bead without one. The card grows with its text
+(and the text shrinks from 22 to 16 points if it must), so four paragraphs fit at 1280x720.
+The numbers are the whole book's once every level is finished, otherwise this level's, and are
+labelled so. The "more of the book" footer shows only for a book level with no `end_text`
+while the book is unfinished.
 
 Boot options for testing: `level=<id>` (straight into a level; with `autoplay=1` only that level),
-`warp=<marker>`, `fresh=1` (forget progress), `god=1`.
+`warp=<marker>`, `fresh=1` (forget progress), `god=1`, `completed=<id>,<id>` (a save that has
+finished those levels), `end_card=1` (with `level=` and `autoplay=1`: straight to the level's
+end card), `beads_check=1` (with `level=` and `autoplay=1`: shots of the beads in the HUD, on
+the cord and on the pause screen).
 
 ## 10. The autoplay route
 
@@ -679,3 +726,7 @@ A point is a marker name, a node name, or [x, y, z].
 | {"death_test": true} | Die and check the respawn at the checkpoint. |
 | {"expect_prompt": id, "timeout": 3} | Fail unless the prompt `id` (a level hint or a kit node's) shows within the timeout. |
 | {"expect_bark": key, "timeout": 3} | Fail unless a bark (a Person's or level narration) is on the panel within the timeout. |
+| {"expect_calm": "Enemy"} | Fail if that enemy is hunting Orimi (outside its territory). |
+| {"cast_blocked": glyph, "target": "Node", "flag": f} | One stroke over a target behind a wall; fail if it answers (f gets set). |
+| {"expect_height": "Node", "y": y} | Fail unless the node stands within 0.3 m of height y (set down on the floor, not the roof). |
+| {"expect_above": y} | Fail unless Orimi is above height y. |

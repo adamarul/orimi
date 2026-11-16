@@ -261,6 +261,11 @@ func _zone_transform(z: CameraZone) -> Transform3D:
 		r = maxf(r, p.distance_to(center))
 	r += z.margin
 	var dir := -v.global_basis.z if v != null else -global_basis.z
+	var flat := Vector2(dir.x, dir.z).length()
+	var limit := deg_to_rad(z.max_pitch_deg)
+	if flat > 0.001 and absf(atan2(dir.y, flat)) > limit:
+		var h := Vector3(dir.x, 0.0, dir.z) / flat
+		dir = h * cos(limit) + Vector3.UP * sin(limit) * signf(dir.y)
 	var half := deg_to_rad(_fov_s) * 0.5
 	var aspect := get_viewport().get_visible_rect().size
 	var half_min := minf(half, atan(tan(half) * aspect.x / maxf(aspect.y, 1.0)))

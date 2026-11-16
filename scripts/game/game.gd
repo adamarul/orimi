@@ -363,6 +363,9 @@ func debug_snapshot() -> Dictionary:
 		"fps": Engine.get_frames_per_second(),
 		"t": snappedf(Time.get_ticks_msec() / 1000.0, 0.01),
 	}
+	if level != null and is_instance_valid(level.camera) and is_instance_valid(player):
+		var zone: Variant = level.camera.get(&"_zone")
+		snap["camera"] = {"zone": String((zone as Node).name) if zone is Node else "", "to_player": snappedf(level.camera.camera.global_position.distance_to(player.global_position), 0.01)}
 	if is_instance_valid(player):
 		snap["player_pos"] = _v(player.global_position)
 		snap["hp"] = player.get(&"hp")
