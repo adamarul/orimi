@@ -52,6 +52,8 @@ var _title_list: VBoxContainer
 var _title_progress: InkProgress
 var _title_status: Label
 var _title_beads: BeadCord
+## The level behind the title was put in its restored state (finished book): never play it as is.
+var _title_shows_restored := false
 var _intro: Control
 var _intro_text: RichTextLabel
 var _end: Control
@@ -286,6 +288,8 @@ func load_level(id: StringName, on_progress: Callable) -> bool:
 
 
 func title_level_id() -> StringName:
+	if Game.book_complete():
+		return LevelRegistry.first_id()
 	var current := StringName(String(Game.progress.get("current", "")))
 	if current != &"" and not LevelRegistry.find(current).is_empty():
 		return current
@@ -310,6 +314,9 @@ func go_to_title() -> void:
 	if not await load_level(id, _on_title_progress):
 		_title_status.text = "No levels found."
 		return
+	_title_shows_restored = Game.book_complete()
+	if _title_shows_restored:
+		level.show_restored()
 	level.camera.cinematic = true
 	_title_time = 0.0
 	_update_title_camera(0.0)
@@ -362,8 +369,12 @@ func _build_title_buttons() -> void:
 		c.queue_free()
 	var any_done: bool = not (Game.progress["completed"] as Array).is_empty()
 	var shown := String(LevelRegistry.find(title_level_id()).get("name", title_level_id()))
-	var first := _title_button(_title_buttons, ("Continue: %s" if any_done else "Begin: %s") % shown, start_game)
-	_title_button(_title_buttons, "Chapters", _show_chapters)
+	var first: Button
+	if Game.book_complete():
+		first = _title_button(_title_buttons, "Book One complete: Chapters", _show_chapters)
+	else:
+		first = _title_button(_title_buttons, ("Continue: %s" if any_done else "Begin: %s") % shown, start_game)
+		_title_button(_title_buttons, "Chapters", _show_chapters)
 	if any_done:
 		_title_button(_title_buttons, "Begin anew", new_journey)
 	_title_beads.refresh()
@@ -404,8 +415,7 @@ func _show_chapters() -> void:
 		var bead := Color(String(e.get("bead_color", "#efe6d2")))
 		dot.draw.connect(func() -> void:
 			if done:
-				dot.draw_circle(Vector2(11, 11), 8.0, bead)
-				dot.draw_arc(Vector2(11, 11), 8.0, 0.0, TAU, 24, Palette.INK, 1.6, true)
+				BeadCord.draw_bead(dot, Vector2(11, 11), 8.0, bead)
 			else:
 				dot.draw_arc(Vector2(11, 11), 5.0, 0.0, TAU, 20, UiKit.INK_FAINT, 1.3, true))
 		row.add_child(dot)
@@ -445,7 +455,7 @@ func choose_level(id: StringName) -> void:
 		return
 	Audio.play_sfx(&"ui_accept")
 	title_ready = false
-	if level != null and level.level_id == id:
+	if level != null and level.level_id == id and not _title_shows_restored:
 		_show_intro()
 		return
 	Game.set_state(Game.STATE_CUTSCENE)

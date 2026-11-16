@@ -244,6 +244,14 @@ func mark_level_complete(id: StringName, next_id: StringName) -> void:
 	apply_beads()
 
 
+## True when every level of the book is finished on this save.
+func book_complete() -> bool:
+	for entry: Dictionary in LevelRegistry.levels():
+		if not is_level_completed(StringName(entry["id"])):
+			return false
+	return true
+
+
 ## True once the control prompt id has been shown on this save.
 func taught(id: StringName) -> bool:
 	return String(id) in progress["taught"]

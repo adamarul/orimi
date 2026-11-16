@@ -444,6 +444,12 @@ func run_finale(zone: CursedZone) -> void:
 	complete()
 
 
+## Behind the title of a finished book: show the level as the player left it, restored, with no
+## events. The default leaves it as built; a level overrides it when it has a restored look.
+func show_restored() -> void:
+	pass
+
+
 ## Start at a marker with the level's state set as if the player had got there (warp=<marker>).
 ## The data file's "warps" section names flags to set first; override _on_warp for more.
 func apply_warp(marker_name: String) -> bool:
