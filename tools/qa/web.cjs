@@ -198,7 +198,7 @@ class Session {
     if (this.opts.name.startsWith('selftest')) return rel(full);
     const jpg = file.replace(/\.png$/, '.jpg');
     const stack = r.startsWith('docs/qa/stack/');
-    spawnSync(PYTHON, ['-I', path.join(projectRoot, 'tools', 'qa', 'shrink.py'), full, jpg, stack ? '1280' : '960', stack ? '80' : '70']);
+    spawnSync(PYTHON, ['-I', path.join(projectRoot, 'tools', 'qa', 'shrink.py'), full, jpg, stack ? '1280' : '960', stack ? '72' : '62']);
     return rel(jpg);
   }
 

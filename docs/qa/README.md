@@ -84,8 +84,8 @@ file, e.g. `| ink_toon.gdshader | band_soft | ... |`.
 
 ## Evidence size
 
-docs/qa/ stays near 5 MB. Captures go under docs/ as JPEGs (stack 1280 px at quality 80, other
-evidence 960 px at quality 70, by tools/qa/shrink.py); the full-size PNGs used for image statistics,
+docs/qa/ stays near 5 MB. Captures go under docs/ as JPEGs (stack 1280 px at quality 72, other
+evidence 960 px at quality 62, by tools/qa/shrink.py); the full-size PNGs used for image statistics,
 whole console logs, export and desktop logs stay under .userdata/qa/ (not committed). Logs under
 docs/ are the marker and error lines plus a tail. Self-test captures never go under docs/. The
 paper screenshots in docs/screenshots/ stay PNG because README shows them.
