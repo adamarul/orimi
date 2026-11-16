@@ -2,6 +2,5 @@
 assets_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_assets_demo.md 3 criteria ok
 brush_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_brush_demo.md 3 criteria ok
 gameplay_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_gameplay_demo.md 3 criteria ok
-render_demo: QA_RESULT FAIL docs/qa/evidence/web_smoke_render_demo.md 2 failing; first: no console/page errors: console error: ERROR: Condition "!is_inside_tree()" is true. Returning: Transform3D()
-QA_RESULT FAIL - runner crashed
+render_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_render_demo.md 3 criteria ok
 vfx_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_vfx_demo.md 3 criteria ok

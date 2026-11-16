@@ -3,11 +3,10 @@
 Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
 Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3080
 
-ORIMI_BOOT t=3.41s options={"scene":"res://scenes/dev/render_demo.tscn","screenshot":"<project>/.userdata/qa/full/desktop_render_demo.png","shot_after":"5"}
-ORIMI_FIRST_FRAME t=3.65s scene=res://scenes/dev/render_demo.tscn renderer=forward_plus driver=vulkan adapter=NVIDIA GeForce RTX 3080 api=1.4.351 display=Windows
-ORIMI_FPS fps=105
-ORIMI_FPS fps=143
+ORIMI_BOOT t=3.21s options={"scene":"res://scenes/dev/render_demo.tscn","screenshot":"<project>/.userdata/qa/full/desktop_render_demo.png","shot_after":"5"}
+ORIMI_FIRST_FRAME t=4.26s scene=res://scenes/dev/render_demo.tscn renderer=forward_plus driver=vulkan adapter=NVIDIA GeForce RTX 3080 api=1.4.351 display=Windows
+ORIMI_FPS fps=112
+ORIMI_FPS fps=129
 ORIMI_FPS fps=141
-ORIMI_FPS fps=125
-ORIMI_FPS fps=141
+ORIMI_FPS fps=120
 ORIMI_SCREENSHOT path=<project>/.userdata/qa/full/desktop_render_demo.png size=1280x720

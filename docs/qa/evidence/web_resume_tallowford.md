@@ -2,18 +2,18 @@
 
 url query: scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn
 chrome: Chrome/157.0.8103.51; webgl: {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-first frame: ORIMI_FIRST_FRAME t=0.67s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (10097 ms)
+first frame: ORIMI_FIRST_FRAME t=0.70s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (10344 ms)
 
 
 | result | criterion | detail |
 | - | - | - |
-| ok | tallowford played through and progress saved | progress_saved {"completed":["hazewater","tallowford"],"current":"sedge_plain","stats":{"tallowford":{"deaths":0,"kills":7,"time":148}},"taught":["move","jump","fight"]} |
-| ok | saved progress loads after a page reload | progress_loaded {"completed":["hazewater","tallowford"],"current":"sedge_plain","from":"localStorage","stats":{"tallowford":{"deaths":0,"kills":7,"time":148}},"taught":["move","jump","fight"]} |
+| ok | tallowford played through and progress saved | progress_saved {"completed":["hazewater","tallowford"],"current":"sedge_plain","stats":{"tallowford":{"deaths":0,"kills":7,"time":147}},"taught":["move","jump","fight"]} |
+| ok | saved progress loads after a page reload | progress_loaded {"completed":["hazewater","tallowford"],"current":"sedge_plain","from":"localStorage","stats":{"tallowford":{"deaths":0,"kills":7,"time":147}},"taught":["move","jump","fight"]} |
 | ok | the title shows sedge_plain behind it | title_ready level sedge_plain |
 | ok | the title offers Continue | buttons: Continue: Sedge Plain, Chapters, Begin anew |
 | ok | Continue starts sedge_plain | level sedge_plain, state playing |
 | ok | Continue keeps the 2 beads earned up to tallowford | beads 2, ink_max 140 |
-| ok | no console/page errors | 985 console lines |
+| ok | no console/page errors | 981 console lines |
 
 screenshots: docs/qa/evidence/web_resume_tallowford_title.jpg, docs/qa/evidence/web_resume_tallowford_continued.jpg
 console log: docs/qa/evidence/web_resume_tallowford_console.txt

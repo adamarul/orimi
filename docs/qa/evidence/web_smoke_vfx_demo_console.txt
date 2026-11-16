@@ -1,27 +1,27 @@
 # 23 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_smoke_vfx_demo_console.txt
-   0.82 # url http://127.0.0.1:58545/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fvfx_demo.tscn
+   1.41 # url http://127.0.0.1:64062/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fvfx_demo.tscn
 # ...
-   0.82 # url http://127.0.0.1:58545/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fvfx_demo.tscn
-   0.82 # chrome Chrome/157.0.8103.51 viewport 1280x720 
-   5.57 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-   9.00 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
-   9.24 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
-   9.84 [log] ORIMI_BOOT t=4.34s options={"scene":"res://scenes/dev/vfx_demo.tscn"}
-  21.04 [log] ORIMI_FIRST_FRAME t=15.54s scene=res://scenes/dev/vfx_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
-  21.10 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-  21.77 [log] ORIMI_FPS fps=65 process_ms=6.20 [t=16.27s]
-  22.05 [log] VFX_PEAK n=1 id=sky_cursed t=1.00
-  22.77 [log] ORIMI_FPS fps=144 process_ms=2.80 [t=17.27s]
-  23.78 [log] ORIMI_FPS fps=144 process_ms=3.10 [t=18.28s]
-  24.72 [log] VFX_PEAK n=2 id=sky_restored t=1.00
-  24.78 [log] ORIMI_FPS fps=144 process_ms=3.50 [t=19.28s]
-  25.79 [log] ORIMI_FPS fps=144 process_ms=3.00 [t=20.29s]
-  26.79 [log] ORIMI_FPS fps=144 process_ms=3.80 [t=21.30s]
-  26.97 [log] VFX_PEAK n=3 id=foliage_curse t=0.67
-  27.80 [log] ORIMI_FPS fps=144 process_ms=3.10 [t=22.30s]
-  28.80 [log] ORIMI_FPS fps=144 process_ms=2.60 [t=23.30s]
-  29.91 [log] VFX_PEAK n=4 id=river_mist t=0.83
-  29.91 [log] ORIMI_FPS fps=144 process_ms=3.00 [t=24.31s]
-  30.81 [log] ORIMI_FPS fps=144 process_ms=2.60 [t=25.32s]
-  31.82 [log] ORIMI_FPS fps=144 process_ms=3.40 [t=26.32s]
+   1.41 # url http://127.0.0.1:64062/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fvfx_demo.tscn
+   1.41 # chrome Chrome/157.0.8103.51 viewport 1280x720 
+   5.41 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+   8.73 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+   8.97 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+   9.57 [log] ORIMI_BOOT t=4.24s options={"scene":"res://scenes/dev/vfx_demo.tscn"}
+  20.40 [log] ORIMI_FIRST_FRAME t=15.07s scene=res://scenes/dev/vfx_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  20.46 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+  21.14 [log] ORIMI_FPS fps=1 process_ms=5.70 [t=15.81s]
+  21.49 [log] VFX_PEAK n=1 id=sky_cursed t=1.00
+  22.14 [log] ORIMI_FPS fps=134 process_ms=4.50 [t=16.81s]
+  23.15 [log] ORIMI_FPS fps=144 process_ms=4.10 [t=17.82s]
+  24.07 [log] VFX_PEAK n=2 id=sky_restored t=1.00
+  24.16 [log] ORIMI_FPS fps=144 process_ms=3.30 [t=18.83s]
+  25.17 [log] ORIMI_FPS fps=144 process_ms=2.50 [t=19.84s]
+  26.17 [log] ORIMI_FPS fps=144 process_ms=3.20 [t=20.84s]
+  26.32 [log] VFX_PEAK n=3 id=foliage_curse t=0.67
+  27.18 [log] ORIMI_FPS fps=144 process_ms=3.90 [t=21.85s]
+  28.19 [log] ORIMI_FPS fps=144 process_ms=3.50 [t=22.86s]
+  29.25 [log] VFX_PEAK n=4 id=river_mist t=0.83
+  29.25 [log] ORIMI_FPS fps=144 process_ms=3.30 [t=23.86s]
+  30.20 [log] ORIMI_FPS fps=144 process_ms=2.70 [t=24.87s]
+  31.21 [log] ORIMI_FPS fps=144 process_ms=3.20 [t=25.88s]
