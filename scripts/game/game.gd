@@ -37,8 +37,8 @@ var level: Level = null
 var valley: Node3D = null
 ## Saved between sessions (user://progress.json, IndexedDB and localStorage in the browser):
 ## {"completed": [level ids], "current": level id to continue from, "taught": [control prompt ids
-## already shown]}.
-var progress: Dictionary = {"completed": [], "current": "", "taught": []}
+## already shown], "stats": {level id: {"time", "kills", "deaths"} of its latest completion}}.
+var progress: Dictionary = {"completed": [], "current": "", "taught": [], "stats": {}}
 ## level=<id>: start straight in that level (and autoplay only that level).
 var start_level: StringName = &""
 ## Zone ids restored so far this run, in order.
@@ -193,6 +193,7 @@ func load_progress() -> void:
 		progress["completed"] = (parsed as Dictionary).get("completed", [])
 		progress["current"] = String((parsed as Dictionary).get("current", ""))
 		progress["taught"] = (parsed as Dictionary).get("taught", [])
+		progress["stats"] = (parsed as Dictionary).get("stats", {})
 	var info := progress.duplicate()
 	info["from"] = from
 	qa_log("progress_loaded", info)
@@ -214,7 +215,7 @@ func save_progress() -> void:
 
 
 func reset_progress(save: bool = true) -> void:
-	progress = {"completed": [], "current": "", "taught": []}
+	progress = {"completed": [], "current": "", "taught": [], "stats": {}}
 	if save:
 		save_progress()
 	apply_beads()
@@ -229,6 +230,7 @@ func mark_level_complete(id: StringName, next_id: StringName) -> void:
 	if not String(id) in progress["completed"]:
 		(progress["completed"] as Array).append(String(id))
 	progress["current"] = String(next_id)
+	(progress["stats"] as Dictionary)[String(id)] = {"time": int((Time.get_ticks_msec() - run_started_msec) / 1000), "kills": kills, "deaths": deaths}
 	save_progress()
 	apply_beads()
 
@@ -244,6 +246,19 @@ func teach(id: StringName) -> void:
 		return
 	(progress["taught"] as Array).append(String(id))
 	save_progress()
+
+
+## Time, kills and deaths summed over the book's levels, or {} until every one has been finished.
+func book_totals() -> Dictionary:
+	var out := {"time": 0, "kills": 0, "deaths": 0, "levels": 0}
+	for entry: Dictionary in LevelRegistry.levels():
+		var s: Variant = (progress["stats"] as Dictionary).get(String(entry["id"]))
+		if not s is Dictionary:
+			return {}
+		for k: String in ["time", "kills", "deaths"]:
+			out[k] += int((s as Dictionary).get(k, 0))
+		out["levels"] += 1
+	return out
 
 
 ## One colour per completed level that has a bead, in registry order.

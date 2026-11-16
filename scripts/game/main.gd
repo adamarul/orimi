@@ -587,8 +587,19 @@ func _show_end(l: Level) -> void:
 		if entry.has("bead"):
 			head += "\n\nThe %s bead is on Orimi's cord." % String(entry["bead"])
 	var beads := Game.bead_colors().size()
-	_end_stats.text = head + "\n\n%s  %d:%02d      %s  %d      %s  %d      %s  %d" % [
-		UiKit.key("Time"), int(secs) / 60, int(secs) % 60, UiKit.key("Ink-spawn undone"), Game.kills, UiKit.key("Falls"), Game.deaths, UiKit.key("Beads"), beads]
+	# The last level of a finished book counts the whole book (each level's latest completion);
+	# anywhere else the numbers are this level's and say so.
+	var totals := Game.book_totals() if LevelRegistry.in_book(l.level_id) and LevelRegistry.next_after(l.level_id) == &"" else {}
+	var scope := "This level"
+	var kills := Game.kills
+	var deaths := Game.deaths
+	if not totals.is_empty():
+		scope = "The whole book, %d levels" % int(totals["levels"])
+		secs = float(totals["time"])
+		kills = int(totals["kills"])
+		deaths = int(totals["deaths"])
+	_end_stats.text = head + "\n\n[i]%s[/i]\n%s  %d:%02d      %s  %d      %s  %d      %s  %d" % [
+		scope, UiKit.key("Time"), int(secs) / 60, int(secs) % 60, UiKit.key("Ink-spawn undone"), kills, UiKit.key("Falls"), deaths, UiKit.key("Beads"), beads]
 	# Only a book level without its own ending says the book goes on: never the last level (it
 	# has end_text) and never a dev level played on its own.
 	var footer := not l.data.has("end_text") and LevelRegistry.in_book(l.level_id) and LevelRegistry.book_unfinished()
@@ -600,6 +611,7 @@ func _show_end(l: Level) -> void:
 	await _fit_card(_end)
 	var info := Game.debug_snapshot()
 	info["footer"] = footer
+	info["stats"] = {"scope": scope, "time": int(secs), "kills": kills, "deaths": deaths, "beads": beads}
 	Game.qa_log("end_card", info)
 
 
