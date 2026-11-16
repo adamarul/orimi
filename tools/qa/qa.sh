@@ -132,7 +132,11 @@ web_input | web_brush | web_full | web_manual | web_perf | web_paper) web "${che
 web_level) web level --name level_example level=example "$@" ;;
 web_level_*) id="${check#web_level_}"; web level --name "level_$id" "level=$id" "$@" ;;
 web_perf_tallowford) web perf --name perf_tallowford level=tallowford warp=M_Square kindle=1 "$@" ;;
+web_perf_sedge_plain) web perf --name perf_sedge_plain level=sedge_plain warp=M_Knoll "$@" ;;
+web_perf_mosswater) web perf --name perf_mosswater level=mosswater warp=M_DarkHollow kindle=1 "$@" ;;
+web_perf_kiln) web perf --name perf_kiln level=hollow_kiln warp=M_Arena_Entry walk=2 expect_qa=dregs_part "$@" ;;
 web_resume) web resume "$@" ;;
+web_resume_*) id="${check#web_resume_}"; web resume --name "resume_$id" "after=$id" "$@" ;;
 packed_exports) py packed_exports.py "$@" ;;
 paper_desktop)
 	[ -f "$MAIN_SCENE" ] || result NOT_YET - "$MAIN_SCENE not delivered; no valley to capture"
@@ -163,7 +167,9 @@ stack)
 	[ -f "$MAIN_SCENE" ] || result NOT_YET - "$MAIN_SCENE not delivered; the full run captures the stack"
 	n="$(ls docs/qa/stack/web_*.jpg 2>/dev/null | wc -l)"
 	head -1 docs/qa/evidence/web_full.md 2>/dev/null | grep -q '(PASS)' || result FAIL docs/qa/stack "the last full run did not pass, so its captures are not a finished stack (docs/qa/evidence/web_full.md)"
-	old="$(find docs/qa/stack -name 'web_*.jpg' ! -newer docs/qa/evidence/web_full_console.txt -mmin +30 2>/dev/null | head -1)"
+	since=.userdata/qa/logs/web_full_started
+	[ -f "$since" ] || since=docs/qa/evidence/web_full_console.txt
+	old="$(find docs/qa/stack -name 'web_*.jpg' ! -newer "$since" 2>/dev/null | head -1)"
 	[ -z "$old" ] || result FAIL docs/qa/stack "capture older than the last full run: $old"
 	[ "$n" -ge 8 ] && result PASS docs/qa/stack "$n web captures from the full run; visual sign-off is in docs/qa/STATUS.md"
 	result FAIL docs/qa/stack "only $n stack capture(s); the full run did not reach the events that trigger them" ;;

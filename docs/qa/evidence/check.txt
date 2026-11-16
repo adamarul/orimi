@@ -1,8 +1,9 @@
 == import
 == load every script, scene and resource inside the running game
-ORIMI_CHECK_DONE files=255 failed=0
+ORIMI_CHECK_DONE files=442 failed=0
 ok   load check
 == boot main scene headless (quit_after=3)
 ok   boot run
+ok   scenes keep instanced-child overrides in a web export
 full log: <project>/.userdata/logs/check.log
 CHECK PASSED

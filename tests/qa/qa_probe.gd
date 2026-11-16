@@ -12,7 +12,7 @@ extends Node
 ##   {"tag":"perf", ...}                                      frame-time statistics since the last
 ##     perf_reset, on demand
 ## On web, page JavaScript sends commands through window.orimiQA("snap" | "targets" | "perf" |
-## "perf_reset" | "paper:<0..2>" | "kindle_all"). On desktop the same commands can be given as qa_cmd_at=<s>:<cmd>.
+## "perf_reset" | "paper:<0..2>" | "kindle_all" | "completed:<id,id>"). On desktop the same commands can be given as qa_cmd_at=<s>:<cmd>.
 
 const PREFIX := "QAPROBE:"
 
@@ -103,6 +103,12 @@ func command(cmd: String) -> void:
 			if t.get(&"lit") == true:
 				lit += 1
 		_emit({"tag": "kindled_all", "lit": lit, "total": targets.size()})
+	elif cmd.begins_with("completed:"):
+		for id in cmd.get_slice(":", 1).split(",", false):
+			if not id in Game.progress["completed"]:
+				(Game.progress["completed"] as Array).append(id)
+		Game.apply_beads()
+		_emit({"tag": "completed_set", "completed": Game.progress["completed"].duplicate()})
 	elif cmd.begins_with("paper:"):
 		Settings.paper_intensity = int(cmd.get_slice(":", 1))
 		_emit(_snapshot())

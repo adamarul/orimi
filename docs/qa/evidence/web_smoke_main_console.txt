@@ -1,15 +1,15 @@
 # 11 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_smoke_main_console.txt
-   0.78 # url http://127.0.0.1:58560/index.html
+   1.23 # url http://127.0.0.1:61339/index.html
 # ...
-   0.78 # url http://127.0.0.1:58560/index.html
-   0.78 # chrome Chrome/157.0.8103.51 viewport 1280x720 
-   4.12 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-   7.25 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
-   7.51 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
-   8.19 [log] ORIMI_BOOT t=4.15s options={}
-   8.88 [log] ORIMI_FIRST_FRAME t=4.84s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
-   9.01 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
-   9.37 [log] QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
-  20.58 [log] QA:{"data":{"enemies":9,"level":"hazewater","markers":13},"tag":"level_built"}
-  20.59 [log] QA:{"data":{"level":"hazewater","t":16.55},"tag":"title_ready"}
+   1.23 # url http://127.0.0.1:61339/index.html
+   1.23 # chrome Chrome/157.0.8103.51 viewport 1280x720 
+   5.21 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+   8.85 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+   9.09 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+   9.69 [log] ORIMI_BOOT t=4.57s options={}
+  10.38 [log] ORIMI_FIRST_FRAME t=5.26s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  10.52 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+  10.91 [log] QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
+  22.79 [log] QA:{"data":{"enemies":9,"level":"hazewater","markers":13},"tag":"level_built"}
+  22.80 [log] QA:{"data":{"level":"hazewater","t":17.68},"tag":"title_ready"}
