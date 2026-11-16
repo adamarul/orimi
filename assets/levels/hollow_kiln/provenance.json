@@ -1,0 +1,336 @@
+{
+ "generator": "tools/levels/hollow_kiln/gen.sh",
+ "command": "tools/levels/hollow_kiln/gen.sh",
+ "outputs": [
+  {
+   "path": "assets/levels/hollow_kiln/models/bellows.glb",
+   "sha256": "639488cdfbee612ebf33b595ebab0514155e714eebc1b68e534e081bb1612eca",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh bellows"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/brazier.glb",
+   "sha256": "6e3c760ad9f5022705e3401a86fae44d2e6620097c54f1a5191aac948dba5ec3",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh brazier"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/cord_gate.glb",
+   "sha256": "5745d4650b687236219fd548c91382753d5568854b4af46a69b206a6de1c5b31",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh cord_gate"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/counterweight.glb",
+   "sha256": "d136dbfbc9a8c7b373c36500eba725dd92fe2021ccc062b15a83bdd2f9cc37ea",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh counterweight"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/dregs.glb",
+   "sha256": "c5b64a0aa7bd885958d91b6196046546daa5bab57b9617d5e136df39f7f8c934",
+   "generator": "tools/levels/hollow_kiln/make_dregs.py",
+   "command": "tools/levels/hollow_kiln/gen.sh dregs"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/drying_rack.glb",
+   "sha256": "322a578648c7638678286e489e2b0b39c42d252fab067042fc83de95b51c3390",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh drying_rack"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/far.glb",
+   "sha256": "89e90f868ef8ea879a071d85dfa80221556aa611dc9b2704a33b0bd4f695ac38",
+   "generator": "tools/levels/hollow_kiln/make_architecture.py",
+   "command": "tools/levels/hollow_kiln/gen.sh far"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/flue.glb",
+   "sha256": "5dcaaec9c592174ff12a2c2d3eb21e1e01fe30b111560ecb3634a4ac22c15414",
+   "generator": "tools/levels/hollow_kiln/make_architecture.py",
+   "command": "tools/levels/hollow_kiln/gen.sh flue"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/ground_n.glb",
+   "sha256": "da84bafd8722afc546a82aa11761c6f876d3f625551e910919a0a0b4f05cbf3c",
+   "generator": "tools/levels/hollow_kiln/make_architecture.py",
+   "command": "tools/levels/hollow_kiln/gen.sh ground_n"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/ground_s.glb",
+   "sha256": "d07d150fe404781beb335b959581246408f7a05d52b9d1429692abe0d21825c9",
+   "generator": "tools/levels/hollow_kiln/make_architecture.py",
+   "command": "tools/levels/hollow_kiln/gen.sh ground_s"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/hall.glb",
+   "sha256": "5ce1ecf0c6ef3edc32a20e9f13136039a8066aa8b32b43091ec0c5e09d6fc349",
+   "generator": "tools/levels/hollow_kiln/make_architecture.py",
+   "command": "tools/levels/hollow_kiln/gen.sh hall"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/ink_pool.glb",
+   "sha256": "6ef88ce56b53fadb5b9f3f0cc46f28f92781e549d82c324d7011cd34422d5d71",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh ink_pool"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/jars.glb",
+   "sha256": "8b21b51447c5f199d34c023a42a49c4cbd0e56c3e7dd7af6875236295fa73648",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh jars"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/kiln.glb",
+   "sha256": "b3adf8ac32d36c854766324fb7f5bf71e1e0c6355dcbf72d550075747d827562",
+   "generator": "tools/levels/hollow_kiln/make_architecture.py",
+   "command": "tools/levels/hollow_kiln/gen.sh kiln"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/kiln_fire.glb",
+   "sha256": "7b4dcd84feffbe97cffb2c14408a675d678f8d6d1205330db355db61bc83dd17",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh kiln_fire"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/moss_foothold.glb",
+   "sha256": "03459e1b4718d698c2b465ed36cee1591edd5206060eeba4d09024c46d1582c8",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh moss_foothold"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/pillar_ring.glb",
+   "sha256": "76d1248c80ca03bad8240c2a048770f3595166cb9d4cb1e6e67bff23a8ab2820",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh pillar_ring"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/raft_jetty.glb",
+   "sha256": "947b7f0969f5beda2935a3de44ca228b2624aef19a6a702e6db5df888dc9d3ec",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh raft_jetty"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/tie_post.glb",
+   "sha256": "fcac350f5280839f43e7444621c183b0cee2aa54be5359dcc54196727a013163",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh tie_post"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/vat.glb",
+   "sha256": "fd2872055f94e0995060fadf737ff8b1cacc1e250c95c3f12cdf3f11f86a5032",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh vat"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/vat_tree.glb",
+   "sha256": "662a8c1e58efb17772142e760a0877928dcf46ecfefef0f5c24c2c16c98f5d0c",
+   "generator": "tools/levels/hollow_kiln/make_tree.py",
+   "command": "tools/levels/hollow_kiln/gen.sh vat_tree"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/wall_lamp.glb",
+   "sha256": "15f188fa9e8be0882697d2a55eb4fd7c8f94ef5fb969e86060428ada8a7e618c",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh wall_lamp"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/water.glb",
+   "sha256": "429f0e9eaea72c27a272c999ea1bf537a90a44a4ed93641ca4169fec9adf58b5",
+   "generator": "tools/levels/hollow_kiln/make_architecture.py",
+   "command": "tools/levels/hollow_kiln/gen.sh water"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/woodpile.glb",
+   "sha256": "104e27ca306b0e4a105da49a608d3e21024a1dd505f48298e8d0f6731f73f3f0",
+   "generator": "tools/levels/hollow_kiln/make_props.py",
+   "command": "tools/levels/hollow_kiln/gen.sh woodpile"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/models/yard.glb",
+   "sha256": "21946b366f4b186233a4995cf71d35ac9adaef4b805a138f7f531a71b1d729ea",
+   "generator": "tools/levels/hollow_kiln/make_architecture.py",
+   "command": "tools/levels/hollow_kiln/gen.sh yard"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/bellows.png",
+   "sha256": "c68a7dc3fedcabaf6a0461f565a038b1ab011db6ac64a14cd7db90bc2a7ec5b2",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh bellows"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/brazier.png",
+   "sha256": "84eb899ff3e47d0f4fb7b836dec35e61819deec2eeacfb62dd197306a9e72f98",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh brazier"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/cord_gate.png",
+   "sha256": "a67b66eabd739ce316691bce4a8c3ec5ab665de02315c1ef6061c12431b4e231",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh cord_gate"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/counterweight.png",
+   "sha256": "0ce976be1cb6bbf90680082acea5582e985e66e33f9ffae8d43a525238adc61a",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh counterweight"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/dregs.png",
+   "sha256": "d2bb47eeeaa3b0b201554ed3dda83cf46fc74d02744c5eb371d486751a089ca7",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh dregs"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/drying_rack.png",
+   "sha256": "10135ada1052e1789c1dbbcff9d92d590b0bc5f9248b7b1f5bf03bc324f9c8c6",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh drying_rack"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_board.png",
+   "sha256": "9935b0c617a85815b3cfcac011bd52d5f0b4aeb0189a66dbbd09aef127598f85",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_brick.png",
+   "sha256": "1fc41c9379cc4608785604a246f831d4b3801b36eb7453a2b5eb2b08dd83b891",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_far.png",
+   "sha256": "e02144827b267caf53b82ab54c01abc9d84f262bc06b4210f0553e1d45b73200",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_flag.png",
+   "sha256": "d2240b7aa5428c46e4489ac8531d0a2f346333a13bc2be0551e6f6e2e0f37fba",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_ground.png",
+   "sha256": "a179f06bc7d5b98ba4d7d96eb0b53d63c774592781980b6c5cb265810889be34",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_ink.png",
+   "sha256": "59168a24c00a3446d81ce0e8ba598c04ef93b79e42427170b649530e0233c53b",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_iron.png",
+   "sha256": "f27f91c9f4964bc72aa6053caa9c63e46cd704bf9bdc0400d6a64b2f16592b6a",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_paper.png",
+   "sha256": "aaab20b058067e5bf3e5df013a0460857af3249dd857f69a9f400a5a54242871",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_plank.png",
+   "sha256": "8476de56a7041606a09185540acc330b3db5d718c8a488dfd0f905aa8d85ca1d",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_plaster.png",
+   "sha256": "98abc0cf9592d3734722fee7d45937cd6a7d767ba4c707004247062e110ab018",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_roof.png",
+   "sha256": "67987c15448f7d9277387cd9a129302e9c7c72e21cd3d92ec33708ff07fdd4c9",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_stone.png",
+   "sha256": "c5077e418da82e84285573941aa3f919fc84999eb60d7defb586e07ae87722ef",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/hk_timber.png",
+   "sha256": "ee3dea07eb2c7f5c2ded94573a5472c3109fd3bb7945ae1423a5ae82b012c04a",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh textures"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/ink_pool.png",
+   "sha256": "1f5bb8294b3ff0c9291b75678d7bd5be9e576a70e9895bdb61383478d23a575f",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh ink_pool"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/jars.png",
+   "sha256": "df2e6b96ea6d1272e5360b607cc3bafdb8d444d0f50d08a17686860bc58652ec",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh jars"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/kiln_fire.png",
+   "sha256": "4deb7a9fd7314aed6b738c21f881474007317f118cd835ac644f4bb8af968f93",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh kiln_fire"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/moss_foothold.png",
+   "sha256": "b0fb49d6eda00e48a2042ce37c8c0ecdb390bf43b58f5ce2fb14186a8d8c8a95",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh moss_foothold"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/pillar_ring.png",
+   "sha256": "16ccf83ee4df70ef5861fd0305b732e63e9e01ab0384661eb97210a29711803a",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh pillar_ring"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/raft_jetty.png",
+   "sha256": "bd14c8f7bb57ac73ab89933c55a07d3530e85f80c4d4ec7ccf1a931fa122e7ca",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh raft_jetty"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/tie_post.png",
+   "sha256": "4e2caa18ac8099beb828ad92b5d093b89fb9937ca670f6014c667528e0ec2278",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh tie_post"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/vat.png",
+   "sha256": "2b93e5980f20d698fe342da27eb5e57838f71653bea07b9166ce257af38156ff",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh vat"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/vat_tree.png",
+   "sha256": "bc3c44d87dd6abc6687fbcb49dc96f3c61f04a0f9bbc8dd104e3a5bf7fdd43d7",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh vat_tree"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/wall_lamp.png",
+   "sha256": "1688c5516f979c23e46b0446ebbe3a01957b595d2ffb981a7598148a3daac016",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh wall_lamp"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/textures/woodpile.png",
+   "sha256": "eef16cc0f6ca2464ea59345caf1b4ca6ce5cf91b03429e7df46f3107b736ac22",
+   "generator": "tools/levels/hollow_kiln/paint_kiln.py",
+   "command": "tools/levels/hollow_kiln/gen.sh woodpile"
+  }
+ ]
+}

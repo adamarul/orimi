@@ -1,0 +1,488 @@
+[gd_scene load_steps=48 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/kit/level.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/game/kit/person.gd" id="2_person"]
+[ext_resource type="Script" path="res://scripts/game/glyph_obstacle.gd" id="3_obstacle"]
+[ext_resource type="Script" path="res://scripts/game/kit/sealed_fight.gd" id="4_fight"]
+[ext_resource type="Script" path="res://scripts/game/kit/enemy_spawn.gd" id="5_spawn"]
+[ext_resource type="Script" path="res://scripts/game/cursed_zone.gd" id="6_zone"]
+[ext_resource type="PackedScene" path="res://scenes/models/folk/folk_lampmaker.tscn" id="7_mender"]
+[ext_resource type="Script" path="res://scripts/game/kit/verse_stone.gd" id="9_stone"]
+[ext_resource type="Script" path="res://scripts/game/kit/cursed_ground.gd" id="10_ground"]
+[ext_resource type="Script" path="res://scripts/game/kit/kindle_target.gd" id="11_kindle"]
+[ext_resource type="Script" path="res://scripts/game/kit/tie_post.gd" id="12_tie"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/tie_posts.tscn" id="13_pair"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/checkpoint.tscn" id="14_checkpoint"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/level_exit.tscn" id="15_exit"]
+[ext_resource type="Script" path="res://scripts/game/kit/glyph_target.gd" id="16_target"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/soot_bank.tscn" id="17_soot"]
+[ext_resource type="Script" path="res://scripts/game/kit/camera_zone.gd" id="18_cam"]
+[ext_resource type="PackedScene" path="res://scenes/models/folk/folk_dyer.tscn" id="8_sorrel"]
+[ext_resource type="Script" path="res://scripts/game/kit/deep_water.gd" id="19_water"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/pickup.tscn" id="20_pickup"]
+[ext_resource type="PackedScene" path="res://scenes/levels/example/hover_blot.tscn" id="21_flyer"]
+[ext_resource type="Script" path="res://scenes/levels/example/drifter.gd" id="22_drifter"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/rising_hazard.tscn" id="23_rising"]
+
+[sub_resource type="StandardMaterial3D" id="mat_ground"]
+albedo_color = Color(0.89, 0.83, 0.69, 1)
+roughness = 1.0
+
+[sub_resource type="BoxShape3D" id="shape_boulder"]
+size = Vector3(2.2, 1.8, 2.2)
+
+[sub_resource type="StandardMaterial3D" id="mat_boulder"]
+albedo_color = Color(0.55, 0.54, 0.5, 1)
+roughness = 1.0
+
+[sub_resource type="SphereMesh" id="mesh_boulder"]
+material = SubResource("mat_boulder")
+radius = 1.2
+height = 1.9
+radial_segments = 10
+rings = 6
+
+[sub_resource type="StandardMaterial3D" id="mat_bellows"]
+albedo_color = Color(0.42, 0.29, 0.17, 1)
+roughness = 1.0
+
+[sub_resource type="PrismMesh" id="mesh_bellows"]
+material = SubResource("mat_bellows")
+size = Vector3(1.2, 0.9, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="mat_wall"]
+albedo_color = Color(0.55, 0.42, 0.33, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="mesh_wall"]
+material = SubResource("mat_wall")
+size = Vector3(8, 2.6, 0.4)
+
+[sub_resource type="BoxShape3D" id="shape_wall"]
+size = Vector3(8, 2.6, 0.4)
+
+[sub_resource type="BoxMesh" id="mesh_roof"]
+material = SubResource("mat_wall")
+size = Vector3(8, 0.3, 2.8)
+
+[sub_resource type="BoxShape3D" id="shape_roof"]
+size = Vector3(8, 0.3, 2.8)
+
+[sub_resource type="CylinderMesh" id="mesh_pillar"]
+material = SubResource("mat_wall")
+top_radius = 0.45
+bottom_radius = 0.55
+height = 4.0
+
+[sub_resource type="CylinderShape3D" id="shape_pillar"]
+radius = 0.5
+height = 4.0
+
+[sub_resource type="BoxMesh" id="mesh_ledge"]
+material = SubResource("mat_wall")
+size = Vector3(3, 1, 2.4)
+
+[sub_resource type="BoxShape3D" id="shape_ledge"]
+size = Vector3(3, 1, 2.4)
+
+[sub_resource type="BoxMesh" id="mesh_shore"]
+material = SubResource("mat_wall")
+size = Vector3(4, 0.2, 3.2)
+
+[sub_resource type="BoxShape3D" id="shape_shore"]
+size = Vector3(4, 0.2, 3.2)
+
+[sub_resource type="CylinderMesh" id="mesh_knoll"]
+material = SubResource("mat_ground")
+top_radius = 3.5
+bottom_radius = 12.0
+height = 5.0
+radial_segments = 24
+rings = 1
+
+[sub_resource type="BoxMesh" id="mesh_blind"]
+material = SubResource("mat_wall")
+size = Vector3(0.4, 4, 6)
+
+[sub_resource type="BoxShape3D" id="shape_blind"]
+size = Vector3(0.4, 4, 6)
+
+[sub_resource type="BoxMesh" id="mesh_step"]
+material = SubResource("mat_wall")
+size = Vector3(1.2, 1, 1.2)
+
+[sub_resource type="BoxShape3D" id="shape_step"]
+size = Vector3(1.2, 1, 1.2)
+
+[sub_resource type="PlaneMesh" id="mesh_ground"]
+material = SubResource("mat_ground")
+size = Vector2(70, 80)
+subdivide_width = 8
+subdivide_depth = 8
+
+[node name="Example" type="Node3D"]
+script = ExtResource("1_level")
+level_id = &"example"
+display_name = "Kit Example"
+chapter = "Every Part of the Kit"
+intro_text = "A small paper meadow that uses every part of the level kit once.
+
+Talk to the Mender, cut the thorns, win the sealed fight, wake the grove, and speak to the one it woke."
+start_gloom = 0.6
+ground_overhead = 1.0
+
+[node name="Ground" type="Node3D" parent="." groups=["level_ground"]]
+
+[node name="Plane" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("mesh_ground")
+
+[node name="M_Spawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
+
+[node name="Mender" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 3, 0, 20)
+script = ExtResource("2_person")
+display_name = "The Mender"
+talk_by_flag = {"restored_grove": "mender_after"}
+bark_near = "mender_bark"
+bark_radius = 9.0
+bark_on_flag = {"tied_bridge": "mender_again"}
+model_scene = ExtResource("7_mender")
+hat = "brim"
+robe_color = Color(0.62, 0.69, 0.55, 1)
+
+[node name="VerseStone" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 19)
+script = ExtResource("9_stone")
+teaches = &"slash"
+teach_text = "The stone remembers a straight stroke that cuts: %s."
+
+[node name="ThornGate" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
+script = ExtResource("3_obstacle")
+glyph = &"slash"
+cleared_flag = &"thorns_cut"
+hint_id = &"example_thorns"
+hint_text = "Thorns. Take up the brush and cut straight across them: %s."
+
+[node name="Knot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+script = ExtResource("4_fight")
+fight_id = &"knot"
+requires_flags = PackedStringArray("thorns_cut")
+
+[node name="SpawnA" type="Marker3D" parent="Knot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -1.5)
+script = ExtResource("5_spawn")
+
+[node name="SpawnB" type="Marker3D" parent="Knot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -1.5)
+script = ExtResource("5_spawn")
+
+[node name="SpawnC" type="Marker3D" parent="Knot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+script = ExtResource("5_spawn")
+wave = 1
+
+[node name="Grove" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+script = ExtResource("6_zone")
+zone_id = &"grove"
+display_name = "The Little Grove"
+radius = 9.0
+requires_flags = PackedStringArray("fight_knot")
+
+[node name="Guard" type="Marker3D" parent="Grove"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+script = ExtResource("5_spawn")
+
+[node name="Flyer" type="Marker3D" parent="Grove"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
+script = ExtResource("5_spawn")
+enemy_scene = ExtResource("21_flyer")
+
+[node name="Greyed" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -9)
+script = ExtResource("2_person")
+display_name = "Sorrel"
+model_scene = ExtResource("8_sorrel")
+hat = "paper"
+robe_color = Color(0.84, 0.25, 0.17, 1)
+faded = true
+wake_flag = &"restored_grove"
+bark_on_flag = {"restored_grove": "greyed_wakes"}
+
+[node name="Mire" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 2)
+script = ExtResource("10_ground")
+radius = 7.0
+clear_flag = &"restored_grove"
+
+[node name="M_MireEdge" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
+
+[node name="M_Island" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 1)
+
+[node name="IslandLamp" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+script = ExtResource("11_kindle")
+
+[node name="BoulderTie" parent="." instance=ExtResource("13_pair")]
+
+[node name="PostA" parent="BoulderTie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 5)
+action = "pull"
+pull_target = NodePath("../../Boulder")
+pull_to = NodePath("../M_BoulderAside")
+pull_to_ground = false
+tied_flag = &"tied_post_a"
+
+[node name="PostB" parent="BoulderTie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 5)
+
+[node name="Boulder" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.8, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="Boulder"]
+shape = SubResource("shape_boulder")
+
+[node name="Mesh" type="MeshInstance3D" parent="Boulder"]
+mesh = SubResource("mesh_boulder")
+
+[node name="M_BoulderAside" type="Marker3D" parent="BoulderTie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 1)
+
+[node name="Bridge" parent="." instance=ExtResource("13_pair")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 16)
+
+[node name="IslandCheckpoint" parent="." instance=ExtResource("14_checkpoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 2.2)
+radius = 1.6
+
+[node name="BlindWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2, 33)
+
+[node name="Shape" type="CollisionShape3D" parent="BlindWall"]
+shape = SubResource("shape_blind")
+
+[node name="Mesh" type="MeshInstance3D" parent="BlindWall"]
+mesh = SubResource("mesh_blind")
+
+[node name="HiddenBellows" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 0, 33)
+script = ExtResource("16_target")
+glyphs = PackedStringArray("gust")
+size = Vector3(1.4, 1, 1.4)
+solid = true
+
+[node name="Mesh" type="MeshInstance3D" parent="HiddenBellows"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("mesh_bellows")
+
+[node name="Penned" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 39)
+script = ExtResource("5_spawn")
+territory_radius = 3.0
+
+[node name="TunnelCheckpoint" parent="." instance=ExtResource("14_checkpoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 33)
+radius = 1.8
+
+[node name="Exit" parent="." instance=ExtResource("15_exit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 27)
+requires_flags = PackedStringArray("talked_greyed")
+
+[node name="Bellows" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 21)
+script = ExtResource("16_target")
+glyphs = PackedStringArray("gust")
+clears = Array[NodePath]([NodePath("../SootDrift")])
+size = Vector3(1.4, 1.0, 1.4)
+solid = true
+
+[node name="Mesh" type="MeshInstance3D" parent="Bellows"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("mesh_bellows")
+
+[node name="SootDrift" parent="." instance=ExtResource("17_soot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 14)
+width = 3.0
+height = 2.2
+cleared_flag = &"drift_cleared"
+requires_flags = PackedStringArray("never_set")
+
+[node name="Pell" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 25)
+script = ExtResource("2_person")
+display_name = "Pell"
+model_name = "folk/pell"
+hat = "paper"
+show_flag = &"talked_greyed"
+
+[node name="Tunnel" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 33)
+
+[node name="WallN" type="CollisionShape3D" parent="Tunnel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -1.2)
+shape = SubResource("shape_wall")
+
+[node name="WallS" type="CollisionShape3D" parent="Tunnel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 1.2)
+shape = SubResource("shape_wall")
+
+[node name="Roof" type="CollisionShape3D" parent="Tunnel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
+shape = SubResource("shape_roof")
+
+[node name="WallNMesh" type="MeshInstance3D" parent="Tunnel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -1.2)
+mesh = SubResource("mesh_wall")
+
+[node name="WallSMesh" type="MeshInstance3D" parent="Tunnel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 1.2)
+mesh = SubResource("mesh_wall")
+
+[node name="RoofMesh" type="MeshInstance3D" parent="Tunnel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
+mesh = SubResource("mesh_roof")
+
+[node name="TunnelCam" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.3, 33)
+script = ExtResource("18_cam")
+size = Vector3(8.4, 3, 2.4)
+distance = 2.6
+lock_pitch = true
+pitch_deg = -6.0
+
+[node name="KnotCam" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+script = ExtResource("18_cam")
+size = Vector3(11, 12, 17)
+mode = "frame"
+view = NodePath("../M_KnotView")
+frame_targets = Array[NodePath]([NodePath("../Knot")])
+margin = 4.0
+max_distance = 12.0
+stay_inside = true
+
+[node name="M_KnotView" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906, 0.423, 0, -0.423, 0.906, 0, 6, 14)
+
+[node name="Pillar" type="StaticBody3D" parent="." groups=["camera_fade"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 2, 33)
+
+[node name="Shape" type="CollisionShape3D" parent="Pillar"]
+shape = SubResource("shape_pillar")
+
+[node name="Mesh" type="MeshInstance3D" parent="Pillar"]
+mesh = SubResource("mesh_pillar")
+
+[node name="Ledge" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 31)
+
+[node name="Shape" type="CollisionShape3D" parent="Ledge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("shape_ledge")
+
+[node name="Mesh" type="MeshInstance3D" parent="Ledge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("mesh_ledge")
+
+[node name="Pond" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 28)
+script = ExtResource("19_water")
+size = Vector3(4, 2, 3.5)
+flag = &"fell_in_pond"
+
+[node name="ShoreUp" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9806, 0.1961, 0, -0.1961, 0.9806, -24, 0.202, -0.48)
+
+[node name="Shape" type="CollisionShape3D" parent="ShoreUp"]
+shape = SubResource("shape_shore")
+
+[node name="Mesh" type="MeshInstance3D" parent="ShoreUp"]
+mesh = SubResource("mesh_shore")
+
+[node name="ShoreDown" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9806, -0.1961, 0, 0.1961, 0.9806, -24, 0.202, 2.48)
+
+[node name="Shape" type="CollisionShape3D" parent="ShoreDown"]
+shape = SubResource("shape_shore")
+
+[node name="Mesh" type="MeshInstance3D" parent="ShoreDown"]
+mesh = SubResource("mesh_shore")
+
+[node name="Shore" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 5.5)
+script = ExtResource("19_water")
+size = Vector3(6, 2, 7)
+
+[node name="KnollHill" type="Node3D" parent="." groups=["level_ground"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2.5, -24)
+
+[node name="Mesh" type="MeshInstance3D" parent="KnollHill"]
+mesh = SubResource("mesh_knoll")
+
+[node name="Knoll" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 5, -24)
+script = ExtResource("4_fight")
+fight_id = &"knoll"
+
+[node name="SpawnWraith" type="Marker3D" parent="Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2)
+script = ExtResource("5_spawn")
+kind = &"reedwraith"
+
+[node name="SpawnBlot" type="Marker3D" parent="Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+script = ExtResource("5_spawn")
+
+[node name="SpawnBlot2" type="Marker3D" parent="Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+script = ExtResource("5_spawn")
+
+[node name="MapLeaf" parent="." instance=ExtResource("20_pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 31)
+title = "A leaf of a map"
+text = "the wind took it from somebody's map"
+
+[node name="SnareA" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 21)
+script = ExtResource("12_tie")
+partner = NodePath("../SnareB")
+action = "catch"
+catch_targets = Array[NodePath]([NodePath("../Drifter")])
+
+[node name="SnareB" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 25)
+script = ExtResource("12_tie")
+
+[node name="Drifter" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.1, 23)
+script = ExtResource("22_drifter")
+
+[node name="Sump" parent="." instance=ExtResource("23_rising")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 30)
+top_height = 0.5
+rise_speed = 0.35
+flag = &"lifted_sump"
+
+[node name="SumpStep" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 0, 30)
+
+[node name="Shape" type="CollisionShape3D" parent="SumpStep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("shape_step")
+
+[node name="Mesh" type="MeshInstance3D" parent="SumpStep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("mesh_step")
+
+[node name="M_RaftArrive" type="Marker3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -3, 0, 22)
+
+[node name="M_PastTies" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 9)
+
+[editable path="BoulderTie"]

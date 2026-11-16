@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://c3a5opyiads4l" path="res://assets/levels/tallowford/textures/drying_rack.png" id="1"]
+
+[resource]
+resource_name = "M_tf_drying_rack"
+albedo_texture = ExtResource("1")
+texture_filter = 3

@@ -1,0 +1,729 @@
+{
+ "level": "tallowford",
+ "title": "The Lamps of Tallowford",
+ "markup": "Words in [square brackets] are key words: the talk panel shows them in its one accent colour. Speaker 'narration' is unvoiced text on the panel with no name. Speaker 'prompt' is the kit's glyph prompt.",
+ "speakers": {
+  "pell": {
+   "name": "Pell",
+   "voice": "Ferry child, paper hat. Quick, practical, never explains the plot."
+  },
+  "trim": {
+   "name": "Old Trim",
+   "voice": "The lamp-maker. Slow, dry, proud of his wicks."
+  },
+  "marrow": {
+   "name": "Marrow",
+   "voice": "The dyer. Loud, brisk, warm under it."
+  },
+  "brindle": {
+   "name": "Brindle",
+   "voice": "The well-keeper. Counts things. Worries kindly."
+  },
+  "flax": {
+   "name": "Flax",
+   "voice": "About eight. In charge of her brother, and of everything else."
+  },
+  "pibbet": {
+   "name": "Pibbet",
+   "voice": "About six. One or two words at a time."
+  },
+  "wherry": {
+   "name": "Aunt Wherry",
+   "voice": "Keeps the ferry-house; Pell's aunt. Dry, unflappable."
+  },
+  "baker": {
+   "name": "The baker",
+   "voice": "Neighbour. Round, floury, cheerful."
+  },
+  "netmender": {
+   "name": "The net-mender",
+   "voice": "Neighbour. Thin, quiet, a little rueful."
+  },
+  "fisher": {
+   "name": "The old fisher",
+   "voice": "Neighbour. Leans on a cane; sees the funny side."
+  },
+  "verse": {
+   "name": "Verse-stone",
+   "voice": "The Ink-maker's own words, carved and remembered. Four lines each."
+  },
+  "narration": {
+   "name": "",
+   "voice": "Unvoiced description."
+  },
+  "prompt": {
+   "name": "",
+   "voice": "Kit glyph prompt."
+  }
+ },
+ "scenes": [
+  {
+   "id": "arrival",
+   "beat": 0,
+   "trigger": "Level start: the raft has tied up at M_Raft; Orimi stands at M_Spawn. Plays once.",
+   "where": "M_Person_Pell",
+   "lines": [
+    [
+     "pell",
+     "Here we are. Tallowford."
+    ],
+    [
+     "pell",
+     "You can usually see it from the bend. Every window lit."
+    ],
+    [
+     "pell",
+     "Not one tonight. Not even old [Trim]'s, and he never lets his go out."
+    ],
+    [
+     "pell",
+     "His house is just up the road. I'll mind the raft."
+    ]
+   ]
+  },
+  {
+   "id": "pell_idle_1",
+   "beat": 0,
+   "trigger": "Talk to Pell at the raft before Trim's lamp is lit. Repeats.",
+   "where": "M_Person_Pell",
+   "lines": [
+    [
+     "pell",
+     "Trim's. Up the road. The house with all the lanterns."
+    ]
+   ]
+  },
+  {
+   "id": "trim_grey",
+   "beat": 1,
+   "trigger": "Talk to Old Trim while he is grey. Repeats.",
+   "where": "M_Person_Trim",
+   "lines": [
+    [
+     "narration",
+     "Old Trim stands grey and still, one hand raised to a cold wick."
+    ]
+   ]
+  },
+  {
+   "id": "verse_1_near",
+   "beat": 1,
+   "trigger": "Orimi comes within 4 m of verse-stone 1 while it is grey. Once.",
+   "where": "M_Verse_1",
+   "lines": [
+    [
+     "narration",
+     "A stone carved with verse. The letters have gone grey, as if they're thirsty."
+    ],
+    [
+     "prompt",
+     "Draw a circle round it: [Bloom]."
+    ]
+   ]
+  },
+  {
+   "id": "verse_1",
+   "beat": 1,
+   "trigger": "Bloom on verse-stone 1. The stone speaks, then grants Kindle.",
+   "where": "M_Verse_1",
+   "lines": [
+    [
+     "verse",
+     "I came here for the black inside your lamps,"
+    ],
+    [
+     "verse",
+     "the soft soot a good wick leaves at dusk."
+    ],
+    [
+     "verse",
+     "A light goes out; its dark stays gentle."
+    ],
+    [
+     "verse",
+     "I thought that I could keep it so."
+    ],
+    [
+     "prompt",
+     "The last line glows like a wick. New glyph: [Kindle]. Open the brush and dab once, short and firm, on a wick."
+    ]
+   ]
+  },
+  {
+   "id": "trim_wakes",
+   "beat": 1,
+   "trigger": "Kindle on Old Trim's lamp (M_Kindle_Trim). Colour spreads from the lamp; Trim wakes. Plays once.",
+   "where": "M_Person_Trim",
+   "lines": [
+    [
+     "trim",
+     "Hm? Who let my lamp go out?"
+    ],
+    [
+     "trim",
+     "A paper fox. With a brush. Well. That's a first, and I've seen a few firsts."
+    ],
+    [
+     "trim",
+     "Something came down the river at dusk, black as a shut eye. Every lamp in the village went out at once."
+    ],
+    [
+     "trim",
+     "Funny. It put me in mind of a customer I had. An ink-maker, from upriver."
+    ],
+    [
+     "trim",
+     "He bought my [lamp-black], the soot off the wicks. A jar a year, at first. Then a cartload."
+    ],
+    [
+     "trim",
+     "I asked what he wanted with so much dark. He said, 'Somewhere to keep the colours safe.' Never did follow him."
+    ],
+    [
+     "trim",
+     "Go and see [Marrow] at the dye yard, west of the square. If someone's shouting, it'll be her. If no one is, worry."
+    ]
+   ]
+  },
+  {
+   "id": "trim_after",
+   "beat": 1,
+   "trigger": "Talk to Old Trim again after he wakes, before the finale. Repeats.",
+   "where": "M_Person_Trim",
+   "lines": [
+    [
+     "trim",
+     "Dye yard. West. Follow the smell of wet wool."
+    ]
+   ]
+  },
+  {
+   "id": "pell_idle_2",
+   "beat": 1,
+   "trigger": "Talk to Pell after Trim wakes, before the ford-lamp. Repeats.",
+   "where": "M_Person_Pell",
+   "lines": [
+    [
+     "pell",
+     "That's one lamp. Tallowford has a lot of lamps. You'd better get going."
+    ]
+   ]
+  },
+  {
+   "id": "vats_near",
+   "beat": 2,
+   "trigger": "Orimi comes within 6 m of the bound vats. Once.",
+   "where": "M_DyeVats",
+   "lines": [
+    [
+     "narration",
+     "Black thorns have knotted themselves round the dye vats."
+    ]
+   ]
+  },
+  {
+   "id": "marrow_grey",
+   "beat": 2,
+   "trigger": "Talk to Marrow while she is grey. Repeats.",
+   "where": "M_Person_Marrow",
+   "lines": [
+    [
+     "narration",
+     "Marrow stands grey to the elbows, her paddle lifted over a vat she can't reach."
+    ]
+   ]
+  },
+  {
+   "id": "vats_cut",
+   "beat": 2,
+   "trigger": "Slash cuts the thorns from the vats (thorns_cut).",
+   "where": "M_DyeVats",
+   "lines": [
+    [
+     "narration",
+     "The vats are free. The dyer's lamp is still cold."
+    ]
+   ]
+  },
+  {
+   "id": "marrow_wakes",
+   "beat": 2,
+   "trigger": "Kindle on Marrow's lamp (M_Kindle_Marrow), after the vats are freed. Plays once.",
+   "where": "M_Person_Marrow",
+   "lines": [
+    [
+     "marrow",
+     "And another thing! Oh. Where did everybody go?"
+    ],
+    [
+     "marrow",
+     "Look at my vats. Grey indigo. Do you know how hard it is to make indigo grey? Apparently not hard at all."
+    ],
+    [
+     "marrow",
+     "That's colour coming back round the lamp, isn't it? Then light them all, fox. Every one."
+    ],
+    [
+     "marrow",
+     "[Brindle]'s well is down the lane to the south-east. Can't dye without water. Can't do anything without water."
+    ]
+   ]
+  },
+  {
+   "id": "marrow_after",
+   "beat": 2,
+   "trigger": "Talk to Marrow again, before the finale. Repeats.",
+   "where": "M_Person_Marrow",
+   "lines": [
+    [
+     "marrow",
+     "If you're done admiring my vats: Brindle. The well. Go."
+    ]
+   ]
+  },
+  {
+   "id": "well_near",
+   "beat": 3,
+   "trigger": "Orimi comes within 5 m of the well. Once.",
+   "where": "M_Well",
+   "lines": [
+    [
+     "narration",
+     "Soot has packed the well to the brim, thick as fleece."
+    ]
+   ]
+  },
+  {
+   "id": "brindle_grey",
+   "beat": 3,
+   "trigger": "Talk to Brindle while he is grey. Repeats.",
+   "where": "M_Person_Brindle",
+   "lines": [
+    [
+     "narration",
+     "Brindle stands grey in his doorway with an empty bucket, lips parted mid-count."
+    ]
+   ]
+  },
+  {
+   "id": "well_cleared",
+   "beat": 3,
+   "trigger": "Gust clears the soot from the well (soot_cleared).",
+   "where": "M_Well",
+   "lines": [
+    [
+     "narration",
+     "The soot blows off down the lane. Brindle's lamp still waits."
+    ]
+   ]
+  },
+  {
+   "id": "brindle_wakes",
+   "beat": 3,
+   "trigger": "Kindle on Brindle's lamp (M_Kindle_Brindle), after the well is cleared. Plays once.",
+   "where": "M_Person_Brindle",
+   "lines": [
+    [
+     "brindle",
+     "Forty-one. I was on forty-one buckets."
+    ],
+    [
+     "brindle",
+     "Then everything went quiet, and I've no idea where forty-two got to."
+    ],
+    [
+     "brindle",
+     "You've cleared the well! You've no idea how glad that makes me. Well. You have some idea. You did it."
+    ],
+    [
+     "brindle",
+     "Have you seen the little ones? [Flax] and [Pibbet]. They were playing under the [persimmon] in the square when it all went dark."
+    ]
+   ]
+  },
+  {
+   "id": "brindle_after",
+   "beat": 3,
+   "trigger": "Talk to Brindle again, before the finale. Repeats.",
+   "where": "M_Person_Brindle",
+   "lines": [
+    [
+     "brindle",
+     "The square. The big bare tree. They'll be near it. They always are."
+    ]
+   ]
+  },
+  {
+   "id": "tree_near",
+   "beat": 4,
+   "trigger": "Orimi comes within 7 m of the persimmon while it is bare. Once.",
+   "where": "M_Persimmon",
+   "lines": [
+    [
+     "narration",
+     "The persimmon in the square stands bare. Not a leaf. Not one fruit."
+    ]
+   ]
+  },
+  {
+   "id": "children_grey",
+   "beat": 4,
+   "trigger": "Talk to Flax or Pibbet while they are grey. Repeats.",
+   "where": "M_Person_Flax",
+   "lines": [
+    [
+     "narration",
+     "Two children stand grey by their door, halfway through a game of tag."
+    ]
+   ]
+  },
+  {
+   "id": "tree_bloomed",
+   "beat": 4,
+   "trigger": "Bloom on the persimmon.",
+   "where": "M_Persimmon",
+   "lines": [
+    [
+     "narration",
+     "Leaves, then fruit, all at once, like a lamp turned up."
+    ]
+   ]
+  },
+  {
+   "id": "children_wake",
+   "beat": 4,
+   "trigger": "Kindle on the children's lamp (M_Kindle_Children), after the tree blooms. Plays once.",
+   "where": "M_Person_Flax",
+   "lines": [
+    [
+     "flax",
+     "Pibbet, you're it, and no tagging back — oh."
+    ],
+    [
+     "pibbet",
+     "Fox."
+    ],
+    [
+     "flax",
+     "It's a paper fox, Pibbet. Don't poke it."
+    ],
+    [
+     "pibbet",
+     "Paper fox."
+    ],
+    [
+     "flax",
+     "Thank you for the tree. The fruit wasn't due till winter. You've done it early. That's allowed, I think."
+    ],
+    [
+     "flax",
+     "Are you lighting all of them? You have to do Aunt [Wherry]'s at the [ferry-house], down by the jetty. She'll be cross if you skip her."
+    ],
+    [
+     "pibbet",
+     "Always cross."
+    ],
+    [
+     "flax",
+     "Nice cross."
+    ]
+   ]
+  },
+  {
+   "id": "children_after",
+   "beat": 4,
+   "trigger": "Talk to Flax or Pibbet again, before the finale. Repeats, alternating.",
+   "where": "M_Person_Flax",
+   "lines": [
+    [
+     "flax",
+     "Ferry-house! East, by the river!"
+    ],
+    [
+     "pibbet",
+     "Persimmon."
+    ]
+   ]
+  },
+  {
+   "id": "wherry_grey",
+   "beat": 5,
+   "trigger": "Talk to Aunt Wherry while she is grey. Repeats.",
+   "where": "M_Person_Wherry",
+   "lines": [
+    [
+     "narration",
+     "A woman in a river-grey coat stands in the ferry-house door, watching the water."
+    ]
+   ]
+  },
+  {
+   "id": "ferry_lamp_lit",
+   "beat": 5,
+   "trigger": "Kindle on the ferry-house lamp (M_Kindle_Ferry). The sealed fight starts on the jetty square as the line ends.",
+   "where": "M_Kindle_Ferry",
+   "lines": [
+    [
+     "narration",
+     "The lamplight reaches across the river, and the river flinches."
+    ]
+   ]
+  },
+  {
+   "id": "wherry_wakes",
+   "beat": 5,
+   "trigger": "The sealed fight ends (every enemy in the ring gone). Wherry wakes. Plays once.",
+   "where": "M_Person_Wherry",
+   "lines": [
+    [
+     "wherry",
+     "Well. That's the second strangest thing I've seen on this jetty."
+    ],
+    [
+     "wherry",
+     "First was my nephew poling a raft upstream with his hat on backwards."
+    ],
+    [
+     "wherry",
+     "You're with Pell, then. Good. Somebody ought to be."
+    ],
+    [
+     "wherry",
+     "The ferry can't cross blind. The [ford-lamp]'s out on its post, up the north path, and something's hooded it."
+    ],
+    [
+     "wherry",
+     "Get that off and light it, and every lamp in Tallowford will remember what it's for."
+    ]
+   ]
+  },
+  {
+   "id": "wherry_after",
+   "beat": 5,
+   "trigger": "Talk to Aunt Wherry again, before the finale. Repeats.",
+   "where": "M_Person_Wherry",
+   "lines": [
+    [
+     "wherry",
+     "North path. Tall post, out in the water. You can't miss it. Well. You could. Don't."
+    ]
+   ]
+  },
+  {
+   "id": "verse_2_near",
+   "beat": 6,
+   "trigger": "Orimi comes within 4 m of verse-stone 2 while it is grey. Once.",
+   "where": "M_Verse_2",
+   "lines": [
+    [
+     "narration",
+     "Another stone of verse, grey as the first."
+    ]
+   ]
+  },
+  {
+   "id": "verse_2",
+   "beat": 6,
+   "trigger": "Bloom on verse-stone 2 (optional).",
+   "where": "M_Verse_2",
+   "lines": [
+    [
+     "verse",
+     "Every colour, folded into one black:"
+    ],
+    [
+     "verse",
+     "I ground it fine, and then I ground it finer."
+    ],
+    [
+     "verse",
+     "The vat grew heavy as a held breath,"
+    ],
+    [
+     "verse",
+     "and still I would not let it go."
+    ]
+   ]
+  },
+  {
+   "id": "hood_near",
+   "beat": 6,
+   "trigger": "Orimi comes within 8 m of the ford-lamp while it is hooded. Once.",
+   "where": "M_FordLamp",
+   "lines": [
+    [
+     "narration",
+     "The ford-lamp wears a hood of soot, pulled down over its eyes."
+    ]
+   ]
+  },
+  {
+   "id": "hood_off",
+   "beat": 6,
+   "trigger": "Gust strips the soot hood (soot_cleared on the hood).",
+   "where": "M_FordLamp",
+   "lines": [
+    [
+     "narration",
+     "The hood tumbles into the river. High on the post, a wick waits."
+    ]
+   ]
+  },
+  {
+   "id": "finale",
+   "beat": 6,
+   "trigger": "Kindle on the ford-lamp (M_Kindle_Ford), hood removed. Every lamp flares, colour returns to the whole village, the cottages' lamps light one by one, and everyone gathers by the jetty. Cutscene.",
+   "where": "M_PellWait",
+   "lines": [
+    [
+     "trim",
+     "There. Now that's a village."
+    ],
+    [
+     "marrow",
+     "Indigo! Proper indigo!"
+    ],
+    [
+     "brindle",
+     "Forty-two."
+    ],
+    [
+     "flax",
+     "Pibbet. Say thank you."
+    ],
+    [
+     "pibbet",
+     "Thank you, paper fox."
+    ],
+    [
+     "wherry",
+     "Ford's lit. Pell! Raft!"
+    ],
+    [
+     "pell",
+     "I saw. Whole river saw."
+    ],
+    [
+     "pell",
+     "Next stop's the [plain]. It's windy. Hold on to your ears."
+    ],
+    [
+     "prompt",
+     "A bead is added to Orimi's cord: [lamp gold]. The ink pot grows."
+    ]
+   ]
+  },
+  {
+   "id": "pell_ready",
+   "beat": 6,
+   "trigger": "Talk to Pell at M_PellWait after the finale. Repeats. Choosing to board leaves the level.",
+   "where": "M_PellWait",
+   "lines": [
+    [
+     "pell",
+     "Ready when you are. Hop on."
+    ]
+   ]
+  },
+  {
+   "id": "trim_end",
+   "beat": 6,
+   "trigger": "Talk to Old Trim after the finale. Repeats.",
+   "where": "M_Person_Trim",
+   "lines": [
+    [
+     "trim",
+     "If you meet that ink-maker upriver, tell him I want my jars back."
+    ]
+   ]
+  },
+  {
+   "id": "marrow_end",
+   "beat": 6,
+   "trigger": "Talk to Marrow after the finale. Repeats.",
+   "where": "M_Person_Marrow",
+   "lines": [
+    [
+     "marrow",
+     "Come back in spring. I'll dye you a scarf. Something loud."
+    ]
+   ]
+  },
+  {
+   "id": "brindle_end",
+   "beat": 6,
+   "trigger": "Talk to Brindle after the finale. Repeats.",
+   "where": "M_Person_Brindle",
+   "lines": [
+    [
+     "brindle",
+     "Forty-three, forty-four... Oh, don't mind me. Safe travels."
+    ]
+   ]
+  },
+  {
+   "id": "children_end",
+   "beat": 6,
+   "trigger": "Talk to Flax or Pibbet after the finale. Repeats.",
+   "where": "M_Person_Flax",
+   "lines": [
+    [
+     "flax",
+     "Pibbet wants to know if you're it."
+    ],
+    [
+     "pibbet",
+     "You're it."
+    ]
+   ]
+  },
+  {
+   "id": "wherry_end",
+   "beat": 6,
+   "trigger": "Talk to Aunt Wherry after the finale. Repeats.",
+   "where": "M_Person_Wherry",
+   "lines": [
+    [
+     "wherry",
+     "Keep him dry. And turn his hat round."
+    ]
+   ]
+  },
+  {
+   "id": "baker_end",
+   "beat": 6,
+   "trigger": "Talk to the baker (M_Person_Neighbour_1) after the finale. Repeats.",
+   "where": "M_Person_Neighbour_1",
+   "lines": [
+    [
+     "baker",
+     "Bread's late tonight. First time in thirty years. I blame the dark, not my oven."
+    ]
+   ]
+  },
+  {
+   "id": "netmender_end",
+   "beat": 6,
+   "trigger": "Talk to the net-mender (M_Person_Neighbour_2) after the finale. Repeats.",
+   "where": "M_Person_Neighbour_2",
+   "lines": [
+    [
+     "netmender",
+     "Everything went grey, and I mended a whole net before I noticed."
+    ]
+   ]
+  },
+  {
+   "id": "fisher_end",
+   "beat": 6,
+   "trigger": "Talk to the old fisher (M_Person_Neighbour_3) after the finale. Repeats.",
+   "where": "M_Person_Neighbour_3",
+   "lines": [
+    [
+     "fisher",
+     "River's bright again. The fish won't know what to do with themselves."
+    ]
+   ]
+  }
+ ]
+}

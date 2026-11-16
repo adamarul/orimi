@@ -1,0 +1,14 @@
+{
+ "assets/levels/hollow_kiln/folk/wenna.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/hollow_kiln/folk/wenna.png",
+  "textures": [
+   "assets/levels/hollow_kiln/folk/wenna_faded.png"
+  ]
+ }
+}

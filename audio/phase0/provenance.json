@@ -1,0 +1,10 @@
+{
+  "generator": "tools/gen/phase0_audio.py",
+  "command": "tools/gen_phase0_assets.sh",
+  "outputs": [
+    {
+      "path": "audio/phase0/probe_chime.wav",
+      "sha256": "137e2c4659c15661930fdb3ab190b3822b8dfba3337da381bc3e866ded8bdcff"
+    }
+  ]
+}

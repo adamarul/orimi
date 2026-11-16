@@ -1,0 +1,11 @@
+# Provenance of models, textures and audio
+manifests: 20 (assets/characters/folk/provenance.json, assets/characters/provenance.json, assets/environment/provenance.json, assets/levels/tallowford/folk/provenance.json, assets/levels/tallowford/provenance.json, assets/phase0/provenance.json, assets/props/provenance.json, assets/textures/painted/folk/provenance.json, assets/textures/painted/provenance.json, assets/textures/render/provenance.json, assets/textures/vfx/provenance.json, audio/levels/hollow_kiln/provenance.json, audio/levels/mosswater/provenance.json, audio/levels/sedge_plain/provenance.json, audio/levels/tallowford/provenance.json, audio/music/provenance.json, audio/phase0/provenance.json, audio/sfx/provenance.json, tests/_plant/tex/plant.provenance.json, ui/icon.provenance.json)
+media files: 2, covered: 0
+
+MISSING  tests/_plant/tex/orphan.wav                                (no manifest entry with a matching hash)
+MISSING  tests/_plant/tex/plant.png                                 (no manifest entry with a matching hash)
+
+problems: 3
+tests/_plant/tex/orphan.wav: no provenance
+tests/_plant/tex/plant.png: no provenance
+tests/_plant/tex/plant.provenance.json: tests/_plant/tex/plant.png sha256 does not match (file changed after generation, or manifest stale)

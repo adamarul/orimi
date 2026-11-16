@@ -1,0 +1,4 @@
+# Banned-term and absolute-path scan
+terms supplied: 27 substring, 10 whole-word (the lead's list, passed at run time)
+files scanned: 1259 project files, 10 build/web files, 295 commit messages
+findings: 0

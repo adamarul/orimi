@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://3nrca8yfyrsb" path="res://assets/levels/tallowford/textures/house_trim.png" id="1"]
+
+[resource]
+resource_name = "M_tf_house_trim"
+albedo_texture = ExtResource("1")
+texture_filter = 3

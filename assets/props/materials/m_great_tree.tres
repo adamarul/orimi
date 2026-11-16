@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://b12chxyargyjv" path="res://assets/textures/painted/great_tree.png" id="1"]
+
+[resource]
+resource_name = "M_great_tree"
+albedo_texture = ExtResource("1")
+texture_filter = 3

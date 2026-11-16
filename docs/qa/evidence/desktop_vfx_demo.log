@@ -1,0 +1,12 @@
+# windowed run of vfx_demo: error lines, then the last 25 lines (full log: .userdata/qa/full/desktop_vfx_demo.log)
+# ...
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3080
+
+ORIMI_BOOT t=4.38s options={"scene":"res://scenes/dev/vfx_demo.tscn","screenshot":"<project>/.userdata/qa/full/desktop_vfx_demo.png","shot_after":"5"}
+ORIMI_FIRST_FRAME t=5.59s scene=res://scenes/dev/vfx_demo.tscn renderer=forward_plus driver=vulkan adapter=NVIDIA GeForce RTX 3080 api=1.4.351 display=Windows
+ORIMI_FPS fps=30 process_ms=9.49 [t=6.56s]
+VFX_PEAK n=1 id=sky_cursed t=1.00
+ORIMI_FPS fps=41 process_ms=30.80 [t=8.22s]
+ORIMI_FPS fps=32 process_ms=829.95 [t=9.91s]
+ORIMI_SCREENSHOT path=<project>/.userdata/qa/full/desktop_vfx_demo.png size=1280x720

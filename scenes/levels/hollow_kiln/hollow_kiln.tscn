@@ -1,0 +1,561 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/hollow_kiln/hollow_kiln.gd" id="level"]
+[ext_resource type="Script" path="res://scripts/game/kit/person.gd" id="person"]
+[ext_resource type="Script" path="res://scripts/game/glyph_obstacle.gd" id="obstacle"]
+[ext_resource type="Script" path="res://scripts/game/kit/sealed_fight.gd" id="fight"]
+[ext_resource type="Script" path="res://scripts/game/kit/enemy_spawn.gd" id="spawn"]
+[ext_resource type="Script" path="res://scripts/game/cursed_zone.gd" id="zone"]
+[ext_resource type="Script" path="res://scripts/game/kit/verse_stone.gd" id="verse"]
+[ext_resource type="Script" path="res://scripts/game/kit/kindle_target.gd" id="kindle"]
+[ext_resource type="Script" path="res://scripts/game/kit/tie_post.gd" id="tie"]
+[ext_resource type="Script" path="res://scripts/game/kit/checkpoint.gd" id="checkpoint"]
+[ext_resource type="Script" path="res://scripts/game/kit/cursed_ground.gd" id="ground"]
+[ext_resource type="Script" path="res://scripts/levels/hollow_kiln/vat_bloom.gd" id="vat_bloom"]
+[ext_resource type="Script" path="res://scripts/game/kit/glyph_target.gd" id="target"]
+[ext_resource type="Script" path="res://scripts/game/kit/camera_zone.gd" id="camzone"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/rising_hazard.tscn" id="rising"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/bellows.tscn" id="bellows"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/moss_foothold.tscn" id="moss"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/kit/brazier_kindle.tscn" id="brazier_look"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/kit/lamp_kindle.tscn" id="lamp_look"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/kit/mouth_kindle.tscn" id="mouth_look"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/kit/counterweight_ring.tscn" id="weight_ring"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/tie_post.tscn" id="tie_post"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/pillar_ring.tscn" id="pillar_ring"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/dregs_enemy.tscn" id="dregs"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/kiln_set_level.tscn" id="set"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/kiln_markers.tscn" id="markers"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/cord_gate_obstacle.tscn" id="gate"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/folk/wenna.tscn" id="wenna"]
+
+[sub_resource type="BoxShape3D" id="ledge_M1"]
+size = Vector3(3.0, 0.4, 4.723)
+
+[sub_resource type="BoxShape3D" id="ledge_M2"]
+size = Vector3(3.0, 0.4, 3.597)
+
+[sub_resource type="BoxShape3D" id="ledge_M3"]
+size = Vector3(3.0, 0.4, 3.597)
+
+[node name="HollowKiln" type="Node3D"]
+script = ExtResource("level")
+level_id = &"hollow_kiln"
+display_name = "The Hollow Kiln"
+chapter = "What the Vat Kept"
+intro_text = "The Ink-maker's works stand at the river's head, under a kiln with a round hat.
+
+All the black came down from here. Climb to the vat."
+start_gloom = 1.0
+title_marker = "M_VatChamber"
+
+[node name="Set" parent="." instance=ExtResource("set") groups=["level_ground"]]
+
+[node name="Markers" parent="." instance=ExtResource("markers")]
+
+[node name="Pell" type="Node3D" parent="."]
+position = Vector3(3.000, 0.000, 56.200)
+rotation = Vector3(0, 1.745329, 0)
+script = ExtResource("person")
+display_name = "Pell"
+talk_id = "pell"
+model_name = "folk/pell"
+hide_flag = &"vat_bloomed"
+
+[node name="PellEnd" type="Node3D" parent="."]
+position = Vector3(-1.600, 18.000, -51.200)
+rotation = Vector3(0, 3.141593, 0)
+script = ExtResource("person")
+display_name = "Pell"
+talk_id = "ending"
+model_name = "folk/pell"
+show_flag = &"vat_bloomed"
+
+[node name="Wenna" type="Node3D" parent="."]
+position = Vector3(-10.800, 2.000, 27.200)
+rotation = Vector3(0, -1.047198, 0)
+script = ExtResource("person")
+display_name = "Wenna"
+talk_id = "wenna"
+model_scene = ExtResource("wenna")
+faded = true
+wake_flag = &"restored_yard"
+
+[node name="CordGate" type="StaticBody3D" parent="."]
+position = Vector3(0.000, 2.000, 32.000)
+script = ExtResource("obstacle")
+glyph = &"slash"
+width = 6.0
+height = 4.6
+model_scene = ExtResource("gate")
+cleared_flag = &"gate_cut"
+hint_id = &"kiln_gate"
+hint_text = "The gate is tied with ink. Cut straight across the cord: %s."
+
+[node name="YardFight" type="Node3D" parent="."]
+position = Vector3(0.000, 2.000, 17.000)
+script = ExtResource("fight")
+fight_id = &"yard"
+radius = 6.0
+requires_flags = PackedStringArray("gate_cut")
+
+[node name="Spawn0" type="Marker3D" parent="YardFight"]
+position = Vector3(-3.000, 0.000, -3.000)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn1" type="Marker3D" parent="YardFight"]
+position = Vector3(3.000, 0.000, -3.000)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn2" type="Marker3D" parent="YardFight"]
+position = Vector3(0.000, 0.000, -5.000)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn3" type="Marker3D" parent="YardFight"]
+position = Vector3(-4.000, 0.000, 2.000)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn4" type="Marker3D" parent="YardFight"]
+position = Vector3(-3.500, 0.000, -2.000)
+script = ExtResource("spawn")
+kind = &"reedwraith"
+wave = 1
+
+[node name="Spawn5" type="Marker3D" parent="YardFight"]
+position = Vector3(3.500, 0.000, -2.000)
+script = ExtResource("spawn")
+kind = &"reedwraith"
+wave = 1
+
+[node name="Spawn6" type="Marker3D" parent="YardFight"]
+position = Vector3(0.000, 0.000, 3.000)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 1
+
+[node name="HallAmbush" type="Node3D" parent="."]
+position = Vector3(1.000, 5.300, -20.800)
+script = ExtResource("fight")
+fight_id = &"hall_ambush"
+radius = 4.0
+start_flag = &"bellows_2_blown"
+requires_flags = PackedStringArray("hall_entered")
+
+[node name="Spawn0" type="Marker3D" parent="HallAmbush"]
+position = Vector3(-2.000, 0.000, 0.000)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn1" type="Marker3D" parent="HallAmbush"]
+position = Vector3(2.500, 0.000, 0.300)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 0
+
+[node name="Bellows_1" type="StaticBody3D" parent="."]
+position = Vector3(-15.600, 5.300, -4.600)
+rotation = Vector3(0, -1.570796, 0)
+script = ExtResource("target")
+glyphs = PackedStringArray("gust")
+flag = &"bellows_1_blown"
+model_scene = ExtResource("bellows")
+clears = Array[NodePath]([NodePath("../SootDrift_D1"), NodePath("../SootDrift_D2"), NodePath("../SootDrift_D3")])
+size = Vector3(1.6, 1.2, 1.6)
+solid = true
+hint_text = "The bellows are cold and heavy. %s into them."
+requires_flags = PackedStringArray("hall_entered")
+refuse_hint = &""
+
+[node name="Bellows_2" type="StaticBody3D" parent="."]
+position = Vector3(15.000, 5.300, -20.800)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("target")
+glyphs = PackedStringArray("gust")
+flag = &"bellows_2_blown"
+model_scene = ExtResource("bellows")
+clears = Array[NodePath]([NodePath("../SootDrift_D4"), NodePath("../SootDrift_D5"), NodePath("../SootDrift_D6")])
+size = Vector3(1.6, 1.2, 1.6)
+solid = true
+hint_text = "The bellows are cold and heavy. %s into them."
+requires_flags = PackedStringArray("hall_entered")
+refuse_hint = &""
+
+[node name="SootDrift_D1" type="StaticBody3D" parent="."]
+position = Vector3(-5.000, 5.300, -5.000)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 3.2
+height = 1.8
+cleared_flag = &"drift_d1"
+requires_flags = PackedStringArray("bellows_1_blown")
+refuse_hint = &""
+hint_text = "Packed soot, too deep for a breath of %s. Something here was built to blow."
+
+[node name="SootDrift_D2" type="StaticBody3D" parent="."]
+position = Vector3(3.000, 5.300, -5.000)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 3.2
+height = 1.8
+cleared_flag = &"drift_d2"
+requires_flags = PackedStringArray("bellows_1_blown")
+refuse_hint = &""
+hint_text = "Packed soot, too deep for a breath of %s. Something here was built to blow."
+
+[node name="SootDrift_D3" type="StaticBody3D" parent="."]
+position = Vector3(9.600, 5.300, -5.000)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 3.2
+height = 1.8
+cleared_flag = &"drift_d3"
+requires_flags = PackedStringArray("bellows_1_blown")
+refuse_hint = &""
+hint_text = "Packed soot, too deep for a breath of %s. Something here was built to blow."
+
+[node name="SootDrift_D4" type="StaticBody3D" parent="."]
+position = Vector3(8.000, 5.300, -20.800)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 3.2
+height = 1.8
+cleared_flag = &"drift_d4"
+requires_flags = PackedStringArray("bellows_2_blown")
+refuse_hint = &""
+hint_text = "Packed soot, too deep for a breath of %s. Something here was built to blow."
+
+[node name="SootDrift_D5" type="StaticBody3D" parent="."]
+position = Vector3(1.000, 5.300, -20.800)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 3.2
+height = 1.8
+cleared_flag = &"drift_d5"
+requires_flags = PackedStringArray("bellows_2_blown")
+refuse_hint = &""
+hint_text = "Packed soot, too deep for a breath of %s. Something here was built to blow."
+
+[node name="SootDrift_D6" type="StaticBody3D" parent="."]
+position = Vector3(-6.000, 5.300, -20.800)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 3.2
+height = 1.8
+cleared_flag = &"drift_d6"
+requires_flags = PackedStringArray("bellows_2_blown")
+refuse_hint = &""
+hint_text = "Packed soot, too deep for a breath of %s. Something here was built to blow."
+
+[node name="MossFoothold_M1" type="StaticBody3D" parent="."]
+position = Vector3(1.000, 7.600, -39.000)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("target")
+glyphs = PackedStringArray("bloom")
+flag = &"moss_m1"
+model_scene = ExtResource("moss")
+size = Vector3(2.0, 1.0, 1.0)
+
+[node name="MossLedge_M1" type="StaticBody3D" parent="."]
+position = Vector3(-0.500, 7.506, -39.049)
+rotation = Vector3(0.244979, 0, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="MossLedge_M1"]
+shape = SubResource("ledge_M1")
+
+[node name="MossFoothold_M2" type="StaticBody3D" parent="."]
+position = Vector3(-17.000, 13.200, -36.800)
+rotation = Vector3(0, -1.570796, 0)
+script = ExtResource("target")
+glyphs = PackedStringArray("bloom")
+flag = &"moss_m2"
+model_scene = ExtResource("moss")
+size = Vector3(2.0, 1.0, 1.0)
+
+[node name="MossLedge_M2" type="StaticBody3D" parent="."]
+position = Vector3(-15.500, 12.870, -37.163)
+rotation = Vector3(-0.448723, 0, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="MossLedge_M2"]
+shape = SubResource("ledge_M2")
+
+[node name="MossFoothold_M3" type="StaticBody3D" parent="."]
+position = Vector3(-17.000, 14.000, -34.800)
+rotation = Vector3(0, -1.570796, 0)
+script = ExtResource("target")
+glyphs = PackedStringArray("bloom")
+flag = &"moss_m3"
+model_scene = ExtResource("moss")
+size = Vector3(2.0, 1.0, 1.0)
+
+[node name="MossLedge_M3" type="StaticBody3D" parent="."]
+position = Vector3(-15.500, 14.170, -34.463)
+rotation = Vector3(-0.448723, 0, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="MossLedge_M3"]
+shape = SubResource("ledge_M3")
+
+[node name="FlueCam" type="Node3D" parent="."]
+position = Vector3(-8.000, 14.000, -38.000)
+script = ExtResource("camzone")
+size = Vector3(18.0, 22.0, 18.0)
+mode = "follow"
+priority = 1
+distance = 3.6
+lock_pitch = true
+pitch_deg = 15.0
+
+[node name="VatCam" type="Node3D" parent="."]
+position = Vector3(2.000, 24.000, -64.000)
+script = ExtResource("camzone")
+size = Vector3(30.0, 14.0, 30.0)
+mode = "follow"
+priority = 1
+distance = 3.6
+pivot_raise = 0.5
+fov = 80.0
+
+[node name="TieCam" type="Node3D" parent="."]
+position = Vector3(2.000, 24.000, -64.000)
+script = ExtResource("camzone")
+size = Vector3(30.0, 14.0, 30.0)
+mode = "follow"
+priority = 2
+distance = 3.6
+pivot_raise = 0.5
+fov = 80.0
+lock_yaw = true
+yaw_deg = 0.0
+lock_pitch = true
+pitch_deg = 3.0
+
+[node name="VerseStone_1" type="StaticBody3D" parent="."]
+position = Vector3(-4.500, 0.000, 47.000)
+script = ExtResource("verse")
+talk_id = "verse_1"
+read_flag = &"verse_1_read"
+
+[node name="VerseStone_2" type="StaticBody3D" parent="."]
+position = Vector3(-10.400, 5.300, -3.400)
+script = ExtResource("verse")
+talk_id = "verse_2"
+read_flag = &"verse_2_read"
+
+[node name="VerseStone_3" type="StaticBody3D" parent="."]
+position = Vector3(-4.800, 18.000, -54.000)
+script = ExtResource("verse")
+talk_id = "verse_3"
+read_flag = &"verse_3_read"
+
+[node name="VerseStone_4" type="StaticBody3D" parent="."]
+position = Vector3(9.500, 18.000, -55.500)
+rotation = Vector3(0, 3.141593, 0)
+script = ExtResource("verse")
+talk_id = "verse_4"
+read_flag = &"verse_4_read"
+
+[node name="Brazier_W" type="StaticBody3D" parent="."]
+position = Vector3(-5.600, 2.000, 34.200)
+script = ExtResource("kindle")
+kind = "brazier"
+lit_flag = &"brazier_w_lit"
+model_scene = ExtResource("brazier_look")
+
+[node name="Brazier_E" type="StaticBody3D" parent="."]
+position = Vector3(5.600, 2.000, 34.200)
+script = ExtResource("kindle")
+kind = "brazier"
+lit_flag = &"brazier_e_lit"
+model_scene = ExtResource("brazier_look")
+
+[node name="WallLamp_K1" type="StaticBody3D" parent="."]
+position = Vector3(-4.000, 11.200, -47.000)
+rotation = Vector3(0, 3.141593, 0)
+script = ExtResource("kindle")
+lit_flag = &"lamp_k1"
+model_scene = ExtResource("lamp_look")
+light_range = 9.0
+
+[node name="WallLamp_K2" type="StaticBody3D" parent="."]
+position = Vector3(-11.000, 12.600, -47.000)
+rotation = Vector3(0, 3.141593, 0)
+script = ExtResource("kindle")
+lit_flag = &"lamp_k2"
+model_scene = ExtResource("lamp_look")
+light_range = 9.0
+
+[node name="WallLamp_K3" type="StaticBody3D" parent="."]
+position = Vector3(-17.000, 14.400, -40.000)
+rotation = Vector3(0, -1.570796, 0)
+script = ExtResource("kindle")
+lit_flag = &"lamp_k3"
+model_scene = ExtResource("lamp_look")
+light_range = 9.0
+
+[node name="WallLamp_K4" type="StaticBody3D" parent="."]
+position = Vector3(1.000, 19.400, -44.000)
+rotation = Vector3(0, 1.570796, 0)
+script = ExtResource("kindle")
+lit_flag = &"lamp_k4"
+model_scene = ExtResource("lamp_look")
+light_range = 9.0
+
+[node name="KilnMouth_NW" type="StaticBody3D" parent="."]
+position = Vector3(-10.304, 18.600, -76.304)
+rotation = Vector3(0, 0.785398, 0)
+script = ExtResource("kindle")
+lit_flag = &"mouth_nw_lit"
+model_scene = ExtResource("mouth_look")
+requires_flags = PackedStringArray("dregs_bound")
+light_range = 10.0
+light_energy = 2.2
+
+[node name="KilnMouth_N" type="StaticBody3D" parent="."]
+position = Vector3(2.000, 18.600, -81.400)
+script = ExtResource("kindle")
+lit_flag = &"mouth_n_lit"
+model_scene = ExtResource("mouth_look")
+requires_flags = PackedStringArray("dregs_bound")
+light_range = 10.0
+light_energy = 2.2
+
+[node name="KilnMouth_NE" type="StaticBody3D" parent="."]
+position = Vector3(14.304, 18.600, -76.304)
+rotation = Vector3(0, -0.785398, 0)
+script = ExtResource("kindle")
+lit_flag = &"mouth_ne_lit"
+model_scene = ExtResource("mouth_look")
+requires_flags = PackedStringArray("dregs_bound")
+light_range = 10.0
+light_energy = 2.2
+
+[node name="TiePost" type="StaticBody3D" parent="."]
+position = Vector3(-4.600, 5.300, -22.800)
+script = ExtResource("tie")
+partner = NodePath("../CounterweightRing")
+action = "bind"
+tied_flag = &"counterweight_tied"
+requires_flags = PackedStringArray("restored_hall")
+model_scene = ExtResource("tie_post")
+
+[node name="CounterweightRing" type="StaticBody3D" parent="."]
+position = Vector3(-12.600, 10.600, -23.200)
+script = ExtResource("tie")
+model_scene = ExtResource("weight_ring")
+
+[node name="PillarRing_W" type="StaticBody3D" parent="."]
+position = Vector3(-6.100, 23.500, -64.000)
+script = ExtResource("tie")
+partner = NodePath("../PillarRing_E")
+action = "bind"
+tied_flag = &"dregs_bound"
+sag = 0.15
+requires_flags = PackedStringArray("dregs_arms_cut")
+model_scene = ExtResource("pillar_ring")
+
+[node name="PillarRing_E" type="StaticBody3D" parent="."]
+position = Vector3(10.100, 23.500, -64.000)
+rotation = Vector3(0, 3.141593, 0)
+script = ExtResource("tie")
+model_scene = ExtResource("pillar_ring")
+
+[node name="HallFloor" type="Node3D" parent="."]
+position = Vector3(0.000, 5.000, -13.000)
+script = ExtResource("ground")
+radius = 21.0
+clear_flag = &"restored_hall"
+max_height = 2.0
+draw_curse = false
+show_safe = false
+
+[node name="FlueRise" parent="." instance=ExtResource("rising")]
+position = Vector3(-8.000, 4.600, -38.000)
+size = Vector2(18.0, 18.0)
+top_height = 9.40
+rise_speed = 0.06
+start_flag = &"lamp_k1"
+start_on_enter = false
+stop_flag = &"flue_climbed"
+flag = &"flue_lifted"
+show_surface = false
+
+[node name="FlueTop" type="Node3D" parent="."]
+position = Vector3(-1.000, 18.000, -46.000)
+script = ExtResource("checkpoint")
+flag = &"flue_climbed"
+show_model = false
+
+[node name="ArenaEntry" type="Node3D" parent="."]
+position = Vector3(-0.600, 18.000, -52.500)
+script = ExtResource("checkpoint")
+flag = &"dregs_started"
+show_model = false
+radius = 2.5
+
+[node name="Zone_yard" type="Node3D" parent="."]
+position = Vector3(0.000, 2.000, 17.000)
+script = ExtResource("zone")
+zone_id = &"yard"
+display_name = "The Kiln Yard"
+radius = 19.0
+target_kind = "sapling"
+target_offset = Vector3(4.000, 0.000, -5.000)
+requires_flags = PackedStringArray("fight_yard")
+
+[node name="Zone_hall" type="Node3D" parent="."]
+position = Vector3(0.000, 5.000, -13.000)
+script = ExtResource("zone")
+zone_id = &"hall"
+display_name = "The Drying Hall"
+radius = 19.5
+target_kind = "sapling"
+target_offset = Vector3(-11.000, 0.300, -7.600)
+requires_flags = PackedStringArray("fight_hall_ambush")
+
+[node name="Zone_flue" type="Node3D" parent="."]
+position = Vector3(-8.000, 11.000, -38.000)
+script = ExtResource("zone")
+zone_id = &"flue"
+display_name = "The Flue"
+radius = 13.5
+target_kind = "none"
+
+[node name="Zone_vat" type="Node3D" parent="."]
+position = Vector3(2.000, 22.000, -64.000)
+script = ExtResource("zone")
+zone_id = &"vat"
+display_name = "The Vat Chamber"
+radius = 17.0
+target_kind = "none"
+requires_flags = PackedStringArray("dregs_unravelled")
+finale = true
+
+[node name="CrackedVat" type="StaticBody3D" parent="Zone_vat"]
+position = Vector3(0.000, -4.000, 0.000)
+script = ExtResource("vat_bloom")
+
+[node name="DregsSpawn" type="Marker3D" parent="Zone_vat"]
+position = Vector3(0.000, 1.000, 0.000)
+rotation = Vector3(0, 3.141593, 0)
+script = ExtResource("spawn")
+enemy_scene = ExtResource("dregs")

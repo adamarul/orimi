@@ -1,0 +1,24 @@
+== import
+== parse every .gd
+ok   scripts/audio/audio_director.gd
+FAIL scripts/brush/brush_layer.gd
+SCRIPT ERROR: Parse Error: Identifier "Events" not declared in the current scope.
+   at: GDScript::reload (res://scripts/brush/brush_layer.gd:23)
+ERROR: Failed to load script "res://scripts/brush/brush_layer.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+ok   scripts/core/boot.gd
+ok   scripts/core/events.gd
+ok   scripts/core/layers.gd
+ok   scripts/core/palette.gd
+ok   scripts/core/settings.gd
+ok   scripts/game/game.gd
+ok   scripts/phase0/frame_counter.gd
+ok   scripts/phase0/phase0.gd
+ok   scripts/render/curse_field.gd
+ok   scripts/render/ink_look.gd
+ok   scripts/render/post_chain.gd
+ok   scripts/vfx/vfx_director.gd
+== boot main scene headless (quit_after=3)
+ok   boot run
+full log: <project>/.userdata/logs/check.log
+CHECK FAILED

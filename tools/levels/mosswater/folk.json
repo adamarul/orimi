@@ -1,0 +1,22 @@
+{
+ "models": "assets/levels/mosswater/folk",
+ "textures": "assets/levels/mosswater/folk",
+ "scenes": "scenes/levels/mosswater/folk",
+ "people": {
+  "fenn": {
+   "size": "adult",
+   "build": "stout",
+   "garment": "apron",
+   "hat": "scarf",
+   "prop": "bucket",
+   "palette": "ash",
+   "colours": {
+    "garment": "#55524c",
+    "trim": "#8c7b5c",
+    "hat": "#6e3b2c",
+    "skin": "#e6d9be"
+   },
+   "seed": 7
+  }
+ }
+}

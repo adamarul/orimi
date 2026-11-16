@@ -1,0 +1,10 @@
+{
+  "generator": "tools/blender/phase0_vcol_probe.py",
+  "command": "tools/gen_phase0_assets.sh",
+  "outputs": [
+    {
+      "path": "assets/phase0/vcol_probe.glb",
+      "sha256": "58249facb33fd8f837bd513aea9425a2e9e69693578d2e881402eb302e9591d5"
+    }
+  ]
+}

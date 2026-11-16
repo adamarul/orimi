@@ -1,0 +1,190 @@
+{
+  "passed": true,
+  "autoplay": {
+    "casts": [
+      {
+        "glyph": "slash",
+        "hit": true,
+        "r_px": 172,
+        "recognised": "slash",
+        "screen": [
+          640,
+          257
+        ],
+        "target": "ThornGate",
+        "targets": 4
+      },
+      {
+        "glyph": "bloom",
+        "hit": true,
+        "r_px": 71,
+        "recognised": "bloom",
+        "screen": [
+          635,
+          319
+        ],
+        "target": "Sapling_zone_a",
+        "targets": 1
+      },
+      {
+        "glyph": "gust",
+        "hit": true,
+        "r_px": 220,
+        "recognised": "gust",
+        "screen": [
+          632,
+          87
+        ],
+        "target": "SootBank",
+        "targets": 5
+      },
+      {
+        "glyph": "gust",
+        "hit": true,
+        "r_px": 46,
+        "recognised": "gust",
+        "screen": [
+          590,
+          252
+        ],
+        "target": "Reedwraith_zone_b_1",
+        "targets": 1
+      },
+      {
+        "glyph": "slash",
+        "hit": true,
+        "r_px": 82,
+        "recognised": "slash",
+        "screen": [
+          871,
+          282
+        ],
+        "target": "Reedwraith_zone_b_0",
+        "targets": 1
+      },
+      {
+        "glyph": "bloom",
+        "hit": true,
+        "r_px": 58,
+        "recognised": "bloom",
+        "screen": [
+          634,
+          298
+        ],
+        "target": "Sapling_zone_b",
+        "targets": 1
+      },
+      {
+        "glyph": "gust",
+        "hit": true,
+        "r_px": 226,
+        "recognised": "gust",
+        "screen": [
+          640,
+          405
+        ],
+        "target": "Reedwraith_w1_3",
+        "targets": 1
+      },
+      {
+        "glyph": "gust",
+        "hit": true,
+        "r_px": 60,
+        "recognised": "gust",
+        "screen": [
+          715,
+          258
+        ],
+        "target": "Reedwraith_w2_6",
+        "targets": 1
+      },
+      {
+        "glyph": "bloom",
+        "hit": true,
+        "r_px": 126,
+        "recognised": "bloom",
+        "screen": [
+          640,
+          152
+        ],
+        "target": "GreatTree",
+        "targets": 1
+      }
+    ],
+    "duration": 78,
+    "failures": [],
+    "passed": true,
+    "snapshot": {
+      "autoplay": true,
+      "checkpoint": [
+        0,
+        0,
+        50
+      ],
+      "deaths": 0,
+      "enemies_alive": 9,
+      "fps": 89,
+      "god": false,
+      "hp": 5,
+      "ink": 100,
+      "ink_max": 100,
+      "kills": 0,
+      "max_hp": 5,
+      "player_pos": [
+        0,
+        0.05,
+        50
+      ],
+      "restored_zones": [],
+      "state": "title",
+      "t": 93.72,
+      "zone": ""
+    },
+    "stages": [
+      "title",
+      "intro",
+      "spawn",
+      "gate_a",
+      "zone_a_enter",
+      "zone_a_clear",
+      "zone_a_restored",
+      "death",
+      "respawned",
+      "crossing",
+      "gate_b",
+      "zone_b_enter",
+      "zone_b_clear",
+      "zone_b_restored",
+      "tree_enter",
+      "tree_clear",
+      "finale",
+      "finale_wide",
+      "end_card",
+      "title_again"
+    ]
+  },
+  "problems": [],
+  "shots": [
+    "01_title.png",
+    "02_intro.png",
+    "03_spawn.png",
+    "04_gate_a.png",
+    "05_zone_a_enter.png",
+    "06_zone_a_clear.png",
+    "07_zone_a_restored.png",
+    "08_death.png",
+    "09_respawned.png",
+    "10_crossing.png",
+    "11_gate_b.png",
+    "12_zone_b_enter.png",
+    "13_zone_b_clear.png",
+    "14_zone_b_restored.png",
+    "15_tree_enter.png",
+    "16_tree_clear.png",
+    "17_finale.png",
+    "18_finale_wide.png",
+    "19_end_card.png",
+    "20_title_again.png"
+  ],
+  "wall_seconds": 102.512
+}

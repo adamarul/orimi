@@ -1,0 +1,110 @@
+{
+ "assets/levels/tallowford/folk/baker.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/baker.png",
+  "textures": [
+   "assets/levels/tallowford/folk/baker_faded.png"
+  ]
+ },
+ "assets/levels/tallowford/folk/brindle.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/brindle.png",
+  "textures": [
+   "assets/levels/tallowford/folk/brindle_faded.png"
+  ]
+ },
+ "assets/levels/tallowford/folk/fisher.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/fisher.png",
+  "textures": [
+   "assets/levels/tallowford/folk/fisher_faded.png"
+  ]
+ },
+ "assets/levels/tallowford/folk/flax.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/flax.png",
+  "textures": [
+   "assets/levels/tallowford/folk/flax_faded.png"
+  ]
+ },
+ "assets/levels/tallowford/folk/marrow.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/marrow.png",
+  "textures": [
+   "assets/levels/tallowford/folk/marrow_faded.png"
+  ]
+ },
+ "assets/levels/tallowford/folk/netmender.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/netmender.png",
+  "textures": [
+   "assets/levels/tallowford/folk/netmender_faded.png"
+  ]
+ },
+ "assets/levels/tallowford/folk/old_trim.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/old_trim.png",
+  "textures": [
+   "assets/levels/tallowford/folk/old_trim_faded.png"
+  ]
+ },
+ "assets/levels/tallowford/folk/pibbet.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/pibbet.png",
+  "textures": [
+   "assets/levels/tallowford/folk/pibbet_faded.png"
+  ]
+ },
+ "assets/levels/tallowford/folk/wherry.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/tallowford/folk/wherry.png",
+  "textures": [
+   "assets/levels/tallowford/folk/wherry_faded.png"
+  ]
+ }
+}

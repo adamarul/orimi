@@ -1,0 +1,46 @@
+Browser frame timing of the real valley (warp=M_ZoneA god=1, inside cursed zone A with enemies
+on screen), Chrome 157 headless on the RTX 3080 through ANGLE/D3D11, measured with
+  tools/render/perf_web.sh --size 1920x1080 --uncapped --settle 22 --hold 8 warp=M_ZoneA god=1 <opts>
+"Uncapped" launches Chrome with --disable-gpu-vsync --disable-frame-rate-limit; --settle 22 waits
+for the game to be up before timing; raf = requestAnimationFrame over 8 s. GPU timer queries are not
+available on web, so chain cost = post=1 minus post=0 (Post's boot option post=0 starts the chain
+off). Other workstreams were using the same GPU at the time, so each row was run twice (2026-11-15)
+and both runs are listed; the spread between runs is the measurement noise.
+
+1920x1080 uncapped, median ms (p95 ms)       run 1         run 2
+  post=0                 (no chain)           4.7 (7.5)     3.9 (5.3)
+  post=1 paper=light                          7.4 (10.8)    6.8 (9.0)
+  post=1 paper=normal                         7.0 (9.0)     8.4 (12.2)
+  post=1 paper=heavy                          7.1 (9.5)     10.0 (13.4)
+
+Chain cost at 1080p on the real valley: Light about 2.8 ms, Normal about 3.4 ms, Heavy about 4.2 ms
+(averages of the two runs; single pairs range from 2.3 to 6.1 ms). Whole-frame median stays at or
+under 10 ms and p95 at or under 13.4 ms on every preset, inside the 16.7 ms frame at 60 Hz.
+
+Earlier render_demo numbers (first pass) are superseded: paper= did not reach Post in that build
+(Settings read it before Boot had parsed the options), so the demo's "heavy" rows measured Normal.
+Fixed in 9239620.
+
+The only console error in these runs is the page error "NotAllowedError: A user gesture is required
+to request Pointer Lock." from gameplay's mouse capture in a headless page without input.
+
+Light pools (2026-11-15, scenes/dev/render_lights.tscn, 1920x1080 uncapped). Each row is the median
+in ms over two sessions; the same GPU was running other workstreams' autoplays at the time:
+  mode=none                  7.3, 8.4
+  mode=dark,    3 pools lit  7.2, 7.0, 8.8
+  mode=drained, 3 pools lit  6.7, 5.7
+The pools have no cost that can be measured above the noise. In the real valley (pools off,
+M_ZoneA) post=1 / post=0 measured 9.1 / 4.8 and 6.3 / 5.0 ms in the same session, which is the
+same range as before.
+
+Cold load in the browser (time until title_ready, Level 1). Every shader compiles the pool code:
+  pools compiled out    19.6 s, 18.3 s
+  first version         31.9 s (one run; per-light code with indexed arrays and noise)
+  shipped version       18.2 s, 22.9 s (written out light by light, no arrays, no noise texture)
+With drained_tint / drained_saturation (light_tint global) and light_keep, same session, the
+machine slower than above (base = efa78c8):
+  base                  27.6 s, 32.3 s, 32.1 s
+  with light_keep       34.9 s, 33.6 s, 34.8 s (and 23.4, 25.0, 24.0, 23.0, 22.8 s earlier that day)
+At most about 2 s (under 10 %) and within the spread between runs.
+Frame time, render_lights 1920x1080 uncapped, same session: mode=none 11.0 / 7.1 ms, mode=drained
+11.4 / 7.8 ms median (two pairs; the first pair ran while the machine was busy).

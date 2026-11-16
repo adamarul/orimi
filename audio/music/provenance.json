@@ -1,0 +1,28 @@
+{
+ "outputs": [
+  {
+   "path": "audio/music/finale.ogg",
+   "sha256": "bb87c564572409215102bff0910a253851b96d4b1d2ba490f8056e25238da9b3",
+   "generator": "tools/audio/music.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/music/title.ogg",
+   "sha256": "94ddf4829f371776c9daac969a49e20102c8f6450243e995da68b6cf8a8cdcac",
+   "generator": "tools/audio/music.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/music/vale_cursed.ogg",
+   "sha256": "d713843f55d8673429ae6058e4cac6fcfae02cb6fa4030bc4735ba829d681cee",
+   "generator": "tools/audio/music.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/music/vale_restored.ogg",
+   "sha256": "b542317a1c38bf394fe0acb5f0a02c40b2d5aa6bd3de5cbb2fab50f736e14d42",
+   "generator": "tools/audio/music.py",
+   "command": "tools/assets/gen_audio.sh"
+  }
+ ]
+}

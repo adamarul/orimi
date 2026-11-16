@@ -1,0 +1,55 @@
+{
+  "_comment": "Owned by the lead. `levels` is the book in playing order; a level whose scene does not exist yet is skipped. `dev` levels load only with level=<id>: a new level stays under dev until its browser autoplay passes, then the lead moves it into the book. Format: docs/LEVEL_KIT.md.",
+  "levels": [
+    {
+      "id": "hazewater",
+      "name": "Hazewater Vale",
+      "chapter": "The Waking",
+      "scene": "res://scenes/levels/hazewater/hazewater.tscn",
+      "bead": "ivory",
+      "bead_color": "#efe6d2"
+    },
+    {
+      "id": "tallowford",
+      "name": "Tallowford",
+      "chapter": "The Lamps of Tallowford",
+      "scene": "res://scenes/levels/tallowford/tallowford.tscn",
+      "bead": "lamp gold",
+      "bead_color": "#d9a441"
+    },
+    {
+      "id": "sedge_plain",
+      "name": "Sedge Plain",
+      "chapter": "The Mapmaker's Road",
+      "scene": "res://scenes/levels/sedge_plain/sedge_plain.tscn",
+      "bead": "sedge green",
+      "bead_color": "#8fa35a"
+    },
+    {
+      "id": "mosswater",
+      "name": "Mosswater Wood",
+      "chapter": "The Three Still Ponds",
+      "scene": "res://scenes/levels/mosswater/mosswater.tscn",
+      "bead": "water indigo",
+      "bead_color": "#3e5a8a"
+    },
+    {
+      "id": "hollow_kiln",
+      "name": "The Hollow Kiln",
+      "chapter": "What the Vat Kept",
+      "scene": "res://scenes/levels/hollow_kiln/hollow_kiln.tscn",
+      "bead": "kiln vermilion",
+      "bead_color": "#d5402b"
+    }
+  ],
+  "dev": [
+    {
+      "id": "example",
+      "name": "Kit Example",
+      "chapter": "Every Part of the Kit",
+      "scene": "res://scenes/levels/example/example.tscn",
+      "bead": "example grey",
+      "bead_color": "#8a8580"
+    }
+  ]
+}

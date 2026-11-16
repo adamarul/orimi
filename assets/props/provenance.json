@@ -1,0 +1,52 @@
+{
+ "outputs": [
+  {
+   "path": "assets/props/great_tree.glb",
+   "sha256": "efbf8857880842889c0e82a890014781c8ebdc9b1580e3230be9e12772864b46",
+   "generator": "tools/blender/make_great_tree.py",
+   "command": "tools/assets/gen_models.sh great_tree"
+  },
+  {
+   "path": "assets/props/raft.glb",
+   "sha256": "621c683275ed7f69d8ef1129672e35d844bc368b0bec59bd125da7ef5f34b0d4",
+   "generator": "tools/blender/make_raft.py",
+   "command": "tools/assets/gen_models.sh raft"
+  },
+  {
+   "path": "assets/props/reeds.glb",
+   "sha256": "ffc88f561ea8e5da67f1df06cee2e5f714084b0e91e749a3e613ad61201398ef",
+   "generator": "tools/blender/make_reeds.py",
+   "command": "tools/assets/gen_models.sh reeds"
+  },
+  {
+   "path": "assets/props/rocks.glb",
+   "sha256": "69886734ce72cb8f1510c371969ce029af934314cfcfa587cbacf2e6afe566bc",
+   "generator": "tools/blender/make_rocks.py",
+   "command": "tools/assets/gen_models.sh rocks"
+  },
+  {
+   "path": "assets/props/sapling.glb",
+   "sha256": "496e0a5312f61d6fde67bbdfe7414bfaae3d3321f29d6a9492cd280ec79fb8a4",
+   "generator": "tools/blender/make_sapling.py",
+   "command": "tools/assets/gen_models.sh sapling"
+  },
+  {
+   "path": "assets/props/shrine.glb",
+   "sha256": "26dbfcf0d751c341cba9e9236636aaf02dc652c9e817bc706198054e24675375",
+   "generator": "tools/blender/make_shrine.py",
+   "command": "tools/assets/gen_models.sh shrine"
+  },
+  {
+   "path": "assets/props/stepping_stone.glb",
+   "sha256": "b691744b5e246e7d8b9d66bb5a7d4d5d3aa8dd96ac631e3828eea4f7cd1545bb",
+   "generator": "tools/blender/make_stepping_stone.py",
+   "command": "tools/assets/gen_models.sh stepping_stone"
+  },
+  {
+   "path": "assets/props/thorn_gate.glb",
+   "sha256": "2d401031128f663fbcc2f852c14a533bcac8b9c9ec2209aafef3e756219ae251",
+   "generator": "tools/blender/make_thorn_gate.py",
+   "command": "tools/assets/gen_models.sh thorn_gate"
+  }
+ ]
+}

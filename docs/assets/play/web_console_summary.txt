@@ -1,0 +1,12 @@
+### warp=M_Spawn god=1
+[console.log] ORIMI_FIRST_FRAME t=5.40s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  "first_frame": "ORIMI_FIRST_FRAME t=5.40s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web",
+### warp=M_ZoneA god=1
+[console.log] ORIMI_FIRST_FRAME t=7.09s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  "first_frame": "ORIMI_FIRST_FRAME t=7.09s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web",
+### warp=M_ZoneB god=1
+[console.log] ORIMI_FIRST_FRAME t=9.16s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  "first_frame": "ORIMI_FIRST_FRAME t=9.16s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web",
+### warp=M_Tree god=1
+[console.log] ORIMI_FIRST_FRAME t=6.46s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  "first_frame": "ORIMI_FIRST_FRAME t=6.46s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web",

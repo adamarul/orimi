@@ -1,0 +1,49 @@
+# serving <project>\build\web at http://127.0.0.1:58185/
+[console.log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[console.log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+[console.log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+[console.log] ORIMI_BOOT t=7.05s options={}
+[console.log] ORIMI_FIRST_FRAME t=7.85s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+# webgl {"webgl2":true,"version":"WebGL 2.0 (OpenGL ES 3.0 Chromium)","vendor":"Google Inc. (NVIDIA)","renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+[console.log] QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
+[console.log] QA:{"data":{"enemies":9,"greybox":false},"tag":"valley_built"}
+[console.log] QA:{"data":{"t":23.52},"tag":"title_ready"}
+# pointer lock after click: false
+# AudioContext before click [{"state":"suspended","time":0}], 1.5 s after click [{"state":"running","time":1.51}]
+[console.log] QA:{"data":{"state":"cutscene"},"tag":"state"}
+[console.log] QA:{"data":{},"tag":"intro"}
+# sent a pen stroke (CDP pointerType=pen, force 0.3..0.9, tilt 20/-10)
+# summary {
+  "headless": true,
+  "query": "",
+  "url": "http://127.0.0.1:58185/index.html",
+  "chrome": "Chrome/157.0.8103.51",
+  "first_frame_ms": 12100,
+  "first_frame": "ORIMI_FIRST_FRAME t=7.85s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web",
+  "webgl": {
+    "webgl2": true,
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "software_gl": false,
+  "audio_before_click": [
+    {
+      "state": "suspended",
+      "time": 0
+    }
+  ],
+  "pointer_lock_after_click": false,
+  "audio_after_click": [
+    {
+      "state": "running",
+      "time": 1.51
+    }
+  ],
+  "raf_fps": 133,
+  "screenshot": "<project>\\docs\\assets\\web_game_spawn.png",
+  "game_fps": [],
+  "probes": [],
+  "problems": [],
+  "passed": true
+}

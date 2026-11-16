@@ -1,0 +1,50 @@
+{
+ "models": "assets/characters/folk",
+ "textures": "assets/textures/painted/folk",
+ "scenes": "scenes/models/folk",
+ "people": {
+  "pell": {
+   "size": "child",
+   "build": "slim",
+   "garment": "tunic",
+   "hat": "paper_boat",
+   "prop": "pole",
+   "palette": "indigo",
+   "colours": {
+    "trim": "#c9533b",
+    "hat": "#f1e9d6"
+   },
+   "seed": 3
+  },
+  "folk_lampmaker": {
+   "size": "elder",
+   "build": "slim",
+   "garment": "robe",
+   "hat": "cap",
+   "prop": "lantern",
+   "palette": "ochre",
+   "seed": 4
+  },
+  "folk_dyer": {
+   "size": "adult",
+   "build": "stout",
+   "garment": "apron",
+   "hat": "scarf",
+   "prop": "bucket",
+   "palette": "madder",
+   "colours": {
+    "hat": "#4a5d7a"
+   },
+   "seed": 5
+  },
+  "folk_mapmaker": {
+   "size": "adult",
+   "build": "slim",
+   "garment": "robe",
+   "hat": "wide_brim",
+   "prop": "scroll",
+   "palette": "moss",
+   "seed": 6
+  }
+ }
+}

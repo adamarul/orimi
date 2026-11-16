@@ -1,0 +1,40 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3080
+
+ORIMI_BOOT t=2.17s options={"screenshot":"<project>/docs/phase0/desktop_forward_plus.png","shot_after":"7"}
+ORIMI_PROBE renderer INFO forward_plus / vulkan / NVIDIA GeForce RTX 3080 [t=2.90s]
+ORIMI_FIRST_FRAME t=3.00s scene=res://scenes/phase0/phase0.tscn renderer=forward_plus driver=vulkan adapter=NVIDIA GeForce RTX 3080 api=1.4.351 display=Windows
+ORIMI_FPS fps=1 process_ms=1.14 [t=3.94s]
+ORIMI_PROBE tree_paused_one_node_processing PASS while paused: pausable node +0 frames, PROCESS_MODE_ALWAYS node +40 frames [t=4.76s]
+ORIMI_PROBE pointer_pressure INFO 24 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0 [t=5.36s]
+ORIMI_FPS fps=72 process_ms=41.51 [t=5.39s]
+ORIMI_PROBE pixel_readback PASS 1280x720 [t=5.58s]
+ORIMI_PROBE fullscreen_quad_3d PASS tile0=magenta [t=5.61s]
+ORIMI_PROBE screen_texture_3d PASS tile1=green (holds linear values) [t=5.65s]
+ORIMI_PROBE depth_texture_3d PASS tile2=green (linearised centre depth vs analytic) [t=5.69s]
+ORIMI_PROBE normal_roughness_texture PASS tile3=green [t=5.72s]
+ORIMI_PROBE depth_reconstructed_normal PASS tile4=green [t=5.76s]
+ORIMI_PROBE chain_3d_second_pass_sees_first NO tile5=red [t=5.79s]
+ORIMI_PROBE canvas_pass_reads_3d_post_output YES tile6=green [t=5.82s]
+ORIMI_PROBE canvas_pass_draws PASS tile7=cyan [t=5.85s]
+ORIMI_PROBE canvas_chain_without_backbuffercopy NO tile8=red [t=5.88s]
+ORIMI_PROBE canvas_chain_after_backbuffercopy YES tile9=green [t=5.91s]
+ORIMI_PROBE screen_texture_canvas PASS tile10=blue (holds sRGB-encoded values) [t=5.94s]
+ORIMI_PROBE decal_node PASS luminance at decal 0.43 vs ground 0.91 [t=5.97s]
+ORIMI_PROBE blob_shadow_quad PASS luminance at blob 0.61 vs ground 0.91 [t=6.00s]
+ORIMI_PROBE gpu_particles_3d PASS 308 orange pixels near emitter [t=6.03s]
+ORIMI_PROBE cpu_particles_3d PASS 304 blue pixels near emitter [t=6.06s]
+ORIMI_PROBE inverted_hull_outline PASS 179 outline-ink pixels around torus [t=6.09s]
+ORIMI_PROBE gltf_vertex_colour_in_shader PASS lit #f28d7e, unlit raw COLOR #e98466, unlit constant 0.5 #bcbcbc [t=6.15s]
+ORIMI_PROBE gltf_outline_vertex_alpha_width PASS 122 outline-ink pixels around glTF mesh [t=6.18s]
+ORIMI_PROBE gltf_vertex_colour_arrays PASS 63 colours, rgb min #21241f max #d73c69, alpha 0.25..1.00 [t=6.23s]
+ORIMI_PROBES_DONE {"blob_shadow_quad":{"detail":"luminance at blob 0.61 vs ground 0.91","status":"PASS"},"canvas_chain_after_backbuffercopy":{"detail":"tile9=green","status":"YES"},"canvas_chain_without_backbuffercopy":{"detail":"tile8=red","status":"NO"},"canvas_pass_draws":{"detail":"tile7=cyan","status":"PASS"},"canvas_pass_reads_3d_post_output":{"detail":"tile6=green","status":"YES"},"chain_3d_second_pass_sees_first":{"detail":"tile5=red","status":"NO"},"cpu_particles_3d":{"detail":"304 blue pixels near emitter","status":"PASS"},"decal_node":{"detail":"luminance at decal 0.43 vs ground 0.91","status":"PASS"},"depth_reconstructed_normal":{"detail":"tile4=green","status":"PASS"},"depth_texture_3d":{"detail":"tile2=green (linearised centre depth vs analytic)","status":"PASS"},"fullscreen_quad_3d":{"detail":"tile0=magenta","status":"PASS"},"gltf_outline_vertex_alpha_width":{"detail":"122 outline-ink pixels around glTF mesh","status":"PASS"},"gltf_vertex_colour_arrays":{"detail":"63 colours, rgb min #21241f max #d73c69, alpha 0.25..1.00","status":"PASS"},"gltf_vertex_colour_in_shader":{"detail":"lit #f28d7e, unlit raw COLOR #e98466, unlit constant 0.5 #bcbcbc","status":"PASS"},"gpu_particles_3d":{"detail":"308 orange pixels near emitter","status":"PASS"},"inverted_hull_outline":{"detail":"179 outline-ink pixels around torus","status":"PASS"},"normal_roughness_texture":{"detail":"tile3=green","status":"PASS"},"pixel_readback":{"detail":"1280x720","status":"PASS"},"pointer_pressure":{"detail":"24 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0","status":"INFO"},"renderer":{"detail":"forward_plus / vulkan / NVIDIA GeForce RTX 3080","status":"INFO"},"screen_texture_3d":{"detail":"tile1=green (holds linear values)","status":"PASS"},"screen_texture_canvas":{"detail":"tile10=blue (holds sRGB-encoded values)","status":"PASS"},"tree_paused_one_node_processing":{"detail":"while paused: pausable node +0 frames, PROCESS_MODE_ALWAYS node +40 frames","status":"PASS"}}
+ORIMI_PROBE pointer_pressure INFO 31 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0 [t=6.38s]
+ORIMI_PROBE audio_after_first_click PASS playing=true playback_position=0.46s (desktop) [t=6.87s]
+ORIMI_PROBE mouse_capture_pointer_lock PASS Input.mouse_mode captured=true [t=6.90s]
+ORIMI_CLICK_PROBES_DONE {"audio_after_first_click":{"detail":"playing=true playback_position=0.46s (desktop)","status":"PASS"},"blob_shadow_quad":{"detail":"luminance at blob 0.61 vs ground 0.91","status":"PASS"},"canvas_chain_after_backbuffercopy":{"detail":"tile9=green","status":"YES"},"canvas_chain_without_backbuffercopy":{"detail":"tile8=red","status":"NO"},"canvas_pass_draws":{"detail":"tile7=cyan","status":"PASS"},"canvas_pass_reads_3d_post_output":{"detail":"tile6=green","status":"YES"},"chain_3d_second_pass_sees_first":{"detail":"tile5=red","status":"NO"},"cpu_particles_3d":{"detail":"304 blue pixels near emitter","status":"PASS"},"decal_node":{"detail":"luminance at decal 0.43 vs ground 0.91","status":"PASS"},"depth_reconstructed_normal":{"detail":"tile4=green","status":"PASS"},"depth_texture_3d":{"detail":"tile2=green (linearised centre depth vs analytic)","status":"PASS"},"fullscreen_quad_3d":{"detail":"tile0=magenta","status":"PASS"},"gltf_outline_vertex_alpha_width":{"detail":"122 outline-ink pixels around glTF mesh","status":"PASS"},"gltf_vertex_colour_arrays":{"detail":"63 colours, rgb min #21241f max #d73c69, alpha 0.25..1.00","status":"PASS"},"gltf_vertex_colour_in_shader":{"detail":"lit #f28d7e, unlit raw COLOR #e98466, unlit constant 0.5 #bcbcbc","status":"PASS"},"gpu_particles_3d":{"detail":"308 orange pixels near emitter","status":"PASS"},"inverted_hull_outline":{"detail":"179 outline-ink pixels around torus","status":"PASS"},"mouse_capture_pointer_lock":{"detail":"Input.mouse_mode captured=true","status":"PASS"},"normal_roughness_texture":{"detail":"tile3=green","status":"PASS"},"pixel_readback":{"detail":"1280x720","status":"PASS"},"pointer_pressure":{"detail":"31 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0","status":"INFO"},"renderer":{"detail":"forward_plus / vulkan / NVIDIA GeForce RTX 3080","status":"INFO"},"screen_texture_3d":{"detail":"tile1=green (holds linear values)","status":"PASS"},"screen_texture_canvas":{"detail":"tile10=blue (holds sRGB-encoded values)","status":"PASS"},"tree_paused_one_node_processing":{"detail":"while paused: pausable node +0 frames, PROCESS_MODE_ALWAYS node +40 frames","status":"PASS"}}
+ORIMI_PROBE pointer_pressure INFO 33 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0 [t=7.01s]
+ORIMI_FPS fps=72 process_ms=741.27 [t=7.04s]
+ORIMI_FPS fps=139 process_ms=7.43 [t=8.01s]
+ORIMI_FPS fps=139 process_ms=7.43 [t=9.01s]
+ORIMI_SCREENSHOT path=<project>/docs/phase0/desktop_forward_plus.png size=1280x720

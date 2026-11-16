@@ -1,0 +1,28 @@
+{
+ "outputs": [
+  {
+   "path": "assets/characters/folk/folk_dyer.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "689f7b6d754a3b1b017a06ddd667d3d4b9c9b65b0b8a015966063e20883df869",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/characters/folk/folk_lampmaker.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "d0faa2b6e5fb272b95d87f6f58cbfe35a99dac86375b121da566f2188aac3293",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/characters/folk/folk_mapmaker.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "8989a0158fd3899b4491e370e7580f2783054ef9aa815800d98e81a26412b8a5",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/characters/folk/pell.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "35b94dcf86f91206953a20677abcb479a22a3cbe1121deb94905835b6c2f534b",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  }
+ ]
+}

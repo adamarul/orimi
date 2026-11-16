@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://pgoexqppt8h" path="res://assets/levels/mosswater/textures/mw_trunk_a.png" id="1"]
+
+[resource]
+resource_name = "M_mw_trunk_a"
+albedo_texture = ExtResource("1")
+texture_filter = 3

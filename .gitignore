@@ -1,0 +1,31 @@
+# Third-party toolchain (recreate with tools/setup_tools.sh)
+.tools/
+# Godot import cache
+.godot/
+# Per-checkout runtime data: redirected Godot/Blender user dirs, browser profiles, logs
+.userdata/
+# Build output (web build is reproducible: tools/export_web.sh)
+build/
+# Per-workstream git worktrees (only the .gdignore marker is tracked)
+.worktrees/*
+!.worktrees/.gdignore
+*.tmp
+.reference/
+# Python caches (compiled files embed the absolute path of the machine that made them)
+__pycache__/
+*.pyc
+# Secrets and local settings
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.keystore
+*.jks
+override.cfg
+# Video and capture output (kept outside the repository)
+*.mp4
+*.avi
+*.mov
+*.webm

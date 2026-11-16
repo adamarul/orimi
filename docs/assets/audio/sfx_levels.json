@@ -1,0 +1,338 @@
+{
+ "footstep": {
+  "file": "audio/sfx/footstep.ogg",
+  "seconds": 0.16,
+  "peak_db": -9.0,
+  "rms_db": -26.8,
+  "bytes": 5834,
+  "clipped": false
+ },
+ "jump": {
+  "file": "audio/sfx/jump.ogg",
+  "seconds": 0.32,
+  "peak_db": -5.6,
+  "rms_db": -18.9,
+  "bytes": 7344,
+  "clipped": false
+ },
+ "land": {
+  "file": "audio/sfx/land.ogg",
+  "seconds": 0.3,
+  "peak_db": -6.5,
+  "rms_db": -22.8,
+  "bytes": 7790,
+  "clipped": false
+ },
+ "swipe": {
+  "file": "audio/sfx/swipe.ogg",
+  "seconds": 0.3,
+  "peak_db": -4.8,
+  "rms_db": -17.0,
+  "bytes": 6527,
+  "clipped": false
+ },
+ "hit": {
+  "file": "audio/sfx/hit.ogg",
+  "seconds": 0.45,
+  "peak_db": -3.1,
+  "rms_db": -21.8,
+  "bytes": 6780,
+  "clipped": false
+ },
+ "hurt": {
+  "file": "audio/sfx/hurt.ogg",
+  "seconds": 0.5,
+  "peak_db": -4.3,
+  "rms_db": -25.1,
+  "bytes": 10882,
+  "clipped": false
+ },
+ "splotchet_hop": {
+  "file": "audio/sfx/splotchet_hop.ogg",
+  "seconds": 0.18,
+  "peak_db": -8.1,
+  "rms_db": -20.5,
+  "bytes": 4640,
+  "clipped": false
+ },
+ "splotchet_die": {
+  "file": "audio/sfx/splotchet_die.ogg",
+  "seconds": 0.8,
+  "peak_db": -3.6,
+  "rms_db": -21.2,
+  "bytes": 10887,
+  "clipped": false
+ },
+ "reedwraith_moan": {
+  "file": "audio/sfx/reedwraith_moan.ogg",
+  "seconds": 1.8,
+  "peak_db": -6.0,
+  "rms_db": -22.1,
+  "bytes": 14460,
+  "clipped": false
+ },
+ "reedwraith_die": {
+  "file": "audio/sfx/reedwraith_die.ogg",
+  "seconds": 1.4,
+  "peak_db": -3.2,
+  "rms_db": -23.8,
+  "bytes": 13946,
+  "clipped": false
+ },
+ "veil_off": {
+  "file": "audio/sfx/veil_off.ogg",
+  "seconds": 1.0,
+  "peak_db": -4.5,
+  "rms_db": -25.8,
+  "bytes": 15936,
+  "clipped": false
+ },
+ "brush_open": {
+  "file": "audio/sfx/brush_open.ogg",
+  "seconds": 1.1,
+  "peak_db": -5.2,
+  "rms_db": -19.9,
+  "bytes": 10814,
+  "clipped": false
+ },
+ "brush_close": {
+  "file": "audio/sfx/brush_close.ogg",
+  "seconds": 0.9,
+  "peak_db": -5.9,
+  "rms_db": -23.1,
+  "bytes": 8605,
+  "clipped": false
+ },
+ "brush_stroke": {
+  "file": "audio/sfx/brush_stroke.ogg",
+  "seconds": 0.55,
+  "peak_db": -9.4,
+  "rms_db": -24.9,
+  "bytes": 8642,
+  "clipped": false
+ },
+ "glyph_ok": {
+  "file": "audio/sfx/glyph_ok.ogg",
+  "seconds": 1.5,
+  "peak_db": -3.9,
+  "rms_db": -18.8,
+  "bytes": 12839,
+  "clipped": false
+ },
+ "glyph_fail": {
+  "file": "audio/sfx/glyph_fail.ogg",
+  "seconds": 0.6,
+  "peak_db": -5.3,
+  "rms_db": -25.3,
+  "bytes": 7712,
+  "clipped": false
+ },
+ "bloom": {
+  "file": "audio/sfx/bloom.ogg",
+  "seconds": 1.8,
+  "peak_db": -3.3,
+  "rms_db": -20.2,
+  "bytes": 17034,
+  "clipped": false
+ },
+ "slash": {
+  "file": "audio/sfx/slash.ogg",
+  "seconds": 0.42,
+  "peak_db": -3.6,
+  "rms_db": -21.3,
+  "bytes": 7466,
+  "clipped": false
+ },
+ "gust": {
+  "file": "audio/sfx/gust.ogg",
+  "seconds": 1.3,
+  "peak_db": -3.5,
+  "rms_db": -23.2,
+  "bytes": 13597,
+  "clipped": false
+ },
+ "thorns_cut": {
+  "file": "audio/sfx/thorns_cut.ogg",
+  "seconds": 0.8,
+  "peak_db": -3.3,
+  "rms_db": -21.6,
+  "bytes": 12452,
+  "clipped": false
+ },
+ "soot_clear": {
+  "file": "audio/sfx/soot_clear.ogg",
+  "seconds": 1.6,
+  "peak_db": -3.2,
+  "rms_db": -18.0,
+  "bytes": 24259,
+  "clipped": false
+ },
+ "zone_restore": {
+  "file": "audio/sfx/zone_restore.ogg",
+  "seconds": 3.4,
+  "peak_db": -2.0,
+  "rms_db": -17.6,
+  "bytes": 24490,
+  "clipped": false
+ },
+ "petals": {
+  "file": "audio/sfx/petals.ogg",
+  "seconds": 1.4,
+  "peak_db": -6.2,
+  "rms_db": -20.5,
+  "bytes": 17308,
+  "clipped": false
+ },
+ "tree_restore": {
+  "file": "audio/sfx/tree_restore.ogg",
+  "seconds": 5.5,
+  "peak_db": -1.4,
+  "rms_db": -14.2,
+  "bytes": 32337,
+  "clipped": false
+ },
+ "ink_pickup": {
+  "file": "audio/sfx/ink_pickup.ogg",
+  "seconds": 0.5,
+  "peak_db": -5.9,
+  "rms_db": -23.4,
+  "bytes": 5995,
+  "clipped": false
+ },
+ "ui_move": {
+  "file": "audio/sfx/ui_move.ogg",
+  "seconds": 0.09,
+  "peak_db": -10.4,
+  "rms_db": -23.2,
+  "bytes": 4291,
+  "clipped": false
+ },
+ "ui_accept": {
+  "file": "audio/sfx/ui_accept.ogg",
+  "seconds": 0.6,
+  "peak_db": -6.2,
+  "rms_db": -25.2,
+  "bytes": 6399,
+  "clipped": false
+ },
+ "kindle": {
+  "file": "audio/sfx/kindle.ogg",
+  "seconds": 1.5,
+  "peak_db": -4.4,
+  "rms_db": -23.3,
+  "bytes": 16828,
+  "clipped": false
+ },
+ "tie": {
+  "file": "audio/sfx/tie.ogg",
+  "seconds": 1.3,
+  "peak_db": -4.1,
+  "rms_db": -22.1,
+  "bytes": 13431,
+  "clipped": false
+ },
+ "verse_wake": {
+  "file": "audio/sfx/verse_wake.ogg",
+  "seconds": 2.8,
+  "peak_db": -2.9,
+  "rms_db": -15.4,
+  "bytes": 23997,
+  "clipped": false
+ },
+ "talk_open": {
+  "file": "audio/sfx/talk_open.ogg",
+  "seconds": 0.45,
+  "peak_db": -7.9,
+  "rms_db": -27.6,
+  "bytes": 8241,
+  "clipped": false
+ },
+ "talk_next": {
+  "file": "audio/sfx/talk_next.ogg",
+  "seconds": 0.12,
+  "peak_db": -14.0,
+  "rms_db": -28.4,
+  "bytes": 4563,
+  "clipped": false
+ },
+ "pickup": {
+  "file": "audio/sfx/pickup.ogg",
+  "seconds": 0.9,
+  "peak_db": -5.7,
+  "rms_db": -23.1,
+  "bytes": 9928,
+  "clipped": false
+ },
+ "bead": {
+  "file": "audio/sfx/bead.ogg",
+  "seconds": 2.6,
+  "peak_db": -2.1,
+  "rms_db": -16.4,
+  "bytes": 23511,
+  "clipped": false
+ },
+ "splash": {
+  "file": "audio/sfx/splash.ogg",
+  "seconds": 1.1,
+  "peak_db": -4.2,
+  "rms_db": -21.0,
+  "bytes": 12038,
+  "clipped": false
+ },
+ "curse_throwback": {
+  "file": "audio/sfx/curse_throwback.ogg",
+  "seconds": 1.0,
+  "peak_db": -4.1,
+  "rms_db": -20.2,
+  "bytes": 10742,
+  "clipped": false
+ },
+ "fight_seal": {
+  "file": "audio/sfx/fight_seal.ogg",
+  "seconds": 2.2,
+  "peak_db": -3.0,
+  "rms_db": -17.0,
+  "bytes": 14495,
+  "clipped": false
+ },
+ "fight_won": {
+  "file": "audio/sfx/fight_won.ogg",
+  "seconds": 2.6,
+  "peak_db": -2.9,
+  "rms_db": -18.4,
+  "bytes": 19389,
+  "clipped": false
+ },
+ "unravel": {
+  "file": "audio/sfx/unravel.ogg",
+  "seconds": 1.55,
+  "peak_db": -3.6,
+  "rms_db": -19.9,
+  "bytes": 23660,
+  "clipped": false
+ },
+ "clean_cut": {
+  "file": "audio/sfx/clean_cut.ogg",
+  "seconds": 0.9,
+  "peak_db": -2.2,
+  "rms_db": -23.1,
+  "bytes": 9800,
+  "clipped": false
+ },
+ "raft": {
+  "file": "audio/sfx/raft.ogg",
+  "seconds": 1.9,
+  "peak_db": -4.8,
+  "rms_db": -26.6,
+  "bytes": 18404,
+  "clipped": false
+ },
+ "lamp_hum": {
+  "file": "audio/sfx/lamp_hum.ogg",
+  "seconds": 2.0,
+  "peak_db": -12.0,
+  "rms_db": -23.4,
+  "bytes": 16395,
+  "clipped": false
+ }
+}

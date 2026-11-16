@@ -1,0 +1,1213 @@
+{
+	"spawn_facing": "M_DarkHollow",
+	"complete_on_objectives": false,
+	"objectives": [
+		{
+			"text": "Find the charcoal-burner in the dark",
+			"flag": "talked_fenn"
+		},
+		{
+			"text": "Blow the soot out of the paddle-wheel",
+			"flag": "wheel_freed"
+		},
+		{
+			"text": "Bloom the lily buds across the middle pond",
+			"flags": [
+				"lily_1_open",
+				"lily_2_open",
+				"lily_3_open"
+			]
+		},
+		{
+			"text": "Tie the fallen log back across the weir",
+			"flag": "tied_log"
+		},
+		{
+			"text": "Climb the gully to the dam",
+			"flags": [
+				"thorns_cut",
+				"soot_cleared",
+				"tied_gap"
+			]
+		},
+		{
+			"text": "Win the fight on the dam",
+			"flag": "fight_dam"
+		},
+		{
+			"text": "Bloom the old willow",
+			"flag": "restored_spring"
+		},
+		{
+			"text": "Board Pell's raft on Willow Pool",
+			"flag": "exit_reached"
+		}
+	],
+	"lines": {
+		"pell": [
+			{
+				"who": "Pell",
+				"text": "Mosswater Wood. The stream ought to be loud here."
+			},
+			{
+				"who": "Pell",
+				"text": "It isn't."
+			},
+			{
+				"who": "Pell",
+				"text": "I lit the first *lantern-fruit* for you. That's all my flint's good for."
+			},
+			{
+				"who": "Pell",
+				"text": "Bring the water back and we can go on upriver. I'll mind the raft."
+			}
+		],
+		"pell_again": [
+			{
+				"who": "Pell",
+				"text": "Mind the dark. Things sit in it."
+			},
+			{
+				"who": "Pell",
+				"text": "And don't fall in anything. I only brought one towel."
+			}
+		],
+		"pell_leaves": [
+			{
+				"who": "Pell",
+				"text": "That's water! Real water, going the right way!"
+			},
+			{
+				"who": "Pell",
+				"text": "Get on. Before it changes its mind."
+			}
+		],
+		"fenn": [
+			{
+				"text": "Stop there. In my light or out of it. Not on the edge."
+			},
+			{
+				"text": "...A paper fox. Huh."
+			},
+			{
+				"text": "Fenn. I burn charcoal. Burned. Nobody's come for any in a long while."
+			},
+			{
+				"text": "You came up the river, so you've seen the ponds. Black as my hands."
+			},
+			{
+				"text": "The *wheel* at the bottom pond is choked with soot. If it turned, the pond would breathe again."
+			},
+			{
+				"text": "I'd clear it myself. Soot doesn't care for shovels."
+			}
+		],
+		"fenn_again": [
+			{
+				"text": "This fire hasn't gone out in a year. I think it's the only reason I'm still me."
+			},
+			{
+				"text": "Keep a light near you. The dark here isn't empty."
+			}
+		],
+		"fenn_wheel": [
+			{
+				"who": "Fenn",
+				"text": "Hear that? That's the bottom pond, talking again."
+			},
+			{
+				"who": "Fenn",
+				"text": "...Thank you. I'm out of practice at saying it."
+			},
+			{
+				"who": "Fenn",
+				"text": "The middle pond's up the bank. Climb the shelves on the *stair tree*. They held me and a sack of charcoal."
+			},
+			{
+				"who": "Fenn",
+				"text": "The lilies up there shut tight when the water stopped. Show them something round and bright. They'll think it's morning."
+			},
+			{
+				"who": "Fenn",
+				"text": "I'll go round by the goat path and meet you up top. You'd fit on it. You wouldn't like it."
+			}
+		],
+		"fenn_call": [
+			{
+				"who": "Fenn",
+				"text": "Over here! Keep out of the water. It's deep, and it's wrong."
+			},
+			{
+				"who": "Fenn",
+				"text": "Mind the flitters over the island. Soot with wings. They can't abide a draught."
+			}
+		],
+		"fenn_log": [
+			{
+				"who": "Fenn",
+				"text": "That log was my bridge. Now it's a cork in the weir."
+			},
+			{
+				"who": "Fenn",
+				"text": "There's a post on your side and one on mine. You'd want a long rope, mind."
+			}
+		],
+		"fenn_tied": [
+			{
+				"who": "Fenn",
+				"text": "You made a rope out of ink. I'm not going to ask."
+			},
+			{
+				"who": "Fenn",
+				"text": "Hear the weir? That's two ponds talking."
+			},
+			{
+				"who": "Fenn",
+				"text": "Come over. I owe you a story, and I'd rather tell it in the light."
+			}
+		],
+		"fenn_ledge": [
+			{
+				"text": "There was a man from the head of the river. The *Ink-maker*, folk called him."
+			},
+			{
+				"text": "Most people buy a sack of charcoal. He bought the whole winter's burn. Every winter."
+			},
+			{
+				"text": "Last time, he wanted it blacker. I asked him how black."
+			},
+			{
+				"text": "He said, a black you could fall into."
+			},
+			{
+				"text": "I should have asked what he wanted it for."
+			}
+		],
+		"fenn_ledge_again": [
+			{
+				"text": "The gully's the only way up to the dam."
+			},
+			{
+				"text": "Thorns at the bottom, dark in the middle, soot at the top. And a gap with no bridge. Bring everything you've got."
+			}
+		],
+		"fenn_willow": [
+			{
+				"text": "You came up the gully. I took the long way. I'm not ashamed."
+			},
+			{
+				"text": "That's the old *willow*. Its roots hold the spring. Open, or shut. Right now, shut."
+			},
+			{
+				"text": "My mother tied that cord round it, for luck. It's been a thin year for luck."
+			}
+		],
+		"fenn_willow_again": [
+			{
+				"text": "*Bloom* the willow. I'll stand back. I've had enough surprises for one year."
+			}
+		],
+		"fenn_end": [
+			{
+				"who": "Fenn",
+				"text": "Listen to that."
+			},
+			{
+				"who": "Fenn",
+				"text": "...I'd forgotten it was this loud."
+			}
+		],
+		"fenn_farewell": [
+			{
+				"text": "If you meet the Ink-maker up there, tell him the burner says the ponds are moving."
+			},
+			{
+				"text": "He'll know what I mean. Or he won't. Either way, tell him."
+			}
+		],
+		"verse_1": [
+			{
+				"who": "",
+				"text": "I bought my black from the burner by the ponds."
+			},
+			{
+				"who": "",
+				"text": "Willow wood, burned slow, a whole winter's sleep."
+			},
+			{
+				"who": "",
+				"text": "He said, that's dark enough for any letter."
+			},
+			{
+				"who": "",
+				"text": "I said, not for the one I mean to write."
+			}
+		],
+		"verse_2": [
+			{
+				"who": "",
+				"text": "I cut a willow switch here for my first brush."
+			},
+			{
+				"who": "",
+				"text": "The tree didn't mind. It had a thousand more."
+			},
+			{
+				"who": "",
+				"text": "I came back for water when my ink ran thick."
+			},
+			{
+				"who": "",
+				"text": "The spring always gave. I never once said thank you."
+			}
+		],
+		"bead": [
+			{
+				"who": "",
+				"text": "The ponds remember their colour. *Water indigo* joins the cord."
+			}
+		]
+	},
+	"raft": {
+		"talk": "pell_leaves",
+		"card": "Pell poles the raft upriver, toward the kiln."
+	},
+	"warps": {
+		"M_WheelView": {
+			"flags": [
+				"talked_pell",
+				"lit_lf02",
+				"lit_lf03",
+				"fight_hollow",
+				"lit_lf04",
+				"lit_lf05",
+				"talked_fenn",
+				"read_verse_1"
+			],
+			"face": "M_Wheel"
+		},
+		"M_StairTree": {
+			"flags": [
+				"talked_pell",
+				"lit_lf02",
+				"lit_lf03",
+				"fight_hollow",
+				"lit_lf04",
+				"lit_lf05",
+				"talked_fenn",
+				"read_verse_1",
+				"wheel_freed",
+				"lit_lf07"
+			],
+			"face": "M_StairTree"
+		},
+		"M_StairTop": {
+			"flags": [
+				"talked_pell",
+				"lit_lf02",
+				"lit_lf03",
+				"fight_hollow",
+				"lit_lf04",
+				"lit_lf05",
+				"talked_fenn",
+				"read_verse_1",
+				"wheel_freed",
+				"lit_lf07"
+			],
+			"face": "M_Island"
+		},
+		"M_Fenn_2": {
+			"flags": [
+				"talked_pell",
+				"lit_lf02",
+				"lit_lf03",
+				"fight_hollow",
+				"lit_lf04",
+				"lit_lf05",
+				"talked_fenn",
+				"read_verse_1",
+				"wheel_freed",
+				"lit_lf07",
+				"lit_lf08",
+				"reached_cp_stair_top",
+				"lily_1_open",
+				"lily_2_open",
+				"lily_3_open",
+				"lit_lf09",
+				"tied_log"
+			],
+			"face": "M_Thorns"
+		},
+		"M_DamFight": {
+			"flags": [
+				"talked_pell",
+				"lit_lf02",
+				"lit_lf03",
+				"fight_hollow",
+				"lit_lf04",
+				"lit_lf05",
+				"talked_fenn",
+				"read_verse_1",
+				"wheel_freed",
+				"lit_lf07",
+				"lit_lf08",
+				"reached_cp_stair_top",
+				"lily_1_open",
+				"lily_2_open",
+				"lily_3_open",
+				"lit_lf09",
+				"tied_log",
+				"thorns_cut",
+				"lit_lf10",
+				"soot_cleared",
+				"tied_gap"
+			],
+			"face": "M_Dam",
+			"route_from": "gap_crossed"
+		},
+		"M_Verse_2": {
+			"flags": [
+				"talked_pell",
+				"lit_lf02",
+				"lit_lf03",
+				"fight_hollow",
+				"lit_lf04",
+				"lit_lf05",
+				"talked_fenn",
+				"read_verse_1",
+				"wheel_freed",
+				"lit_lf07",
+				"lit_lf08",
+				"reached_cp_stair_top",
+				"lily_1_open",
+				"lily_2_open",
+				"lily_3_open",
+				"lit_lf09",
+				"tied_log",
+				"thorns_cut",
+				"lit_lf10",
+				"soot_cleared",
+				"tied_gap",
+				"fight_dam"
+			],
+			"face": "M_Willow",
+			"route_from": "willow_path"
+		}
+	},
+	"hints": [
+		{
+			"id": "mw_kindle",
+			"near": [
+				26.02,
+				3.39,
+				35.36
+			],
+			"radius": 6,
+			"text": "%s a lantern-fruit: a short dab on it.",
+			"glyph": "kindle",
+			"until": "lit_lf02"
+		},
+		{
+			"id": "mw_dark",
+			"near": "M_DarkHollow",
+			"radius": 9,
+			"text": "Something waits where the light stops.",
+			"until": "lit_lf03"
+		},
+		{
+			"id": "mw_sootflit",
+			"near": "M_Lily_3",
+			"radius": 5,
+			"flag": "lily_2_open",
+			"text": "Sootflits circle out of reach. A %s brings them down.",
+			"glyph": "gust",
+			"until": "tied_log"
+		},
+		{
+			"id": "mw_tie",
+			"near": "M_TiePost_A",
+			"radius": 3,
+			"text": "Two posts, one line. %s them.",
+			"glyph": "tie",
+			"until": "tied_log"
+		},
+		{
+			"id": "mw_moss",
+			"near": "M_MossLantern",
+			"radius": 5,
+			"text": "The moss leans toward the light.",
+			"until": "lit_lf10"
+		},
+		{
+			"id": "mw_deep",
+			"flag": "fell_in_pond",
+			"text": "The still water will not hold Orimi. Back to the shore."
+		}
+	],
+	"barks": {
+		"ponds_remember": "bead"
+	},
+	"autoplay": {
+		"chain": [
+			"M_Spawn",
+			[
+				31.8,
+				0.3,
+				36.1
+			],
+			[
+				25,
+				1.1,
+				37.2
+			],
+			"M_DarkHollow",
+			[
+				14.7,
+				1.1,
+				33.4
+			],
+			[
+				14.7,
+				1.1,
+				28.3
+			],
+			"M_Fenn_1",
+			[
+				18.2,
+				1.1,
+				23.9
+			],
+			"M_WheelView",
+			[
+				10,
+				1.1,
+				25.3
+			],
+			[
+				5.5,
+				1.1,
+				21.4
+			],
+			[
+				2.3,
+				1.1,
+				17
+			],
+			[
+				1.65,
+				1.1,
+				14.98
+			],
+			"M_StairTop",
+			[
+				-2.7,
+				7,
+				6.4
+			]
+		],
+		"route": [
+			{
+				"talk": "Pell"
+			},
+			{
+				"stage": "arrival"
+			},
+			{
+				"cast": "kindle",
+				"target": "LF02",
+				"before": 3.5,
+				"flag": "lit_lf02",
+				"from": [
+					26,
+					1,
+					40
+				]
+			},
+			{
+				"go": [
+					25,
+					1.1,
+					37.2
+				]
+			},
+			{
+				"cast": "kindle",
+				"target": "LF03",
+				"before": 3.5,
+				"flag": "lit_lf03"
+			},
+			{
+				"stage": "hollow_lit"
+			},
+			{
+				"fight": "Fight_Hollow",
+				"finish": true
+			},
+			{
+				"stage": "hollow_won"
+			},
+			{
+				"cast": "kindle",
+				"target": "LF04",
+				"before": 3.5,
+				"flag": "lit_lf04"
+			},
+			{
+				"cast": "kindle",
+				"target": "LF05",
+				"before": 3.5,
+				"flag": "lit_lf05"
+			},
+			{
+				"talk": "Fenn"
+			},
+			{
+				"stage": "fenn"
+			},
+			{
+				"cast": "bloom",
+				"target": "Verse_1",
+				"before": 3,
+				"flag": "read_verse_1"
+			},
+			{
+				"go": "M_WheelView"
+			},
+			{
+				"cast": "gust",
+				"target": "WheelSoot",
+				"before": 5,
+				"from": "M_WheelView",
+				"flag": "wheel_freed"
+			},
+			{
+				"stage": "wheel"
+			},
+			{
+				"cast": "kindle",
+				"target": "LF07",
+				"before": 3.5,
+				"flag": "lit_lf07"
+			},
+			{
+				"go": [
+					1.65,
+					1.1,
+					14.98
+				]
+			},
+			{
+				"stage": "stair_tree"
+			},
+			{
+				"jump": true,
+				"toward": [
+					1.32,
+					2.1,
+					13.73
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 1.8
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					2.68,
+					3.1,
+					12.74
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 2.8
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					3.03,
+					4.1,
+					11.09
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 3.8
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					2.19,
+					5.1,
+					9.63
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 4.8
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					0.58,
+					6.1,
+					9.11
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 5.8
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					-0.95,
+					7.1,
+					9.79
+				],
+				"air_time": 0.3
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": "M_StairTop",
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 6.8
+			},
+			{
+				"go": "M_StairTop"
+			},
+			{
+				"stage": "stair_top"
+			},
+			{
+				"cast": "kindle",
+				"target": "LF08",
+				"before": 3,
+				"flag": "lit_lf08"
+			},
+			{
+				"go": [
+					-2.7,
+					7,
+					6.4
+				]
+			},
+			{
+				"cast": "bloom",
+				"target": "Lily_1",
+				"before": 3,
+				"from": [
+					-2.7,
+					7,
+					6.4
+				],
+				"flag": "lily_1_open"
+			},
+			{
+				"go": [
+					-3.2,
+					6.6,
+					5.2
+				]
+			},
+			{
+				"jump": true,
+				"toward": "M_Lily_1"
+			},
+			{
+				"expect_above": 6.45
+			},
+			{
+				"cast": "bloom",
+				"target": "Lily_2",
+				"before": 2.5,
+				"flag": "lily_2_open"
+			},
+			{
+				"go": [
+					-3.95,
+					6.55,
+					2.12
+				]
+			},
+			{
+				"jump": true,
+				"hold": 0.25,
+				"toward": "M_Lily_2"
+			},
+			{
+				"expect_above": 6.45
+			},
+			{
+				"cast": "bloom",
+				"target": "Lily_3",
+				"before": 2.5,
+				"flag": "lily_3_open"
+			},
+			{
+				"go": [
+					-4.19,
+					6.55,
+					-1.01
+				]
+			},
+			{
+				"jump": true,
+				"hold": 0.25,
+				"toward": "M_Lily_3"
+			},
+			{
+				"expect_above": 6.45
+			},
+			{
+				"stage": "lilies_open"
+			},
+			{
+				"go": [
+					-2.53,
+					6.55,
+					-3.29
+				]
+			},
+			{
+				"jump": true,
+				"hold": 0.25,
+				"toward": "M_Island"
+			},
+			{
+				"expect_above": 6.5
+			},
+			{
+				"stage": "island"
+			},
+			{
+				"go": "M_Island"
+			},
+			{
+				"tie": [
+					"Ties/Log/PostA",
+					"Ties/Log/PostB"
+				],
+				"flag": "tied_log"
+			},
+			{
+				"wait": 2
+			},
+			{
+				"go": [
+					0.4,
+					6.75,
+					-4.4
+				]
+			},
+			{
+				"go": [
+					-2.82,
+					6.9,
+					-8.2
+				]
+			},
+			{
+				"go": [
+					-5.09,
+					7,
+					-10.86
+				]
+			},
+			{
+				"go": "M_LogEnd_Bridge"
+			},
+			{
+				"talk": "FennLedge"
+			},
+			{
+				"stage": "fenn_ledge"
+			},
+			{
+				"go": [
+					-8.77,
+					7,
+					-8.77
+				]
+			},
+			{
+				"go": [
+					-10.5,
+					7,
+					-8.0
+				]
+			},
+			{
+				"go": [
+					-11.5,
+					7,
+					-6.5
+				]
+			},
+			{
+				"go": [
+					-11.03,
+					7,
+					-5.37
+				]
+			},
+			{
+				"cast": "slash",
+				"target": "Thorns",
+				"before": 2.5,
+				"flag": "thorns_cut"
+			},
+			{
+				"cast": "kindle",
+				"target": "LF10",
+				"before": 3,
+				"flag": "lit_lf10"
+			},
+			{
+				"wait": 2
+			},
+			{
+				"stage": "gully_foot"
+			},
+			{
+				"go": [
+					-11.8,
+					7,
+					-4.4
+				]
+			},
+			{
+				"go": [
+					-13.57,
+					7,
+					-4.66
+				]
+			},
+			{
+				"jump": true,
+				"toward": [
+					-14.76,
+					8,
+					-4.86
+				],
+				"air_time": 0.45
+			},
+			{
+				"expect_above": 7.7
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					-15.24,
+					9,
+					-3.22
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 8.7
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					-15.92,
+					10,
+					-1.77
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 9.7
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					-17.13,
+					11,
+					-0.87
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 10.7
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					-18.45,
+					12,
+					-0.06
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 11.7
+			},
+			{
+				"wait": 0.3
+			},
+			{
+				"jump": true,
+				"toward": [
+					-19.37,
+					12.9,
+					1.14
+				],
+				"air_time": 0.3
+			},
+			{
+				"expect_above": 12.6
+			},
+			{
+				"go": [
+					-22.2,
+					13,
+					-0.6
+				]
+			},
+			{
+				"stage": "gully_climbed"
+			},
+			{
+				"go": [
+					-21.5,
+					13,
+					-1.7
+				]
+			},
+			{
+				"go": [
+					-20.6,
+					13,
+					-2.7
+				]
+			},
+			{
+				"go": [
+					-19.6,
+					13,
+					-3.7
+				]
+			},
+			{
+				"cast": "gust",
+				"target": "SootBank",
+				"before": 2.8,
+				"from": [
+					-19.6,
+					13,
+					-3.7
+				],
+				"flag": "soot_cleared"
+			},
+			{
+				"go": [
+					-17.4,
+					13,
+					-5.5
+				]
+			},
+			{
+				"go": [
+					-16.8,
+					13,
+					-6.5
+				]
+			},
+			{
+				"go": [
+					-16.5,
+					13,
+					-7.5
+				]
+			},
+			{
+				"tie": [
+					"Ties/Gap/PostA",
+					"Ties/Gap/PostB"
+				],
+				"flag": "tied_gap"
+			},
+			{
+				"wait": 1.5
+			},
+			{
+				"go": "M_TiePost_D"
+			},
+			{
+				"go": [
+					-11.46,
+					13,
+					-12.3
+				]
+			},
+			{
+				"stage": "gap_crossed"
+			},
+			{
+				"fight": "Fight_Dam",
+				"finish": true
+			},
+			{
+				"stage": "dam_won"
+			},
+			{
+				"go": [
+					-7.07,
+					13,
+					-22.63
+				]
+			},
+			{
+				"go": [
+					-5.94,
+					13,
+					-27.44
+				]
+			},
+			{
+				"go": [
+					-7.5,
+					13,
+					-32.1
+				]
+			},
+			{
+				"go": [
+					-11.24,
+					13,
+					-36.13
+				]
+			},
+			{
+				"stage": "willow_path"
+			},
+			{
+				"cast": "bloom",
+				"target": "Verse_2",
+				"before": 3,
+				"flag": "read_verse_2"
+			},
+			{
+				"stage": "verse_2"
+			},
+			{
+				"go": [
+					-20.36,
+					13,
+					-37.05
+				]
+			},
+			{
+				"talk": "FennWillow"
+			},
+			{
+				"stage": "fenn_willow"
+			},
+			{
+				"go": "M_Exit"
+			},
+			{
+				"probe_water": "Water/PondHigh",
+				"toward": [
+					-19.5,
+					11.0,
+					-31.0
+				],
+				"hold": 2
+			},
+			{
+				"cast": "bloom",
+				"target": "Willow",
+				"before": 4,
+				"from": "M_Exit",
+				"flag": "restored_spring"
+			},
+			{
+				"wait": 2.5
+			},
+			{
+				"stage": "spring_restored"
+			},
+			{
+				"wait_flag": "water_runs",
+				"timeout": 20
+			},
+			{
+				"wait": 2
+			},
+			{
+				"stage": "water_runs"
+			},
+			{
+				"talk": "FennWillow"
+			},
+			{
+				"expect_bark": "bead",
+				"timeout": 12
+			},
+			{
+				"go": "M_Exit"
+			},
+			{
+				"go": "Exit",
+				"required": false
+			},
+			{
+				"wait_flag": "exit_reached",
+				"timeout": 20
+			},
+			{
+				"stage": "raft"
+			}
+		]
+	},
+	"mosswater": {
+		"_comment": "Mosswater's own data, ignored by the kit. Layout: scripts/levels/mosswater/mosswater_layout.json. Scene: scenes/levels/mosswater/mosswater.tscn, written by tools/levels/mosswater/make_level_scene.py. Readable copy of the lines: docs/levels/mosswater/SCRIPT.md.",
+		"waiting_on_kit": {
+			"EnemyBase model from a scene path; BloomTarget model_scene": "Sootflit loads its model through _build_placeholder; the willow's BloomTarget placeholder is hidden and the willow prop blooms beside it"
+		},
+		"events": {
+			"fenn_wheel": "Fenn (brazier) bark_on_flag wheel_freed; he hides at reached_cp_stair_top",
+			"fenn_call": "FennLedge bark_on_flag reached_cp_stair_top (shown from the same flag)",
+			"fenn_log": "FennLedge bark_on_flag lily_3_open (the last bud before the island)",
+			"fenn_tied": "FennLedge bark_on_flag tied_log",
+			"fenn_end": "FennWillow bark_on_flag water_runs (set by mosswater.gd about 7 s after restored_spring)",
+			"fenn_farewell": "FennWillow talk_by_flag restored_spring",
+			"bead": "level narration (barks) on ponds_remember, set by mosswater.gd once the finale camera lets go"
+		}
+	}
+}

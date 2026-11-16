@@ -1,0 +1,4 @@
+# Licences of fonts and third-party files
+files needing a licence: 1, missing: 0
+
+ok       tests/_plant/fonts/PlantSans.ttf                        font                       licence: tests/_plant/fonts/OFL.txt

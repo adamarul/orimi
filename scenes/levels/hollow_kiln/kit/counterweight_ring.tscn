@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[node name="Look" type="Node3D"]
+
+[node name="Ring" type="Node3D" parent="."]
+position = Vector3(0.000, 0.000, 0.000)

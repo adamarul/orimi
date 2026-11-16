@@ -1,0 +1,20 @@
+{
+ "models": "assets/levels/hollow_kiln/folk",
+ "textures": "assets/levels/hollow_kiln/folk",
+ "scenes": "scenes/levels/hollow_kiln/folk",
+ "people": {
+  "wenna": {
+   "size": "adult",
+   "build": "stout",
+   "garment": "apron",
+   "hat": "scarf",
+   "prop": "bucket",
+   "palette": "ash",
+   "colours": {
+    "trim": "#b5482f",
+    "hat": "#c98a3a"
+   },
+   "seed": 11
+  }
+ }
+}

@@ -1,0 +1,1115 @@
+{
+	"spawn_facing": "M_Knoll",
+	"complete_on_objectives": false,
+	"objectives": [
+		{
+			"text": "Tie a rope across the Seam",
+			"flag": "tied_bridge_1"
+		},
+		{
+			"text": "Find Tamsin's first map leaf on the Mere's rim",
+			"flag": "leaf_1"
+		},
+		{
+			"text": "Fetch the leaf from Kettle Hollow",
+			"flag": "leaf_2"
+		},
+		{
+			"text": "Fetch the leaf from Ladle Hollow",
+			"flag": "leaf_3"
+		},
+		{
+			"text": "Bring Tamsin all three leaves",
+			"flag": "talked_tamsin_map"
+		},
+		{
+			"text": "Follow the old road through the Mere",
+			"flag": "tied_mere_gap"
+		},
+		{
+			"text": "Wake the sapling on the Knoll",
+			"flag": "restored_mere"
+		}
+	],
+	"lines": {
+		"pell_arrival": [
+			{
+				"who": "Pell",
+				"text": "Sedge Plain. Mind the holes. They bite."
+			},
+			{
+				"who": "Pell",
+				"text": "I'll pole round through the trees and wait where the brook comes out of the *wood*."
+			},
+			{
+				"who": "Pell",
+				"text": "If you hear someone shouting at the wind, that's the mapmaker. She's harmless. Mostly."
+			}
+		],
+		"pell_arrival_again": [
+			{
+				"who": "Pell",
+				"text": "Go on. I'll be at the brook by the *wood*. Ears ready."
+			}
+		],
+		"tamsin_meet": [
+			{
+				"text": "Oh! A fox. A paper fox. Are you lost as well?"
+			},
+			{
+				"text": "Don't answer that. Nobody out here answers."
+			},
+			{
+				"text": "I'm Tamsin. I map this plain. Mapped it. Was mapping it."
+			},
+			{
+				"text": "Then the black came up in the low places, and the wind took my map clean off the frame."
+			},
+			{
+				"text": "Three leaves, and every one blew into a hollow. Of course it did."
+			},
+			{
+				"text": "The first went north, past the *Leaning Stones*, toward the gully. The *Seam*, I call it."
+			},
+			{
+				"text": "Bring it back and I'll draw you. From the good side."
+			}
+		],
+		"tamsin_rim_early": [
+			{
+				"text": "The leaf went down by the Mere's rim, just east of here. Bring it and I'll show you where we are."
+			}
+		],
+		"tamsin_meet_again": [
+			{
+				"text": "North, past the stones. The leaf is the one thing out there that isn't sedge."
+			}
+		],
+		"verse_1": [
+			{
+				"text": "I carried soot across this plain each spring."
+			},
+			{
+				"text": "Where the ground split, I strung a rope from post to post."
+			},
+			{
+				"text": "One straight line and two good posts make a bridge."
+			},
+			{
+				"text": "I made a thousand. I never made one home."
+			}
+		],
+		"leaf_1": [
+			{
+				"who": "",
+				"text": "A leaf of Tamsin's map: most of the plain, and a hole where the middle should be."
+			}
+		],
+		"tamsin_rim": [
+			{
+				"text": "You tied the bridge! I walked over it with my eyes shut. Both of them."
+			},
+			{
+				"text": "That's my first leaf. Look: there's the *Mere*, and the Knoll in the middle of it."
+			},
+			{
+				"text": "There used to be a road out to the Knoll. My map knows where. My map is in three pieces."
+			},
+			{
+				"text": "The second leaf is east, out on the island in *Kettle Hollow*. The causeway's under soot."
+			},
+			{
+				"text": "Soot blows away, I'm told. Do you blow?"
+			}
+		],
+		"tamsin_rim_again": [
+			{
+				"text": "East, to Kettle Hollow. Blow the soot off the causeway and walk out to the island."
+			}
+		],
+		"spur_dead_end": [
+			{
+				"who": "",
+				"text": "The old road stops here, in the black. This isn't the way."
+			}
+		],
+		"leaf_2": [
+			{
+				"who": "",
+				"text": "The second leaf: a road leaves the rim for the Knoll, then runs off the edge of the page."
+			}
+		],
+		"tamsin_two_leaves": [
+			{
+				"text": "Kettle Hollow! I named it. It whistles when the wind's in the south."
+			},
+			{
+				"text": "The last leaf went west, back over the gully, into *Ladle Hollow*. Yes, I named that one too."
+			}
+		],
+		"leaf_3": [
+			{
+				"who": "",
+				"text": "The third leaf: two bends, a gap, and the Knoll."
+			}
+		],
+		"tamsin_map": [
+			{
+				"text": "All three! Hold still, I need your nose to pin the corner."
+			},
+			{
+				"text": "There. The old road goes in by the *leaning post*, bends twice, and jumps a gap before the Knoll."
+			},
+			{
+				"text": "The soot at the start is thick. Blow hard. Then *tie* the gap the way you tied the gully."
+			},
+			{
+				"text": "I'd come along, but someone has to hold the map. Also I'm scared of the black. Mostly the second thing."
+			}
+		],
+		"tamsin_map_again": [
+			{
+				"text": "In by the leaning post, two bends, tie the gap. I'll be right here. Holding the map. Bravely."
+			}
+		],
+		"verse_2": [
+			{
+				"text": "I boiled this sedge for green when I was young."
+			},
+			{
+				"text": "The green ran out of every pot I filled."
+			},
+			{
+				"text": "So I began to grind a black to keep it in."
+			},
+			{
+				"text": "The plain kept its green without me. I should have asked it how."
+			}
+		],
+		"tamsin_after": [
+			{
+				"text": "Look at it. Every hollow green right to the bottom."
+			},
+			{
+				"text": "I finished the map. Here's the river, all the way up past the *wood*."
+			},
+			{
+				"text": "And here's the mountain, and here is... nothing. I have never once drawn nothing."
+			},
+			{
+				"text": "Somebody up there makes ink. Lots of it. I could smell it on the wind before the black came."
+			},
+			{
+				"text": "Take the path north-west, down to the brook. Your ferry child is waiting there. Loudly."
+			}
+		],
+		"tamsin_after_again": [
+			{
+				"text": "North-west, through the trees. Come back and I'll draw you. I did say the good side. I meant it."
+			}
+		],
+		"pell_exit": [
+			{
+				"who": "Pell",
+				"text": "There you are. The whole plain went green behind you. I saw it from the water."
+			},
+			{
+				"who": "Pell",
+				"text": "In you get. It's dark under those trees, so hold on to your ears."
+			}
+		]
+	},
+	"raft": {
+		"talk": "pell_exit",
+		"card": "Pell poles the raft north-west, under the trees of Mosswater Wood."
+	},
+	"end_text": "[font_size=34]The plain is on the map again.[/font_size]\n\nTamsin's three leaves are one sheet, the Mere runs green under the Knoll, and the brook carries Pell on towards Mosswater Wood.",
+	"safe_ground": {
+		"Ground_mere": [
+			{
+				"path": [
+					[
+						-13.9,
+						0,
+						-16.0
+					],
+					[
+						-10.8,
+						0,
+						-19.6
+					],
+					[
+						-10.9,
+						0,
+						-24.2
+					]
+				],
+				"width": 2.6
+			},
+			{
+				"path": [
+					[
+						-9.6,
+						0,
+						-28.9
+					],
+					[
+						-7.9,
+						0,
+						-30.4
+					]
+				],
+				"width": 2.6
+			},
+			{
+				"path": [
+					[
+						6.0,
+						0,
+						-9.5
+					],
+					[
+						5.2,
+						0,
+						-13.4
+					],
+					[
+						5.8,
+						0,
+						-16.4
+					]
+				],
+				"width": 2.2
+			},
+			{
+				"path": [
+					[
+						22.0,
+						0,
+						-26.0
+					],
+					[
+						18.2,
+						0,
+						-27.6
+					],
+					[
+						15.6,
+						0,
+						-27.2
+					]
+				],
+				"width": 2.2
+			},
+			{
+				"path": [
+					[
+						-6.93,
+						0,
+						-28.9
+					],
+					[
+						-6.62,
+						0,
+						-27.41
+					],
+					[
+						-6.05,
+						0,
+						-25.98
+					],
+					[
+						-5.26,
+						0,
+						-24.68
+					],
+					[
+						-4.25,
+						0,
+						-23.53
+					],
+					[
+						-3.06,
+						0,
+						-22.56
+					],
+					[
+						-1.73,
+						0,
+						-21.81
+					],
+					[
+						-0.29,
+						0,
+						-21.3
+					],
+					[
+						1.22,
+						0,
+						-21.03
+					]
+				],
+				"width": 2.8
+			},
+			{
+				"circle": [
+					2.0,
+					0,
+					-30.0
+				],
+				"radius": 5.6
+			}
+		],
+		"Ground_east": [
+			{
+				"path": [
+					[
+						32.4,
+						0,
+						-17.2
+					],
+					[
+						36.5,
+						0,
+						-18.8
+					],
+					[
+						40.5,
+						0,
+						-21.6
+					],
+					[
+						43.6,
+						0,
+						-23.2
+					]
+				],
+				"width": 2.4
+			},
+			{
+				"circle": [
+					46.0,
+					0,
+					-24.0
+				],
+				"radius": 3.4
+			}
+		],
+		"Ground_west": [
+			{
+				"path": [
+					[
+						-27.4,
+						0,
+						13.6
+					],
+					[
+						-30.5,
+						0,
+						17.4
+					],
+					[
+						-34.6,
+						0,
+						21.6
+					],
+					[
+						-37.0,
+						0,
+						23.4
+					]
+				],
+				"width": 2.4
+			},
+			{
+				"circle": [
+					-38.6,
+					0,
+					24.6
+				],
+				"radius": 3.4
+			}
+		]
+	},
+	"warps": {
+		"M_Verse_1": {
+			"flags": [
+				"talked_tamsin_meet",
+				"fight_stones"
+			],
+			"face": "M_Bridge1_N"
+		},
+		"M_Tamsin_Rim": {
+			"flags": [
+				"talked_tamsin_meet",
+				"fight_stones",
+				"read_verse_1",
+				"tied_bridge_1",
+				"leaf_1",
+				"talked_tamsin_rim"
+			],
+			"face": "M_Knoll"
+		},
+		"M_Causeway_East": {
+			"flags": [
+				"talked_tamsin_meet",
+				"fight_stones",
+				"read_verse_1",
+				"tied_bridge_1",
+				"leaf_1",
+				"talked_tamsin_rim"
+			],
+			"face": "M_Island_East"
+		},
+		"M_Causeway_Mere": {
+			"flags": [
+				"talked_tamsin_meet",
+				"fight_stones",
+				"read_verse_1",
+				"tied_bridge_1",
+				"leaf_1",
+				"talked_tamsin_rim",
+				"fight_east",
+				"soot_east_1",
+				"soot_east_2",
+				"leaf_2",
+				"leaves_two",
+				"talked_tamsin_two_leaves",
+				"tied_bridge_2",
+				"fight_west",
+				"soot_west_1",
+				"soot_west_2",
+				"leaf_3",
+				"leaves_all",
+				"talked_tamsin_map"
+			],
+			"face": "M_Tie_Break_A"
+		},
+		"M_Knoll": {
+			"flags": [
+				"talked_tamsin_meet",
+				"fight_stones",
+				"read_verse_1",
+				"tied_bridge_1",
+				"leaf_1",
+				"talked_tamsin_rim",
+				"fight_east",
+				"soot_east_1",
+				"soot_east_2",
+				"leaf_2",
+				"leaves_two",
+				"talked_tamsin_two_leaves",
+				"tied_bridge_2",
+				"fight_west",
+				"soot_west_1",
+				"soot_west_2",
+				"leaf_3",
+				"leaves_all",
+				"talked_tamsin_map",
+				"soot_mere",
+				"tied_mere_gap"
+			],
+			"face": "M_Sapling"
+		},
+		"M_Landing": {
+			"flags": [],
+			"face": "M_Knoll"
+		},
+		"M_Verse_2": {
+			"flags": [
+				"talked_tamsin_meet",
+				"fight_stones",
+				"read_verse_1",
+				"tied_bridge_1",
+				"leaf_1",
+				"talked_tamsin_rim",
+				"fight_east",
+				"soot_east_1",
+				"soot_east_2",
+				"leaf_2",
+				"leaves_two",
+				"talked_tamsin_two_leaves",
+				"tied_bridge_2",
+				"fight_west",
+				"soot_west_1",
+				"soot_west_2",
+				"leaf_3",
+				"leaves_all",
+				"talked_tamsin_map",
+				"soot_mere",
+				"tied_mere_gap"
+			],
+			"face": "M_Hollow_East"
+		},
+		"Fight_Knoll": {
+			"flags": [
+				"talked_tamsin_meet",
+				"fight_stones",
+				"read_verse_1",
+				"tied_bridge_1",
+				"leaf_1",
+				"talked_tamsin_rim",
+				"fight_east",
+				"soot_east_1",
+				"soot_east_2",
+				"leaf_2",
+				"leaves_two",
+				"talked_tamsin_two_leaves",
+				"tied_bridge_2",
+				"fight_west",
+				"soot_west_1",
+				"soot_west_2",
+				"leaf_3",
+				"leaves_all",
+				"talked_tamsin_map",
+				"soot_mere",
+				"tied_mere_gap"
+			],
+			"face": "M_Hollow_West"
+		}
+	},
+	"autoplay": {
+		"chain": [],
+		"route": [
+			{
+				"stage": "arrival"
+			},
+			{
+				"talk": "Pell"
+			},
+			{
+				"go": [
+					-2.5,
+					0,
+					44.5
+				],
+				"from": "M_Spawn"
+			},
+			{
+				"talk": "Tamsin"
+			},
+			{
+				"expect_flag": "talked_tamsin_meet"
+			},
+			{
+				"go": [
+					0.5,
+					0,
+					38
+				]
+			},
+			{
+				"go": [
+					5.5,
+					0,
+					30
+				]
+			},
+			{
+				"stage": "stones"
+			},
+			{
+				"fight": "Fight_Stones",
+				"finish": true
+			},
+			{
+				"go": "M_Verse_1"
+			},
+			{
+				"cast": "bloom",
+				"target": "Verse_1",
+				"before": 2.5,
+				"flag": "read_verse_1"
+			},
+			{
+				"go": [
+					17.0,
+					0.59,
+					12.6
+				]
+			},
+			{
+				"stage": "bridge_1"
+			},
+			{
+				"tie": [
+					"Bridge_1/PostA",
+					"Bridge_1/PostB"
+				],
+				"before": 9.0,
+				"flag": "tied_bridge_1"
+			},
+			{
+				"stage": "bridge_1_tied"
+			},
+			{
+				"go": [
+					17.0,
+					0.59,
+					12.6
+				]
+			},
+			{
+				"go": [
+					17.0,
+					0.59,
+					7.4
+				]
+			},
+			{
+				"stage": "bridge_1_deck"
+			},
+			{
+				"go": [
+					17.0,
+					0.76,
+					-6.6
+				]
+			},
+			{
+				"go": "M_Leaf_1"
+			},
+			{
+				"wait_flag": "leaf_1",
+				"timeout": 5
+			},
+			{
+				"go": [
+					-2,
+					1,
+					-7.6
+				]
+			},
+			{
+				"go": [
+					-9,
+					1,
+					-9
+				]
+			},
+			{
+				"talk": "Tamsin_Rim"
+			},
+			{
+				"expect_flag": "talked_tamsin_rim"
+			},
+			{
+				"go": [
+					-2,
+					1,
+					-7.6
+				]
+			},
+			{
+				"go": [
+					12,
+					1,
+					-7
+				]
+			},
+			{
+				"go": [
+					21,
+					1,
+					-7.5
+				]
+			},
+			{
+				"stage": "east"
+			},
+			{
+				"go": "M_Fight_2"
+			},
+			{
+				"fight": "Fight_East"
+			},
+			{
+				"go": "M_Causeway_East"
+			},
+			{
+				"cast": "gust",
+				"target": "Soot_East_1",
+				"flag": "soot_east_1"
+			},
+			{
+				"cast": "gust",
+				"target": "Soot_East_2",
+				"flag": "soot_east_2"
+			},
+			{
+				"go": "M_Leaf_2",
+				"from": "M_Causeway_East"
+			},
+			{
+				"wait_flag": "leaf_2",
+				"timeout": 5
+			},
+			{
+				"stage": "kettle_island"
+			},
+			{
+				"go": "M_Island_East"
+			},
+			{
+				"probe_cursed": "Ground_east",
+				"toward": [
+					44,
+					0,
+					-18
+				]
+			},
+			{
+				"go": "M_Island_East"
+			},
+			{
+				"go": "M_Soot_East_2"
+			},
+			{
+				"go": "M_Soot_East_1"
+			},
+			{
+				"go": "M_Causeway_East"
+			},
+			{
+				"go": [
+					21,
+					1,
+					-7.5
+				]
+			},
+			{
+				"go": [
+					12,
+					1,
+					-7
+				]
+			},
+			{
+				"go": [
+					-2,
+					1,
+					-7.6
+				]
+			},
+			{
+				"go": [
+					-9,
+					1,
+					-9
+				]
+			},
+			{
+				"talk": "Tamsin_Rim"
+			},
+			{
+				"expect_flag": "talked_tamsin_two_leaves"
+			},
+			{
+				"go": [
+					-21,
+					1,
+					-8
+				]
+			},
+			{
+				"go": [
+					-25.5,
+					1,
+					-16
+				]
+			},
+			{
+				"stage": "bridge_2"
+			},
+			{
+				"tie": [
+					"Bridge_2/PostB",
+					"Bridge_2/PostA"
+				],
+				"before": 9.0,
+				"flag": "tied_bridge_2"
+			},
+			{
+				"go": [
+					-27.0,
+					0.92,
+					-11.1
+				]
+			},
+			{
+				"go": [
+					-27.0,
+					0.92,
+					-5.9
+				]
+			},
+			{
+				"go": [
+					-27.0,
+					0.81,
+					8.1
+				]
+			},
+			{
+				"go": [
+					-24,
+					1,
+					9.5
+				]
+			},
+			{
+				"stage": "west"
+			},
+			{
+				"go": "M_Fight_3"
+			},
+			{
+				"fight": "Fight_West"
+			},
+			{
+				"go": "M_Causeway_West"
+			},
+			{
+				"cast": "gust",
+				"target": "Soot_West_1",
+				"flag": "soot_west_1"
+			},
+			{
+				"cast": "gust",
+				"target": "Soot_West_2",
+				"flag": "soot_west_2"
+			},
+			{
+				"go": "M_Leaf_3",
+				"from": "M_Causeway_West"
+			},
+			{
+				"wait_flag": "leaf_3",
+				"timeout": 5
+			},
+			{
+				"stage": "ladle_island"
+			},
+			{
+				"go": "M_Causeway_West"
+			},
+			{
+				"go": [
+					-24,
+					1,
+					9.5
+				]
+			},
+			{
+				"go": [
+					-25.0,
+					0.81,
+					10.1
+				]
+			},
+			{
+				"go": [
+					-25.0,
+					0.81,
+					4.9
+				]
+			},
+			{
+				"go": [
+					-25.0,
+					0.92,
+					-9.1
+				]
+			},
+			{
+				"go": [
+					-21,
+					1,
+					-8
+				]
+			},
+			{
+				"talk": "Tamsin_Rim"
+			},
+			{
+				"expect_flag": "talked_tamsin_map"
+			},
+			{
+				"go": "M_Causeway_Mere",
+				"from": "M_Tamsin_Rim"
+			},
+			{
+				"stage": "mere"
+			},
+			{
+				"cast": "gust",
+				"target": "Soot_Mere",
+				"flag": "soot_mere"
+			},
+			{
+				"go": [
+					-10.8,
+					1,
+					-19.6
+				]
+			},
+			{
+				"go": [
+					-10.58,
+					1.23,
+					-22.55
+				]
+			},
+			{
+				"tie": [
+					"Mere_Gap/PostA",
+					"Mere_Gap/PostB"
+				],
+				"before": 3.6,
+				"flag": "tied_mere_gap"
+			},
+			{
+				"go": [
+					-10.58,
+					1.23,
+					-22.55
+				]
+			},
+			{
+				"go": [
+					-9.86,
+					1.23,
+					-25.16
+				]
+			},
+			{
+				"go": [
+					-8.34,
+					1.36,
+					-30.63
+				]
+			},
+			{
+				"go": "M_Knoll_Ramp"
+			},
+			{
+				"go": [
+					-4.25,
+					3,
+					-23.5
+				]
+			},
+			{
+				"go": [
+					1.2,
+					4.7,
+					-21
+				]
+			},
+			{
+				"stage": "knoll"
+			},
+			{
+				"fight": "Fight_Knoll"
+			},
+			{
+				"cast": "bloom",
+				"target": "Verse_2",
+				"before": 2.5,
+				"flag": "read_verse_2"
+			},
+			{
+				"bloom_zone": "Zone_mere"
+			},
+			{
+				"stage": "restored"
+			},
+			{
+				"wait_flag": "restored_mere",
+				"timeout": 20
+			},
+			{
+				"go": [
+					1.2,
+					4.7,
+					-21
+				]
+			},
+			{
+				"go": "M_Knoll_Ramp"
+			},
+			{
+				"go": [
+					-9.92,
+					1.36,
+					-30.55
+				]
+			},
+			{
+				"go": [
+					-10.64,
+					1.36,
+					-27.94
+				]
+			},
+			{
+				"go": [
+					-12.16,
+					1.23,
+					-22.47
+				]
+			},
+			{
+				"go": [
+					-10.8,
+					1,
+					-19.6
+				]
+			},
+			{
+				"go": "M_Causeway_Mere"
+			},
+			{
+				"go": [
+					-15,
+					1,
+					-11.5
+				]
+			},
+			{
+				"go": [
+					-24,
+					1,
+					-18
+				]
+			},
+			{
+				"go": [
+					-34,
+					1,
+					-27
+				]
+			},
+			{
+				"go": [
+					-44,
+					1,
+					-36
+				]
+			},
+			{
+				"go": [
+					-53,
+					1,
+					-43
+				]
+			},
+			{
+				"stage": "exit"
+			},
+			{
+				"go": "M_Exit"
+			}
+		]
+	}
+}

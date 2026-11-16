@@ -1,0 +1,7 @@
+# Triangle counts (budget 5000 per model, counted as rendered)
+file                                                            tris  unique mesh inst
+tests/_plant/in_budget.glb                                      4999    4999    1    1  ok
+tests/_plant/over_budget.glb                                    6000    6000    1    1  OVER
+
+failures: 1
+tests/_plant/over_budget.glb: 6000 triangles > 5000

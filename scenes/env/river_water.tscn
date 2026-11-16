@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/env/river_water.gd" id="1"]
+[ext_resource type="Material" path="res://materials/env/water.tres" id="2"]
+
+[node name="RiverWater" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Surface" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+material_override = ExtResource("2")

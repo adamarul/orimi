@@ -1,0 +1,16 @@
+{
+ "_comment": "Trailer shot list, read by scripts/trailer/director.gd. Each shot is captured on its own by tools/trailer/capture.sh under Movie Maker. level/warp/flags: where it starts (warps as in level.json and the level scripts). prep: done before the camera rolls (teleport, clear_zone, face, wait). setup: autoplay route steps before the camera rolls. steps: autoplay route steps while it rolls (docs/LEVEL_KIT.md; casts are drawn live). hud: on, off or auto (hidden in cutscenes). camera: placed keys, else the gameplay camera. pitch_override: gameplay camera pitch held in degrees. tail/min/max: seconds. See docs/TRAILER.md.",
+ "shots": [
+  {"id":"vale_open","level":"hazewater","hud":"off","prep":[{"teleport":[0.5,0,51],"face":{"marker":"M_GateA"}}],"camera":{"smooth":3,"keys":[{"t":0,"pos":{"ground":[6,59.5],"up":7.5},"look":{"ground":[-0.5,46.5],"up":0.3},"fov":42},{"t":7,"pos":{"ground":[4.6,57.2],"up":6.6},"look":{"ground":[-1.5,44.5],"up":0.3},"fov":40}]},"steps":[{"wait":1.5},{"go":[-1.5,0,45]},{"wait":1}],"min":6,"tail":0.5,"max":12},
+  {"id":"run_slash","level":"hazewater","hud":"on","pitch_override":-21,"prep":[{"teleport":[1,0,52],"face":{"marker":"M_GateA"}}],"steps":[{"go":"ThornGate","before":3.8,"from":"M_Spawn"},{"cast":"slash","target":"ThornGate","flag":"gate_a_cut"}],"tail":1.6,"max":25},
+  {"id":"zone_a","level":"hazewater","warp":"M_ZoneA","hud":"on","pitch_override":-24,"steps":[{"fight":"Zone_zone_a","finish":true},{"bloom_zone":"Zone_zone_a"},{"wait":3}],"tail":0.5,"max":70},
+  {"id":"zone_b","level":"hazewater","warp":"M_ZoneB","hud":"on","pitch_override":-22,"steps":[{"fight":"Zone_zone_b"}],"tail":1,"max":70},
+  {"id":"tree_finale","level":"hazewater","warp":"M_Tree","hud":"auto","pitch_override":-12,"flags":["restored_zone_a","restored_zone_b"],"prep":[{"clear_zone":"Zone_tree"}],"steps":[{"cast":"bloom","target":"GreatTree","before":9,"until":"cutscene","attempts":3},{"wait_flag":"valley_restored","timeout":20},{"wait":22}],"tail":0.5,"max":70,"line_time":2.4},
+  {"id":"tf_trim","level":"tallowford","warp":"M_Lamp_Trim","hud":"on","pitch_override":-20,"steps":[{"cast":"kindle","target":"Lamp_Trim","before":2.6,"flag":"lit_trim"},{"wait":1.5},{"talk":"Trim"}],"tail":1,"max":40},
+  {"id":"tf_sealed","level":"tallowford","warp":"M_JettySquare","hud":"on","pitch_override":-24,"steps":[{"cast":"kindle","target":"Lamp_Ferry","before":2.4,"flag":"lit_ferry"},{"wait":2.8},{"fight":"JettyFight","finish":true},{"wait":2}],"tail":0.5,"max":80},
+  {"id":"tf_finale","level":"tallowford","warp":"M_FordLamp","hud":"auto","pitch_override":-18,"steps":[{"cast":"gust","target":"FordHood","flag":"hood_cleared"},{"cast":"kindle","target":"Lamp_Ford","flag":"lit_ford"},{"wait_flag":"said_finale","timeout":40},{"wait":2}],"tail":0.5,"max":70},
+  {"id":"card_lost","type":"card","length":2.4,"lines":[{"text":"The vale has lost its colour.","size":46}],"lead":0.15,"fade":0.4},
+  {"id":"card_draw","type":"card","length":1.8,"lead":0.1,"lines":[{"text":"Draw it back.","size":52}],"fade":0.35},
+  {"id":"title","type":"card","length":5,"width":980,"height":420,"stagger":0.7,"lines":[{"text":"Orimi: The Unfaded Vale","size":76,"gap":6},{"text":"A living-ink adventure you play in your browser.","size":30,"color":"vermilion","gap":18},{"text":"In development","size":22,"color":"sepia"}]}
+ ]
+}

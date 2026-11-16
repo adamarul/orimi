@@ -1,0 +1,10 @@
+{
+  "generator": "tools/gen/icon.py",
+  "command": "tools/gen_phase0_assets.sh",
+  "outputs": [
+    {
+      "path": "ui/icon.png",
+      "sha256": "9661615171b5f75fcc49999fe6df4a41fe92a67742ff23ded5fa3f9c64e339c3"
+    }
+  ]
+}

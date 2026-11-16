@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/hazewater/hazewater.gd" id="1_valley"]
+
+[node name="Hazewater" type="Node3D"]
+script = ExtResource("1_valley")
+level_id = &"hazewater"
+display_name = "Hazewater Vale"
+chapter = "The Waking"
+intro_text = "Spilled ink has soaked into Hazewater Vale and drunk its colour.
+
+By the Lull, a fox folded from shrine paper wakes with a brush that still remembers how colour goes.
+
+Climb to the Thousand-Ring Camphor and give the valley back its colour."
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="M_Spawn" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+
+[node name="M_GateA" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 36)
+
+[node name="M_ZoneA" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 20)
+
+[node name="M_Crossing" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="M_GateB" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 4)
+
+[node name="M_ZoneB" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 3, -10)
+
+[node name="M_Tree" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -42)

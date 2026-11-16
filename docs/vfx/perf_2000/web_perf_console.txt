@@ -1,0 +1,120 @@
+[console.log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[console.log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+[console.log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+[console.log] ORIMI_BOOT t=4.96s options={"foliage":"2000","scene":"res://scenes/dev/vfx_demo.tscn"}
+[console.log] ORIMI_FIRST_FRAME t=13.93s scene=res://scenes/dev/vfx_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+[console.log] ORIMI_FPS fps=10 process_ms=4.80 [t=14.66s]
+[console.log] VFX_PEAK n=1 id=sky_cursed t=1.00
+[console.log] ORIMI_FPS fps=144 process_ms=3.60 [t=15.66s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.20 [t=16.67s]
+[console.log] VFX_PEAK n=2 id=sky_restored t=1.00
+[console.log] ORIMI_FPS fps=144 process_ms=3.30 [t=17.67s]
+[console.log] ORIMI_FPS fps=144 process_ms=2.80 [t=18.68s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.10 [t=19.69s]
+[console.log] VFX_PEAK n=3 id=foliage_curse t=0.67
+[console.log] ORIMI_FPS fps=144 process_ms=4.10 [t=20.70s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.20 [t=21.70s]
+[console.log] VFX_PEAK n=4 id=river_mist t=0.83
+[console.log] ORIMI_FPS fps=144 process_ms=3.10 [t=22.71s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.00 [t=23.72s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.10 [t=24.72s]
+[console.log] ORIMI_FPS fps=144 process_ms=5.00 [t=25.73s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.10 [t=26.74s]
+[console.log] VFX_PEAK n=5 id=wake_flowers t=3.00
+[console.log] ORIMI_FPS fps=144 process_ms=2.90 [t=27.74s]
+[console.log] QA:{"data":{"alive":0,"at":[8.0,0.3,6.0],"kind":"smudgeling"},"tag":"enemy_died"}
+[console.log] VFX_PEAK n=6 id=ink_splash t=0.25
+[console.log] ORIMI_FPS fps=144 process_ms=4.10 [t=28.73s]
+[console.log] ORIMI_FPS fps=142 process_ms=21.20 [t=29.74s]
+[console.log] ORIMI_FPS fps=144 process_ms=8.20 [t=30.74s]
+[console.log] VFX_PEAK n=7 id=hit_spark t=0.08
+[console.log] ORIMI_FPS fps=122 process_ms=191.60 [t=31.80s]
+[console.log] ORIMI_FPS fps=140 process_ms=4.20 [t=32.81s]
+[console.log] QA:{"data":{"glyph":"slash","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+[console.log] VFX_PEAK n=8 id=slash_ribbon t=0.08
+[console.log] ORIMI_FPS fps=95 process_ms=350.80 [t=34.01s]
+[console.log] ORIMI_FPS fps=144 process_ms=5.30 [t=35.02s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.40 [t=36.02s]
+[console.log] VFX_PEAK n=9 id=tail_swipe t=0.08
+[console.log] ORIMI_FPS fps=144 process_ms=5.20 [t=37.03s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.00 [t=38.04s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.00 [t=39.04s]
+[console.log] VFX_PEAK n=10 id=attach_trail t=0.25
+[console.log] ORIMI_FPS fps=144 process_ms=5.80 [t=40.05s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.00 [t=41.06s]
+[console.log] QA:{"data":{"glyph":"gust","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+[console.log] VFX_PEAK n=11 id=gust t=0.33
+[console.log] ORIMI_FPS fps=144 process_ms=8.80 [t=42.06s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.20 [t=43.07s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.00 [t=44.08s]
+[console.log] QA:{"data":{"glyph":"bloom","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+[console.log] VFX_PEAK n=12 id=bloom_glyph t=0.50
+[console.log] ORIMI_FPS fps=100 process_ms=317.00 [t=45.26s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.20 [t=46.27s]
+[console.log] ORIMI_FPS fps=144 process_ms=5.50 [t=47.27s]
+[console.log] VFX_PEAK n=13 id=petal_burst t=0.50
+# summary {
+  "mode": "perf",
+  "query": "foliage=2000&scene=res%3A%2F%2Fscenes%2Fdev%2Fvfx_demo.tscn",
+  "chrome": "Chrome/157.0.8103.51",
+  "first_frame_ms": 19016,
+  "webgl": {
+    "webgl2": true,
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "raf_fps": [
+    144,
+    144,
+    144,
+    144,
+    144,
+    143,
+    131,
+    123,
+    144,
+    144,
+    144,
+    144,
+    144,
+    122,
+    144
+  ],
+  "game_fps": [
+    10,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    142,
+    144,
+    122,
+    140,
+    95,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    100,
+    144,
+    144
+  ],
+  "shots": [],
+  "problems": [],
+  "passed": true
+}

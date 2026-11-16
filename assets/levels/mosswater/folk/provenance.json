@@ -1,0 +1,22 @@
+{
+ "outputs": [
+  {
+   "path": "assets/levels/mosswater/folk/fenn.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "911247f1299525e409bd29a2b702d429c99d245c41d13c59414841329d49aa7c",
+   "command": "tools/assets/gen_folk.sh tools/levels/mosswater/folk.json"
+  },
+  {
+   "path": "assets/levels/mosswater/folk/fenn.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "5f007254a9e99793cf25df357d378207eb98bbef1e8b38b5df9ddcb0ba261cda",
+   "command": "tools/assets/gen_folk.sh tools/levels/mosswater/folk.json"
+  },
+  {
+   "path": "assets/levels/mosswater/folk/fenn_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "422bc091e3a708bdc09a2f65b3af40170757627ef87c0774d017e3876f7e8d50",
+   "command": "tools/assets/gen_folk.sh tools/levels/mosswater/folk.json"
+  }
+ ]
+}

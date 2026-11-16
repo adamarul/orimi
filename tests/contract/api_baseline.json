@@ -1,0 +1,1001 @@
+{
+ "autoloads": {
+  "Audio": {
+   "constants": {},
+   "global_name": "",
+   "methods": {
+    "play_music": {
+     "args": [
+      {
+       "class": "",
+       "type": 21
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "play_sfx": {
+     "args": [
+      {
+       "class": "",
+       "type": 21
+      },
+      {
+       "class": "",
+       "type": 9
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 2,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "set_brush_duck": {
+     "args": [
+      {
+       "class": "",
+       "type": 1
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    }
+   },
+   "native_base": "Node",
+   "node_class": "Node",
+   "process_mode": 0,
+   "properties": {},
+   "script": "res://scripts/audio/audio_director.gd",
+   "signals": {}
+  },
+  "Brush": {
+   "constants": {},
+   "global_name": "",
+   "methods": {
+    "add_ink": {
+     "args": [
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "inject_stroke": {
+     "args": [
+      {
+       "class": "",
+       "type": 35
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 27
+     },
+     "static": false,
+     "vararg": false
+    },
+    "is_open": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 1
+     },
+     "static": false,
+     "vararg": false
+    },
+    "known_glyphs": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "of": "StringName",
+      "type": 28
+     },
+     "static": false,
+     "vararg": false
+    },
+    "refill": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    }
+   },
+   "native_base": "CanvasLayer",
+   "node_class": "CanvasLayer",
+   "process_mode": 3,
+   "properties": {
+    "enabled": {
+     "class": "",
+     "export": false,
+     "type": 1
+    },
+    "ink": {
+     "class": "",
+     "export": false,
+     "type": 3
+    },
+    "ink_max": {
+     "class": "",
+     "export": false,
+     "type": 3
+    }
+   },
+   "script": "res://scripts/brush/brush_layer.gd",
+   "signals": {}
+  },
+  "Controls": {
+   "constants": {},
+   "global_name": "",
+   "methods": {},
+   "native_base": "Node",
+   "node_class": "Node",
+   "process_mode": 3,
+   "properties": {},
+   "script": "res://scripts/core/controls.gd",
+   "signals": {}
+  },
+  "CurseField": {
+   "constants": {
+    "MAX_ZONES": "4"
+   },
+   "global_name": "",
+   "methods": {
+    "amount_at": {
+     "args": [
+      {
+       "class": "",
+       "type": 9
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 3
+     },
+     "static": false,
+     "vararg": false
+    },
+    "clear_zone": {
+     "args": [
+      {
+       "class": "",
+       "type": 2
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "restore_zone": {
+     "args": [
+      {
+       "class": "",
+       "type": 2
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "set_valley_gloom": {
+     "args": [
+      {
+       "class": "",
+       "type": 3
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "set_zone": {
+     "args": [
+      {
+       "class": "",
+       "type": 2
+      },
+      {
+       "class": "",
+       "type": 9
+      },
+      {
+       "class": "",
+       "type": 3
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    }
+   },
+   "native_base": "Node",
+   "node_class": "Node",
+   "process_mode": 3,
+   "properties": {
+    "valley_gloom": {
+     "class": "",
+     "export": false,
+     "type": 3
+    }
+   },
+   "script": "res://scripts/render/curse_field.gd",
+   "signals": {}
+  },
+  "Events": {
+   "constants": {},
+   "global_name": "",
+   "methods": {},
+   "native_base": "Node",
+   "node_class": "Node",
+   "process_mode": 0,
+   "properties": {},
+   "script": "res://scripts/core/events.gd",
+   "signals": {
+    "brush_closed": [],
+    "brush_opened": [],
+    "enemy_died": [
+     {
+      "class": "Node3D",
+      "type": 24
+     },
+     {
+      "class": "",
+      "type": 21
+     },
+     {
+      "class": "",
+      "type": 9
+     }
+    ],
+    "enemy_hit": [
+     {
+      "class": "Node3D",
+      "type": 24
+     },
+     {
+      "class": "",
+      "type": 3
+     },
+     {
+      "class": "",
+      "type": 9
+     }
+    ],
+    "enemy_unveiled": [
+     {
+      "class": "Node3D",
+      "type": 24
+     }
+    ],
+    "finale_started": [
+     {
+      "class": "",
+      "type": 9
+     }
+    ],
+    "game_state_changed": [
+     {
+      "class": "",
+      "type": 21
+     }
+    ],
+    "glyph_cast": [
+     {
+      "class": "",
+      "type": 21
+     },
+     {
+      "class": "",
+      "type": 27
+     }
+    ],
+    "glyph_failed": [
+     {
+      "class": "",
+      "type": 27
+     }
+    ],
+    "ink_changed": [
+     {
+      "class": "",
+      "type": 3
+     },
+     {
+      "class": "",
+      "type": 3
+     }
+    ],
+    "player_attacked": [
+     {
+      "class": "",
+      "type": 21
+     },
+     {
+      "class": "",
+      "type": 18
+     }
+    ],
+    "player_damaged": [
+     {
+      "class": "",
+      "type": 2
+     },
+     {
+      "class": "",
+      "type": 2
+     }
+    ],
+    "player_died": [],
+    "player_healed": [
+     {
+      "class": "",
+      "type": 2
+     },
+     {
+      "class": "",
+      "type": 2
+     }
+    ],
+    "player_respawned": [
+     {
+      "class": "",
+      "type": 9
+     }
+    ],
+    "soot_cleared": [
+     {
+      "class": "Node3D",
+      "type": 24
+     },
+     {
+      "class": "",
+      "type": 9
+     }
+    ],
+    "thorns_cut": [
+     {
+      "class": "Node3D",
+      "type": 24
+     },
+     {
+      "class": "",
+      "type": 9
+     }
+    ],
+    "valley_restored": [],
+    "zone_entered": [
+     {
+      "class": "",
+      "type": 21
+     }
+    ],
+    "zone_exited": [
+     {
+      "class": "",
+      "type": 21
+     }
+    ],
+    "zone_restore_started": [
+     {
+      "class": "",
+      "type": 21
+     },
+     {
+      "class": "",
+      "type": 9
+     },
+     {
+      "class": "",
+      "type": 3
+     }
+    ],
+    "zone_restored": [
+     {
+      "class": "",
+      "type": 21
+     }
+    ]
+   }
+  },
+  "Game": {
+   "constants": {
+    "STATE_CUTSCENE": "&\"cutscene\"",
+    "STATE_ENDED": "&\"ended\"",
+    "STATE_PAUSED": "&\"paused\"",
+    "STATE_PLAYING": "&\"playing\"",
+    "STATE_TITLE": "&\"title\""
+   },
+   "global_name": "",
+   "methods": {
+    "debug_snapshot": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 27
+     },
+     "static": false,
+     "vararg": false
+    },
+    "qa_log": {
+     "args": [
+      {
+       "class": "",
+       "type": 4
+      },
+      {
+       "class": "",
+       "type": 27
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "return_to_title": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "start_new_game": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    }
+   },
+   "native_base": "Node",
+   "node_class": "Node",
+   "process_mode": 0,
+   "properties": {
+    "player": {
+     "class": "CharacterBody3D",
+     "export": false,
+     "type": 24
+    },
+    "state": {
+     "class": "",
+     "export": false,
+     "type": 21
+    }
+   },
+   "script": "res://scripts/game/game.gd",
+   "signals": {}
+  },
+  "Post": {
+   "constants": {},
+   "global_name": "",
+   "methods": {
+    "set_enabled": {
+     "args": [
+      {
+       "class": "",
+       "type": 1
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    }
+   },
+   "native_base": "CanvasLayer",
+   "node_class": "CanvasLayer",
+   "process_mode": 3,
+   "properties": {
+    "enabled": {
+     "class": "",
+     "export": false,
+     "type": 1
+    }
+   },
+   "script": "res://scripts/render/post_chain.gd",
+   "signals": {}
+  },
+  "Settings": {
+   "constants": {
+    "PAPER_LABELS": "Array[String]([\"Light\", \"Normal\", \"Heavy\"])",
+    "PAPER_NAMES": "Array[StringName]([&\"light\", &\"normal\", &\"heavy\"])",
+    "Paper": "{\n\"HEAVY\": 2,\n\"LIGHT\": 0,\n\"NORMAL\": 1\n}"
+   },
+   "global_name": "",
+   "methods": {
+    "cycle_paper": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "paper_amount": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 3
+     },
+     "static": false,
+     "vararg": false
+    },
+    "paper_label": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 4
+     },
+     "static": false,
+     "vararg": false
+    },
+    "paper_name": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 21
+     },
+     "static": false,
+     "vararg": false
+    }
+   },
+   "native_base": "Node",
+   "node_class": "Node",
+   "process_mode": 3,
+   "properties": {
+    "invert_y": {
+     "class": "",
+     "export": false,
+     "type": 1
+    },
+    "master_volume": {
+     "class": "",
+     "export": false,
+     "type": 3
+    },
+    "mouse_sensitivity": {
+     "class": "",
+     "export": false,
+     "type": 3
+    },
+    "music_volume": {
+     "class": "",
+     "export": false,
+     "type": 3
+    },
+    "paper_intensity": {
+     "class": "",
+     "export": false,
+     "type": 2
+    },
+    "sfx_volume": {
+     "class": "",
+     "export": false,
+     "type": 3
+    }
+   },
+   "script": "res://scripts/core/settings.gd",
+   "signals": {
+    "controls_changed": [],
+    "paper_intensity_changed": [
+     {
+      "class": "",
+      "type": 2
+     }
+    ],
+    "volume_changed": []
+   }
+  },
+  "Vfx": {
+   "constants": {},
+   "global_name": "",
+   "methods": {
+    "attach_trail": {
+     "args": [
+      {
+       "class": "Node3D",
+       "type": 24
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "Node",
+      "type": 24
+     },
+     "static": false,
+     "vararg": false
+    },
+    "bloom_ring": {
+     "args": [
+      {
+       "class": "",
+       "type": 9
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "gust": {
+     "args": [
+      {
+       "class": "",
+       "type": 9
+      },
+      {
+       "class": "",
+       "type": 9
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "hit_spark": {
+     "args": [
+      {
+       "class": "",
+       "type": 9
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "ink_splash": {
+     "args": [
+      {
+       "class": "",
+       "type": 9
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "petal_burst": {
+     "args": [
+      {
+       "class": "",
+       "type": 9
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "slash_ribbon": {
+     "args": [
+      {
+       "class": "",
+       "type": 9
+      },
+      {
+       "class": "",
+       "type": 9
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    }
+   },
+   "native_base": "Node",
+   "node_class": "Node",
+   "process_mode": 0,
+   "properties": {},
+   "script": "res://scripts/vfx/vfx_director.gd",
+   "signals": {}
+  }
+ },
+ "classes": {
+  "Boot": {
+   "constants": {
+    "DEFAULT_SCENE": "\"res://scenes/phase0/phase0.tscn\"",
+    "FIRST_FRAME_MARKER": "\"ORIMI_FIRST_FRAME\"",
+    "PAPER_LEVELS": "PackedStringArray(\"light\", \"normal\", \"heavy\")"
+   },
+   "global_name": "Boot",
+   "methods": {
+    "is_web": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 1
+     },
+     "static": true,
+     "vararg": false
+    },
+    "opt": {
+     "args": [
+      {
+       "class": "",
+       "type": 4
+      },
+      {
+       "class": "",
+       "type": 0
+      }
+     ],
+     "defaults": 1,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": true,
+     "vararg": false
+    }
+   },
+   "native_base": "Node",
+   "properties": {},
+   "script": "res://scripts/core/boot.gd",
+   "signals": {}
+  },
+  "InkLook": {
+   "constants": {},
+   "global_name": "InkLook",
+   "methods": {
+    "apply": {
+     "args": [],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "flash": {
+     "args": [
+      {
+       "class": "",
+       "type": 20
+      },
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 2,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    },
+    "set_dissolve": {
+     "args": [
+      {
+       "class": "",
+       "type": 3
+      }
+     ],
+     "defaults": 0,
+     "return": {
+      "class": "",
+      "type": 0
+     },
+     "static": false,
+     "vararg": false
+    }
+   },
+   "native_base": "Node",
+   "properties": {
+    "accent": {
+     "class": "",
+     "export": true,
+     "type": 21
+    },
+    "apply_on_ready": {
+     "class": "",
+     "export": true,
+     "type": 1
+    },
+    "cursable": {
+     "class": "",
+     "export": true,
+     "type": 1
+    },
+    "outline_width": {
+     "class": "",
+     "export": true,
+     "type": 3
+    },
+    "wind": {
+     "class": "",
+     "export": true,
+     "type": 1
+    }
+   },
+   "script": "res://scripts/render/ink_look.gd",
+   "signals": {}
+  },
+  "Layers": {
+   "constants": {
+    "BRUSH_RAY_MASK": "13",
+    "BRUSH_TARGET": "8",
+    "CANVAS_BRUSH": "30",
+    "CANVAS_FADE": "50",
+    "CANVAS_HUD": "20",
+    "CANVAS_MENU": "40",
+    "CANVAS_POST": "5",
+    "ENEMY": "4",
+    "ENEMY_HIT": "64",
+    "GROUP_BRUSH_TARGET": "&\"brush_target\"",
+    "GROUP_CURSED_ZONE": "&\"cursed_zone\"",
+    "GROUP_ENEMY": "&\"enemy\"",
+    "GROUP_PLAYER": "&\"player\"",
+    "PLAYER": "2",
+    "PLAYER_HIT": "32",
+    "TRIGGER": "16",
+    "WORLD": "1"
+   },
+   "global_name": "Layers",
+   "methods": {},
+   "native_base": "RefCounted",
+   "properties": {},
+   "script": "res://scripts/core/layers.gd",
+   "signals": {}
+  },
+  "Palette": {
+   "constants": {
+    "CURSE_INK": "Color(0.050980393, 0.047058824, 0.05490196, 1)",
+    "CURSE_RED": "Color(0.7019608, 0.1254902, 0.16470589, 1)",
+    "GOLD": "Color(0.8509804, 0.6431373, 0.25490198, 1)",
+    "GOLD_PALE": "Color(0.92156863, 0.79607844, 0.47843137, 1)",
+    "INK": "Color(0.105882354, 0.101960786, 0.10980392, 1)",
+    "INK_SOFT": "Color(0.18039216, 0.16862746, 0.1764706, 1)",
+    "IVORY": "Color(0.9372549, 0.9019608, 0.8235294, 1)",
+    "MIST": "Color(0.7882353, 0.8235294, 0.8117647, 1)",
+    "MOSS": "Color(0.33333334, 0.4, 0.29411766, 1)",
+    "PARCHMENT": "Color(0.8901961, 0.827451, 0.6901961, 1)",
+    "PARCHMENT_WARM": "Color(0.84705883, 0.7490196, 0.56078434, 1)",
+    "PETAL": "Color(0.9529412, 0.7176471, 0.7529412, 1)",
+    "PETAL_DEEP": "Color(0.8980392, 0.5411765, 0.627451, 1)",
+    "RIVER": "Color(0.49803922, 0.627451, 0.6509804, 1)",
+    "RIVER_DEEP": "Color(0.30588236, 0.43529412, 0.47843137, 1)",
+    "SAGE": "Color(0.6156863, 0.6862745, 0.54901963, 1)",
+    "SAGE_DEEP": "Color(0.43529412, 0.5176471, 0.4, 1)",
+    "SEPIA": "Color(0.41960785, 0.2901961, 0.16862746, 1)",
+    "SKY": "Color(0.84705883, 0.87058824, 0.8392157, 1)",
+    "STONE": "Color(0.54901963, 0.5411765, 0.5019608, 1)",
+    "STONE_DARK": "Color(0.36862746, 0.36078432, 0.33333334, 1)",
+    "VERMILION": "Color(0.8352941, 0.2509804, 0.16862746, 1)",
+    "VERMILION_DEEP": "Color(0.64705884, 0.16470589, 0.10980392, 1)"
+   },
+   "global_name": "Palette",
+   "methods": {},
+   "native_base": "RefCounted",
+   "properties": {},
+   "script": "res://scripts/core/palette.gd",
+   "signals": {}
+  }
+ }
+}

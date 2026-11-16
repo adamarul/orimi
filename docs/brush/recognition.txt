@@ -1,0 +1,63 @@
+BRUSH_TEST confusion table (rows: what was drawn; columns: what the recogniser said)
+
+| drawn | n | bloom | slash | gust | kindle | tie | rejected | correct |
+| - | - | - | - | - | - | - | - | - |
+| bloom | 300 | 299 | 0 | 0 | 0 | 0 | 1 | 99.7% |
+| slash | 300 | 0 | 300 | 0 | 0 | 0 | 0 | 100.0% |
+| gust | 300 | 0 | 0 | 286 | 0 | 0 | 14 | 95.3% |
+| kindle | 300 | 0 | 0 | 0 | 300 | 0 | 0 | 100.0% |
+| tie | 300 | 0 | 0 | 0 | 0 | 299 | 1 | 99.7% |
+| scribble | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| zigzag | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| open_arc | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| vertical | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| diagonal | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| spiral | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| figure8 | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| double_loop | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| square | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| triangle | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| check | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| wave | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| long_press | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| slash_start | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| tiny_loop | 40 | 0 | 0 | 0 | 1 | 0 | 39 | 97.5% |
+| tie_one_end | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| tie_curved | 40 | 0 | 5 | 0 | 0 | 0 | 35 | 100.0% |
+| tie_overshoot | 40 | 0 | 0 | 0 | 0 | 0 | 40 | 100.0% |
+| gust_long_tails | 40 | 0 | 1 | 31 | 0 | 0 | 8 | 77.5% |
+
+BRUSH_TEST overall 2234 / 2260 correct (98.8%), 2260 strokes in 5359 ms (2.37 ms per stroke)
+
+Accuracy of the drawn glyphs (bloom, slash, gust, tie) by drawing speed and input rate:
+
+| speed | rate | bloom | slash | gust | tie |
+| - | - | - | - | - | - |
+| fast | 030 Hz | 34 / 34 | 34 / 34 | 22 / 34 | 34 / 34 |
+| fast | 060 Hz | 33 / 33 | 33 / 33 | 32 / 33 | 33 / 33 |
+| fast | 144 Hz | 33 / 33 | 33 / 33 | 33 / 33 | 33 / 33 |
+| medium | 030 Hz | 34 / 34 | 34 / 34 | 33 / 34 | 34 / 34 |
+| medium | 060 Hz | 33 / 33 | 33 / 33 | 33 / 33 | 33 / 33 |
+| medium | 144 Hz | 33 / 33 | 33 / 33 | 33 / 33 | 33 / 33 |
+| slow | 030 Hz | 34 / 34 | 34 / 34 | 34 / 34 | 34 / 34 |
+| slow | 060 Hz | 33 / 33 | 33 / 33 | 33 / 33 | 33 / 33 |
+| slow | 144 Hz | 32 / 33 | 33 / 33 | 33 / 33 | 32 / 33 |
+
+Dab measurements (%H for size and length, seconds for time): min / median / max. A dab must be within
+size 2.5 %H, length 3.0 %H (re-cleaned at 1.0 %H) and 0.8 s.
+
+| class | n | bounding box | path length | press time |
+| - | - | - | - | - |
+| kindle (mouse) | 95 | 0.00 / 0.32 / 0.77 | 0.00 / 0.30 / 0.56 | 0.05 / 0.14 / 0.25 |
+| kindle (pen) | 205 | 0.01 / 0.71 / 1.35 | 0.02 / 0.66 / 1.40 | 0.05 / 0.24 / 0.50 |
+| long_press (mouse) | 14 | 0.00 / 0.13 / 0.67 | 0.00 / 0.13 / 0.56 | 1.00 / 1.66 / 1.98 |
+| long_press (pen) | 26 | 0.19 / 0.65 / 1.30 | 0.06 / 0.59 / 1.19 | 1.06 / 1.66 / 1.96 |
+| slash_start | 40 | 4.36 / 6.68 / 9.93 | 4.50 / 6.79 / 10.10 | 0.12 / 0.12 / 0.22 |
+| tiny_loop | 40 | 1.22 / 2.60 / 3.99 | 0.17 / 8.04 / 12.26 | 0.12 / 0.12 / 0.30 |
+
+Most common reasons for wrong answers:
+- bloom: unrecognised closest bloom: has a corner x1
+- gust: unrecognised closest gust: 0 crossings x5, unrecognised closest slash: too steep x4, unrecognised closest slash: not straight x2, unrecognised closest gust: loop turns 156 deg x1
+- tie: unrecognised closest slash: too short x1
+- tiny_loop: accepted as kindle x1
+- gust_long_tails: unrecognised closest gust: loop too small x5, unrecognised closest slash: not straight x2, accepted as slash x1, unrecognised closest slash: too steep x1

@@ -1,0 +1,16 @@
+{
+ "outputs": [
+  {
+   "path": "assets/environment/river_surface.glb",
+   "sha256": "18457bcd82eec3845fc89e5d0e744d4e47e64334b1791cf987cf7d9e7a454dc3",
+   "generator": "tools/blender/make_terrain.py",
+   "command": "tools/assets/gen_models.sh terrain"
+  },
+  {
+   "path": "assets/environment/valley_terrain.glb",
+   "sha256": "cc73c43fb4eb08347eccd0b18c74030e98f9fa5c5fddc576295c9e850dcd1a0b",
+   "generator": "tools/blender/make_terrain.py",
+   "command": "tools/assets/gen_models.sh terrain"
+  }
+ ]
+}

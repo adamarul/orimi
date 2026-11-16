@@ -1,0 +1,257 @@
+{
+ "generator": "tools/levels/mosswater/make_mw.py",
+ "outputs": [
+  {
+   "path": "assets/levels/mosswater/mw_brazier.glb",
+   "sha256": "1ad3b95bfe1bd2b03609362ff8e925c3542fe6fd5bbdc12440b41610f7d12d85",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh brazier"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_dam.glb",
+   "sha256": "aec5227528b437ba4555d3ef2450c068a71cc2891d0f7618a4e8daa020522d14",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh dam"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_fenn_hut.glb",
+   "sha256": "fdf36b846ed0270969703f2a41bf8d49846a7eaec100f53dfc5ec58417a4661c",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh fenn_hut"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_fungus_shelf.glb",
+   "sha256": "61f8a80091db3cb1c0971e311be6fb5706a0cb06c47a314e49e18d0f10ae56f1",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh fungus_shelf"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_lantern_fruit.glb",
+   "sha256": "0f7f30f068f2465243053c05055396e580847ec6112dd362ff155c51afa16e80",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh lantern_fruit"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_ledge.glb",
+   "sha256": "cd1c4b15d952ec95b436abd8fbb8b900c951809a5aca2588f08a41722ecc0e74",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh ledge"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_lily.glb",
+   "sha256": "01dc472bab2d54ddcc4a06ff6e8c4ef92928ce9cac11da411d8c3981a36f0d76",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh lily"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_lily_pad.glb",
+   "sha256": "0833570d4a6cff1aa71de732dc3b84d7045f0e7c26909b386b26b265647bb78f",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh lily_pad"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_log.glb",
+   "sha256": "049cebd33f072195448eb8bf789a6c286ae5b6cd2b084b1d157da8f575b738d0",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh log"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_moss_shelf.glb",
+   "sha256": "1a9b0f98e53c22c4512876d8425bb6c6bb19d9cb7e893f3ab5f4c8f3e7d1cd76",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh moss_shelf"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_raft_post.glb",
+   "sha256": "d58e38ce729993f1e13f2396f48674662dbdaaf482a3bbc7748aa1448dc7da18",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh raft_post"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_sootflit.glb",
+   "sha256": "6508864ca5e24850f6aba3f3d96457c10e4a631f52b094bccccc33242b86e9dd",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh sootflit"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_stair_tree.glb",
+   "sha256": "907240354734931c8a7a769c80c14092f53acac4ad38f69003de3baf673012eb",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh stair_tree"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_terrain.glb",
+   "sha256": "39bd590a37e6978c69df6a8e9a9b0eca9049d1c7c18ef0dc6426a0bb474dbc49",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh terrain"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_trunk_a.glb",
+   "sha256": "39ba173246707b9fd427f7c5d3a7f950b90728ba872a91bc90d40f317853bd6a",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh trunk_a"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_trunk_b.glb",
+   "sha256": "05cd016344e0da81a3d458ca47acf81b0a8ef042c7110b24b3d48cff66dcb6e6",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh trunk_b"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_trunk_c.glb",
+   "sha256": "2b449ad8560d015512629a6b719ae422418ba18abe4091094f803ece6bf124c2",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh trunk_c"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_trunk_snag.glb",
+   "sha256": "5502de9d25576eeb2d100a006461ba311e51f1d666e05f6f2096adef286563e3",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh trunk_snag"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_water.glb",
+   "sha256": "a7c9f6e00a9c7c3dd76ab898958d1a83ba748e9da58d99770d3234fcd1bf6c5d",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh terrain"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_wheel.glb",
+   "sha256": "5c8a0d59bd4dae315befc3a7bf4c61fb798c88f6f9efaa5df7c742c159547352",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh wheel"
+  },
+  {
+   "path": "assets/levels/mosswater/mw_willow.glb",
+   "sha256": "14d8fd8bc540a029b4f4050d3c439dff451c981563d0ec704138da7add249a2a",
+   "generator": "tools/levels/mosswater/make_mw.py",
+   "command": "tools/levels/mosswater/gen.sh willow"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_brazier.png",
+   "sha256": "d94819c8ad6eafd06dd9a77d3a766eba0ff430e926d90d8a1d340626334acaaa",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh brazier"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_cliff.png",
+   "sha256": "41db35c78275363fa261afa445e648ec75a5cfb6f7d99ddded5e78c87e4cdd12",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh terrain"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_dam.png",
+   "sha256": "c109c17d088a56cf6a6db46aace1d63983c31247ca1bf18c01bf1352d29819e1",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh dam"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_fenn_hut.png",
+   "sha256": "dce458e25553fcc70adfa3b69d3e76c1d006e2608f1711606c648aef4d3fdac4",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh fenn_hut"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_fungus_shelf.png",
+   "sha256": "44d5bcc0347cc08b605c25657763b1ea14de4cac492836e809b603ee26e32bc2",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh fungus_shelf"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_ground.png",
+   "sha256": "597391cbe8aa8cab857114634c830a07b37a9ec174f340241548bd1db2a4fc88",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh terrain"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_lantern_fruit.png",
+   "sha256": "03fa6cf9b95722481f1270db483246573ed8d79372671d2be651237595fe93dd",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh lantern_fruit"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_ledge.png",
+   "sha256": "01cbee74ffc928fe615b29bcabe23542a46805900022bd8deea22ecd0fa6f11b",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh ledge"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_lily.png",
+   "sha256": "d7f1bf5a15c0cec3f6b3deb11a307e79887036db2939e96ea2341fd4472698c4",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh lily"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_lily_pad.png",
+   "sha256": "a81664912f312f7015672ce3efa61bddb79aa7ce4fae07ff9e3d5fa0f233fcf9",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh lily_pad"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_log.png",
+   "sha256": "76ec0376aad32468c66f96244dafaae3f314bfdf067f7b4556bef766226604a1",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh log"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_moss_shelf.png",
+   "sha256": "a6c22f5782ad19ab21cd1f8b74d4ef173be703726f7571b8923b6f7178e1bbd5",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh moss_shelf"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_raft_post.png",
+   "sha256": "69e5f7bb6ac324e3dbf59a045b66bf997600fa0512a7a682546398daa1cc2edc",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh raft_post"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_sootflit.png",
+   "sha256": "4e46efdc9842f4f5fcefe7ce35fc52fae2aadd8e95e931a894725e18774d87d8",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh sootflit"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_stair_tree.png",
+   "sha256": "73a70513df7371ad3d7b9354501cbbcb57c2a0ff7f25af90bf95ae8c5a7f8322",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh stair_tree"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_trunk_a.png",
+   "sha256": "064c69debc11224c811cb8cbe00ece13a81d125d1ddc7c643bfef64e15a845a4",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh trunk_a"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_trunk_b.png",
+   "sha256": "b0c86dda220018c692f83004743765c568b4f1c7e483935c5709d5e640e8ee28",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh trunk_b"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_trunk_c.png",
+   "sha256": "bdb4bdd2afd31a3d9c000ee84b0078e1ebc9f5b24e944fe1b63f5fef6263d7ec",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh trunk_c"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_trunk_snag.png",
+   "sha256": "a1580a70ca3b71676bfecd20cee96365297be657ec71d08e7707596691eedbfe",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh trunk_snag"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_wheel.png",
+   "sha256": "f72f1c9be32879d3f0c3660f64406dbf4c683f7ec88d13cac8792f4ae512437b",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh wheel"
+  },
+  {
+   "path": "assets/levels/mosswater/textures/mw_willow.png",
+   "sha256": "db27e6b4951c9f4e279addee859dd0fe222618c69cb1cc68ad6c5c44bd71167d",
+   "generator": "tools/levels/mosswater/paint_mw.py",
+   "command": "tools/levels/mosswater/gen.sh willow"
+  }
+ ]
+}

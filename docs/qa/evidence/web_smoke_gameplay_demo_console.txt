@@ -1,0 +1,16 @@
+# 12 console lines. Marker and problem lines first, then the last 40 lines.
+# Full log (not committed): .userdata/qa/logs/web_smoke_gameplay_demo_console.txt
+   1.42 # url http://127.0.0.1:60105/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fgameplay_demo.tscn
+# ...
+   1.42 # url http://127.0.0.1:60105/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fgameplay_demo.tscn
+   1.42 # chrome Chrome/157.0.8103.51 viewport 1280x720 
+   6.07 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+   9.23 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+   9.47 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+  10.03 [log] ORIMI_BOOT t=4.04s options={"scene":"res://scenes/dev/gameplay_demo.tscn"}
+  10.25 [log] QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
+  10.29 [log] QA:{"data":{"state":"playing"},"tag":"state"}
+  10.29 [log] ORIMI_AUDIO music=vale_cursed fade=2.0
+  10.47 [log] QA:{"data":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.0,0.0],"deaths":0,"enemies_alive":3,"fps":1.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":0,"level":"","max_hp":5,"player_pos":[0.0,0.05,6.0],"restored_zones":[],"state":"playing","t":4.48},"tag":"demo_ready"}
+  16.10 [log] ORIMI_FIRST_FRAME t=10.11s scene=res://scenes/dev/gameplay_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  16.13 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}

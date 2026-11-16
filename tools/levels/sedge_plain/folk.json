@@ -1,0 +1,20 @@
+{
+ "models": "assets/levels/sedge_plain/folk",
+ "textures": "assets/levels/sedge_plain/folk",
+ "scenes": "scenes/levels/sedge_plain/folk",
+ "people": {
+  "tamsin": {
+   "size": "adult",
+   "build": "slim",
+   "garment": "tunic",
+   "hat": "wide_brim",
+   "prop": "scroll",
+   "palette": "ash",
+   "colours": {
+    "hat": "#c8b27a",
+    "trim": "#8fa35a"
+   },
+   "seed": 21
+  }
+ }
+}

@@ -1,0 +1,133 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3080
+
+ORIMI_BOOT t=3.34s options={"once":"1","scene":"res://scenes/dev/vfx_demo.tscn","vfx_shots":"<project>/docs/vfx/desktop"}
+ORIMI_FIRST_FRAME t=4.25s scene=res://scenes/dev/vfx_demo.tscn renderer=forward_plus driver=vulkan adapter=NVIDIA GeForce RTX 3080 api=1.4.351 display=Windows
+ORIMI_FPS fps=108 process_ms=11.26 [t=5.03s]
+VFX_PEAK n=1 id=sky_cursed t=1.00
+VFX_SHOT 01_sky_cursed.png
+VFX_PEAK_HELD n=1 id=sky_cursed
+ORIMI_FPS fps=46 process_ms=529.05 [t=6.64s]
+VFX_PAUSE_CHECK n=1 frozen=true
+ORIMI_FPS fps=118 process_ms=24.61 [t=7.63s]
+ORIMI_FPS fps=135 process_ms=53.19 [t=8.63s]
+VFX_PEAK n=2 id=sky_restored t=1.00
+VFX_SHOT 02_sky_restored.png
+VFX_PEAK_HELD n=2 id=sky_restored
+ORIMI_FPS fps=86 process_ms=357.30 [t=10.16s]
+VFX_PAUSE_CHECK n=2 frozen=true
+ORIMI_FPS fps=113 process_ms=212.71 [t=11.25s]
+VFX_PEAK n=3 id=foliage_curse t=0.67
+VFX_SHOT 03_foliage_curse.png
+VFX_PEAK_HELD n=3 id=foliage_curse
+ORIMI_FPS fps=100 process_ms=379.20 [t=13.39s]
+VFX_PAUSE_CHECK n=3 frozen=true
+ORIMI_FPS fps=85 process_ms=34.40 [t=14.39s]
+ORIMI_FPS fps=143 process_ms=28.67 [t=15.40s]
+VFX_PEAK n=4 id=river_mist t=0.83
+VFX_SHOT 04_river_mist.png
+VFX_PEAK_HELD n=4 id=river_mist
+ORIMI_FPS fps=63 process_ms=379.83 [t=17.02s]
+VFX_PAUSE_CHECK n=4 frozen=true
+ORIMI_FPS fps=143 process_ms=28.68 [t=18.02s]
+ORIMI_FPS fps=51 process_ms=666.17 [t=19.55s]
+ORIMI_FPS fps=88 process_ms=407.87 [t=20.82s]
+ORIMI_FPS fps=106 process_ms=7.26 [t=22.14s]
+VFX_PEAK n=5 id=wake_flowers t=3.00
+VFX_SHOT 05_wake_flowers.png
+VFX_PEAK_HELD n=5 id=wake_flowers
+VFX_PAUSE_CHECK n=5 frozen=true
+ORIMI_FPS fps=25 process_ms=55.25 [t=24.05s]
+QA:{"data":{"alive":0,"at":[8.0,0.3,6.0],"kind":"smudgeling"},"tag":"enemy_died"}
+VFX_PEAK n=6 id=ink_splash t=0.25
+VFX_SHOT 06_ink_splash.png
+VFX_PEAK_HELD n=6 id=ink_splash
+ORIMI_FPS fps=134 process_ms=65.57 [t=25.43s]
+VFX_PAUSE_CHECK n=6 frozen=true
+ORIMI_FPS fps=86 process_ms=365.31 [t=26.84s]
+VFX_PEAK n=7 id=hit_spark t=0.08
+VFX_SHOT 07_hit_spark.png
+VFX_PEAK_HELD n=7 id=hit_spark
+ORIMI_FPS fps=103 process_ms=357.38 [t=28.15s]
+VFX_PAUSE_CHECK n=7 frozen=true
+ORIMI_FPS fps=122 process_ms=619.57 [t=29.63s]
+QA:{"data":{"glyph":"slash","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+VFX_PEAK n=8 id=slash_ribbon t=0.08
+VFX_SHOT 08_slash_ribbon.png
+VFX_PEAK_HELD n=8 id=slash_ribbon
+ORIMI_FPS fps=60 process_ms=21.96 [t=31.24s]
+VFX_PAUSE_CHECK n=8 frozen=true
+ORIMI_FPS fps=107 process_ms=7.52 [t=32.24s]
+VFX_PEAK n=9 id=tail_swipe t=0.08
+VFX_SHOT 09_tail_swipe.png
+VFX_PEAK_HELD n=9 id=tail_swipe
+ORIMI_FPS fps=129 process_ms=81.61 [t=33.52s]
+VFX_PAUSE_CHECK n=9 frozen=true
+ORIMI_FPS fps=42 process_ms=730.33 [t=35.08s]
+VFX_PEAK n=10 id=attach_trail t=0.25
+ORIMI_FPS fps=138 process_ms=61.59 [t=37.00s]
+VFX_SHOT 10_attach_trail.png
+VFX_PEAK_HELD n=10 id=attach_trail
+VFX_PAUSE_CHECK n=10 frozen=true
+ORIMI_FPS fps=96 process_ms=7.41 [t=38.96s]
+QA:{"data":{"glyph":"gust","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+ORIMI_FPS fps=108 process_ms=397.22 [t=40.19s]
+VFX_PEAK n=11 id=gust t=0.33
+VFX_SHOT 11_gust.png
+VFX_PEAK_HELD n=11 id=gust
+ORIMI_FPS fps=68 process_ms=365.56 [t=41.44s]
+VFX_PAUSE_CHECK n=11 frozen=true
+ORIMI_FPS fps=139 process_ms=39.62 [t=42.43s]
+QA:{"data":{"glyph":"bloom","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+VFX_PEAK n=12 id=bloom_glyph t=0.50
+VFX_SHOT 12_bloom_glyph.png
+VFX_PEAK_HELD n=12 id=bloom_glyph
+ORIMI_FPS fps=53 process_ms=386.64 [t=44.21s]
+VFX_PAUSE_CHECK n=12 frozen=true
+ORIMI_FPS fps=137 process_ms=59.19 [t=45.21s]
+ORIMI_FPS fps=44 process_ms=713.67 [t=46.77s]
+VFX_PEAK n=13 id=petal_burst t=0.50
+VFX_SHOT 13_petal_burst.png
+VFX_PEAK_HELD n=13 id=petal_burst
+ORIMI_FPS fps=113 process_ms=21.86 [t=48.02s]
+VFX_PAUSE_CHECK n=13 frozen=true
+QA:{"data":{"center":[-14.0,0.0,2.0],"radius":9.0,"zone":"zone_a"},"tag":"zone_restore_started"}
+ORIMI_FPS fps=134 process_ms=74.01 [t=49.08s]
+VFX_PEAK n=14 id=bloom_ring t=0.75
+VFX_SHOT 14_bloom_ring.png
+VFX_PEAK_HELD n=14 id=bloom_ring
+ORIMI_FPS fps=90 process_ms=357.20 [t=50.28s]
+VFX_PAUSE_CHECK n=14 frozen=true
+ORIMI_FPS fps=125 process_ms=61.21 [t=51.28s]
+QA:{"data":{"at":[16.0,1.5,0.0]},"tag":"soot_cleared"}
+ORIMI_FPS fps=142 process_ms=33.31 [t=52.28s]
+VFX_PEAK n=15 id=soot_clear t=0.75
+VFX_SHOT 15_soot_clear.png
+VFX_PEAK_HELD n=15 id=soot_clear
+ORIMI_FPS fps=37 process_ms=397.75 [t=54.47s]
+VFX_PAUSE_CHECK n=15 frozen=true
+ORIMI_FPS fps=127 process_ms=119.60 [t=55.48s]
+QA:{"data":{"at":[8.0,1.0,6.0]},"tag":"thorns_cut"}
+VFX_PEAK n=16 id=thorns_cut t=0.25
+VFX_SHOT 16_thorns_cut.png
+VFX_PEAK_HELD n=16 id=thorns_cut
+ORIMI_FPS fps=91 process_ms=347.09 [t=57.09s]
+VFX_PAUSE_CHECK n=16 frozen=true
+ORIMI_FPS fps=137 process_ms=68.79 [t=58.09s]
+QA:{"data":{"at":[8.0,0.0,6.0]},"tag":"enemy_unveiled"}
+VFX_PEAK n=17 id=veil_stripped t=0.50
+VFX_SHOT 17_veil_stripped.png
+VFX_PEAK_HELD n=17 id=veil_stripped
+ORIMI_FPS fps=127 process_ms=602.08 [t=59.94s]
+VFX_PAUSE_CHECK n=17 frozen=true
+ORIMI_FPS fps=2 process_ms=58.79 [t=60.94s]
+QA:{"data":{"autoplay":false,"checkpoint":[0.0,0.0,50.0],"deaths":0,"enemies_alive":0,"fps":145.0,"god":false,"hp":0,"ink":100.0,"ink_max":100.0,"kills":1,"max_hp":0,"player_pos":[],"restored_zones":[],"state":"title","t":61.49},"tag":"valley_restored"}
+ORIMI_FPS fps=145 process_ms=35.76 [t=61.94s]
+ORIMI_FPS fps=138 process_ms=41.10 [t=62.94s]
+ORIMI_FPS fps=84 process_ms=15.19 [t=64.28s]
+VFX_PEAK n=18 id=valley_petals t=3.00
+VFX_SHOT 18_valley_petals.png
+VFX_PEAK_HELD n=18 id=valley_petals
+ORIMI_FPS fps=89 process_ms=362.28 [t=66.14s]
+VFX_PAUSE_CHECK n=18 frozen=true
+VFX_DEMO_DONE

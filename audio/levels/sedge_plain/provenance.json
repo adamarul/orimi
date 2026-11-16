@@ -1,0 +1,16 @@
+{
+ "outputs": [
+  {
+   "path": "audio/levels/sedge_plain/sedge_plain_cursed.ogg",
+   "sha256": "2e24ae8d4a53b4327e426990dd0600160db6d4441f3facc209b1b5dffd2fd2e0",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/levels/sedge_plain/sedge_plain_restored.ogg",
+   "sha256": "0d1fa6f5d4c96876f9a5bd37df39c6761dc83f66aecc4a653b0a3c46b49d41c8",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "outputs": [
+  {
+   "path": "audio/levels/hollow_kiln/hollow_kiln_cursed.ogg",
+   "sha256": "9ffa7d6e624992d807ff3bd1c523c4de680a312c31914bfe4a94afe63066eb63",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/levels/hollow_kiln/hollow_kiln_dregs.ogg",
+   "sha256": "01def73a749f7b6bca35a352546970ef1bd12365937a01f2a5a653336bb58b28",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/levels/hollow_kiln/hollow_kiln_restored.ogg",
+   "sha256": "3909d55dadb328a96403fdd2baabeefce0c07fd19ee00db9699f8c7fced46de0",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  }
+ ]
+}

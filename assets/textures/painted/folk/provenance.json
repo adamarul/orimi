@@ -1,0 +1,52 @@
+{
+ "outputs": [
+  {
+   "path": "assets/textures/painted/folk/folk_dyer.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "8a4fe96bc48df12727a8fe251d5867810e51d0d920c88b2218be755a291b8c46",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/textures/painted/folk/folk_dyer_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "ec7b9b4b7f08ebed253cd9c4be5f4706f868b8c7727e66f106388934a812e773",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/textures/painted/folk/folk_lampmaker.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "3235803738fb454734fbe9fd8f510eb5f05b8548cf8aa4bc54b27db915783c24",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/textures/painted/folk/folk_lampmaker_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "502a8b386573f25434af8939e35974db7fa5ae2864fb2ed53d122cd70c0d03c3",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/textures/painted/folk/folk_mapmaker.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "6bd09a4090b3b1d61ff6373a4c640f8b05d16e46c8465197ace323e956493a05",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/textures/painted/folk/folk_mapmaker_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "0f7261b61c0f55129e1849fcdac49356a3fc1dd200123674d8e06072603b150d",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/textures/painted/folk/pell.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "ed94f8edb4c426f0ebd1d8cf1fb1fcfa69ee3ce3ac7db14b49ed3405ab5ff806",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  },
+  {
+   "path": "assets/textures/painted/folk/pell_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "d0780e40766041a4fb70ca0a779dfa720a50c6005225c65342b2413d3ee07c55",
+   "command": "tools/assets/gen_folk.sh tools/assets/folk_cast.json"
+  }
+ ]
+}

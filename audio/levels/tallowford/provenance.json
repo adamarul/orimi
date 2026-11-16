@@ -1,0 +1,16 @@
+{
+ "outputs": [
+  {
+   "path": "audio/levels/tallowford/tallowford_cursed.ogg",
+   "sha256": "ea80e142f114cf99b6e6e497529dfbece079eb9dfb41708e8e21334e403c0df1",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/levels/tallowford/tallowford_restored.ogg",
+   "sha256": "11dc3432ee036d1a0334a375916d847ce23183eb10289b1a73a9dfdbb3444917",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  }
+ ]
+}

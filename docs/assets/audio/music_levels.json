@@ -1,0 +1,52 @@
+{
+ "title": {
+  "file": "audio/music/title.ogg",
+  "seconds": 58.18,
+  "loop": true,
+  "peak_db": -1.1,
+  "rms_db": -16.1,
+  "bytes": 657025,
+  "clipped": false,
+  "samples_written": 2565818,
+  "samples_decoded": 2565818,
+  "loop_step_ratio_rendered": 0.25,
+  "loop_step_ratio_decoded": 0.28
+ },
+ "vale_cursed": {
+  "file": "audio/music/vale_cursed.ogg",
+  "seconds": 66.21,
+  "loop": true,
+  "peak_db": -1.2,
+  "rms_db": -17.2,
+  "bytes": 716130,
+  "clipped": false,
+  "samples_written": 2919724,
+  "samples_decoded": 2919724,
+  "loop_step_ratio_rendered": 0.05,
+  "loop_step_ratio_decoded": 0.13
+ },
+ "vale_restored": {
+  "file": "audio/music/vale_restored.ogg",
+  "seconds": 53.33,
+  "loop": true,
+  "peak_db": -0.9,
+  "rms_db": -15.0,
+  "bytes": 605992,
+  "clipped": false,
+  "samples_written": 2352000,
+  "samples_decoded": 2352000,
+  "loop_step_ratio_rendered": 0.04,
+  "loop_step_ratio_decoded": 0.05
+ },
+ "finale": {
+  "file": "audio/music/finale.ogg",
+  "seconds": 62.84,
+  "loop": false,
+  "peak_db": -1.3,
+  "rms_db": -16.7,
+  "bytes": 660695,
+  "clipped": false,
+  "samples_written": 2771336,
+  "samples_decoded": 2771336
+ }
+}

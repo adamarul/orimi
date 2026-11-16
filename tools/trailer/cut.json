@@ -1,0 +1,23 @@
+{
+ "_comment": "The trailer edit, read by tools/trailer/edit.py. Segments in order; in/out are seconds from the shot's TRAILER_IN mark (tools/trailer/review.sh <shot> shows the frames). fade_in/fade_out dip to the game's paper colour. The music bed is one game track from its start; its hit at 12.55 s is placed on the great tree's colour returning.",
+ "paper_color": "0xF0E6D2",
+ "sfx_gain_db": 0,
+ "music": {"file":"audio/music/finale.ogg","start":0,"fade_in":0.05,"fade_out":3,"gain_db":0},
+ "segments": [
+  {"shot":"vale_open","in":0.4,"out":3,"fade_in":0.6,"fade_out":0.3,"note":"the grey vale, Orimi small on the shrine path"},
+  {"shot":"card_lost","in":0,"out":2.4,"note":"card: The vale has lost its colour."},
+  {"shot":"run_slash","in":1.5,"out":5.8,"note":"runs; the brush stills the world; Slash drawn; the thorns are cut"},
+  {"shot":"card_draw","in":0,"out":1.4,"note":"card: Draw it back."},
+  {"shot":"tree_finale","in":2,"out":9,"note":"Bloom drawn round the great camphor; colour floods back (music hit)"},
+  {"shot":"tree_finale","in":11,"out":14,"crop":[213,240,1493,840],"note":"the crane ends over the green valley"},
+  {"shot":"zone_a","in":0.8,"out":3,"note":"Slash finishes a Splotchet"},
+  {"shot":"zone_b","in":3.8,"out":6,"note":"Gust strips a Reedwraith's veil"},
+  {"shot":"zone_a","in":7.6,"out":10.9,"note":"Bloom on the sapling; the Reed Shallows turn green"},
+  {"shot":"tf_trim","in":0.4,"out":6.4,"note":"dusk Tallowford; Kindle lights Old Trim's lamp; the warm pool spreads; he wakes: Who let my lamp go out?"},
+  {"shot":"tf_sealed","in":7.65,"out":10.15,"note":"sealed fight: Orimi steps onto the jetty square, the torn-paper screens rise round it; a Slash"},
+  {"shot":"tf_sealed","in":12.75,"out":13.75,"note":"a Splotchet lunges and is struck"},
+  {"shot":"tf_sealed","in":20.95,"out":23.55,"note":"the Reedwraith unravels; the screens fall; petals"},
+  {"shot":"tf_finale","in":29,"out":31.4,"fade_out":0.4,"note":"Tallowford lit, the ford-lamp over the river"},
+  {"shot":"title","in":0,"out":5,"note":"title card"}
+ ]
+}

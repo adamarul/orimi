@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://cpj73kufpex2a" path="res://assets/levels/hollow_kiln/textures/ink_pool.png" id="1"]
+
+[resource]
+resource_name = "M_ink_pool"
+albedo_texture = ExtResource("1")
+texture_filter = 3

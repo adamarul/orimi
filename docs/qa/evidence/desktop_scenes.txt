@@ -1,0 +1,7 @@
+# Windowed desktop runs (Forward+): screenshot after 5 s, fail on any script or shader error
+ok   main
+ok   assets_demo
+ok   brush_demo
+ok   gameplay_demo
+ok   render_demo
+ok   vfx_demo

@@ -1,0 +1,70 @@
+# serving <project>\build\web at http://127.0.0.1:58085/
+[console.log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[console.log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+[console.log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+[console.log] ORIMI_BOOT t=11.24s options={"scene":"res://scenes/levels/sedge_plain/lookdev.tscn","view":"landing"}
+[console.log] SEDGE_LOOKDEV {"foliage_cards":11290,"foliage_per_tile":700,"markers":40,"props":90,"state":"drained","view":"landing"}
+[console.log] ORIMI_FIRST_FRAME t=19.59s scene=res://scenes/levels/sedge_plain/lookdev.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+# webgl {"webgl2":true,"version":"WebGL 2.0 (OpenGL ES 3.0 Chromium)","vendor":"Google Inc. (NVIDIA)","renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+[console.log] ORIMI_FPS fps=46
+[console.log] ORIMI_FPS fps=124
+[console.log] ORIMI_FPS fps=130
+# pointer lock after click: false
+[console.log] ORIMI_FPS fps=133
+# AudioContext before click [{"state":"suspended","time":0}], 1.5 s after click [{"state":"running","time":1.48}]
+[console.log] ORIMI_FPS fps=113
+# sent a pen stroke (CDP pointerType=pen, force 0.3..0.9, tilt 20/-10)
+[console.log] ORIMI_FPS fps=114
+[console.log] ORIMI_FPS fps=114
+[console.log] ORIMI_FPS fps=116
+[console.log] ORIMI_FPS fps=123
+[console.log] ORIMI_FPS fps=119
+[console.log] ORIMI_FPS fps=132
+[console.log] ORIMI_FPS fps=128
+# summary {
+  "headless": true,
+  "query": "scene=res%3A%2F%2Fscenes%2Flevels%2Fsedge_plain%2Flookdev.tscn&view=landing",
+  "url": "http://127.0.0.1:58085/index.html?scene=res%3A%2F%2Fscenes%2Flevels%2Fsedge_plain%2Flookdev.tscn&view=landing",
+  "chrome": "Chrome/157.0.8103.51",
+  "first_frame_ms": 23780,
+  "first_frame": "ORIMI_FIRST_FRAME t=19.59s scene=res://scenes/levels/sedge_plain/lookdev.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web",
+  "webgl": {
+    "webgl2": true,
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "software_gl": false,
+  "audio_before_click": [
+    {
+      "state": "suspended",
+      "time": 0
+    }
+  ],
+  "pointer_lock_after_click": false,
+  "audio_after_click": [
+    {
+      "state": "running",
+      "time": 1.48
+    }
+  ],
+  "raf_fps": 115,
+  "screenshot": "<project>\\.userdata\\web\\web_landing.png",
+  "game_fps": [
+    46,
+    124,
+    130,
+    133,
+    113,
+    114,
+    114,
+    116,
+    123,
+    119,
+    132,
+    128
+  ],
+  "probes": [],
+  "problems": [],
+  "passed": true
+}

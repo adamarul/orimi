@@ -1,0 +1,14 @@
+{
+ "assets/levels/mosswater/folk/fenn.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/mosswater/folk/fenn.png",
+  "textures": [
+   "assets/levels/mosswater/folk/fenn_faded.png"
+  ]
+ }
+}

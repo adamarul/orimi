@@ -1,0 +1,22 @@
+{
+ "outputs": [
+  {
+   "path": "assets/levels/sedge_plain/folk/tamsin.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "8a2005bafee4230237374150ff07f1507098fda3509989a12eceb8b8db2f08ac",
+   "command": "tools/assets/gen_folk.sh tools/levels/sedge_plain/folk.json"
+  },
+  {
+   "path": "assets/levels/sedge_plain/folk/tamsin.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "8dcfb5b11c07762d04708f2d82ed24625a1d41a47b98e019c7f98de6f5d635a2",
+   "command": "tools/assets/gen_folk.sh tools/levels/sedge_plain/folk.json"
+  },
+  {
+   "path": "assets/levels/sedge_plain/folk/tamsin_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "5dcd45c4d76c9803d1e86f805e7ebf19c61054e73b803845b9c7756839265a75",
+   "command": "tools/assets/gen_folk.sh tools/levels/sedge_plain/folk.json"
+  }
+ ]
+}

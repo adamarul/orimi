@@ -1,0 +1,22 @@
+{
+ "outputs": [
+  {
+   "path": "assets/characters/fox.glb",
+   "sha256": "cce2afb2f23b77934d4c80f6626a8117ecf6cb49a2330a18a2e011b2ef267bd5",
+   "generator": "tools/blender/make_fox.py",
+   "command": "tools/assets/gen_models.sh fox"
+  },
+  {
+   "path": "assets/characters/reedwraith.glb",
+   "sha256": "d62babd7e526dccd42af480ef0d00ef1972a0849a6da36a3a2a3864790f97432",
+   "generator": "tools/blender/make_reedwraith.py",
+   "command": "tools/assets/gen_models.sh reedwraith"
+  },
+  {
+   "path": "assets/characters/splotchet.glb",
+   "sha256": "46df293571b82dcaab72a3ada9634cfa68f8f1ef412e41e49e6b2fd7a62b2be1",
+   "generator": "tools/blender/make_splotchet.py",
+   "command": "tools/assets/gen_models.sh splotchet"
+  }
+ ]
+}

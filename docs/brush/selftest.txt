@@ -1,0 +1,44 @@
+BRUSH_SELFTEST physics engine setting DEFAULT, server PhysicsServer3D
+BRUSH_SELFTEST PASS inject_bloom bloom targets=["Sapling"]
+BRUSH_SELFTEST PASS info_keys_bloom missing=[] world_points=40
+BRUSH_SELFTEST PASS inject_slash slash targets=["Thorns"]
+BRUSH_SELFTEST PASS info_keys_slash missing=[] world_points=40
+BRUSH_SELFTEST PASS inject_gust gust targets=["Soot"]
+BRUSH_SELFTEST PASS info_keys_gust missing=[] world_points=40
+BRUSH_SELFTEST PASS inject_kindle kindle targets=["Lamp"]
+BRUSH_SELFTEST PASS info_keys_kindle missing=[] world_points=1
+BRUSH_SELFTEST PASS inject_tie tie targets=["PostA", "PostB"]
+BRUSH_SELFTEST PASS info_keys_tie missing=[] world_points=40
+BRUSH_SELFTEST PASS reject_vertical closest slash: too steep (90 deg)
+BRUSH_SELFTEST PASS kindle_real_press reacted=1 duration=0.10
+BRUSH_SELFTEST PASS long_press_not_kindle closest kindle: held 1.2 s
+BRUSH_SELFTEST PASS kindle_within_40px offset 102 px, called=true
+BRUSH_SELFTEST PASS kindle_beyond_40px offset 127 px, called=false
+BRUSH_SELFTEST PASS kindle_ink cost 3.05
+BRUSH_SELFTEST PASS tie_PostA_first targets=["PostA", "PostB"] told_in_order=true
+BRUSH_SELFTEST PASS tie_ink_PostA cost 11.49 = 7.49 + 4.0
+BRUSH_SELFTEST PASS tie_PostB_first targets=["PostB", "PostA"] told_in_order=true
+BRUSH_SELFTEST PASS tie_ink_PostB cost 11.49 = 7.49 + 4.0
+BRUSH_SELFTEST PASS tie_line_without_posts_is_slash slash
+BRUSH_SELFTEST PASS tie_one_end_is_slash slash
+BRUSH_SELFTEST PASS tie_no_ink no_ink
+BRUSH_SELFTEST PASS draw_then_release_closing still fading out
+BRUSH_SELFTEST PASS draw_release_order_a open=false paused=false reacted=2
+BRUSH_SELFTEST PASS brush_released_before_draw open=false paused=false reacted=2
+BRUSH_SELFTEST PASS refuse_when_disabled 
+BRUSH_SELFTEST PASS refuse_when_paused 
+BRUSH_SELFTEST PASS close_on_focus_out opened=true open=false paused=false
+BRUSH_SELFTEST PASS close_on_disabled opened=true open=false paused=false
+BRUSH_SELFTEST PASS close_on_unpaused opened=true open=false paused=false
+BRUSH_SELFTEST PASS close_on_escape opened=true open=false paused=false
+BRUSH_SELFTEST PASS world_frozen_while_open moved while open 0.000, after 1.387
+BRUSH_SELFTEST PASS ray_hits_while_paused Soot:<StaticBody3D#81856038699>
+BRUSH_SELFTEST INFO ray at a body moved while paused, same frame: Ground:<StaticBody3D#81134618368>
+BRUSH_SELFTEST PASS ray_sees_body_moved_while_paused_next_frame Soot:<StaticBody3D#81856038699>
+BRUSH_SELFTEST INFO ray at a body added while paused, same frame: nothing
+BRUSH_SELFTEST PASS ray_sees_body_added_while_paused_next_frame @StaticBody3D@92:<StaticBody3D#126131111832>
+BRUSH_SELFTEST PASS ink_runs_out ink=0.00 result=closest slash: not straight (0.45)
+BRUSH_SELFTEST PASS no_ink_reason no_ink
+BRUSH_SELFTEST PASS refill_over_time 2.51 after 1 s
+BRUSH_SELFTEST PASS refill_on_enemy_died 17.51
+BRUSH_SELFTEST_DONE passed=40 failed=0

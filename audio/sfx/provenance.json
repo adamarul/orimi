@@ -1,0 +1,256 @@
+{
+ "outputs": [
+  {
+   "path": "audio/sfx/bead.ogg",
+   "sha256": "dea5d568164692555c7fc80c06d452aa872c34d18c30debbc8386a28f75ed313",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/bloom.ogg",
+   "sha256": "24ad8ab6e1a49e6b38c43a64f4694a916baacdc4699161f8ef66b53f5ea3b276",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/brush_close.ogg",
+   "sha256": "f4033006cd8d75eb155a2ea73e20880b25a9191b26cc57b37cb30708929b7de2",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/brush_open.ogg",
+   "sha256": "5cfa28bebda4a5385d6f564712211633aa2fcd0285f3f4c952788e597cbc91e7",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/brush_stroke.ogg",
+   "sha256": "964dc7fbe1fdd724bb914215970399ca97b1e9e02126b72b60e2b276a339b150",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/clean_cut.ogg",
+   "sha256": "50fcf017092b997ea2b1a6564809d02b22dc1ca7b0aa542f7e95d30dc787b974",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/curse_throwback.ogg",
+   "sha256": "1f0af606ff13102d3132153235d826dc6e65016a539f1bdcbba0cca983199a1c",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/fight_seal.ogg",
+   "sha256": "7ef665df63e77032277f38f3db5dc61a8a57db6fb1878f2afde2d63424e9525c",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/fight_won.ogg",
+   "sha256": "dff78f89f43f5fe166fd644e3eac4b400800e7ed1f136bcb72f3066849f99152",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/footstep.ogg",
+   "sha256": "7cb06db91271c78839ca9a6036bd8c58d3bf61477ff9bc7e0eb82693762e0474",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/glyph_fail.ogg",
+   "sha256": "caf1ffc90d48400f563ca36e2f9dbfeaa76342cfe3b566e6057a8fddd80a9bb1",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/glyph_ok.ogg",
+   "sha256": "10de5c2a1779623bc6ff99b8391842ab087bb926f22015bccef6236866920c13",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/gust.ogg",
+   "sha256": "f55cb27d9a3295734b1ecc91fd67425acbfbec0be67d6ccfda1a6f6b131ccd4a",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/hit.ogg",
+   "sha256": "ad019d5f99093c59f33b550dfddd9c2db84365335d99a331b2fa3f2066912260",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/hurt.ogg",
+   "sha256": "563d7400a532c16c69fa00a3c65af343e32b205b256591eb37e5e2eb40811c7d",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/ink_pickup.ogg",
+   "sha256": "f578215e538613ac04888404b59b8a89d2f1867e5f4b73aaac92bd26629a4c53",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/jump.ogg",
+   "sha256": "7d439da3462073026149cdbec6b27dfc79a6571112622b7b4d483834527134ff",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/kindle.ogg",
+   "sha256": "b1dc17801e7bfca6bc5d5307af4258c8e3cb6ccb618f5024b7e24235bf1cb32c",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/lamp_hum.ogg",
+   "sha256": "5d8e2a84c5bae7d3bc2c465bc5bdeba0f7e8c4bcc90f8176712e4d77cc5afacb",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/land.ogg",
+   "sha256": "05000b80e00e67e37d9c38a68e4ee7aa789bf76c92e9198ac568495893c1109f",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/petals.ogg",
+   "sha256": "9299b6a804566a6d9f5b2487443657ac6b8dd35ce6ed79aad33602197942a6dd",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/pickup.ogg",
+   "sha256": "ae314ef5c9bcd050ff0b07b620a72d5533cf1ac7b7ce64f21abdae570acb7953",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/raft.ogg",
+   "sha256": "b7c7ba28a75e5dcd772f8079ace62b4f5e3ca9612cba5f88f9c636480d729ab0",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/reedwraith_die.ogg",
+   "sha256": "598b11f3ef644cfe0e327d357d9563320a276a35cdf28f49e0316c4f85b77576",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/reedwraith_moan.ogg",
+   "sha256": "604405f9eded9e49ef7ceebb393eb755751a52f14f250afc751c9d01e333c4a9",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/slash.ogg",
+   "sha256": "3b7d45d1352905f4a4af37e392de6a7bdaa0b103bb1dbf842883e65d3924e8bf",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/soot_clear.ogg",
+   "sha256": "5152a7dc448ac49c4a5040ffb799d46ab2ebb04c3df220daaba1103d0b62acb2",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/splash.ogg",
+   "sha256": "7dcdc4dfe39c052db513ce2ae32c9cb0a9b06843daa470dac0c8db801da78f9d",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/splotchet_die.ogg",
+   "sha256": "d7ffb4818ee9e28aceb5f2dc3721c277c7570a005a72eb70d54cfc4ebb8778f1",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/splotchet_hop.ogg",
+   "sha256": "7f9b528a6b8db26c60748a8ad4afc9c4e69b57fe804826a453243d77e5f54e10",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/swipe.ogg",
+   "sha256": "6096632220941a647fa266cee6a595e9a34bf41d3566242db81067035c61ade8",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/talk_next.ogg",
+   "sha256": "0b1216649f75e952f57ca89ba55e006f00043487af00e9728fffffc100ed0755",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/talk_open.ogg",
+   "sha256": "cfaf1485ad5a3504552fb93abfb8361a80ff7ec089219409f617a0aa1171e6b6",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/thorns_cut.ogg",
+   "sha256": "680f3e73d1f79421022f393d921fa63f9098c828fd640cfe455b2bca1e72ac16",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/tie.ogg",
+   "sha256": "fb962fcec7309c24a2189b063fc68a85cb4cb699ce440321b3a2a41067936076",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/tree_restore.ogg",
+   "sha256": "ff50dc16f1ce69d9b44408bcb33a1d1b67aac77051f6fae0491dbf7ad49028ba",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/ui_accept.ogg",
+   "sha256": "01b944ba2e2c50e47048dfc163d0555c60cc31fb388219fbd16661ee9b52edd8",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/ui_move.ogg",
+   "sha256": "3b2079bceadf1a530e0e5d1aa7477d3a940c2042ff77e4fbeeb0fcd9eb045de0",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/unravel.ogg",
+   "sha256": "e073bb3ac722977c238d20d8670b20d0134a4e77981abbf4a39da22a186f8898",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/veil_off.ogg",
+   "sha256": "eb7e4f6e8063df479aa6bf0be27d86b2113ef72a20d0ce77a41def51a36800f4",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/verse_wake.ogg",
+   "sha256": "0baf029788738a02d556341e5975b1a25479d1d922caabaadd603f9a8adff563",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/sfx/zone_restore.ogg",
+   "sha256": "b50d2cb28db3d43cc779def1ba71eefccfd9ba0ce2c381eb48218a167ade39c0",
+   "generator": "tools/audio/sfx.py",
+   "command": "tools/assets/gen_audio.sh"
+  }
+ ]
+}

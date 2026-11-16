@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bu83kxgxcq6ln" path="res://assets/levels/mosswater/textures/mw_lantern_fruit.png" id="1"]
+
+[resource]
+resource_name = "M_mw_lantern_fruit_glow_sacred"
+albedo_texture = ExtResource("1")
+texture_filter = 3

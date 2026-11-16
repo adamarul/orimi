@@ -1,0 +1,120 @@
+# url http://127.0.0.1:57736/index.html?scene=res%3A%2F%2Fscenes%2Fgame%2Fmain.tscn&autoplay=1
+[7.1s console.log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[12.7s console.log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+[12.9s console.log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+[13.4s console.log] ORIMI_BOOT t=6.41s options={"autoplay":"1","scene":"res://scenes/game/main.tscn"}
+[14.1s console.log] ORIMI_FIRST_FRAME t=7.07s scene=res://scenes/game/main.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+[14.5s console.log] QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
+[22.8s console.log] QA:{"data":{"enemies":9,"greybox":false},"tag":"valley_built"}
+[22.8s console.log] QA:{"data":{"t":15.77},"tag":"title_ready"}
+[23.2s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"elapsed":0.5,"enemies_alive":9,"fps":35.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":0,"max_hp":5,"player_pos":[0.0,0.05,50.0],"restored_zones":[],"stage":"title","state":"title","t":16.26,"zone":""},"tag":"stage"}
+[24.8s console.log] QA:{"data":{"state":"cutscene"},"tag":"state"}
+[24.8s console.log] QA:{"data":{},"tag":"intro"}
+[25.4s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"elapsed":2.6,"enemies_alive":9,"fps":139.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":0,"max_hp":5,"player_pos":[0.0,0.05,50.0],"restored_zones":[],"stage":"intro","state":"cutscene","t":18.37,"zone":""},"tag":"stage"}
+[26.4s console.log] QA:{"data":{"state":"playing"},"tag":"state"}
+[26.4s console.log] ORIMI_AUDIO music=vale_cursed fade=2.0
+[26.6s console.log] QA:{"data":{"id":"move"},"tag":"prompt"}
+[26.6s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"enemies_alive":9,"fps":137.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":0,"max_hp":5,"player_pos":[0.0,0.05,50.0],"restored_zones":[],"state":"playing","t":19.61,"zone":""},"tag":"play_started"}
+[27.2s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"elapsed":4.4,"enemies_alive":9,"fps":91.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":0,"max_hp":5,"player_pos":[0.0,0.05,50.0],"restored_zones":[],"stage":"spawn","state":"playing","t":20.18,"zone":""},"tag":"stage"}
+[28.0s console.log] QA:{"data":{"id":"gate_a"},"tag":"prompt"}
+[28.6s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"elapsed":5.9,"enemies_alive":9,"fps":113.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":0,"max_hp":5,"player_pos":[-2.3,0.06,41.93],"restored_zones":[],"stage":"gate_a","state":"playing","t":21.62,"zone":""},"tag":"stage"}
+[29.5s console.log] QA:{"data":{"at":[-4.0,1.44,36.0]},"tag":"thorns_cut"}
+[29.5s console.log] QA:{"data":{"alive":8,"at":[-8.0,0.0,23.0],"kind":"smudgeling"},"tag":"enemy_died"}
+[29.5s console.log] QA:{"data":{"alive":7,"at":[-15.0,0.0,26.0],"kind":"smudgeling"},"tag":"enemy_died"}
+[29.5s console.log] QA:{"data":{"alive":6,"at":[-9.0,0.0,14.0],"kind":"smudgeling"},"tag":"enemy_died"}
+[29.6s console.log] QA:{"data":{"glyph":"slash","ink":100.0,"score":0.99,"targets":["ThornGate","Smudgeling_zone_a_1","Smudgeling_zone_a_2","Smudgeling_zone_a_3"]},"tag":"glyph_cast"}
+[29.6s console.log] QA:{"data":{"glyph":"slash","hit":true,"r_px":172.0,"recognised":"slash","screen":[640.0,257.0],"target":"ThornGate","targets":4},"tag":"autoplay_cast"}
+[29.6s console.log] QA:{"data":{"id":"jump"},"tag":"prompt"}
+[31.5s console.log] QA:{"data":{"zone":"zone_a"},"tag":"zone_entered"}
+[33.0s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"elapsed":10.2,"enemies_alive":6,"fps":118.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":3,"max_hp":5,"player_pos":[-8.3,0.02,25.97],"restored_zones":[],"stage":"zone_a_enter","state":"playing","t":25.96,"zone":"zone_a"},"tag":"stage"}
+[33.2s console.log] QA:{"data":{"id":"fight"},"tag":"prompt"}
+[35.0s console.log] QA:{"data":{"alive":5,"at":[-15.91,0.0,17.25],"kind":"smudgeling"},"tag":"enemy_died"}
+[35.0s console.log] QA:{"data":{"zone":"zone_a"},"tag":"zone_cleared"}
+[35.0s console.log] QA:{"data":{"id":"bloom_ready"},"tag":"prompt"}
+[35.0s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"elapsed":12.3,"enemies_alive":5,"fps":144.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":4,"max_hp":5,"player_pos":[-14.85,0.02,18.46],"restored_zones":[],"stage":"zone_a_clear","state":"playing","t":28.06,"zone":"zone_a"},"tag":"stage"}
+[37.1s console.log] QA:{"data":{"center":[-12.0,0.0,20.0],"radius":16.0,"zone":"zone_a"},"tag":"zone_restore_started"}
+[37.1s console.log] QA:{"data":{"glyph":"bloom","ink":83.8,"score":0.97,"targets":["Sapling_zone_a"]},"tag":"glyph_cast"}
+[37.1s console.log] QA:{"data":{"glyph":"bloom","hit":true,"r_px":71.0,"recognised":"bloom","screen":[635.0,319.0],"target":"Sapling_zone_a","targets":1},"tag":"autoplay_cast"}
+[39.7s console.log] ORIMI_AUDIO music=vale_restored fade=3.0
+[39.8s console.log] QA:{"data":{"restored":["zone_a"],"zone":"zone_a"},"tag":"zone_restored"}
+[39.8s console.log] QA:{"data":{"autoplay":true,"checkpoint":[-11.07,0.0,22.32],"deaths":0,"elapsed":17.1,"enemies_alive":5,"fps":141.0,"god":false,"hp":5,"ink":90.3,"ink_max":100.0,"kills":4,"max_hp":5,"player_pos":[-10.98,0.02,23.35],"restored_zones":["zone_a"],"stage":"zone_a_restored","state":"playing","t":32.85,"zone":"zone_a"},"tag":"stage"}
+[39.9s console.log] QA:{"data":{"at":[-10.98,0.02,23.35],"deaths":1},"tag":"player_died"}
+[39.9s console.log] QA:{"data":{"autoplay":true,"checkpoint":[-11.07,0.0,22.32],"deaths":1,"elapsed":17.1,"enemies_alive":5,"fps":141.0,"god":false,"hp":0,"ink":90.3,"ink_max":100.0,"kills":4,"max_hp":5,"player_pos":[-10.98,0.02,23.35],"restored_zones":["zone_a"],"stage":"death","state":"playing","t":32.86,"zone":"zone_a"},"tag":"stage"}
+[41.7s console.log] QA:{"data":{"at":[-11.07,0.0,22.32]},"tag":"player_respawned"}
+[42.7s console.log] QA:{"data":{"autoplay":true,"checkpoint":[-11.07,0.0,22.32],"deaths":1,"distance_from_checkpoint":0.1,"elapsed":19.9,"enemies_alive":5,"fps":144.0,"god":false,"hp":5,"ink":97.7,"ink_max":100.0,"kills":4,"max_hp":5,"player_pos":[-11.07,0.0,22.32],"restored_zones":["zone_a"],"stage":"respawned","state":"playing","t":35.67,"zone":"zone_a"},"tag":"stage"}
+[45.6s console.log] QA:{"data":{"id":"gate_b"},"tag":"prompt"}
+[49.9s console.log] ORIMI_AUDIO music=vale_cursed fade=2.5
+[49.9s console.log] QA:{"data":{"zone":"zone_a"},"tag":"zone_exited"}
+[50.3s console.log] QA:{"data":{"autoplay":true,"checkpoint":[-11.07,0.0,22.32],"deaths":1,"elapsed":27.6,"enemies_alive":5,"fps":143.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":4,"max_hp":5,"player_pos":[3.62,-0.55,7.24],"restored_zones":["zone_a"],"stage":"crossing","state":"playing","t":43.35,"zone":""},"tag":"stage"}
+[51.2s console.log] QA:{"data":{"at":[6.0,3.03,4.0]},"tag":"soot_cleared"}
+[51.2s console.log] QA:{"data":{"at":[19.0,3.02,-15.0]},"tag":"enemy_unveiled"}
+[51.3s console.log] QA:{"data":{"glyph":"gust","ink":78.0,"score":0.91,"targets":["SootBank","Smudgeling_zone_b_3","Smudgeling_zone_b_2","Smudgeling_zone_b_4","Reedwraith_zone_b_0"]},"tag":"glyph_cast"}
+[51.3s console.log] QA:{"data":{"glyph":"gust","hit":true,"r_px":220.0,"recognised":"gust","screen":[632.0,87.0],"target":"SootBank","targets":5},"tag":"autoplay_cast"}
+[51.8s console.log] QA:{"data":{"autoplay":true,"checkpoint":[-11.07,0.0,22.32],"deaths":1,"elapsed":29.1,"enemies_alive":5,"fps":144.0,"god":false,"hp":5,"ink":79.5,"ink_max":100.0,"kills":4,"max_hp":5,"player_pos":[3.73,-0.55,7.17],"restored_zones":["zone_a"],"stage":"gate_b","state":"playing","t":44.85,"zone":""},"tag":"stage"}
+[55.8s console.log] QA:{"data":{"zone":"zone_b"},"tag":"zone_entered"}
+[56.8s console.log] QA:{"data":{"id":"veil"},"tag":"prompt"}
+[57.1s console.log] QA:{"data":{"autoplay":true,"checkpoint":[-11.07,0.0,22.32],"deaths":1,"elapsed":34.4,"enemies_alive":5,"fps":144.0,"god":false,"hp":5,"ink":92.7,"ink_max":100.0,"kills":4,"max_hp":5,"player_pos":[9.57,3.01,-1.14],"restored_zones":["zone_a"],"stage":"zone_b_enter","state":"playing","t":50.14,"zone":"zone_b"},"tag":"stage"}
+[58.1s console.log] QA:{"data":{"alive":4,"at":[12.79,3.0,-3.99],"kind":"smudgeling"},"tag":"enemy_died"}
+[58.9s console.log] QA:{"data":{"alive":3,"at":[14.91,3.0,-2.98],"kind":"smudgeling"},"tag":"enemy_died"}
+[61.0s console.log] QA:{"data":{"at":[15.16,2.97,3.73]},"tag":"enemy_unveiled"}
+[61.0s console.log] QA:{"data":{"glyph":"gust","ink":87.6,"score":0.93,"targets":["Reedwraith_zone_b_1"]},"tag":"glyph_cast"}
+[61.0s console.log] QA:{"data":{"glyph":"gust","hit":true,"r_px":46.0,"recognised":"gust","screen":[590.0,252.0],"target":"Reedwraith_zone_b_1","targets":1},"tag":"autoplay_cast"}
+[61.6s console.log] QA:{"data":{"alive":2,"at":[11.95,3.0,-9.72],"kind":"smudgeling"},"tag":"enemy_died"}
+[62.4s console.log] QA:{"data":{"alive":1,"at":[15.21,3.0,-4.1],"kind":"reedwraith"},"tag":"enemy_died"}
+[62.4s console.log] QA:{"data":{"glyph":"slash","ink":100.0,"score":0.99,"targets":["Reedwraith_zone_b_0"]},"tag":"glyph_cast"}
+[62.4s console.log] QA:{"data":{"glyph":"slash","hit":true,"r_px":82.0,"recognised":"slash","screen":[871.0,282.0],"target":"Reedwraith_zone_b_0","targets":1},"tag":"autoplay_cast"}
+[65.1s console.log] QA:{"data":{"alive":0,"at":[15.47,2.97,5.03],"kind":"reedwraith"},"tag":"enemy_died"}
+[65.1s console.log] QA:{"data":{"zone":"zone_b"},"tag":"zone_cleared"}
+[65.1s console.log] QA:{"data":{"id":"bloom_ready"},"tag":"prompt"}
+[65.1s console.log] QA:{"data":{"autoplay":true,"checkpoint":[-11.07,0.0,22.32],"deaths":1,"elapsed":42.3,"enemies_alive":0,"fps":144.0,"god":false,"hp":4,"ink":100.0,"ink_max":100.0,"kills":9,"max_hp":5,"player_pos":[15.22,2.99,3.99],"restored_zones":["zone_a"],"stage":"zone_b_clear","state":"playing","t":58.12,"zone":"zone_b"},"tag":"stage"}
+[68.1s console.log] QA:{"data":{"center":[14.0,3.0,-10.0],"radius":16.0,"zone":"zone_b"},"tag":"zone_restore_started"}
+[68.1s console.log] QA:{"data":{"glyph":"bloom","ink":86.9,"score":0.97,"targets":["Sapling_zone_b"]},"tag":"glyph_cast"}
+[68.1s console.log] QA:{"data":{"glyph":"bloom","hit":true,"r_px":58.0,"recognised":"bloom","screen":[634.0,298.0],"target":"Sapling_zone_b","targets":1},"tag":"autoplay_cast"}
+[70.7s console.log] ORIMI_AUDIO music=vale_restored fade=3.0
+[70.7s console.log] QA:{"data":{"restored":["zone_a","zone_b"],"zone":"zone_b"},"tag":"zone_restored"}
+[70.7s console.log] QA:{"data":{"autoplay":true,"checkpoint":[13.43,3.0,-7.57],"deaths":1,"elapsed":47.9,"enemies_alive":0,"fps":135.0,"god":false,"hp":5,"ink":93.4,"ink_max":100.0,"kills":9,"max_hp":5,"player_pos":[12.39,3.02,-4.74],"restored_zones":["zone_a","zone_b"],"stage":"zone_b_restored","state":"playing","t":63.72,"zone":"zone_b"},"tag":"stage"}
+[74.9s console.log] ORIMI_AUDIO music=vale_cursed fade=2.5
+[74.9s console.log] QA:{"data":{"zone":"tree"},"tag":"zone_entered"}
+[74.9s console.log] QA:{"data":{"of":2,"wave":1,"zone":"tree"},"tag":"wave"}
+[74.9s console.log] QA:{"data":{"id":"final_wave"},"tag":"prompt"}
+[75.4s console.log] QA:{"data":{"zone":"zone_b"},"tag":"zone_exited"}
+[75.9s console.log] QA:{"data":{"autoplay":true,"checkpoint":[13.43,3.0,-7.57],"deaths":1,"elapsed":53.1,"enemies_alive":4,"fps":141.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":9,"max_hp":5,"player_pos":[4.6,4.99,-27.99],"restored_zones":["zone_a","zone_b"],"stage":"tree_enter","state":"playing","t":68.9,"zone":"tree"},"tag":"stage"}
+[77.0s console.log] QA:{"data":{"alive":3,"at":[5.59,5.88,-33.69],"kind":"smudgeling"},"tag":"enemy_died"}
+[78.1s console.log] QA:{"data":{"alive":2,"at":[1.92,5.93,-32.21],"kind":"smudgeling"},"tag":"enemy_died"}
+[78.1s console.log] QA:{"data":{"alive":1,"at":[2.79,6.05,-33.84],"kind":"smudgeling"},"tag":"enemy_died"}
+[78.1s console.log] QA:{"data":{"of":2,"wave":2,"zone":"tree"},"tag":"wave"}
+[79.0s console.log] QA:{"data":{"at":[4.27,5.91,-30.92]},"tag":"enemy_unveiled"}
+[79.0s console.log] QA:{"data":{"glyph":"gust","ink":76.4,"score":0.93,"targets":["Reedwraith_w1_3"]},"tag":"glyph_cast"}
+[79.0s console.log] QA:{"data":{"glyph":"gust","hit":true,"r_px":226.0,"recognised":"gust","screen":[640.0,405.0],"target":"Reedwraith_w1_3","targets":1},"tag":"autoplay_cast"}
+[79.7s console.log] QA:{"data":{"alive":3,"at":[4.78,5.54,-30.01],"kind":"reedwraith"},"tag":"enemy_died"}
+[81.0s console.log] QA:{"data":{"alive":2,"at":[3.44,5.92,-31.6],"kind":"smudgeling"},"tag":"enemy_died"}
+[81.4s console.log] QA:{"data":{"alive":1,"at":[1.43,5.79,-28.96],"kind":"smudgeling"},"tag":"enemy_died"}
+[82.5s console.log] QA:{"data":{"at":[6.99,6.01,-36.43]},"tag":"enemy_unveiled"}
+[82.5s console.log] QA:{"data":{"glyph":"gust","ink":87.6,"score":0.93,"targets":["Reedwraith_w2_6"]},"tag":"glyph_cast"}
+[82.5s console.log] QA:{"data":{"glyph":"gust","hit":true,"r_px":60.0,"recognised":"gust","screen":[715.0,258.0],"target":"Reedwraith_w2_6","targets":1},"tag":"autoplay_cast"}
+[84.2s console.log] QA:{"data":{"alive":0,"at":[7.62,6.04,-37.24],"kind":"reedwraith"},"tag":"enemy_died"}
+[84.2s console.log] QA:{"data":{"zone":"tree"},"tag":"zone_cleared"}
+[84.2s console.log] QA:{"data":{"id":"tree_bloom"},"tag":"prompt"}
+[84.2s console.log] QA:{"data":{"autoplay":true,"checkpoint":[13.43,3.0,-7.57],"deaths":1,"elapsed":61.4,"enemies_alive":0,"fps":144.0,"god":false,"hp":4,"ink":100.0,"ink_max":100.0,"kills":16,"max_hp":5,"player_pos":[6.64,6.0,-35.98],"restored_zones":["zone_a","zone_b"],"stage":"tree_clear","state":"playing","t":77.2,"zone":"tree"},"tag":"stage"}
+[85.1s console.log] QA:{"data":{"state":"cutscene"},"tag":"state"}
+[85.1s console.log] ORIMI_AUDIO music=finale fade=2.0
+[85.3s console.log] QA:{"data":{"center":[0.0,6.0,-42.0]},"tag":"finale_started"}
+[85.3s console.log] QA:{"data":{"center":[0.0,6.0,-42.0],"radius":20.0,"zone":"tree"},"tag":"zone_restore_started"}
+[85.3s console.log] QA:{"data":{"glyph":"bloom","ink":71.4,"score":0.97,"targets":["GreatTree"]},"tag":"glyph_cast"}
+[85.3s console.log] QA:{"data":{"glyph":"bloom","hit":true,"r_px":126.0,"recognised":"bloom","screen":[640.0,152.0],"target":"GreatTree","targets":1},"tag":"autoplay_cast"}
+[85.3s console.log] QA:{"data":{"autoplay":true,"checkpoint":[13.43,3.0,-7.57],"deaths":1,"elapsed":62.5,"enemies_alive":0,"fps":144.0,"god":false,"hp":4,"ink":71.4,"ink_max":100.0,"kills":16,"max_hp":5,"player_pos":[6.64,6.0,-35.98],"restored_zones":["zone_a","zone_b"],"stage":"finale","state":"cutscene","t":78.29,"zone":"tree"},"tag":"stage"}
+[87.7s console.log] ORIMI_AUDIO music=vale_restored fade=3.0
+[87.8s console.log] QA:{"data":{"restored":["zone_a","zone_b","tree"],"zone":"tree"},"tag":"zone_restored"}
+[93.7s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,6.04,-39.5],"deaths":1,"enemies_alive":0,"fps":144.0,"god":false,"hp":5,"ink":92.9,"ink_max":100.0,"kills":16,"max_hp":5,"player_pos":[6.64,6.0,-35.98],"restored_zones":["zone_a","zone_b","tree"],"state":"cutscene","t":86.74,"zone":"tree"},"tag":"valley_restored"}
+[94.2s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,6.04,-39.5],"deaths":1,"elapsed":71.5,"enemies_alive":0,"fps":144.0,"god":false,"hp":5,"ink":94.2,"ink_max":100.0,"kills":16,"max_hp":5,"player_pos":[6.64,6.0,-35.98],"restored_zones":["zone_a","zone_b","tree"],"stage":"finale_wide","state":"cutscene","t":87.25,"zone":"tree"},"tag":"stage"}
+[97.2s console.log] QA:{"data":{"state":"ended"},"tag":"state"}
+[97.2s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,6.04,-39.5],"deaths":1,"enemies_alive":0,"fps":133.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":16,"max_hp":5,"player_pos":[6.64,6.0,-35.98],"restored_zones":["zone_a","zone_b","tree"],"state":"ended","t":90.25,"zone":"tree"},"tag":"end_card"}
+[98.8s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,6.04,-39.5],"deaths":1,"elapsed":76.1,"enemies_alive":0,"fps":142.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":16,"max_hp":5,"player_pos":[6.64,6.0,-35.98],"restored_zones":["zone_a","zone_b","tree"],"stage":"end_card","state":"ended","t":91.85,"zone":"tree"},"tag":"stage"}
+[99.2s console.log] QA:{"data":{"state":"title"},"tag":"state"}
+[99.2s console.log] ORIMI_AUDIO music=title fade=2.0
+[99.6s console.log] QA:{"data":{"attack_1":{"active":[2,3],"combo_from":2,"damage":1.0,"frames":8,"knock":4.5,"lunge":3.5},"attack_2":{"active":[2,4],"combo_from":99,"damage":1.0,"frames":10,"knock":9.0,"lunge":4.5}},"tag":"attack_timing"}
+[99.7s console.log] QA:{"data":{"enemies":9,"greybox":false},"tag":"valley_built"}
+[99.7s console.log] QA:{"data":{"t":92.73},"tag":"title_ready"}
+[100.7s console.log] QA:{"data":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"elapsed":78.0,"enemies_alive":9,"fps":89.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":0,"max_hp":5,"player_pos":[0.0,0.05,50.0],"restored_zones":[],"stage":"title_again","state":"title","t":93.72,"zone":""},"tag":"stage"}
+[100.7s console.log] QA:{"data":{"casts":[{"glyph":"slash","hit":true,"r_px":172.0,"recognised":"slash","screen":[640.0,257.0],"target":"ThornGate","targets":4},{"glyph":"bloom","hit":true,"r_px":71.0,"recognised":"bloom","screen":[635.0,319.0],"target":"Sapling_zone_a","targets":1},{"glyph":"gust","hit":true,"r_px":220.0,"recognised":"gust","screen":[632.0,87.0],"target":"SootBank","targets":5},{"glyph":"gust","hit":true,"r_px":46.0,"recognised":"gust","screen":[590.0,252.0],"target":"Reedwraith_zone_b_1","targets":1},{"glyph":"slash","hit":true,"r_px":82.0,"recognised":"slash","screen":[871.0,282.0],"target":"Reedwraith_zone_b_0","targets":1},{"glyph":"bloom","hit":true,"r_px":58.0,"recognised":"bloom","screen":[634.0,298.0],"target":"Sapling_zone_b","targets":1},{"glyph":"gust","hit":true,"r_px":226.0,"recognised":"gust","screen":[640.0,405.0],"target":"Reedwraith_w1_3","targets":1},{"glyph":"gust","hit":true,"r_px":60.0,"recognised":"gust","screen":[715.0,258.0],"target":"Reedwraith_w2_6","targets":1},{"glyph":"bloom","hit":true,"r_px":126.0,"recognised":"bloom","screen":[640.0,152.0],"target":"GreatTree","targets":1}],"duration":78.0,"failures":[],"passed":true,"snapshot":{"autoplay":true,"checkpoint":[0.0,0.0,50.0],"deaths":0,"enemies_alive":9,"fps":89.0,"god":false,"hp":5,"ink":100.0,"ink_max":100.0,"kills":0,"max_hp":5,"player_pos":[0.0,0.05,50.0],"restored_zones":[],"state":"title","t":93.72,"zone":""},"stages":["title","intro","spawn","gate_a","zone_a_enter","zone_a_clear","zone_a_restored","death","respawned","crossing","gate_b","zone_b_enter","zone_b_clear","zone_b_restored","tree_enter","tree_clear","finale","finale_wide","end_card","title_again"]},"tag":"autoplay_end"}
+[100.7s console.log] QA_AUTOPLAY_PASSED

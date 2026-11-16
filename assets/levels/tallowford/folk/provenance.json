@@ -1,0 +1,166 @@
+{
+ "outputs": [
+  {
+   "path": "assets/levels/tallowford/folk/baker.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "230433dc2187f361b2882f2440ee18499cb6268dadd0390c966c3f90fc60567f",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/baker.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "36d738ac9b16ad41f9c5aefefeef2522f1e3412b25a1666f7764fb7b200758d0",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/baker_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "7ccc2909a8d6873832853088f9fe3be09a1448816cf66835518e6df8758be40b",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/brindle.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "d1ea71ca63bd906c74bbfbdb9e119f91cd68aeff2edc8027cea918b17db67bdc",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/brindle.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "f5a5fb8d15b45a0bb675e78a5a35793508f1751b85b82046f9e78cbc1f69cc26",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/brindle_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "ab9344881a62aaa874b39e9a565b469a8294a73bdde61939217652a23abdff0e",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/fisher.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "fd675da4e208a2c64496f2d3334205eaf5c33772236dc03a30d77b9d28b9f452",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/fisher.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "a557287f4d99ad3aabbb690186ff3d34dff7726af0272d63c62ece849716f70a",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/fisher_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "5d3c5737aa7fb7ed71db120bba984ece885b2b132780cd354822ac468e8ee472",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/flax.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "89469675e740550dec33f84bd0b413ac277f4ede9e016359b9462b22da923049",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/flax.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "fdc14de67b0852e75b48d7b5db471d2ec5bd48ae820f4c92dbfd6662b20c53ae",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/flax_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "de381cb9bda63c06a3104f358be7ff899cf7369cae8107104202d10ca3536c59",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/marrow.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "e6d93d5720abe163e7a479338c7bd66318f734964deee0d2ec0344e87e36daf9",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/marrow.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "6b9f54719bea70c2c32087ed5a564bd5a2467ab0138c9411e82e00e0d9cac994",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/marrow_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "2a5a2980c32d2674bb6f2c99e9dd372d4ab4a8b3a1caeb4acebbff3ad356d491",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/netmender.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "4630cc68cad2993a5b20ebfd132ad7c1b9a29c30075195e59c8b2cf909699f10",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/netmender.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "a25c5d8025ac49a2a869f3860960bb4ab50cf537ae6fa241d2d82ce1ea341f30",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/netmender_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "361fd2b5486870317d5e28226c98872e78c0140596b22e6c59a746d8e223ce21",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/old_trim.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "228bb720badebf31ac582424ad95b6fc64c05982be9e34dc48c29964f07fed2a",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/old_trim.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "34208867f0e8ee59f2e0086ddbe4db5aaf1851aee1b15561d884713305a75948",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/old_trim_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "d60693d796b05b0a02d86febbc258381c11c1e256ff3989296ec334698228a7b",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/pibbet.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "20dec15e85becc15a85d8be0ec28b9e148c69528a23a7728e60b30feef199312",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/pibbet.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "d1fd31d81f2bb3192b56457cbcca43bc23243b2872515269fa262b09384640d4",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/pibbet_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "6e1ecc6c0c0ad0af8cafde25e912f16157a0354dd8dada9a22c3594d75962045",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/wherry.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "edc28707a226716a9e5b9543d71c165e24c94e813ae8aad3d1d2bfb7d89521e7",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/wherry.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "cfee99d92d3ee792ead745d2469e2e840aeae54b0d3a54aedd426dc1ec291bcc",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  },
+  {
+   "path": "assets/levels/tallowford/folk/wherry_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "a70c93ece4f5be648a52688208ec2d15f9f4ccb1e13fadf2f3c35b2e5d2156a8",
+   "command": "tools/assets/gen_folk.sh tools/levels/tallowford/folk.json"
+  }
+ ]
+}

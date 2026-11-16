@@ -1,0 +1,190 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/bellows.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/brazier.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/cord_gate.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/counterweight.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/dregs.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/drying_rack.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/far.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/flue.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/ground_n.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/ground_s.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/hall.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/ink_pool.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/jars.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/kiln.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/kiln_fire.tscn" id="15"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/moss_foothold.tscn" id="16"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/pillar_ring.tscn" id="17"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/raft_jetty.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/tie_post.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/vat.tscn" id="20"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/vat_tree.tscn" id="21"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/wall_lamp.tscn" id="22"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/water.tscn" id="23"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/woodpile.tscn" id="24"]
+[ext_resource type="PackedScene" path="res://scenes/levels/hollow_kiln/models/yard.tscn" id="25"]
+
+[node name="HollowKilnSet" type="Node3D"]
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Actors" type="Node3D" parent="."]
+
+[node name="GroundS" parent="Ground" instance=ExtResource("10")]
+
+[node name="GroundN" parent="Ground" instance=ExtResource("9")]
+
+[node name="Far" parent="Ground" instance=ExtResource("7")]
+
+[node name="Water" parent="Ground" instance=ExtResource("23")]
+
+[node name="Yard" parent="Buildings" instance=ExtResource("25")]
+
+[node name="Hall" parent="Buildings" instance=ExtResource("11")]
+
+[node name="Flue" parent="Buildings" instance=ExtResource("8")]
+
+[node name="Kiln" parent="Buildings" instance=ExtResource("14")]
+
+[node name="Brazier" parent="Props" instance=ExtResource("2")]
+position = Vector3(-5.600, 2.000, 34.200)
+
+[node name="Brazier_1" parent="Props" instance=ExtResource("2")]
+position = Vector3(5.600, 2.000, 34.200)
+
+[node name="CordGate" parent="Props" instance=ExtResource("3")]
+position = Vector3(0.000, 2.000, 32.000)
+
+[node name="Woodpile" parent="Props" instance=ExtResource("24")]
+position = Vector3(-13.600, 2.000, 24.000)
+rotation = Vector3(0, 1.570796, 0)
+
+[node name="Jars" parent="Props" instance=ExtResource("13")]
+position = Vector3(-13.000, 2.000, 14.000)
+rotation = Vector3(0, 0.349066, 0)
+
+[node name="Jars_1" parent="Props" instance=ExtResource("13")]
+position = Vector3(6.500, 2.000, 28.500)
+rotation = Vector3(0, 3.490659, 0)
+
+[node name="Jars_2" parent="Props" instance=ExtResource("13")]
+position = Vector3(-6.000, 2.000, 5.000)
+rotation = Vector3(0, 1.308997, 0)
+
+[node name="Bellows" parent="Props" instance=ExtResource("1")]
+position = Vector3(-15.600, 5.300, -4.600)
+rotation = Vector3(0, -1.570796, 0)
+
+[node name="Bellows_1" parent="Props" instance=ExtResource("1")]
+position = Vector3(15.000, 5.300, -20.800)
+rotation = Vector3(0, 1.570796, 0)
+
+[node name="TiePost" parent="Props" instance=ExtResource("19")]
+position = Vector3(-4.600, 5.300, -22.800)
+
+[node name="Counterweight" parent="Props" instance=ExtResource("4")]
+position = Vector3(-12.600, 5.000, -23.200)
+
+[node name="Vat" parent="Props" instance=ExtResource("20")]
+position = Vector3(2.000, 18.000, -64.000)
+
+[node name="PillarRing" parent="Props" instance=ExtResource("17")]
+position = Vector3(-6.100, 23.500, -64.000)
+
+[node name="PillarRing_1" parent="Props" instance=ExtResource("17")]
+position = Vector3(10.100, 23.500, -64.000)
+rotation = Vector3(0, 3.141593, 0)
+
+[node name="RaftJetty" parent="Props" instance=ExtResource("18")]
+position = Vector3(7.600, 0.000, 58.000)
+
+[node name="DryingRack" parent="Props" instance=ExtResource("6")]
+position = Vector3(-8.600, 5.000, -9.800)
+
+[node name="DryingRack_1" parent="Props" instance=ExtResource("6")]
+position = Vector3(-8.600, 5.000, -12.800)
+
+[node name="DryingRack_2" parent="Props" instance=ExtResource("6")]
+position = Vector3(-8.600, 5.000, -15.800)
+
+[node name="DryingRack_3" parent="Props" instance=ExtResource("6")]
+position = Vector3(-2.800, 5.000, -9.800)
+
+[node name="DryingRack_4" parent="Props" instance=ExtResource("6")]
+position = Vector3(-2.800, 5.000, -12.800)
+
+[node name="DryingRack_5" parent="Props" instance=ExtResource("6")]
+position = Vector3(-2.800, 5.000, -15.800)
+
+[node name="DryingRack_6" parent="Props" instance=ExtResource("6")]
+position = Vector3(3.000, 5.000, -9.800)
+
+[node name="DryingRack_7" parent="Props" instance=ExtResource("6")]
+position = Vector3(3.000, 5.000, -12.800)
+
+[node name="DryingRack_8" parent="Props" instance=ExtResource("6")]
+position = Vector3(3.000, 5.000, -15.800)
+
+[node name="DryingRack_9" parent="Props" instance=ExtResource("6")]
+position = Vector3(8.700, 5.000, -9.800)
+
+[node name="DryingRack_10" parent="Props" instance=ExtResource("6")]
+position = Vector3(8.700, 5.000, -12.800)
+
+[node name="DryingRack_11" parent="Props" instance=ExtResource("6")]
+position = Vector3(8.700, 5.000, -15.800)
+
+[node name="WallLamp" parent="Props" instance=ExtResource("22")]
+position = Vector3(-4.000, 11.200, -47.000)
+rotation = Vector3(0, 3.141593, 0)
+
+[node name="WallLamp_1" parent="Props" instance=ExtResource("22")]
+position = Vector3(-11.000, 12.600, -47.000)
+rotation = Vector3(0, 3.141593, 0)
+
+[node name="WallLamp_2" parent="Props" instance=ExtResource("22")]
+position = Vector3(-17.000, 14.400, -40.000)
+rotation = Vector3(0, -1.570796, 0)
+
+[node name="WallLamp_3" parent="Props" instance=ExtResource("22")]
+position = Vector3(1.000, 19.400, -44.000)
+rotation = Vector3(0, 1.570796, 0)
+
+[node name="MossFoothold" parent="Props" instance=ExtResource("16")]
+position = Vector3(1.000, 7.600, -39.000)
+rotation = Vector3(0, 1.570796, 0)
+
+[node name="MossFoothold_1" parent="Props" instance=ExtResource("16")]
+position = Vector3(-17.000, 13.200, -36.800)
+rotation = Vector3(0, -1.570796, 0)
+
+[node name="MossFoothold_2" parent="Props" instance=ExtResource("16")]
+position = Vector3(-17.000, 14.000, -34.800)
+rotation = Vector3(0, -1.570796, 0)
+
+[node name="InkPool" parent="Props" instance=ExtResource("12")]
+position = Vector3(-8.000, 4.600, -38.000)
+
+[node name="KilnFire" parent="Props" instance=ExtResource("15")]
+position = Vector3(-10.304, 18.600, -76.304)
+rotation = Vector3(0, 0.785398, 0)
+
+[node name="KilnFire_1" parent="Props" instance=ExtResource("15")]
+position = Vector3(2.000, 18.600, -81.400)
+
+[node name="KilnFire_2" parent="Props" instance=ExtResource("15")]
+position = Vector3(14.304, 18.600, -76.304)
+rotation = Vector3(0, -0.785398, 0)
+
+[node name="Dregs" parent="Actors" instance=ExtResource("5")]
+position = Vector3(2.000, 21.500, -64.000)
+rotation = Vector3(0, 3.141593, 0)
+
+[node name="VatTree" parent="Actors" instance=ExtResource("21")]
+position = Vector3(2.000, 18.000, -64.000)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/levels/tallowford/folk/brindle.glb" id="1"]
+[ext_resource type="Script" path="res://scripts/render/ink_look.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/models/folk/folk_person.gd" id="3"]
+[ext_resource type="Texture2D" path="res://assets/levels/tallowford/folk/brindle.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/levels/tallowford/folk/brindle_faded.png" id="5"]
+
+[node name="Brindle" instance=ExtResource("1")]
+script = ExtResource("3")
+woken_texture = ExtResource("4")
+faded_texture = ExtResource("5")
+
+[node name="AnimationPlayer" parent="." index="1"]
+unique_name_in_owner = true
+
+[node name="InkLook" type="Node" parent="."]
+script = ExtResource("2")
+cursable = false
+line_style = &"character"

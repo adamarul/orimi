@@ -1,0 +1,82 @@
+{
+ "outputs": [
+  {
+   "path": "assets/textures/painted/fox.png",
+   "sha256": "c3779d464a7e5841e52912ff2c3198bfb4a063151a8e9dcdd978ed5473b12185",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh fox"
+  },
+  {
+   "path": "assets/textures/painted/great_tree.png",
+   "sha256": "57cfa931e861cb69d63656a5a3304ea284c1567b7e366f823557d6bb3faa1233",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh great_tree"
+  },
+  {
+   "path": "assets/textures/painted/raft.png",
+   "sha256": "f99dbe332fa233a486aa1de66a4fccdb4f9b3600dde9a657185a95c0221d0ca2",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh raft"
+  },
+  {
+   "path": "assets/textures/painted/reeds.png",
+   "sha256": "433e6d450ddccd886aceba86f12b2104b2f40e4354ce9c6940ec1fdf8699766e",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh reeds"
+  },
+  {
+   "path": "assets/textures/painted/reedwraith.png",
+   "sha256": "fe38a5af7181ff33629824dbaca9a8dc712ccd505e57ccace5a671c6ae3595bd",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh reedwraith"
+  },
+  {
+   "path": "assets/textures/painted/rocks.png",
+   "sha256": "6fa49333276d1119828a4692ba07ef3ba072a3218d2753cc5a4b1b3356ca4243",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh rocks"
+  },
+  {
+   "path": "assets/textures/painted/sapling.png",
+   "sha256": "5d12eb009ea09b709c19b31796d36bbbe0fb08a42586e2bc74abbc3a8275b67a",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh sapling"
+  },
+  {
+   "path": "assets/textures/painted/shrine.png",
+   "sha256": "0cbbf2c8e8d647daa594862f4dbc6155e7236656e4feea31bb1b17543d19bc00",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh shrine"
+  },
+  {
+   "path": "assets/textures/painted/splotchet.png",
+   "sha256": "865bbcc25aa37b68c38090dcc923743a498d1657f7ae0f00e4d6e96a63c4a56e",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh splotchet"
+  },
+  {
+   "path": "assets/textures/painted/stepping_stone.png",
+   "sha256": "d9ba4de54306fbced7c501999693f702b0df88fc3079d686796dd49f9eebb067",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh stepping_stone"
+  },
+  {
+   "path": "assets/textures/painted/terrain.png",
+   "sha256": "498b8ade1c098da96342f219d06db43c276bce7e137ed96d5e30f9caeae1ec68",
+   "generator": "tools/textures/painted/paint_terrain.py",
+   "command": "tools/assets/gen_models.sh terrain"
+  },
+  {
+   "path": "assets/textures/painted/terrain_walls.png",
+   "sha256": "807e188e29c97a91462f723e386f222e697598be77a1101543fc87866645b509",
+   "generator": "tools/textures/painted/paint_terrain.py",
+   "command": "tools/assets/gen_models.sh terrain"
+  },
+  {
+   "path": "assets/textures/painted/thorn_gate.png",
+   "sha256": "89943982c814391e98f404a36ef6ab69577b3cf4d89e24ea5a1ab9ece4389a9e",
+   "generator": "tools/textures/painted/paint_models.py",
+   "command": "tools/assets/gen_models.sh thorn_gate"
+  }
+ ]
+}

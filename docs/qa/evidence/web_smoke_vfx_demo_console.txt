@@ -1,0 +1,37 @@
+# 33 console lines. Marker and problem lines first, then the last 40 lines.
+# Full log (not committed): .userdata/qa/logs/web_smoke_vfx_demo_console.txt
+   1.92 # url http://127.0.0.1:58723/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fvfx_demo.tscn
+# ...
+   1.92 # url http://127.0.0.1:58723/index.html?scene=res%3A%2F%2Fscenes%2Fdev%2Fvfx_demo.tscn
+   1.92 # chrome Chrome/157.0.8103.51 viewport 1280x720 
+   5.63 [log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+   8.75 [log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+   8.98 [log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+   9.55 [log] ORIMI_BOOT t=4.00s options={"scene":"res://scenes/dev/vfx_demo.tscn"}
+  19.97 [log] ORIMI_FIRST_FRAME t=14.41s scene=res://scenes/dev/vfx_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+  20.00 # webgl {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+  20.71 [log] ORIMI_FPS fps=84 process_ms=4.60 [t=15.16s]
+  20.98 [log] VFX_PEAK n=1 id=sky_cursed t=1.00
+  21.71 [log] ORIMI_FPS fps=144 process_ms=2.90 [t=16.16s]
+  22.71 [log] ORIMI_FPS fps=144 process_ms=3.90 [t=17.16s]
+  23.64 [log] VFX_PEAK n=2 id=sky_restored t=1.00
+  23.72 [log] ORIMI_FPS fps=144 process_ms=2.50 [t=18.16s]
+  24.73 [log] ORIMI_FPS fps=144 process_ms=2.90 [t=19.17s]
+  25.73 [log] ORIMI_FPS fps=144 process_ms=3.70 [t=20.18s]
+  25.89 [log] VFX_PEAK n=3 id=foliage_curse t=0.67
+  26.74 [log] ORIMI_FPS fps=144 process_ms=2.80 [t=21.18s]
+  27.75 [log] ORIMI_FPS fps=144 process_ms=3.10 [t=22.19s]
+  28.78 [log] VFX_PEAK n=4 id=river_mist t=0.83
+  28.78 [log] ORIMI_FPS fps=144 process_ms=2.80 [t=23.20s]
+  29.76 [log] ORIMI_FPS fps=144 process_ms=2.60 [t=24.21s]
+  30.77 [log] ORIMI_FPS fps=144 process_ms=3.60 [t=25.21s]
+  31.78 [log] ORIMI_FPS fps=144 process_ms=2.80 [t=26.22s]
+  32.78 [log] ORIMI_FPS fps=144 process_ms=3.00 [t=27.23s]
+  33.48 [log] VFX_PEAK n=5 id=wake_flowers t=3.00
+  33.79 [log] ORIMI_FPS fps=144 process_ms=2.50 [t=28.23s]
+  34.30 [log] QA:{"data":{"alive":0,"at":[8.0,0.3,6.0],"kind":"splotchet"},"tag":"enemy_died"}
+  35.70 [log] VFX_PEAK n=6 id=ink_splash t=0.25
+  35.70 [log] ORIMI_FPS fps=143 process_ms=16.70 [t=29.22s]
+  35.78 [log] ORIMI_FPS fps=144 process_ms=2.50 [t=30.23s]
+  36.79 [log] ORIMI_FPS fps=144 process_ms=2.90 [t=31.23s]
+  36.88 [log] VFX_PEAK n=7 id=hit_spark t=0.08

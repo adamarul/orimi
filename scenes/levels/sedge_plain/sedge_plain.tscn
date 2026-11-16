@@ -1,0 +1,385 @@
+[gd_scene load_steps=19 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/sedge_plain/sedge_plain.gd" id="level"]
+[ext_resource type="Script" path="res://scripts/game/kit/person.gd" id="person"]
+[ext_resource type="Script" path="res://scripts/game/glyph_obstacle.gd" id="obstacle"]
+[ext_resource type="Script" path="res://scripts/game/kit/sealed_fight.gd" id="fight"]
+[ext_resource type="Script" path="res://scripts/game/kit/enemy_spawn.gd" id="spawn"]
+[ext_resource type="Script" path="res://scripts/game/cursed_zone.gd" id="zone"]
+[ext_resource type="PackedScene" path="res://scenes/levels/sedge_plain/terrain.tscn" id="terrain"]
+[ext_resource type="PackedScene" path="res://scenes/levels/sedge_plain/dressing.tscn" id="dressing"]
+[ext_resource type="PackedScene" path="res://scenes/levels/sedge_plain/folk/tamsin.tscn" id="tamsin"]
+[ext_resource type="PackedScene" path="res://scenes/models/raft.tscn" id="raft"]
+[ext_resource type="Script" path="res://scripts/game/kit/tie_post.gd" id="tie"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/verse_stone.tscn" id="verse"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/cursed_ground.tscn" id="ground"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/checkpoint.tscn" id="checkpoint"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/level_exit.tscn" id="exit"]
+[ext_resource type="PackedScene" path="res://scenes/levels/sedge_plain/props/tie_post.tscn" id="post"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/pickup.tscn" id="pickup"]
+[ext_resource type="PackedScene" path="res://scenes/levels/sedge_plain/props/map_leaf.tscn" id="leaf"]
+
+[node name="SedgePlain" type="Node3D"]
+script = ExtResource("level")
+level_id = &"sedge_plain"
+display_name = "Sedge Plain"
+chapter = "The Mapmaker's Road"
+intro_text = "A wide plain of sedge and standing stones. The black has come up in the low places, and the wind took a mapmaker's map.
+
+Find her leaves, cross the Seam, and wake the sapling on the Knoll."
+title_marker = "M_Knoll"
+
+[node name="Terrain" parent="." groups=["level_ground"] instance=ExtResource("terrain")]
+
+[node name="Dressing" parent="." instance=ExtResource("dressing")]
+
+[node name="Pell" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, -0, 0, -1, 4.5, 0.25, 63.6)
+script = ExtResource("person")
+display_name = "Pell"
+talk_id = "pell_arrival"
+model_name = "folk/pell"
+
+[node name="Raft_Landing" parent="." instance=ExtResource("raft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 6.7, -0.6, 63.6)
+
+[node name="LevelExit" parent="." instance=ExtResource("exit")]
+transform = Transform3D(0.835, 0, -0.551, 0, 1, 0, 0.551, 0, 0.835, -58.162, -0.6, -46.627)
+radius = 4.59
+requires_flags = PackedStringArray("restored_mere")
+
+[node name="Tamsin" type="Node3D" parent="."]
+transform = Transform3D(-0.18, 0, 0.984, 0, 1, 0, -0.984, 0, -0.18, -8.5, 0.07, 45.6)
+script = ExtResource("person")
+display_name = "Tamsin"
+talk_id = "tamsin_meet"
+model_scene = ExtResource("tamsin")
+hide_flag = &"tied_bridge_1"
+
+[node name="Tamsin_Rim" type="Node3D" parent="."]
+transform = Transform3D(0.055, 0, 0.999, 0, 1, 0, -0.999, 0, 0.055, -17.6, 0.98, -10)
+script = ExtResource("person")
+display_name = "Tamsin"
+talk_id = "tamsin_rim_early"
+model_scene = ExtResource("tamsin")
+show_flag = &"tied_bridge_1"
+talk_by_flag = {"leaf_1": "tamsin_rim", "leaves_two": "tamsin_two_leaves", "leaves_all": "tamsin_map", "restored_mere": "tamsin_after"}
+
+[node name="Fight_Stones" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 9.5, 0.53, 22)
+script = ExtResource("fight")
+fight_id = &"stones"
+knot_drift = 1.5
+
+[node name="Spawn1" type="Marker3D" parent="Fight_Stones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 2.39, 0, 1.01)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn2" type="Marker3D" parent="Fight_Stones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -1.01, 0, 2.39)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn3" type="Marker3D" parent="Fight_Stones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -2.39, 0, -1.01)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn4" type="Marker3D" parent="Fight_Stones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 1.01, 0, -2.39)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Fight_East" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 25.5, 1.03, -13.5)
+script = ExtResource("fight")
+fight_id = &"east"
+knot_drift = 3
+
+[node name="Spawn1" type="Marker3D" parent="Fight_East"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 2.39, 0, 1.01)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn2" type="Marker3D" parent="Fight_East"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -1.01, 0, 2.39)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn3" type="Marker3D" parent="Fight_East"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -2.39, 0, -1.01)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn4" type="Marker3D" parent="Fight_East"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 1.01, 0, -2.39)
+script = ExtResource("spawn")
+kind = &"reedwraith"
+
+[node name="Fight_West" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -11, 0.36, 21)
+script = ExtResource("fight")
+fight_id = &"west"
+knot_drift = 3
+
+[node name="Spawn1" type="Marker3D" parent="Fight_West"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 2.39, 0, 1.01)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn2" type="Marker3D" parent="Fight_West"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -0.22, 0, 2.59)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn3" type="Marker3D" parent="Fight_West"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -2.53, 0, 0.59)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn4" type="Marker3D" parent="Fight_West"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -1.34, 0, -2.23)
+script = ExtResource("spawn")
+kind = &"reedwraith"
+
+[node name="Spawn5" type="Marker3D" parent="Fight_West"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 1.7, 0, -1.96)
+script = ExtResource("spawn")
+kind = &"reedwraith"
+
+[node name="Fight_Knoll" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 2.5, 4.73, -29)
+script = ExtResource("fight")
+fight_id = &"knoll"
+knot_drift = 1
+
+[node name="Spawn1" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 2.39, 0, 1.01)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn2" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 1.18, 0, 2.31)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn3" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -0.58, 0, 2.53)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn4" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -2.07, 0, 1.57)
+script = ExtResource("spawn")
+kind = &"splotchet"
+
+[node name="Spawn5" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -2.6, 0, -0.13)
+script = ExtResource("spawn")
+kind = &"reedwraith"
+
+[node name="Spawn6" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -1.9, 0, -1.77)
+script = ExtResource("spawn")
+kind = &"reedwraith"
+wave = 1
+
+[node name="Spawn7" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -0.32, 0, -2.58)
+script = ExtResource("spawn")
+kind = &"reedwraith"
+wave = 1
+
+[node name="Spawn8" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 1.41, 0, -2.18)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 1
+
+[node name="Spawn9" type="Marker3D" parent="Fight_Knoll"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 2.49, 0, -0.76)
+script = ExtResource("spawn")
+kind = &"splotchet"
+wave = 1
+
+[node name="Zone_mere" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 2, -1.61, -30)
+script = ExtResource("zone")
+zone_id = &"mere"
+display_name = "The Mere"
+radius = 17.5
+target_kind = "sapling"
+target_offset = Vector3(-0.4, 6.34, -0.6)
+finale = true
+
+[node name="Zone_east" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 44, -1.43, -22)
+script = ExtResource("zone")
+zone_id = &"east"
+display_name = "Kettle Hollow"
+radius = 9.5
+target_kind = "none"
+
+[node name="Zone_west" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -36, -2.54, 22)
+script = ExtResource("zone")
+zone_id = &"west"
+display_name = "Ladle Hollow"
+radius = 9.5
+target_kind = "none"
+
+[node name="Bridge_1" type="Node3D" parent="."]
+
+[node name="PostA" type="StaticBody3D" parent="Bridge_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 16, 0.59, 8.6)
+script = ExtResource("tie")
+model_scene = ExtResource("post")
+partner = NodePath("../PostB")
+action = "bridge"
+bridge_width = 3.4
+
+[node name="PostB" type="StaticBody3D" parent="Bridge_1"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, -0, 0, -1, 16, 0.76, -4.6)
+script = ExtResource("tie")
+model_scene = ExtResource("post")
+
+[node name="Bridge_2" type="Node3D" parent="."]
+
+[node name="PostA" type="StaticBody3D" parent="Bridge_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -26, 0.81, 6.1)
+script = ExtResource("tie")
+model_scene = ExtResource("post")
+partner = NodePath("../PostB")
+action = "bridge"
+bridge_width = 3.4
+
+[node name="PostB" type="StaticBody3D" parent="Bridge_2"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, -0, 0, -1, -26, 0.92, -7.1)
+script = ExtResource("tie")
+model_scene = ExtResource("post")
+
+[node name="Mere_Gap" type="Node3D" parent="."]
+
+[node name="PostA" type="StaticBody3D" parent="Mere_Gap"]
+transform = Transform3D(0.964, 0, -0.267, 0, 1, 0, 0.267, 0, 0.964, -10.9, 1.23, -24.2)
+script = ExtResource("tie")
+model_scene = ExtResource("post")
+partner = NodePath("../PostB")
+action = "bridge"
+bridge_width = 3.4
+
+[node name="PostB" type="StaticBody3D" parent="Mere_Gap"]
+transform = Transform3D(-0.964, 0, 0.267, 0, 1, 0, -0.267, 0, -0.964, -9.6, 1.36, -28.9)
+script = ExtResource("tie")
+model_scene = ExtResource("post")
+
+[node name="Verse_1" parent="." instance=ExtResource("verse")]
+transform = Transform3D(0.217, 0, 0.976, 0, 1, 0, -0.976, 0, 0.217, 19.6, 0.59, 9.4)
+teaches = &"tie"
+
+[node name="Verse_2" parent="." instance=ExtResource("verse")]
+transform = Transform3D(-0.555, 0, 0.832, 0, 1, 0, -0.832, 0, -0.555, 5.2, 4.42, -33)
+
+[node name="Ground_mere" parent="." instance=ExtResource("ground")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 2, -1.61, -30)
+radius = 17.5
+clear_flag = &"restored_mere"
+max_height = 2.4
+draw_curse = false
+show_safe = false
+
+[node name="Ground_east" parent="." instance=ExtResource("ground")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 44, -1.43, -22)
+radius = 9.5
+clear_flag = &"restored_east"
+max_height = 2.4
+draw_curse = false
+show_safe = false
+
+[node name="Ground_west" parent="." instance=ExtResource("ground")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -36, -2.54, 22)
+radius = 9.5
+clear_flag = &"restored_west"
+max_height = 2.4
+draw_curse = false
+show_safe = false
+
+[node name="Checkpoint_Rim" parent="." instance=ExtResource("checkpoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -17.6, 0.98, -10)
+
+[node name="Checkpoint_Mere" parent="." instance=ExtResource("checkpoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -13.9, 1.02, -16)
+
+[node name="Leaf_1" parent="." instance=ExtResource("pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 7.8, 0.83, -8.6)
+flag = &"leaf_1"
+model_scene = ExtResource("leaf")
+radius = 1.4
+
+[node name="Leaf_2" parent="." instance=ExtResource("pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 46.6, 1.25, -24.6)
+flag = &"leaf_2"
+model_scene = ExtResource("leaf")
+radius = 1.4
+
+[node name="Leaf_3" parent="." instance=ExtResource("pickup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, -39.2, -0.11, 25.2)
+flag = &"leaf_3"
+model_scene = ExtResource("leaf")
+radius = 1.4
+
+[node name="Soot_East_1" type="StaticBody3D" parent="."]
+transform = Transform3D(0.468, 0, -0.884, 0, 1, 0, 0.884, 0, 0.468, 35.27, 1.28, -18.32)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 4.2
+height = 2.4
+cleared_flag = &"soot_east_1"
+hint_id = &"sedge_soot"
+hint_text = "Soot buries the road. A %s will clear it."
+requires_flags = PackedStringArray("fight_east")
+
+[node name="Soot_East_2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.425, 0, -0.905, 0, 1, 0, 0.905, 0, 0.425, 39.7, 1.37, -21.04)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 4.2
+height = 2.4
+cleared_flag = &"soot_east_2"
+hint_id = &"sedge_soot"
+hint_text = "Soot buries the road. A %s will clear it."
+requires_flags = PackedStringArray("fight_east")
+
+[node name="Soot_West_1" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.678, 0, 0.735, 0, 1, 0, -0.735, 0, -0.678, -29.57, 0.53, 16.26)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 4.2
+height = 2.4
+cleared_flag = &"soot_west_1"
+hint_id = &"sedge_soot"
+hint_text = "Soot buries the road. A %s will clear it."
+requires_flags = PackedStringArray("fight_west")
+
+[node name="Soot_West_2" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.623, 0, 0.782, 0, 1, 0, -0.782, 0, -0.623, -33.78, 0.12, 20.76)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 4.2
+height = 2.4
+cleared_flag = &"soot_west_2"
+hint_id = &"sedge_soot"
+hint_text = "Soot buries the road. A %s will clear it."
+requires_flags = PackedStringArray("fight_west")
+
+[node name="Soot_Mere" type="StaticBody3D" parent="."]
+transform = Transform3D(0.964, 0, -0.267, 0, 1, 0, 0.267, 0, 0.964, -12.82, 1.04, -17.26)
+script = ExtResource("obstacle")
+glyph = &"gust"
+width = 4.2
+height = 2.4
+cleared_flag = &"soot_mere"
+hint_id = &"sedge_soot"
+hint_text = "Soot buries the road. A %s will clear it."
+requires_flags = PackedStringArray("talked_tamsin_map")

@@ -1,0 +1,275 @@
+{
+	"spawn_facing": "M_GateA",
+	"complete_on_objectives": false,
+	"end_text": "[font_size=34]The vale remembers its colour.[/font_size]\n\nThe Thousand-Ring Camphor is in leaf again, and the Lull runs bright from the rise to the shrine.",
+	"objectives": [
+		{
+			"text": "Cut through the thorns on the path",
+			"flag": "gate_a_cut"
+		},
+		{
+			"text": "Wake the sapling in the Reed Shallows",
+			"flag": "restored_zone_a"
+		},
+		{
+			"text": "Blow the soot from the terrace ramp",
+			"flag": "gate_b_cleared"
+		},
+		{
+			"text": "Wake the sapling on the Soot Terrace",
+			"flag": "restored_zone_b"
+		},
+		{
+			"text": "Wake the great camphor",
+			"flag": "restored_tree"
+		}
+	],
+	"lines": {
+		"pell_arrives": [
+			{
+				"who": "Pell",
+				"text": "I saw the colour from the ford. Come and see what's happened to my village."
+			}
+		],
+		"shrine_stone": [
+			{
+				"text": "Everything fades, they told me: the river, the reeds, the faces I love."
+			},
+			{
+				"text": "So I will grind a black that holds *every colour* at once."
+			},
+			{
+				"text": "Lamp-soot from the ford, char from the wood, the river's own dark silt."
+			},
+			{
+				"text": "One more year at the vat, and nothing I keep will fade again."
+			}
+		]
+	},
+	"raft": {
+		"talk": "pell_arrives",
+		"card": "Pell poles the raft upriver, toward the ford.",
+		"water": -0.35,
+		"depart": [
+			-22.2,
+			-0.35,
+			-42
+		],
+		"depart_yaw": 0,
+		"board": [
+			-19,
+			0,
+			-42
+		]
+	},
+	"warps": {},
+	"autoplay": {
+		"chain": [
+			[
+				0,
+				0,
+				50
+			],
+			[
+				-3.5,
+				0,
+				41
+			],
+			[
+				-4,
+				0,
+				31
+			],
+			[
+				-9,
+				0,
+				24
+			],
+			[
+				-6,
+				0,
+				13
+			],
+			[
+				0,
+				0,
+				8
+			],
+			[
+				4.6,
+				0,
+				6.6
+			],
+			[
+				6.5,
+				1,
+				6
+			],
+			[
+				8.5,
+				2,
+				3.5
+			],
+			[
+				10.5,
+				2.6,
+				0.5
+			],
+			[
+				9.6,
+				3,
+				-2.3
+			],
+			[
+				14,
+				3,
+				-10
+			],
+			[
+				10,
+				3,
+				-20
+			],
+			[
+				4,
+				6,
+				-29
+			],
+			[
+				0,
+				6,
+				-34
+			]
+		],
+		"route": [
+			{
+				"cast": "bloom",
+				"target": "VerseStone",
+				"flag": "read_shrine_stone",
+				"before": 3.5
+			},
+			{
+				"stage": "verse_stone"
+			},
+			{
+				"go": "ThornGate",
+				"before": 5,
+				"from": "M_Spawn"
+			},
+			{
+				"stage": "gate_a"
+			},
+			{
+				"cast": "slash",
+				"target": "ThornGate",
+				"flag": "gate_a_cut"
+			},
+			{
+				"go": [
+					-9,
+					0,
+					25
+				]
+			},
+			{
+				"stage": "zone_a_enter"
+			},
+			{
+				"fight": "Zone_zone_a",
+				"finish": true
+			},
+			{
+				"stage": "zone_a_clear"
+			},
+			{
+				"bloom_zone": "Zone_zone_a"
+			},
+			{
+				"stage": "zone_a_restored"
+			},
+			{
+				"death_test": true
+			},
+			{
+				"go": [
+					4.6,
+					0,
+					6.6
+				]
+			},
+			{
+				"stage": "crossing"
+			},
+			{
+				"cast": "gust",
+				"target": "SootBank",
+				"flag": "gate_b_cleared"
+			},
+			{
+				"stage": "gate_b"
+			},
+			{
+				"go": [
+					9.6,
+					3,
+					-2.3
+				]
+			},
+			{
+				"stage": "zone_b_enter"
+			},
+			{
+				"fight": "Zone_zone_b"
+			},
+			{
+				"stage": "zone_b_clear"
+			},
+			{
+				"bloom_zone": "Zone_zone_b"
+			},
+			{
+				"stage": "zone_b_restored"
+			},
+			{
+				"go": [
+					4,
+					6,
+					-29
+				]
+			},
+			{
+				"stage": "tree_enter"
+			},
+			{
+				"fight": "Zone_tree"
+			},
+			{
+				"stage": "tree_clear"
+			},
+			{
+				"cast": "bloom",
+				"target": "GreatTree",
+				"before": 8,
+				"until": "cutscene",
+				"attempts": 4
+			},
+			{
+				"stage": "finale"
+			},
+			{
+				"wait_flag": "restored_tree",
+				"timeout": 10
+			},
+			{
+				"wait_flag": "valley_restored",
+				"timeout": 20
+			},
+			{
+				"wait": 0.5
+			},
+			{
+				"stage": "finale_wide"
+			}
+		]
+	}
+}

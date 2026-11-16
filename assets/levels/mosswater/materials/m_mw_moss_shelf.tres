@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bpwrwlmdy2im2" path="res://assets/levels/mosswater/textures/mw_moss_shelf.png" id="1"]
+
+[resource]
+resource_name = "M_mw_moss_shelf"
+albedo_texture = ExtResource("1")
+texture_filter = 3

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bf8g7u6ha0ry5" path="res://assets/levels/hollow_kiln/textures/drying_rack.png" id="1"]
+
+[resource]
+resource_name = "M_drying_rack"
+albedo_texture = ExtResource("1")
+texture_filter = 3

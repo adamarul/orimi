@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/props/bridge_wreck.glb" id="1"]
+[ext_resource type="Script" path="res://scripts/render/ink_look.gd" id="2"]
+
+[node name="BridgeWreck" instance=ExtResource("1")]
+
+[node name="InkLook" type="Node" parent="."]
+script = ExtResource("2")
+outline_width = 0.8
+wind = true

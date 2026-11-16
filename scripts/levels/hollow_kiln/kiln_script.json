@@ -1,0 +1,287 @@
+{
+ "level": "hollow_kiln",
+ "title": "What the Vat Kept",
+ "markup": "Words between *asterisks* are key words: the talk panel shows them in its one accent colour (docs/LEVEL_KIT.md, section 3). Scene ids are the level.json lines keys: a Person with talk_id <id> plays <id>_faded while faded, <id> the first time awake and <id>_again after. Speaker 'narration' is unvoiced text on the panel with no name (who \"\"). Speaker 'verse' is a verse-stone: four lines, shown when it is bloomed.",
+ "speakers": {
+  "pell": {
+   "name": "Pell",
+   "voice": "Ferry child, paper hat. Quick, practical, never explains the plot."
+  },
+  "wenna": {
+   "name": "Wenna",
+   "voice": "Kept the kiln's fires for the Ink-maker. Plain, warm, tired; talks while she works."
+  },
+  "verse": {
+   "name": "Verse-stone",
+   "voice": "The Ink-maker's own words, carved and remembered. Four lines each."
+  },
+  "narration": {
+   "name": "",
+   "voice": "Unvoiced description."
+  }
+ },
+ "scenes": [
+  {
+   "id": "pell",
+   "beat": 0,
+   "speaker": "pell",
+   "trigger": "Talk to Pell on the landing (first talk). Phase B may play it on arrival, before control.",
+   "where": "M_Spawn",
+   "once": true,
+   "lines": [
+    "End of the river. Well. End of the bit I'll pole.",
+    "That's the *kiln* up there, with the round hat on. All the black came down from it.",
+    "I'll mind the raft. Shout if you need me. I won't hear you, but shout."
+   ]
+  },
+  {
+   "id": "pell_again",
+   "beat": 0,
+   "speaker": "pell",
+   "trigger": "Talk to Pell again on the landing.",
+   "where": "M_Spawn",
+   "once": false,
+   "lines": [
+    "The gate's tied with ink. You're good with knots. Well, you cut them."
+   ]
+  },
+  {
+   "id": "verse_1",
+   "beat": 1,
+   "speaker": "verse",
+   "trigger": "Bloom verse-stone 1 on the landing.",
+   "where": "M_Verse_1",
+   "once": true,
+   "lines": [
+    "I came up the river with a jar of black",
+    "and a fear of every colour going pale.",
+    "The mountain gave me clay, the stream gave water.",
+    "I built a kiln to make a black that stays."
+   ]
+  },
+  {
+   "id": "gate_look",
+   "beat": 2,
+   "speaker": "narration",
+   "trigger": "Orimi comes within 6 m of the gate while it is shut. Plays once.",
+   "where": "M_Gate",
+   "once": true,
+   "lines": [
+    "The gate is tied shut with a cord of wet *ink*. The two braziers beside it are cold, their wicks still dry."
+   ]
+  },
+  {
+   "id": "gate_half",
+   "beat": 2,
+   "speaker": "narration",
+   "trigger": "One of the gate's three locks is still on (the cord or either brazier) after the other two are done.",
+   "where": "M_Gate",
+   "once": false,
+   "lines": [
+    "The gate shivers in its frame, and holds."
+   ]
+  },
+  {
+   "id": "wenna_faded",
+   "beat": 3,
+   "speaker": "narration",
+   "trigger": "Talk to Wenna while she is faded (before the yard is restored).",
+   "where": "M_Keeper",
+   "once": false,
+   "lines": [
+    "A woman by the woodpile, as grey as the ash in her bucket. She does not look up."
+   ]
+  },
+  {
+   "id": "wenna",
+   "beat": 3,
+   "speaker": "wenna",
+   "trigger": "The yard is restored (its sapling bloomed after the sealed fight): Wenna wakes, and speaks when Orimi talks to her. Plays once.",
+   "where": "M_Keeper",
+   "once": true,
+   "lines": [
+    "Oh. The logs are *brown*. I'd forgotten logs were brown.",
+    "I'm Wenna. I kept his fires for twenty winters, till he sent me down to the yard and barred the hall.",
+    "The hall floor's gone bad. Keep to the *boards*. Where the soot's buried them, the *bellows* still blow.",
+    "The back door hangs on a counterweight. He always *tied* it off to the post. And mind the flue after. It fills."
+   ]
+  },
+  {
+   "id": "wenna_again",
+   "beat": 3,
+   "speaker": "wenna",
+   "trigger": "Talk to Wenna again after she wakes.",
+   "where": "M_Keeper",
+   "once": false,
+   "lines": [
+    "He wasn't unkind. He was frightened of *grey*.",
+    "He'd hold a page up to the window every morning, to see if it had faded in the night."
+   ]
+  },
+  {
+   "id": "hall_look",
+   "beat": 4,
+   "speaker": "narration",
+   "trigger": "Orimi steps onto the entry platform P0 inside the hall door. Plays once.",
+   "where": "M_HallDoor",
+   "once": true,
+   "lines": [
+    "Racks of paper, every sheet grey. The floor between the boards *smoulders* with ink."
+   ]
+  },
+  {
+   "id": "verse_2",
+   "beat": 4,
+   "speaker": "verse",
+   "trigger": "Bloom verse-stone 2 on the hall's entry platform.",
+   "where": "M_Verse_2",
+   "once": true,
+   "lines": [
+    "Paper fades. The dyer's blue goes grey by spring.",
+    "I hung a thousand sheets to dry and watched them.",
+    "The ones I inked the deepest held the longest.",
+    "So I inked deeper. Then I inked the ink."
+   ]
+  },
+  {
+   "id": "counterweight_look",
+   "beat": 6,
+   "speaker": "narration",
+   "trigger": "Orimi reaches the back aisle strip P3 while the door is shut. Plays once.",
+   "where": "M_TieAnchor",
+   "once": true,
+   "lines": [
+    "The door's weight hangs from a beam overhead. Below it stands a *post*, worn smooth by rope."
+   ]
+  },
+  {
+   "id": "flue_rise",
+   "beat": 7,
+   "speaker": "narration",
+   "trigger": "Orimi enters the flue (M_FlueEntry). Plays once.",
+   "where": "M_FlueEntry",
+   "once": true,
+   "lines": [
+    "Somewhere below, the ink begins to *rise*."
+   ]
+  },
+  {
+   "id": "flue_dark",
+   "beat": 7,
+   "speaker": "narration",
+   "trigger": "Orimi has stood on one ledge for 8 s with a lamp above still unlit. Plays once.",
+   "where": "M_Flue",
+   "once": true,
+   "lines": [
+    "Too dark to see the next ledge. The lamps on the walls still have their *wicks*."
+   ]
+  },
+  {
+   "id": "verse_3",
+   "beat": 8,
+   "speaker": "verse",
+   "trigger": "Bloom verse-stone 3 inside the vat chamber door.",
+   "where": "M_Verse_3",
+   "once": true,
+   "lines": [
+    "The vat drank lamp-black, charcoal, soot and night.",
+    "It grew too heavy to stir, and then to lift.",
+    "One morning something in the dark looked back.",
+    "I told it: keep. It was the only word it learned."
+   ]
+  },
+  {
+   "id": "dregs_wakes",
+   "beat": 9,
+   "speaker": "narration",
+   "trigger": "Orimi steps past M_Arena_Entry: the fight seals. Plays once.",
+   "where": "M_Arena_Entry",
+   "once": true,
+   "lines": [
+    "Something in the vat breathes out *soot*."
+   ]
+  },
+  {
+   "id": "dregs_hint_veil",
+   "beat": 9,
+   "speaker": "narration",
+   "trigger": "Part 1 has lasted 25 s with no Gust on the veil.",
+   "where": "M_Vat",
+   "once": true,
+   "lines": [
+    "The soot round it *billows* like a curtain in a draught."
+   ]
+  },
+  {
+   "id": "dregs_hint_arms",
+   "beat": 9,
+   "speaker": "narration",
+   "trigger": "Part 2 has lasted 25 s with no arm cut.",
+   "where": "M_Vat",
+   "once": true,
+   "lines": [
+    "Each arm lies *still* a moment after it strikes."
+   ]
+  },
+  {
+   "id": "dregs_hint_chains",
+   "beat": 9,
+   "speaker": "narration",
+   "trigger": "Part 3: the Dregs has reached the top of the chains once.",
+   "where": "M_Vat",
+   "once": true,
+   "lines": [
+    "Each of the two *pillars* carries an iron ring."
+   ]
+  },
+  {
+   "id": "dregs_hint_mouths",
+   "beat": 9,
+   "speaker": "narration",
+   "trigger": "Part 4: the binding has broken once.",
+   "where": "M_Vat",
+   "once": true,
+   "lines": [
+    "Three kiln mouths, cold for years. Their *wicks* are still dry."
+   ]
+  },
+  {
+   "id": "vat_crack",
+   "beat": 10,
+   "speaker": "narration",
+   "trigger": "The Dregs has unravelled; Orimi comes within 6 m of the vat. Plays once.",
+   "where": "M_Vat",
+   "once": true,
+   "lines": [
+    "The vat is cracked from rim to foot. Something *green* waits in the crack."
+   ]
+  },
+  {
+   "id": "verse_4",
+   "beat": 11,
+   "speaker": "verse",
+   "trigger": "Bloom verse-stone 4, which the tree's roots lift out of the floor.",
+   "where": "M_Verse_4",
+   "once": true,
+   "lines": [
+    "It kept the river, the reeds, the faces. It kept them still.",
+    "Nothing faded, because nothing moved.",
+    "I was wrong about what stays. Colour stays by coming back.",
+    "Let the river run. Let it fade, and bloom."
+   ]
+  },
+  {
+   "id": "ending",
+   "beat": 12,
+   "speaker": "pell",
+   "trigger": "The raft talk after completion (level.json raft.talk), after verse-stone 4. Pell has followed Orimi up the flue and stands in the chamber door (M_Pell_End) for the first two lines; the camera then rises through the oculus to M_EndView, over the valley in full colour, for the last. The travel card that follows reads \"End of Book One.\"",
+   "where": "M_Pell_End",
+   "once": true,
+   "lines": [
+    "That flue is a lot of stairs.",
+    "So that's where all the colour went. Back where it was.",
+    "There's more river above the mountain, you know."
+   ]
+  }
+ ]
+}

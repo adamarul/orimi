@@ -1,0 +1,32 @@
+# tools/export_web.sh: error and warning lines, then the last 30 lines (full log: .userdata/qa/export.out)
+# ...
+[  98% ] savepack | Storing File: res://scripts/vfx/vfx_director.gd.remap
+[  98% ] savepack | Storing File: res://scripts/vfx/vfx_kit.gd.remap
+[  98% ] savepack | Storing File: res://scripts/vfx/vfx_layer.gd.remap
+[  98% ] savepack | Storing File: res://scripts/vfx/vfx_ribbon.gd.remap
+[  98% ] savepack | Storing File: res://scripts/vfx/vfx_trail.gd.remap
+[  98% ] savepack | Storing File: res://tests/contract/api_dump.gd.remap
+[  98% ] savepack | Storing File: res://tests/contract/api_dump.tscn.remap
+[  98% ] savepack | Storing File: res://tests/fixtures/qa_fixture.gd.remap
+[  98% ] savepack | Storing File: res://tests/fixtures/qa_fixture.tscn.remap
+[  98% ] savepack | Storing File: res://tests/fixtures/qa_fixture_gate.gd.remap
+[  98% ] savepack | Storing File: res://tests/qa/qa_host.gd.remap
+[  98% ] savepack | Storing File: res://tests/qa/qa_host.tscn.remap
+[  98% ] savepack | Storing File: res://tests/qa/qa_probe.gd.remap
+[  98% ] savepack | Storing File: res://.godot/global_script_class_cache.cfg
+[  98% ] savepack | Storing File: res://ui/icon.png
+[  98% ] savepack | Storing File: res://.godot/uid_cache.bin
+[  98% ] savepack | Storing File: res://project.binary
+[ DONE ] savepack
+
+total 55100
+-rw-r--r-- 1 User 197121    37492 Nov 16 11:05 index.apple-touch-icon.png
+-rw-r--r-- 1 User 197121     2973 Nov 16 11:05 index.audio.position.worklet.js
+-rw-r--r-- 1 User 197121     7298 Nov 16 11:05 index.audio.worklet.js
+-rw-r--r-- 1 User 197121     5455 Nov 16 11:05 index.html
+-rw-r--r-- 1 User 197121    23612 Nov 16 11:05 index.icon.png
+-rw-r--r-- 1 User 197121   279815 Nov 16 11:05 index.js
+-rw-r--r-- 1 User 197121 16509744 Nov 16 11:05 index.pck
+-rw-r--r-- 1 User 197121    21443 Nov 16 11:05 index.png
+-rw-r--r-- 1 User 197121 39514754 Nov 16 11:05 index.wasm
+EXPORT OK: build/web/index.html (log: build/export_web.log)

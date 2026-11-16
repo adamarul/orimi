@@ -1,0 +1,20 @@
+# Deliverable documents
+
+ok       README.md exists
+ok       README names the title from project.godot (Orimi: The Unfaded Vale)
+ok       README: how to run on desktop
+ok       README: how to run in the browser
+ok       README: controls section naming W, A, S, D, Space, Shift, Q, Esc, F2, J
+ok       README: glyph guide (Bloom, Slash and Gust each with the shape to draw)
+ok       README: credits and licences
+ok       README embeds an existing docs/screenshots/ image for Light paper
+ok       README embeds an existing docs/screenshots/ image for Normal paper
+ok       README embeds an existing docs/screenshots/ image for Heavy paper
+ok       README embeds at least one web-build screenshot
+ok       docs/screenshots has a web capture at Light paper
+ok       docs/screenshots has a desktop capture at Light paper
+ok       docs/screenshots has a web capture at Normal paper
+ok       docs/screenshots has a desktop capture at Normal paper
+ok       docs/screenshots has a web capture at Heavy paper
+ok       docs/screenshots has a desktop capture at Heavy paper
+ok       docs/SHADERS.md exists

@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/levels/hollow_kiln/models/kiln.glb" id="1"]
+[ext_resource type="Script" path="res://scripts/render/ink_look.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/levels/hollow_kiln/far_fade.gd" id="3"]
+
+[node name="Kiln" instance=ExtResource("1")]
+
+[node name="InkLook" type="Node" parent="."]
+script = ExtResource("2")
+outline_width = 1.3
+
+[node name="FarFade" type="Node" parent="."]
+script = ExtResource("3")
+fade_start = 90.0
+fade_end = 400.0
+fade_max = 0.5

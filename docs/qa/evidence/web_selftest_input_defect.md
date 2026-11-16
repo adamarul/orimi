@@ -1,0 +1,28 @@
+# Browser check: input (FAIL)
+
+url query: scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&god=1&defect=input
+chrome: Chrome/157.0.8103.51; webgl: {"webgl2":true,"renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+first frame: ORIMI_FIRST_FRAME t=6.50s scene=res://tests/qa/qa_host.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web (11860 ms)
+
+
+| result | criterion | detail |
+| - | - | - |
+| ok | title -> playing with real input | states title > playing, player [0,0,50] |
+| ok | click captures the mouse | pointerLockElement true, Input.mouse_mode 2 |
+| FAIL | KeyW moves the player +fwd | moved 0.00 m, 0.00 m along the camera fwd axis |
+| FAIL | KeyS moves the player -fwd | moved 0.00 m, 0.00 m along the camera fwd axis |
+| FAIL | KeyA moves the player -right | moved 0.00 m, 0.00 m along the camera right axis |
+| FAIL | KeyD moves the player +right | moved 0.00 m, 0.00 m along the camera right axis |
+| FAIL | Game.debug_snapshot() reports the player position and it changes | position changed in 0 of 4 moves |
+| FAIL | mouse motion orbits the camera | yaw 0.0 -> 0.0 |
+| FAIL | Space jumps | height 0.00 -> peak 0.00 |
+| FAIL | J and the left mouse button attack (Events.player_attacked) | J false, left button false |
+| ok | Escape (pause action) pauses and frees the mouse | pointer lock false, mouse_mode 0, tree paused true, state paused |
+| ok | resume with Escape again (playing and captured 1.5 s later) | state changes playing; now state playing, tree paused false, mouse_mode 2 |
+| ok | resume with P (playing and captured 1.5 s later) | state changes paused > playing; now state playing, tree paused false, mouse_mode 2 |
+| ok | resume with a click on Resume (playing and captured 1.5 s later) | state changes paused > playing; now state playing, tree paused false, mouse_mode 2 |
+| ok | a capture lost to the browser is treated as a pause | after exitPointerLock: mouse_mode 0, tree paused true, state paused |
+| ok | no console/page errors | 107 console lines |
+
+screenshots: none
+console log: docs/qa/evidence/web_selftest_input_defect_console.txt

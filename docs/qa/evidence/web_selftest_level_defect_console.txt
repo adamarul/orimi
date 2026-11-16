@@ -1,0 +1,46 @@
+# 94 console lines. Marker and problem lines first, then the last 40 lines.
+# Full log (not committed): .userdata/qa/logs/web_selftest_level_defect_console.txt
+   0.80 # url http://127.0.0.1:53125/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&autoplay=1&level=example&defect=level_fail
+  25.35 [log] QA:{"data":{"level":"example","what":"planted level_fail"},"tag":"autoplay_fail"}
+  25.35 [log] QA:{"data":{"failures":["planted level_fail"],"levels":["example"],"passed":false},"tag":"autoplay_end"}
+# ...
+  22.14 [log] QAPROBE:{"args":["slash",{"glyph":"slash","score":1.0,"targets":[]}],"name":"glyph_cast","t":15592,"tag":"evt"}
+  22.14 [log] QA:{"data":{"step":"[\"glyph\", &\"slash\"]"},"tag":"glyph"}
+  22.53 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  22.54 [log] QA:{"data":{"glyph":"bloom","ink":100.0,"score":1.0,"targets":[]},"tag":"glyph_cast"}
+  22.54 [log] QAPROBE:{"args":["bloom",{"glyph":"bloom","score":1.0,"targets":[]}],"name":"glyph_cast","t":15995,"tag":"evt"}
+  22.55 [log] QA:{"data":{"step":"[\"glyph\", &\"bloom\"]"},"tag":"glyph"}
+  22.95 [log] QA:{"data":{"center":[0.0,0.0,0.0],"radius":16.0,"zone":"zone_b"},"tag":"zone_restore_started"}
+  22.95 [log] QAPROBE:{"args":["zone_b",[0.0,0.0,0.0],16.0],"name":"zone_restore_started","t":16398,"tag":"evt"}
+  22.95 [log] QA:{"data":{"restored":["zone_a","zone_b"],"zone":"zone_b"},"tag":"zone_restored"}
+  22.95 [log] QAPROBE:{"args":["zone_b"],"name":"zone_restored","t":16399,"tag":"evt"}
+  22.95 [log] QA:{"data":{"step":"[\"zone\", &\"zone_b\"]"},"tag":"zone"}
+  23.04 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  23.35 [log] QAPROBE:{"args":[100.0,100.0],"name":"ink_changed","t":16800,"tag":"evt"}
+  23.35 [log] QA:{"data":{"alive":0,"at":[0.0,0.0,50.0],"kind":"splotchet"},"tag":"enemy_died"}
+  23.35 [log] QAPROBE:{"args":[{"class":"CharacterBody3D","groups":["player"],"node":"FixturePlayer","pos":[0.0,0.0,50.0]},"splotchet",[0.0,0.0,50.0]],"name":"enemy_died","t":16801,"tag":"evt"}
+  23.35 [log] QA:{"data":{"step":"[\"enemy\", &\"splotchet\"]"},"tag":"enemy"}
+  23.55 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  23.75 [log] QAPROBE:{"args":[100.0,100.0],"name":"ink_changed","t":17203,"tag":"evt"}
+  23.75 [log] QA:{"data":{"alive":0,"at":[0.0,0.0,50.0],"kind":"reedwraith"},"tag":"enemy_died"}
+  23.75 [log] QAPROBE:{"args":[{"class":"CharacterBody3D","groups":["player"],"node":"FixturePlayer","pos":[0.0,0.0,50.0]},"reedwraith",[0.0,0.0,50.0]],"name":"enemy_died","t":17204,"tag":"evt"}
+  23.75 [log] QA:{"data":{"step":"[\"enemy\", &\"reedwraith\"]"},"tag":"enemy"}
+  24.05 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  24.16 [log] QA:{"data":{"glyph":"bloom","ink":100.0,"score":1.0,"targets":[]},"tag":"glyph_cast"}
+  24.16 [log] QAPROBE:{"args":["bloom",{"glyph":"bloom","score":1.0,"targets":[]}],"name":"glyph_cast","t":17606,"tag":"evt"}
+  24.16 [log] QA:{"data":{"step":"[\"glyph\", &\"bloom\"]"},"tag":"glyph"}
+  24.56 [log] ORIMI_AUDIO music=finale fade=2.0
+  24.70 [log] QA:{"data":{"center":[0.0,6.0,-42.0]},"tag":"finale_started"}
+  24.70 [log] QAPROBE:{"args":[[0.0,6.0,-42.0]],"name":"finale_started","t":18149,"tag":"evt"}
+  24.70 [log] QA:{"data":{"step":"[\"finale\"]"},"tag":"finale"}
+  24.70 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  24.95 [log] QA:{"data":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.0,0.0],"deaths":0,"enemies_alive":0,"fps":144.0,"god":false,"hp":null,"ink":100.0,"ink_max":100.0,"kills":4,"level":"","max_hp":null,"player_pos":[0.0,0.0,50.0],"restored_zones":["zone_a","zone_b"],"state":"playing","t":18.4}," [cut]
+  24.95 [log] QAPROBE:{"args":[],"name":"valley_restored","t":18402,"tag":"evt"}
+  24.95 [log] QA:{"data":{"step":"[\"restored\"]"},"tag":"restored"}
+  25.19 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  25.35 [log] QAPROBE:{"args":["ended"],"name":"game_state_changed","t":18803,"tag":"evt"}
+  25.35 [log] QA:{"data":{"step":"[\"state\", &\"ended\"]"},"tag":"state"}
+  25.35 [log] QA:{"data":{"level":"example","what":"planted level_fail"},"tag":"autoplay_fail"}
+  25.35 [log] QA:{"data":{"failures":["planted level_fail"],"levels":["example"],"passed":false},"tag":"autoplay_end"}
+  25.70 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":124.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"ended"},"game_state":"ended","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false,"pl [cut]
+  26.21 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":124.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"ended"},"game_state":"ended","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false,"pl [cut]

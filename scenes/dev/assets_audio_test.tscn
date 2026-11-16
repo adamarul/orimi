@@ -1,0 +1,198 @@
+[gd_scene load_steps=2 format=3]
+
+[sub_resource type="GDScript" id="GDScript_audio_test"]
+script/source = "extends Node
+## Headless audio self-test: every id loads, loop flags are right, the director reacts to Events.
+## Prints ORIMI_AUDIO_TEST lines and a final PASS/FAIL. Run:
+##   tools/check.sh scene=res://scenes/dev/assets_audio_test.tscn   (or the godot console exe headless)
+
+var _fails := 0
+## The refusal checks print engine warnings on purpose; the web smoke counts any console
+## warning as a problem, so they run only on desktop (the logic is the same on every platform).
+var _warnings := not OS.has_feature(\"web\")
+
+
+func _ready() -> void:
+	await get_tree().process_frame
+	for id in Audio.MUSIC_IDS:
+		var s: AudioStream = Audio._music_streams.get(id)
+		_check(\"music %s loaded\" % id, s != null)
+		if s:
+			var looping: bool = s.loop if \"loop\" in s else false
+			_check(\"music %s loop=%s len=%.1fs\" % [id, looping, s.get_length()], looping == (id != &\"finale\"))
+			_check(\"music %s length 40..90 s\" % id, s.get_length() >= 40.0 and s.get_length() <= 90.0)
+	for id in Audio.SFX_IDS:
+		var s: AudioStream = Audio._sfx_streams.get(id)
+		_check(\"sfx %s loaded (%.2fs)\" % [id, s.get_length() if s else 0.0], s != null and (s.loop if \"loop\" in s else false) == (id in Audio.LOOP_SFX))
+	Events.game_state_changed.emit(&\"title\")
+	_check(\"title state -> title music\", Audio.current_music == &\"title\")
+	Events.game_state_changed.emit(&\"playing\")
+	_check(\"playing -> vale_cursed\", Audio.current_music == &\"vale_cursed\")
+	Events.brush_opened.emit()
+	_check(\"brush duck on\", Audio.is_ducked())
+	Events.brush_closed.emit()
+	_check(\"brush duck off\", not Audio.is_ducked())
+	Events.zone_entered.emit(&\"zone_a\")
+	Events.zone_restored.emit(&\"zone_a\")
+	_check(\"zone_a restored -> vale_restored\", Audio.current_music == &\"vale_restored\")
+	Events.zone_exited.emit(&\"zone_a\")
+	_check(\"left restored zone -> vale_cursed\", Audio.current_music == &\"vale_cursed\")
+	_level_registration()
+	await _kit_hooks()
+	_level_tracks()
+	Events.finale_started.emit(Vector3(0, 6, -42))
+	_check(\"finale_started -> finale\", Audio.current_music == &\"finale\")
+	Events.game_state_changed.emit(&\"cutscene\")
+	Events.zone_entered.emit(&\"zone_c\")
+	Events.zone_restored.emit(&\"zone_c\")
+	Events.zone_exited.emit(&\"zone_c\")
+	Events.game_state_changed.emit(&\"playing\")
+	Audio.set_level_music(&\"\")
+	_check(\"zone and state changes do not interrupt the finale\", Audio.current_music == &\"finale\")
+	Audio._after_finale()
+	_check(\"after the finale -> restored\", Audio.current_music == &\"vale_restored\")
+	Events.zone_exited.emit(&\"zone_c\")
+	_check(\"restored for good after the finale\", Audio.current_music == &\"vale_restored\")
+	Audio.play_sfx(&\"hit\", Vector3(0, 0, 0))
+	Audio.play_sfx(&\"footstep\")
+	if _warnings:
+		Audio.play_sfx(&\"nonexistent_id_is_warned\")
+	await get_tree().create_timer(0.3).timeout
+	var playing := 0
+	for c in Audio.get_children():
+		if c is AudioStreamPlayer and (c as AudioStreamPlayer).playing:
+			playing += 1
+	_check(\"players playing after sfx + music (%d)\" % playing, playing >= 2)
+	print(\"ORIMI_AUDIO_TEST %s fails=%d\" % [\"PASS\" if _fails == 0 else \"FAIL\", _fails])
+	if not OS.has_feature(\"web\"):
+		get_tree().quit(0 if _fails == 0 else 1)
+
+
+## A level's run-time registration: tracks and sounds from res:// paths, loop flags on private
+## copies, built-in ids protected, and the level's cursed/restored pair driving the music.
+func _level_registration() -> void:
+	_check(\"register_music level theme\", Audio.register_music(&\"test_level_theme\", \"res://audio/music/title.ogg\"))
+	_check(\"register_music looping copy of a one-shot file\", Audio.register_music(&\"test_level_restored\", \"res://audio/sfx/petals.ogg\", true))
+	_check(\"registered music loops\", Audio._music_streams[&\"test_level_restored\"].loop)
+	_check(\"source sfx stream left one-shot\", not Audio._sfx_streams[&\"petals\"].loop)
+	if _warnings:
+		_check(\"built-in music id refused\", not Audio.register_music(&\"title\", \"res://audio/music/finale.ogg\"))
+		_check(\"missing file refused\", not Audio.register_music(&\"test_missing\", \"res://audio/levels/none/none.ogg\"))
+	_check(\"register_sfx level sound\", Audio.register_sfx(&\"test_level_chime\", \"res://audio/sfx/petals.ogg\", -2.0, 0.05))
+	_check(\"register_sfx from a stream, loop cleared\", Audio.register_sfx(&\"test_level_hum\", Audio._music_streams[&\"vale_cursed\"]) and not Audio._sfx_streams[&\"test_level_hum\"].loop)
+	_check(\"source music stream still loops\", Audio._music_streams[&\"vale_cursed\"].loop)
+	if _warnings:
+		_check(\"built-in sound id refused\", not Audio.register_sfx(&\"hit\", \"res://audio/sfx/petals.ogg\"))
+	_check(\"has_music / has_sfx\", Audio.has_music(&\"test_level_theme\") and Audio.has_sfx(&\"test_level_chime\"))
+	Audio.play_sfx(&\"test_level_chime\")
+	_check(\"registered sound plays\", _any_playing(Audio._sfx_streams[&\"test_level_chime\"]))
+	Audio.set_level_music(&\"test_level_theme\", &\"test_level_restored\")
+	_check(\"set_level_music while playing -> level cursed track\", Audio.current_music == &\"test_level_theme\")
+	Events.zone_entered.emit(&\"zone_b\")
+	Events.zone_restored.emit(&\"zone_b\")
+	_check(\"level zone restored -> level restored track\", Audio.current_music == &\"test_level_restored\")
+	Events.zone_exited.emit(&\"zone_b\")
+	_check(\"left level zone -> level cursed track\", Audio.current_music == &\"test_level_theme\")
+	Audio.set_level_music(&\"test_level_theme\", &\"test_level_restored\", true)
+	_check(\"re-entered restored level -> level restored track\", Audio.current_music == &\"test_level_restored\")
+	if _warnings:
+		Audio.set_level_music(&\"test_unregistered\")
+		_check(\"unregistered level id ignored\", Audio.current_music == &\"test_level_restored\")
+	Audio.set_level_music(&\"\")
+	_check(\"set_level_music(&\\\"\\\") -> vale tracks\", Audio.current_music == &\"vale_cursed\")
+
+
+func _any_playing(stream: AudioStream) -> bool:
+	for c in Audio.get_children():
+		if c is AudioStreamPlayer and (c as AudioStreamPlayer).playing and (c as AudioStreamPlayer).stream == stream:
+			return true
+	return false
+
+
+func _check(what: String, ok: bool) -> void:
+	if not ok:
+		_fails += 1
+	print(\"ORIMI_AUDIO_TEST %s %s\" % [\"ok  \" if ok else \"FAIL\", what])
+
+
+## The level themes under audio/levels/: each registers from its file, loops and lasts 40 to 90 s.
+func _level_tracks() -> void:
+	for pair in [[\"tallowford\", \"tallowford_cursed\"], [\"tallowford\", \"tallowford_restored\"],
+			[\"sedge_plain\", \"sedge_plain_cursed\"], [\"sedge_plain\", \"sedge_plain_restored\"],
+			[\"mosswater\", \"mosswater_cursed\"], [\"mosswater\", \"mosswater_restored\"],
+			[\"hollow_kiln\", \"hollow_kiln_cursed\"], [\"hollow_kiln\", \"hollow_kiln_restored\"], [\"hollow_kiln\", \"hollow_kiln_dregs\"]]:
+		var id := StringName(pair[1])
+		var ok := Audio.register_music(id, \"res://audio/levels/%s/%s.ogg\" % pair)
+		var s: AudioStream = Audio._music_streams.get(id)
+		var secs := s.get_length() if s else 0.0
+		_check(\"level music %s registered, loops, %.1f s\" % [id, secs], ok and s.loop and secs >= 40.0 and secs <= 90.0)
+	Audio.set_level_music(&\"hollow_kiln_cursed\", &\"hollow_kiln_restored\")
+	_check(\"level pair plays\", Audio.current_music == &\"hollow_kiln_cursed\")
+	Audio.play_music(&\"hollow_kiln_dregs\", 0.5)
+	_check(\"boss track plays\", Audio.current_music == &\"hollow_kiln_dregs\" and _any_playing(Audio._music_streams[&\"hollow_kiln_dregs\"]))
+	Audio.set_level_music(&\"\")
+
+
+## The level-kit hooks: fake kit nodes in the kit's groups, hooked by Audio.hook_kit(), each
+## signal playing its sound; Game and Events signals; the lamp hum following a lit lamp.
+func _kit_hooks() -> void:
+	var root := Node3D.new()
+	add_child(root)
+	var kit := {}
+	for g in [\"kindle_target\", \"tie_post\", \"tie_post_b\", \"sealed_fight\", \"verse_stone\"]:
+		var n := FakeKit.new()
+		n.add_to_group(StringName(g.trim_suffix(\"_b\")))
+		root.add_child(n)
+		kit[g] = n
+	Audio.hook_kit()
+	Audio.hook_kit()
+	Audio._last_played.clear()
+	kit[\"kindle_target\"].kindled.emit()
+	_check(\"KindleTarget.kindled -> kindle\", Audio._last_played.has(&\"kindle\"))
+	kit[\"tie_post\"].tied_up.emit(kit[\"tie_post_b\"])
+	kit[\"tie_post_b\"].tied_up.emit(kit[\"tie_post\"])
+	_check(\"TiePost.tied_up -> tie\", Audio._last_played.has(&\"tie\"))
+	kit[\"sealed_fight\"].fight_started.emit()
+	_check(\"SealedFight.fight_started -> fight_seal\", Audio._last_played.has(&\"fight_seal\"))
+	kit[\"sealed_fight\"].fight_won.emit()
+	_check(\"SealedFight.fight_won -> fight_won\", Audio._last_played.has(&\"fight_won\"))
+	kit[\"verse_stone\"].reading = true
+	await get_tree().process_frame
+	_check(\"VerseStone reading -> verse_wake\", Audio._last_played.has(&\"verse_wake\"))
+	Game.enemy_finished.emit(kit[\"verse_stone\"])
+	_check(\"Game.enemy_finished -> clean_cut\", Audio._last_played.has(&\"clean_cut\"))
+	Events.enemy_hit.emit(kit[\"verse_stone\"], 1.0, Vector3.ZERO)
+	_check(\"Events.enemy_hit at hp 0 -> unravel\", Audio._last_played.has(&\"unravel\"))
+	Events.game_state_changed.emit(&\"talk\")
+	_check(\"talk state -> talk_open\", Audio._last_played.has(&\"talk_open\"))
+	Events.game_state_changed.emit(&\"playing\")
+	if Events.has_signal(&\"bead_awarded\"):
+		Events.emit_signal(&\"bead_awarded\", &\"test_level\", Color.WHITE)
+		_check(\"Events.bead_awarded -> bead\", Audio._last_played.has(&\"bead\"))
+	if Events.has_signal(&\"player_thrown_back\"):
+		Events.emit_signal(&\"player_thrown_back\", Vector3.ZERO, &\"water\")
+		Events.emit_signal(&\"player_thrown_back\", Vector3.ZERO, &\"curse\")
+		_check(\"Events.player_thrown_back -> splash, curse_throwback\", Audio._last_played.has(&\"splash\") and Audio._last_played.has(&\"curse_throwback\"))
+	_check(\"no hum before a lamp is lit\", not Audio.is_humming())
+	kit[\"kindle_target\"].lit = true
+	await get_tree().process_frame
+	_check(\"lit lamp -> lamp hum\", Audio.is_humming())
+	kit[\"kindle_target\"].lit = false
+	await get_tree().process_frame
+	_check(\"unlit lamp -> hum stops\", not Audio.is_humming())
+	root.queue_free()
+
+
+class FakeKit extends Node3D:
+	signal kindled
+	signal tied_up(other: Node)
+	signal fight_started
+	signal fight_won
+	var kind := \"lamp\"
+	var lit := false
+	var reading := false
+	var hp := 0.0
+"
+
+[node name="AssetsAudioTest" type="Node"]
+script = SubResource("GDScript_audio_test")

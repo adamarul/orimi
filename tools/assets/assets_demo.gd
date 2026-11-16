@@ -1,0 +1,447 @@
+extends Node3D
+## Assets demo: every model on a turntable row with its animations cycling, a top-down terrain
+## view with the marker names, and keys to audition every sound and music track.
+## Boot options: view=row|terrain|closeup  model=<wrapper name> (closeup)  anim=<name>
+## anim_at=<seconds> holds the forced animation at that time (for frame captures).
+## view=folk: every person in scenes/models/folk/, woken in front and faded behind;
+## folk_anim=idle|talk|walk for the woken row, wake_after=<seconds> wakes the faded row,
+## folk_dir=res://scenes/levels/<id>/folk to show a level's cast instead.
+## view=terrain terrain_cam=persp cam=x,y,z look=x,y,z places the perspective terrain camera.
+## view=enemies: both enemies seen from the gameplay camera (57 deg, 4.9 m behind Orimi, pitch
+## -16): near row idle, windup and unravelling, then idle at 15 m and 30 m; curse=1 curses the
+## ground. Poses are held, so a capture shows the frame that matters.
+## Keys: Left/Right select a sound, Enter or Space plays it, M next music track, N music off,
+## B toggles the brush duck, T toggles the terrain view, 1-9 close-up on a model.
+
+const MODELS: Array[String] = ["fox", "splotchet", "reedwraith", "sapling", "thorn_gate", "shrine",
+	"stepping_stone", "rocks", "reeds", "raft", "great_tree"]
+const SPACING := {"fox": 2.2, "splotchet": 2.0, "reedwraith": 2.6, "sapling": 2.6, "thorn_gate": 6.5,
+	"shrine": 4.0, "stepping_stone": 2.6, "rocks": 4.0, "reeds": 3.0, "raft": 3.6, "great_tree": 16.0}
+const SOUNDS: Array[StringName] = [&"footstep", &"jump", &"land", &"swipe", &"hit", &"hurt",
+	&"splotchet_hop", &"splotchet_die", &"reedwraith_moan", &"reedwraith_die", &"veil_off",
+	&"brush_open", &"brush_close", &"brush_stroke", &"glyph_ok", &"glyph_fail", &"bloom", &"slash",
+	&"gust", &"thorns_cut", &"soot_clear", &"zone_restore", &"petals", &"tree_restore", &"ink_pickup",
+	&"ui_move", &"ui_accept"]
+const MUSIC: Array[StringName] = [&"title", &"vale_cursed", &"vale_restored", &"finale"]
+## Close-up framing per model: look-at height and camera distance.
+const CLOSEUP := {"fox": [0.4, 1.9], "splotchet": [0.22, 1.4], "reedwraith": [1.3, 4.6], "sapling": [0.8, 3.2],
+	"thorn_gate": [1.2, 7.5], "shrine": [1.4, 6.0], "stepping_stone": [0.1, 2.6], "rocks": [0.6, 5.0],
+	"reeds": [0.7, 3.4], "great_tree": [7.0, 26.0]}
+const STEP := 1.0 / 12.0
+const ANIM_SECONDS := 2.5
+
+var _camera: Camera3D
+var _hud: Label
+var _turntables: Array[Node3D] = []
+var _players: Array[AnimationPlayer] = []
+var _anim_index: Array[int] = []
+var _labels: Array[Label3D] = []
+var _clock := 0.0
+var _step_clock := 0.0
+var _anim_clock := 0.0
+var _sound := 0
+var _music := -1
+var _duck := false
+var _view := "row"
+var _row_root: Node3D
+var _terrain_root: Node3D
+var _audio_started := false
+
+
+func _ready() -> void:
+	_build_world()
+	_build_row()
+	_view = String(Boot.opt("view", "row"))
+	if _view == "terrain":
+		_show_terrain()
+	elif _view == "closeup":
+		_closeup(String(Boot.opt("model", "fox")))
+	elif _view == "folk":
+		_show_folk()
+	elif _view == "enemies":
+		_show_enemies()
+	else:
+		_camera_row()
+	_update_hud()
+
+
+func _build_world() -> void:
+	var env := Environment.new()
+	env.background_mode = Environment.BG_COLOR
+	env.background_color = Palette.IVORY
+	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+	env.ambient_light_color = Color(0.85, 0.82, 0.76)
+	env.ambient_light_energy = 0.7
+	var we := WorldEnvironment.new()
+	we.environment = env
+	add_child(we)
+	var sun := DirectionalLight3D.new()
+	sun.rotation_degrees = Vector3(-55, -35, 0)
+	sun.light_energy = 0.8
+	add_child(sun)
+	_camera = Camera3D.new()
+	_camera.fov = 50
+	_camera.far = 900
+	add_child(_camera)
+	_camera.make_current()
+	var hud_layer := CanvasLayer.new()
+	hud_layer.layer = Layers.CANVAS_HUD
+	add_child(hud_layer)
+	_hud = Label.new()
+	_hud.position = Vector2(12, 8)
+	_hud.add_theme_color_override(&"font_color", Palette.INK)
+	_hud.add_theme_font_size_override(&"font_size", 15)
+	hud_layer.add_child(_hud)
+
+
+func _build_row() -> void:
+	_row_root = Node3D.new()
+	add_child(_row_root)
+	var ground := MeshInstance3D.new()
+	var plane := PlaneMesh.new()
+	plane.size = Vector2(80, 30)
+	ground.mesh = plane
+	var gm := StandardMaterial3D.new()
+	gm.albedo_color = Palette.PARCHMENT
+	ground.material_override = gm
+	ground.position = Vector3(20, -0.01, 0)
+	_row_root.add_child(ground)
+	var x := 0.0
+	for name in MODELS:
+		var path := "res://scenes/models/%s.tscn" % name
+		if not ResourceLoader.exists(path):
+			continue
+		var w: float = SPACING.get(name, 3.0)
+		x += w * 0.5
+		var table := Node3D.new()
+		table.name = "Turntable_" + name
+		table.position = Vector3(x, 0, 0)
+		x += w * 0.5
+		_row_root.add_child(table)
+		var model: Node3D = (load(path) as PackedScene).instantiate()
+		table.add_child(model)
+		_turntables.append(table)
+		var ap := model.get_node_or_null("%AnimationPlayer") as AnimationPlayer
+		_players.append(ap)
+		_anim_index.append(0)
+		var label := Label3D.new()
+		label.text = name
+		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+		label.modulate = Palette.INK
+		label.outline_size = 0
+		label.font_size = 48
+		label.pixel_size = 0.004 * maxf(1.0, w / 3.0)
+		label.position = Vector3(x - w * 0.5, -0.25, w * 0.35)
+		_row_root.add_child(label)
+		_labels.append(label)
+		_play_current(_players.size() - 1)
+
+
+func _play_current(i: int) -> void:
+	var ap := _players[i]
+	if ap == null:
+		_labels[i].text = String(_turntables[i].name).trim_prefix("Turntable_")
+		return
+	var list := ap.get_animation_list()
+	if list.is_empty():
+		return
+	var forced := String(Boot.opt("anim", ""))
+	var anim: String = forced if forced in list else list[_anim_index[i] % list.size()]
+	ap.play(anim)
+	ap.speed_scale = 0.0
+	if String(Boot.opt("anim_at", "")) != "":
+		ap.seek(float(Boot.opt("anim_at", "0")), true)
+	_labels[i].text = "%s\n%s" % [String(_turntables[i].name).trim_prefix("Turntable_"), anim]
+
+
+func _process(delta: float) -> void:
+	_clock += delta
+	_step_clock += delta
+	_anim_clock += delta
+	if _step_clock >= STEP:
+		_step_clock = fmod(_step_clock, STEP)
+		for i in _players.size():
+			var ap := _players[i]
+			if ap and ap.current_animation != "" and String(Boot.opt("anim_at", "")) == "":
+				var a := ap.get_animation(ap.current_animation)
+				var t := ap.current_animation_position + STEP
+				if t > a.length + 0.001:
+					t = 0.0 if a.loop_mode != Animation.LOOP_NONE else a.length
+				ap.seek(t, true)
+		if _view == "row":
+			for table in _turntables:
+				table.rotation.y = snappedf(_clock * 0.5, deg_to_rad(15.0))
+	if _anim_clock >= ANIM_SECONDS and String(Boot.opt("anim", "")) == "":
+		_anim_clock = 0.0
+		for i in _players.size():
+			_anim_index[i] += 1
+			_play_current(i)
+
+
+func _camera_row() -> void:
+	_view = "row"
+	_row_root.visible = true
+	if _terrain_root:
+		_terrain_root.visible = false
+	var last := _turntables[_turntables.size() - 1].position.x if not _turntables.is_empty() else 10.0
+	var span := minf(last, 26.0)
+	_camera.position = Vector3(span * 0.5, 3.2, span * 0.62 + 3.0)
+	_camera.look_at(Vector3(span * 0.5, 0.6, 0))
+
+
+func _closeup(name: String) -> void:
+	_view = "closeup"
+	for t in _turntables:
+		if String(t.name) == "Turntable_" + name:
+			var frame: Array = CLOSEUP.get(name, [0.8, 4.0])
+			var h: float = frame[0]
+			var dist: float = float(Boot.opt("dist", str(frame[1])))
+			t.rotation.y = deg_to_rad(float(Boot.opt("yaw", "145")))
+			var pitch := deg_to_rad(float(Boot.opt("pitch", "16")))
+			_camera.position = t.position + Vector3(0, h + sin(pitch) * dist, cos(pitch) * dist)
+			_camera.look_at(t.position + Vector3(0, h, 0))
+			return
+
+
+func _show_folk() -> void:
+	_row_root.visible = false
+	var root := Node3D.new()
+	add_child(root)
+	var ground := MeshInstance3D.new()
+	var plane := PlaneMesh.new()
+	plane.size = Vector2(40, 20)
+	ground.mesh = plane
+	var gm := StandardMaterial3D.new()
+	gm.albedo_color = Palette.PARCHMENT
+	ground.material_override = gm
+	root.add_child(ground)
+	var names: Array[String] = []
+	var folk_dir := String(Boot.opt("folk_dir", "res://scenes/models/folk"))
+	for f in ResourceLoader.list_directory(folk_dir):
+		if f.ends_with(".tscn"):
+			names.append(f.get_basename())
+	names.sort()
+	var spacing := 1.7
+	var x0 := -spacing * (names.size() - 1) * 0.5
+	var faded_people: Array[Node] = []
+	for i in names.size():
+		var scene := load("%s/%s.tscn" % [folk_dir, names[i]]) as PackedScene
+		for row in 2:
+			var person := scene.instantiate() as Node3D
+			person.set(&"faded", row == 1)
+			person.position = Vector3(x0 + i * spacing + (0.35 if row == 1 else 0.0), 0, -1.6 * row)
+			person.rotation_degrees.y = float(Boot.opt("yaw", "200"))
+			root.add_child(person)
+			if row == 0 and String(Boot.opt("folk_anim", "")) != "":
+				var ap := person.get_node_or_null(^"%AnimationPlayer") as AnimationPlayer
+				if ap:
+					ap.play(StringName(Boot.opt("folk_anim", "idle")))
+			else:
+				faded_people.append(person)
+		var label := Label3D.new()
+		label.text = names[i]
+		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+		label.modulate = Palette.INK
+		label.font_size = 40
+		label.pixel_size = 0.004
+		label.position = Vector3(x0 + i * spacing, 0.05, 0.7)
+		root.add_child(label)
+	var dist := float(Boot.opt("dist", "5.2"))
+	_camera.position = Vector3(0, 1.6, dist)
+	_camera.look_at(Vector3(0, 0.75, -0.6))
+	var wake_after := float(Boot.opt("wake_after", "-1"))
+	if wake_after >= 0.0:
+		await get_tree().create_timer(wake_after).timeout
+		for person in faded_people:
+			if person.has_method(&"wake"):
+				person.call(&"wake")
+
+
+func _show_terrain() -> void:
+	_view = "terrain"
+	_row_root.visible = false
+	if _terrain_root == null:
+		_terrain_root = Node3D.new()
+		add_child(_terrain_root)
+		var path := "res://scenes/models/valley_terrain.tscn"
+		if ResourceLoader.exists(path):
+			var terrain: Node3D = (load(path) as PackedScene).instantiate()
+			_terrain_root.add_child(terrain)
+			var river_path := "res://scenes/models/river_surface.tscn"
+			if ResourceLoader.exists(river_path):
+				_terrain_root.add_child((load(river_path) as PackedScene).instantiate())
+			var top_view := String(Boot.opt("terrain_cam", "top")) == "top"
+			for marker in terrain.find_children("M_*", "", true, false):
+				if String(marker.name).begins_with("M_Stone"):
+					continue
+				var label := Label3D.new()
+				label.text = "%s\n(%.0f, %.1f, %.0f)" % [marker.name, marker.global_position.x, marker.global_position.y, marker.global_position.z]
+				label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+				label.no_depth_test = true
+				label.modulate = Palette.VERMILION_DEEP
+				label.outline_modulate = Palette.IVORY
+				label.outline_size = 10
+				label.font_size = 64
+				label.pixel_size = 0.045 if top_view else 0.0012
+				label.fixed_size = not top_view
+				_terrain_root.add_child(label)
+				label.global_position = (marker as Node3D).global_position + Vector3(0, 2, 0)
+				label.offset = Vector2(0, 40)
+				var pin := MeshInstance3D.new()
+				var pm := CylinderMesh.new()
+				pm.top_radius = 0.6
+				pm.bottom_radius = 0.6
+				pm.height = 3.0
+				pin.mesh = pm
+				var mat := StandardMaterial3D.new()
+				mat.albedo_color = Palette.VERMILION
+				mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+				pin.material_override = mat
+				_terrain_root.add_child(pin)
+				pin.global_position = (marker as Node3D).global_position
+	_terrain_root.visible = true
+	var top := String(Boot.opt("terrain_cam", "top"))
+	if top == "top":
+		_camera.projection = Camera3D.PROJECTION_ORTHOGONAL
+		_camera.size = 168
+		_camera.position = Vector3(0, 160, -2.5)
+		_camera.rotation_degrees = Vector3(-90, 0, 0)
+	else:
+		_camera.projection = Camera3D.PROJECTION_PERSPECTIVE
+		_camera.position = _vec_opt("cam", Vector3(0, 9, 64))
+		_camera.look_at(_vec_opt("look", Vector3(0, 2, 20)))
+
+
+func _show_enemies() -> void:
+	_row_root.visible = false
+	var root := Node3D.new()
+	add_child(root)
+	var ground := MeshInstance3D.new()
+	var plane := PlaneMesh.new()
+	plane.size = Vector2(120, 120)
+	plane.subdivide_width = 24
+	plane.subdivide_depth = 24
+	ground.mesh = plane
+	var gm := StandardMaterial3D.new()
+	gm.albedo_color = Color(0.89, 0.83, 0.69)
+	gm.roughness = 1.0
+	ground.material_override = gm
+	ground.position = Vector3(0, -0.01, -30)
+	root.add_child(ground)
+	var ground_look: Node = (load("res://scripts/render/ink_look.gd") as GDScript).new()
+	ground.add_child(ground_look)
+	# [model, x, z, animation, seconds]: the windup is held on its last frame before the lunge,
+	# the unravel 0.9 s in (gameplay plays "hurt" there when a model has no "unravel").
+	var spots := [["fox", 0.0, 0.0, "idle", 0.0],
+		["splotchet", 1.0, -3.0, "idle", 0.25], ["splotchet", 2.1, -3.0, "attack", 0.5], ["splotchet", 3.2, -3.0, "unravel", 0.9],
+		["reedwraith", 4.6, -6.0, "idle", 0.5], ["reedwraith", 6.3, -6.0, "attack", 0.75], ["reedwraith", 8.0, -6.0, "unravel", 0.9],
+		["splotchet", -3.5, -15.0, "idle", 0.25], ["reedwraith", -6.5, -15.0, "idle", 0.5],
+		["splotchet", -8.0, -30.0, "attack", 0.5], ["reedwraith", -12.5, -30.0, "attack", 0.75]]
+	for spot: Array in spots:
+		var model: Node3D = (load("res://scenes/models/%s.tscn" % spot[0]) as PackedScene).instantiate()
+		root.add_child(model)
+		model.position = Vector3(spot[1], 0, spot[2])
+		if spot[0] != "fox":
+			model.rotation.y = PI + atan2(float(spot[1]), 4.7 - float(spot[2]))
+		var ap := model.get_node_or_null(^"%AnimationPlayer") as AnimationPlayer
+		if ap == null:
+			continue
+		var anim: String = spot[3]
+		var unravel := anim == "unravel"
+		if unravel and not ap.has_animation(&"unravel"):
+			anim = "hurt"
+		ap.play(StringName(anim))
+		ap.seek(minf(float(spot[4]), ap.get_animation(StringName(anim)).length), true)
+		ap.pause()
+		if unravel:
+			model.rotation.z = 0.1
+			var look := model.get_node_or_null(^"InkLook")
+			if look != null:
+				look.call_deferred(&"set_dissolve", 0.2)
+	if String(Boot.opt("curse", "0")) == "1":
+		CurseField.set_zone(0, Vector3(0, 0, -15), 40.0, 1.0)
+		CurseField.set_valley_gloom(0.6)
+	_camera.fov = 57.0
+	_camera.position = Vector3(0, 0.95 + 4.9 * sin(deg_to_rad(16.0)), 4.9 * cos(deg_to_rad(16.0)))
+	_camera.look_at(Vector3(0, 0.95, 0))
+
+
+func _vec_opt(key: String, fallback: Vector3) -> Vector3:
+	var parts := String(Boot.opt(key, "")).split(",")
+	if parts.size() != 3:
+		return fallback
+	return Vector3(float(parts[0]), float(parts[1]), float(parts[2]))
+
+
+func _input(event: InputEvent) -> void:
+	var mb := event as InputEventMouseButton
+	if mb and mb.pressed and not _audio_started:
+		_audio_started = true
+		_start_audio()
+
+
+## Audio can only start after a user gesture in the browser, so the demo waits for the first click.
+func _start_audio() -> void:
+	Audio.play_music(MUSIC[0], 0.5)
+	_music = 0
+	Audio.play_sfx(&"ui_accept")
+	await get_tree().create_timer(1.0).timeout
+	_report_audio("after_click")
+	if String(Boot.opt("audio_tour", "0")) == "1":
+		for i in SOUNDS.size():
+			_sound = i
+			Audio.play_sfx(SOUNDS[i])
+			_update_hud()
+			await get_tree().create_timer(0.25).timeout
+		for i in MUSIC.size():
+			_music = i
+			Audio.play_music(MUSIC[i], 0.8)
+			_update_hud()
+			await get_tree().create_timer(1.2).timeout
+		_report_audio("tour_done")
+
+
+func _report_audio(tag: String) -> void:
+	var playing := 0
+	for c in Audio.get_children():
+		if c is AudioStreamPlayer and (c as AudioStreamPlayer).playing:
+			playing += 1
+	print("ORIMI_AUDIO_DEMO %s music=%s players_playing=%d" % [tag, Audio.current_music, playing])
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	var key := event as InputEventKey
+	if key == null or not key.pressed or key.echo:
+		return
+	match key.keycode:
+		KEY_LEFT:
+			_sound = (_sound + SOUNDS.size() - 1) % SOUNDS.size()
+		KEY_RIGHT:
+			_sound = (_sound + 1) % SOUNDS.size()
+		KEY_ENTER, KEY_SPACE:
+			Audio.play_sfx(SOUNDS[_sound])
+		KEY_M:
+			_music = (_music + 1) % MUSIC.size()
+			Audio.play_music(MUSIC[_music])
+		KEY_N:
+			_music = -1
+			Audio.play_music(&"")
+		KEY_B:
+			_duck = not _duck
+			Audio.set_brush_duck(_duck)
+		KEY_T:
+			if _view == "terrain":
+				_camera.projection = Camera3D.PROJECTION_PERSPECTIVE
+				_camera_row()
+			else:
+				_show_terrain()
+		_:
+			var n := key.keycode - KEY_1
+			if n >= 0 and n < _turntables.size():
+				_closeup(String(_turntables[n].name).trim_prefix("Turntable_"))
+	_update_hud()
+
+
+func _update_hud() -> void:
+	_hud.text = "Assets demo   view: %s   sound [Left/Right, Enter]: %s   music [M/N]: %s   duck [B]: %s   terrain [T]   close-up [1-9]" % [
+		_view, SOUNDS[_sound], MUSIC[_music] if _music >= 0 else "off", "on" if _duck else "off"]

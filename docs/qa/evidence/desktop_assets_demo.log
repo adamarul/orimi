@@ -1,0 +1,8 @@
+# windowed run of assets_demo: error lines, then the last 25 lines (full log: .userdata/qa/full/desktop_assets_demo.log)
+# ...
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3080
+
+ORIMI_BOOT t=2.87s options={"scene":"res://scenes/dev/assets_demo.tscn","screenshot":"<project>/.userdata/qa/full/desktop_assets_demo.png","shot_after":"5"}
+ORIMI_FIRST_FRAME t=3.91s scene=res://scenes/dev/assets_demo.tscn renderer=forward_plus driver=vulkan adapter=NVIDIA GeForce RTX 3080 api=1.4.351 display=Windows
+ORIMI_SCREENSHOT path=<project>/.userdata/qa/full/desktop_assets_demo.png size=1280x720

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/props/tie_post.glb" id="1"]
+[ext_resource type="Script" path="res://scripts/render/ink_look.gd" id="2"]
+
+[node name="TiePost" instance=ExtResource("1")]
+
+[node name="InkLook" type="Node" parent="."]
+script = ExtResource("2")
+accent = &"gold"
+cursable = false
+
+[node name="Ring" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -0, 0, 1, 0, 1.45, 0)

@@ -1,0 +1,121 @@
+{
+ "models": "assets/levels/tallowford/folk",
+ "textures": "assets/levels/tallowford/folk",
+ "scenes": "scenes/levels/tallowford/folk",
+ "people": {
+  "old_trim": {
+   "size": "elder",
+   "build": "slim",
+   "garment": "robe",
+   "hat": "cap",
+   "prop": "pole",
+   "palette": "ash",
+   "colours": {
+    "trim": "#3a3029",
+    "hat": "#e6dcc6"
+   },
+   "seed": 4
+  },
+  "marrow": {
+   "size": "adult",
+   "build": "stout",
+   "garment": "apron",
+   "hat": "scarf",
+   "prop": "pole",
+   "palette": "indigo",
+   "colours": {
+    "garment": "#4e5f7a",
+    "trim": "#a5584a",
+    "hat": "#a5584a"
+   },
+   "seed": 7
+  },
+  "brindle": {
+   "size": "adult",
+   "build": "stout",
+   "garment": "tunic",
+   "hat": "none",
+   "prop": "bucket",
+   "palette": "ochre",
+   "colours": {
+    "garment": "#c7bc98",
+    "legs": "#8c8a80"
+   },
+   "seed": 9
+  },
+  "flax": {
+   "size": "child",
+   "build": "slim",
+   "garment": "tunic",
+   "hat": "none",
+   "prop": "none",
+   "palette": "ochre",
+   "colours": {
+    "garment": "#d5c7a0",
+    "trim": "#9daf8c"
+   },
+   "seed": 11
+  },
+  "pibbet": {
+   "size": "child",
+   "build": "average",
+   "garment": "tunic",
+   "hat": "none",
+   "prop": "lantern",
+   "palette": "moss",
+   "colours": {
+    "garment": "#9daf8c"
+   },
+   "seed": 13
+  },
+  "wherry": {
+   "size": "adult",
+   "build": "slim",
+   "garment": "robe",
+   "hat": "wide_brim",
+   "prop": "pole",
+   "palette": "ash",
+   "colours": {
+    "garment": "#6b8d95"
+   },
+   "seed": 15
+  },
+  "baker": {
+   "size": "adult",
+   "build": "stout",
+   "garment": "apron",
+   "hat": "cap",
+   "prop": "basket",
+   "palette": "ochre",
+   "colours": {
+    "trim": "#efe6d2",
+    "hat": "#efe6d2"
+   },
+   "seed": 17
+  },
+  "netmender": {
+   "size": "adult",
+   "build": "slim",
+   "garment": "tunic",
+   "hat": "scarf",
+   "prop": "scroll",
+   "palette": "moss",
+   "colours": {
+    "garment": "#8c8a80"
+   },
+   "seed": 19
+  },
+  "fisher": {
+   "size": "elder",
+   "build": "average",
+   "garment": "robe",
+   "hat": "wide_brim",
+   "prop": "basket",
+   "palette": "ochre",
+   "colours": {
+    "garment": "#6b4a2b"
+   },
+   "seed": 21
+  }
+ }
+}

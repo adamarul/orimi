@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "M_tf_river"
+albedo_color = Color(0.4980, 0.6275, 0.6510, 1)

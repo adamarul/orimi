@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/levels/mosswater/mw_brazier.glb" id="1"]
+[ext_resource type="Script" path="res://scripts/render/ink_look.gd" id="2"]
+
+[node name="MwBrazier" instance=ExtResource("1")]
+metadata/wick = Vector3(0, 0.8, 0)
+
+[node name="InkLook" type="Node" parent="."]
+script = ExtResource("2")

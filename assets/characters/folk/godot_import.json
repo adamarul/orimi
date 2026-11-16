@@ -1,0 +1,50 @@
+{
+ "assets/characters/folk/folk_dyer.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/textures/painted/folk/folk_dyer.png",
+  "textures": [
+   "assets/textures/painted/folk/folk_dyer_faded.png"
+  ]
+ },
+ "assets/characters/folk/folk_lampmaker.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/textures/painted/folk/folk_lampmaker.png",
+  "textures": [
+   "assets/textures/painted/folk/folk_lampmaker_faded.png"
+  ]
+ },
+ "assets/characters/folk/folk_mapmaker.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/textures/painted/folk/folk_mapmaker.png",
+  "textures": [
+   "assets/textures/painted/folk/folk_mapmaker_faded.png"
+  ]
+ },
+ "assets/characters/folk/pell.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/textures/painted/folk/pell.png",
+  "textures": [
+   "assets/textures/painted/folk/pell_faded.png"
+  ]
+ }
+}

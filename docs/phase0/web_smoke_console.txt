@@ -1,0 +1,129 @@
+# serving <project>\build\web at http://127.0.0.1:63801/
+[console.log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[console.log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+[console.log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+[console.log] ORIMI_BOOT t=3.72s options={}
+[console.log] ORIMI_PROBE renderer INFO gl_compatibility / opengl3 / WebKit WebGL [t=7.69s]
+[console.log] ORIMI_FIRST_FRAME t=7.69s scene=res://scenes/phase0/phase0.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+# reloading (same profile, warm caches)
+[console.log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[console.log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+[console.log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+[console.log] ORIMI_BOOT t=0.21s options={}
+[console.log] ORIMI_PROBE renderer INFO gl_compatibility / opengl3 / WebKit WebGL [t=0.74s]
+[console.log] ORIMI_FIRST_FRAME t=0.74s scene=res://scenes/phase0/phase0.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+# webgl {"webgl2":true,"version":"WebGL 2.0 (OpenGL ES 3.0 Chromium)","vendor":"Google Inc. (NVIDIA)","renderer":"ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"}
+[console.log] ORIMI_FPS fps=34 process_ms=489.80 [t=1.63s]
+[console.log] ORIMI_PROBE tree_paused_one_node_processing PASS while paused: pausable node +0 frames, PROCESS_MODE_ALWAYS node +58 frames [t=2.03s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.80 [t=2.63s]
+[console.log] ORIMI_PROBE pixel_readback PASS 1280x720 [t=2.84s]
+[console.log] ORIMI_PROBE fullscreen_quad_3d PASS tile0=magenta [t=2.84s]
+[console.log] ORIMI_PROBE screen_texture_3d PASS tile1=blue (holds sRGB-encoded values) [t=2.84s]
+[console.log] ORIMI_PROBE depth_texture_3d PASS tile2=green (linearised centre depth vs analytic) [t=2.84s]
+[console.log] ORIMI_PROBE normal_roughness_texture SKIP tile3=yellow (gated off under Compatibility) [t=2.84s]
+[console.log] ORIMI_PROBE depth_reconstructed_normal PASS tile4=green [t=2.84s]
+[console.log] ORIMI_PROBE chain_3d_second_pass_sees_first NO tile5=red [t=2.84s]
+[console.log] ORIMI_PROBE canvas_pass_reads_3d_post_output YES tile6=green [t=2.84s]
+[console.log] ORIMI_PROBE canvas_pass_draws PASS tile7=cyan [t=2.84s]
+[console.log] ORIMI_PROBE canvas_chain_without_backbuffercopy NO tile8=red [t=2.84s]
+[console.log] ORIMI_PROBE canvas_chain_after_backbuffercopy YES tile9=green [t=2.85s]
+[console.log] ORIMI_PROBE screen_texture_canvas PASS tile10=blue (holds sRGB-encoded values) [t=2.85s]
+[console.log] ORIMI_PROBE decal_node FAIL luminance at decal 0.91 vs ground 0.91 [t=2.85s]
+[console.log] ORIMI_PROBE blob_shadow_quad PASS luminance at blob 0.42 vs ground 0.91 [t=2.85s]
+[console.log] ORIMI_PROBE gpu_particles_3d PASS 301 orange pixels near emitter [t=2.85s]
+[console.log] ORIMI_PROBE cpu_particles_3d PASS 310 blue pixels near emitter [t=2.85s]
+[console.log] ORIMI_PROBE inverted_hull_outline PASS 176 outline-ink pixels around torus [t=2.85s]
+[console.log] ORIMI_PROBE gltf_vertex_colour_in_shader PASS lit #c93e30, unlit raw COLOR #d03b20, unlit constant 0.5 #808080 [t=2.85s]
+[console.log] ORIMI_PROBE gltf_outline_vertex_alpha_width PASS 113 outline-ink pixels around glTF mesh [t=2.85s]
+[console.log] ORIMI_PROBE gltf_vertex_colour_arrays PASS 63 colours, rgb min #21241f max #d73c69, alpha 0.25..1.00 [t=2.86s]
+[console.log] ORIMI_PROBES_DONE {"blob_shadow_quad":{"detail":"luminance at blob 0.42 vs ground 0.91","status":"PASS"},"canvas_chain_after_backbuffercopy":{"detail":"tile9=green","status":"YES"},"canvas_chain_without_backbuffercopy":{"detail":"tile8=red","status":"NO"},"canvas_pass_draws":{"detail":"tile7=cyan","status":"PASS"},"canvas_pass_reads_3d_post_output":{"detail":"tile6=green","status":"YES"},"chain_3d_second_pass_sees_first":{"detail":"tile5=red","status":"NO"},"cpu_particles_3d":{"detail":"310 blue pixels near emitter","status":"PASS"},"decal_node":{"detail":"luminance at decal 0.91 vs ground 0.91","status":"FAIL"},"depth_reconstructed_normal":{"detail":"tile4=green","status":"PASS"},"depth_texture_3d":{"detail":"tile2=green (linearised centre depth vs analytic)","status":"PASS"},"fullscreen_quad_3d":{"detail":"tile0=magenta","status":"PASS"},"gltf_outline_vertex_alpha_width":{"detail":"113 outline-ink pixels around glTF mesh","status":"PASS"},"gltf_vertex_colour_arrays":{"detail":"63 colours, rgb min #21241f max #d73c69, alpha 0.25..1.00","status":"PASS"},"gltf_vertex_colour_in_shader":{"detail":"lit #c93e30, unlit raw COLOR #d03b20, unlit constant 0.5 #808080","status":"PASS"},"gpu_particles_3d":{"detail":"301 orange pixels near emitter","status":"PASS"},"inverted_hull_outline":{"detail":"176 outline-ink pixels around torus","status":"PASS"},"normal_roughness_texture":{"detail":"tile3=yellow (gated off under Compatibility)","status":"SKIP"},"pixel_readback":{"detail":"1280x720","status":"PASS"},"renderer":{"detail":"gl_compatibility / opengl3 / WebKit WebGL","status":"INFO"},"screen_texture_3d":{"detail":"tile1=blue (holds sRGB-encoded values)","status":"PASS"},"screen_texture_canvas":{"detail":"tile10=blue (holds sRGB-encoded values)","status":"PASS"},"tree_paused_one_node_processing":{"detail":"while paused: pausable node +0 frames, PROCESS_MODE_ALWAYS node +58 frames","status":"PASS"}}
+[console.log] ORIMI_FPS fps=141 process_ms=23.20 [t=3.62s]
+[console.log] ORIMI_PROBE pointer_pressure INFO 1 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0 [t=3.82s]
+# pointer lock after click: true
+[console.log] ORIMI_PROBE audio_after_first_click PASS playing=true playback_position=0.00s (web default_playback_type=1) [t=4.31s]
+[console.log] ORIMI_PROBE mouse_capture_pointer_lock PASS Input.mouse_mode captured=true, document.pointerLockElement set=1 [t=4.32s]
+[console.log] ORIMI_CLICK_PROBES_DONE {"audio_after_first_click":{"detail":"playing=true playback_position=0.00s (web default_playback_type=1)","status":"PASS"},"blob_shadow_quad":{"detail":"luminance at blob 0.42 vs ground 0.91","status":"PASS"},"canvas_chain_after_backbuffercopy":{"detail":"tile9=green","status":"YES"},"canvas_chain_without_backbuffercopy":{"detail":"tile8=red","status":"NO"},"canvas_pass_draws":{"detail":"tile7=cyan","status":"PASS"},"canvas_pass_reads_3d_post_output":{"detail":"tile6=green","status":"YES"},"chain_3d_second_pass_sees_first":{"detail":"tile5=red","status":"NO"},"cpu_particles_3d":{"detail":"310 blue pixels near emitter","status":"PASS"},"decal_node":{"detail":"luminance at decal 0.91 vs ground 0.91","status":"FAIL"},"depth_reconstructed_normal":{"detail":"tile4=green","status":"PASS"},"depth_texture_3d":{"detail":"tile2=green (linearised centre depth vs analytic)","status":"PASS"},"fullscreen_quad_3d":{"detail":"tile0=magenta","status":"PASS"},"gltf_outline_vertex_alpha_width":{"detail":"113 outline-ink pixels around glTF mesh","status":"PASS"},"gltf_vertex_colour_arrays":{"detail":"63 colours, rgb min #21241f max #d73c69, alpha 0.25..1.00","status":"PASS"},"gltf_vertex_colour_in_shader":{"detail":"lit #c93e30, unlit raw COLOR #d03b20, unlit constant 0.5 #808080","status":"PASS"},"gpu_particles_3d":{"detail":"301 orange pixels near emitter","status":"PASS"},"inverted_hull_outline":{"detail":"176 outline-ink pixels around torus","status":"PASS"},"mouse_capture_pointer_lock":{"detail":"Input.mouse_mode captured=true, document.pointerLockElement set=1","status":"PASS"},"normal_roughness_texture":{"detail":"tile3=yellow (gated off under Compatibility)","status":"SKIP"},"pixel_readback":{"detail":"1280x720","status":"PASS"},"pointer_pressure":{"detail":"1 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0","status":"INFO"},"renderer":{"detail":"gl_compatibility / opengl3 / WebKit WebGL","status":"INFO"},"screen_texture_3d":{"detail":"tile1=blue (holds sRGB-encoded values)","status":"PASS"},"screen_texture_canvas":{"detail":"tile10=blue (holds sRGB-encoded values)","status":"PASS"},"tree_paused_one_node_processing":{"detail":"while paused: pausable node +0 frames, PROCESS_MODE_ALWAYS node +58 frames","status":"PASS"}}
+[console.log] ORIMI_PROBE pointer_pressure INFO 1 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0 [t=4.63s]
+[console.log] ORIMI_FPS fps=143 process_ms=5.80 [t=4.63s]
+# AudioContext before click [{"state":"suspended","time":0}], 1.5 s after click [{"state":"running","time":1.4}]
+[console.log] ORIMI_PROBE pointer_pressure INFO 22 motion events, pressure 0.00..0.90, tilt in 0, pen_inverted in 0 [t=5.50s]
+# sent a pen stroke (CDP pointerType=pen, force 0.3..0.9, tilt 20/-10)
+[console.log] ORIMI_PROBE pointer_pressure INFO 22 motion events, pressure 0.00..0.90, tilt in 0, pen_inverted in 0 [t=5.63s]
+[console.log] ORIMI_FPS fps=144 process_ms=9.20 [t=5.63s]
+[console.log] ORIMI_FPS fps=144 process_ms=2.70 [t=6.64s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.00 [t=7.65s]
+[console.log] ORIMI_FPS fps=141 process_ms=23.40 [t=8.65s]
+# summary {
+  "headless": true,
+  "query": "",
+  "url": "http://127.0.0.1:63801/index.html",
+  "chrome": "Chrome/157.0.8103.51",
+  "first_frame_ms": 11175,
+  "first_frame": "ORIMI_FIRST_FRAME t=7.69s scene=res://scenes/phase0/phase0.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web",
+  "reload_first_frame_ms": 4006,
+  "webgl": {
+    "webgl2": true,
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "software_gl": false,
+  "audio_before_click": [
+    {
+      "state": "suspended",
+      "time": 0
+    }
+  ],
+  "pointer_lock_after_click": true,
+  "audio_after_click": [
+    {
+      "state": "running",
+      "time": 1.4
+    }
+  ],
+  "raf_fps": 144,
+  "screenshot": "<project>\\docs\\phase0\\web_compatibility.png",
+  "game_fps": [
+    34,
+    144,
+    141,
+    143,
+    144,
+    144,
+    144,
+    141
+  ],
+  "probes": [
+    "ORIMI_PROBE renderer INFO gl_compatibility / opengl3 / WebKit WebGL [t=7.69s]",
+    "ORIMI_PROBE renderer INFO gl_compatibility / opengl3 / WebKit WebGL [t=0.74s]",
+    "ORIMI_PROBE tree_paused_one_node_processing PASS while paused: pausable node +0 frames, PROCESS_MODE_ALWAYS node +58 frames [t=2.03s]",
+    "ORIMI_PROBE pixel_readback PASS 1280x720 [t=2.84s]",
+    "ORIMI_PROBE fullscreen_quad_3d PASS tile0=magenta [t=2.84s]",
+    "ORIMI_PROBE screen_texture_3d PASS tile1=blue (holds sRGB-encoded values) [t=2.84s]",
+    "ORIMI_PROBE depth_texture_3d PASS tile2=green (linearised centre depth vs analytic) [t=2.84s]",
+    "ORIMI_PROBE normal_roughness_texture SKIP tile3=yellow (gated off under Compatibility) [t=2.84s]",
+    "ORIMI_PROBE depth_reconstructed_normal PASS tile4=green [t=2.84s]",
+    "ORIMI_PROBE chain_3d_second_pass_sees_first NO tile5=red [t=2.84s]",
+    "ORIMI_PROBE canvas_pass_reads_3d_post_output YES tile6=green [t=2.84s]",
+    "ORIMI_PROBE canvas_pass_draws PASS tile7=cyan [t=2.84s]",
+    "ORIMI_PROBE canvas_chain_without_backbuffercopy NO tile8=red [t=2.84s]",
+    "ORIMI_PROBE canvas_chain_after_backbuffercopy YES tile9=green [t=2.85s]",
+    "ORIMI_PROBE screen_texture_canvas PASS tile10=blue (holds sRGB-encoded values) [t=2.85s]",
+    "ORIMI_PROBE decal_node FAIL luminance at decal 0.91 vs ground 0.91 [t=2.85s]",
+    "ORIMI_PROBE blob_shadow_quad PASS luminance at blob 0.42 vs ground 0.91 [t=2.85s]",
+    "ORIMI_PROBE gpu_particles_3d PASS 301 orange pixels near emitter [t=2.85s]",
+    "ORIMI_PROBE cpu_particles_3d PASS 310 blue pixels near emitter [t=2.85s]",
+    "ORIMI_PROBE inverted_hull_outline PASS 176 outline-ink pixels around torus [t=2.85s]",
+    "ORIMI_PROBE gltf_vertex_colour_in_shader PASS lit #c93e30, unlit raw COLOR #d03b20, unlit constant 0.5 #808080 [t=2.85s]",
+    "ORIMI_PROBE gltf_outline_vertex_alpha_width PASS 113 outline-ink pixels around glTF mesh [t=2.85s]",
+    "ORIMI_PROBE gltf_vertex_colour_arrays PASS 63 colours, rgb min #21241f max #d73c69, alpha 0.25..1.00 [t=2.86s]",
+    "ORIMI_PROBE pointer_pressure INFO 1 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0 [t=3.82s]",
+    "ORIMI_PROBE audio_after_first_click PASS playing=true playback_position=0.00s (web default_playback_type=1) [t=4.31s]",
+    "ORIMI_PROBE mouse_capture_pointer_lock PASS Input.mouse_mode captured=true, document.pointerLockElement set=1 [t=4.32s]",
+    "ORIMI_PROBE pointer_pressure INFO 1 motion events, pressure 0.00..0.00, tilt in 0, pen_inverted in 0 [t=4.63s]",
+    "ORIMI_PROBE pointer_pressure INFO 22 motion events, pressure 0.00..0.90, tilt in 0, pen_inverted in 0 [t=5.50s]",
+    "ORIMI_PROBE pointer_pressure INFO 22 motion events, pressure 0.00..0.90, tilt in 0, pen_inverted in 0 [t=5.63s]"
+  ],
+  "problems": [],
+  "passed": true
+}

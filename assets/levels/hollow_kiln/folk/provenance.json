@@ -1,0 +1,22 @@
+{
+ "outputs": [
+  {
+   "path": "assets/levels/hollow_kiln/folk/wenna.glb",
+   "generator": "tools/blender/make_folk.py",
+   "sha256": "41cf1749a49252d6458e29fcfcc553066ab9583068da1654e76c15b2ba47c9a1",
+   "command": "tools/assets/gen_folk.sh tools/levels/hollow_kiln/folk.json"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/folk/wenna.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "401d68c889a2c25bcd2a6a11edaa6a8a32b43b45f93bdcaecbf324ea3b663677",
+   "command": "tools/assets/gen_folk.sh tools/levels/hollow_kiln/folk.json"
+  },
+  {
+   "path": "assets/levels/hollow_kiln/folk/wenna_faded.png",
+   "generator": "tools/textures/painted/paint_folk.py",
+   "sha256": "240c2b61b2d0de25d956f9268bfc45a9d8e1e4d4d1b6a1f28591a3f00cf773f0",
+   "command": "tools/assets/gen_folk.sh tools/levels/hollow_kiln/folk.json"
+  }
+ ]
+}

@@ -1,0 +1,223 @@
+[console.log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[console.log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+[console.log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+[console.log] ORIMI_BOOT t=5.54s options={"once":"1","peak_pause":"1","scene":"res://scenes/dev/vfx_demo.tscn"}
+[console.log] ORIMI_FIRST_FRAME t=15.75s scene=res://scenes/dev/vfx_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+[console.log] ORIMI_FPS fps=35 process_ms=4.70 [t=16.49s]
+[console.log] VFX_PEAK n=1 id=sky_cursed t=1.00
+[console.log] VFX_PEAK_HELD n=1 id=sky_cursed
+# shot 01_sky_cursed.png
+[console.log] ORIMI_FPS fps=144 process_ms=4.70 [t=17.49s]
+[console.log] VFX_PAUSE_CHECK n=1 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=2.90 [t=18.50s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.30 [t=19.51s]
+[console.log] VFX_PEAK n=2 id=sky_restored t=1.00
+[console.log] VFX_PEAK_HELD n=2 id=sky_restored
+# shot 02_sky_restored.png
+[console.log] ORIMI_FPS fps=144 process_ms=4.00 [t=20.49s]
+[console.log] VFX_PAUSE_CHECK n=2 frozen=true
+[console.log] ORIMI_FPS fps=140 process_ms=28.80 [t=21.50s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.70 [t=22.51s]
+[console.log] VFX_PEAK n=3 id=foliage_curse t=0.67
+[console.log] VFX_PEAK_HELD n=3 id=foliage_curse
+# shot 03_foliage_curse.png
+[console.log] ORIMI_FPS fps=144 process_ms=3.80 [t=23.51s]
+[console.log] VFX_PAUSE_CHECK n=3 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=3.60 [t=24.52s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.10 [t=25.53s]
+[console.log] VFX_PEAK n=4 id=river_mist t=0.83
+[console.log] VFX_PEAK_HELD n=4 id=river_mist
+# shot 04_river_mist.png
+[console.log] ORIMI_FPS fps=144 process_ms=4.90 [t=26.54s]
+[console.log] VFX_PAUSE_CHECK n=4 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=2.70 [t=27.54s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.20 [t=28.55s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.50 [t=29.56s]
+[console.log] ORIMI_FPS fps=144 process_ms=5.00 [t=30.56s]
+[console.log] VFX_PEAK n=5 id=wake_flowers t=3.00
+[console.log] VFX_PEAK_HELD n=5 id=wake_flowers
+# shot 05_wake_flowers.png
+[console.log] ORIMI_FPS fps=144 process_ms=5.50 [t=31.57s]
+[console.log] VFX_PAUSE_CHECK n=5 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=3.90 [t=32.58s]
+[console.log] QA:{"data":{"alive":0,"at":[8.0,0.3,6.0],"kind":"smudgeling"},"tag":"enemy_died"}
+[console.log] VFX_PEAK n=6 id=ink_splash t=0.25
+[console.log] VFX_PEAK_HELD n=6 id=ink_splash
+# shot 06_ink_splash.png
+[console.log] ORIMI_FPS fps=143 process_ms=14.50 [t=33.59s]
+[console.log] VFX_PAUSE_CHECK n=6 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=5.50 [t=34.60s]
+[console.log] VFX_PEAK n=7 id=hit_spark t=0.08
+[console.log] VFX_PEAK_HELD n=7 id=hit_spark
+[console.log] ORIMI_FPS fps=144 process_ms=5.00 [t=35.65s]
+# shot 07_hit_spark.png
+[console.log] VFX_PAUSE_CHECK n=7 frozen=true
+[console.log] ORIMI_FPS fps=120 process_ms=178.70 [t=36.65s]
+[console.log] QA:{"data":{"glyph":"slash","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+[console.log] ORIMI_FPS fps=144 process_ms=3.30 [t=37.91s]
+[console.log] VFX_PEAK n=8 id=slash_ribbon t=0.08
+[console.log] VFX_PEAK_HELD n=8 id=slash_ribbon
+# shot 08_slash_ribbon.png
+[console.log] ORIMI_FPS fps=100 process_ms=313.60 [t=38.90s]
+[console.log] VFX_PAUSE_CHECK n=8 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=3.50 [t=39.91s]
+[console.log] VFX_PEAK n=9 id=tail_swipe t=0.08
+[console.log] VFX_PEAK_HELD n=9 id=tail_swipe
+# shot 09_tail_swipe.png
+[console.log] ORIMI_FPS fps=144 process_ms=4.30 [t=40.92s]
+[console.log] VFX_PAUSE_CHECK n=9 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=4.80 [t=41.92s]
+[console.log] VFX_PEAK n=10 id=attach_trail t=0.25
+[console.log] VFX_PEAK_HELD n=10 id=attach_trail
+# shot 10_attach_trail.png
+[console.log] ORIMI_FPS fps=144 process_ms=3.00 [t=42.93s]
+[console.log] VFX_PAUSE_CHECK n=10 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=3.40 [t=43.94s]
+[console.log] QA:{"data":{"glyph":"gust","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+[console.log] ORIMI_FPS fps=144 process_ms=3.20 [t=44.95s]
+[console.log] VFX_PEAK n=11 id=gust t=0.33
+[console.log] VFX_PEAK_HELD n=11 id=gust
+# shot 11_gust.png
+[console.log] ORIMI_FPS fps=144 process_ms=7.30 [t=45.95s]
+[console.log] VFX_PAUSE_CHECK n=11 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=4.80 [t=46.96s]
+[console.log] QA:{"data":{"glyph":"bloom","ink":100.0,"score":0.0,"targets":[]},"tag":"glyph_cast"}
+[console.log] VFX_PEAK n=12 id=bloom_glyph t=0.50
+[console.log] VFX_PEAK_HELD n=12 id=bloom_glyph
+# shot 12_bloom_glyph.png
+[console.log] ORIMI_FPS fps=108 process_ms=259.50 [t=48.08s]
+[console.log] VFX_PAUSE_CHECK n=12 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=4.40 [t=49.08s]
+[console.log] ORIMI_FPS fps=144 process_ms=4.10 [t=50.09s]
+[console.log] VFX_PEAK n=13 id=petal_burst t=0.50
+[console.log] VFX_PEAK_HELD n=13 id=petal_burst
+# shot 13_petal_burst.png
+[console.log] ORIMI_FPS fps=144 process_ms=6.00 [t=51.10s]
+[console.log] VFX_PAUSE_CHECK n=13 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=4.70 [t=52.10s]
+[console.log] QA:{"data":{"center":[-14.0,0.0,2.0],"radius":9.0,"zone":"zone_a"},"tag":"zone_restore_started"}
+[console.log] ORIMI_FPS fps=143 process_ms=16.30 [t=53.09s]
+[console.log] VFX_PEAK n=14 id=bloom_ring t=0.75
+[console.log] VFX_PEAK_HELD n=14 id=bloom_ring
+# shot 14_bloom_ring.png
+[console.log] ORIMI_FPS fps=144 process_ms=5.30 [t=54.10s]
+[console.log] VFX_PAUSE_CHECK n=14 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=4.40 [t=55.10s]
+[console.log] QA:{"data":{"at":[16.0,1.5,0.0]},"tag":"soot_cleared"}
+[console.log] VFX_PEAK n=15 id=soot_clear t=0.75
+[console.log] VFX_PEAK_HELD n=15 id=soot_clear
+[console.log] ORIMI_FPS fps=144 process_ms=8.10 [t=56.11s]
+# shot 15_soot_clear.png
+[console.log] ORIMI_FPS fps=144 process_ms=4.00 [t=57.12s]
+[console.log] VFX_PAUSE_CHECK n=15 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=6.20 [t=58.13s]
+[console.log] QA:{"data":{"at":[8.0,1.0,6.0]},"tag":"thorns_cut"}
+[console.log] VFX_PEAK n=16 id=thorns_cut t=0.25
+[console.log] VFX_PEAK_HELD n=16 id=thorns_cut
+# shot 16_thorns_cut.png
+[console.log] ORIMI_FPS fps=144 process_ms=8.60 [t=59.13s]
+[console.log] VFX_PAUSE_CHECK n=16 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=3.80 [t=60.14s]
+[console.log] QA:{"data":{"at":[8.0,0.0,6.0]},"tag":"enemy_unveiled"}
+[console.log] VFX_PEAK n=17 id=veil_stripped t=0.50
+[console.log] VFX_PEAK_HELD n=17 id=veil_stripped
+[console.log] ORIMI_FPS fps=144 process_ms=7.10 [t=61.15s]
+# shot 17_veil_stripped.png
+[console.log] ORIMI_FPS fps=144 process_ms=4.10 [t=62.15s]
+[console.log] VFX_PAUSE_CHECK n=17 frozen=true
+[console.log] ORIMI_FPS fps=144 process_ms=4.50 [t=63.16s]
+[console.log] QA:{"data":{"autoplay":false,"checkpoint":[0.0,0.0,50.0],"deaths":0,"enemies_alive":0,"fps":144.0,"god":false,"hp":0,"ink":100.0,"ink_max":100.0,"kills":1,"max_hp":0,"player_pos":[],"restored_zones":[],"state":"title","t":63.22},"tag":"valley_restored"}
+[console.log] ORIMI_FPS fps=144 process_ms=4.70 [t=64.17s]
+[console.log] ORIMI_FPS fps=144 process_ms=3.70 [t=65.17s]
+[console.log] VFX_PEAK n=18 id=valley_petals t=3.00
+[console.log] ORIMI_FPS fps=144 process_ms=3.70 [t=66.18s]
+[console.log] VFX_PEAK_HELD n=18 id=valley_petals
+# shot 18_valley_petals.png
+[console.log] ORIMI_FPS fps=144 process_ms=4.10 [t=67.19s]
+[console.log] VFX_PAUSE_CHECK n=18 frozen=true
+[console.log] VFX_DEMO_DONE
+# summary {
+  "mode": "series",
+  "query": "scene=res%3A%2F%2Fscenes%2Fdev%2Fvfx_demo.tscn&peak_pause=1&once=1",
+  "chrome": "Chrome/157.0.8103.51",
+  "first_frame_ms": 21021,
+  "webgl": {
+    "webgl2": true,
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "game_fps": [
+    35,
+    144,
+    144,
+    144,
+    144,
+    140,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    143,
+    144,
+    144,
+    120,
+    144,
+    100,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    108,
+    144,
+    144,
+    144,
+    144,
+    143,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144,
+    144
+  ],
+  "shots": [
+    "01_sky_cursed.png",
+    "02_sky_restored.png",
+    "03_foliage_curse.png",
+    "04_river_mist.png",
+    "05_wake_flowers.png",
+    "06_ink_splash.png",
+    "07_hit_spark.png",
+    "08_slash_ribbon.png",
+    "09_tail_swipe.png",
+    "10_attach_trail.png",
+    "11_gust.png",
+    "12_bloom_glyph.png",
+    "13_petal_burst.png",
+    "14_bloom_ring.png",
+    "15_soot_clear.png",
+    "16_thorns_cut.png",
+    "17_veil_stripped.png",
+    "18_valley_petals.png"
+  ],
+  "problems": [],
+  "passed": true
+}

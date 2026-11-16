@@ -1,0 +1,287 @@
+{
+ "level": "sedge_plain",
+ "markup": "[word] = accent colour",
+ "speakers": {
+  "pell": {
+   "name": "Pell",
+   "who": "the ferry child (recurring, shared across levels)"
+  },
+  "tamsin": {
+   "name": "Tamsin",
+   "who": "the mapmaker, camped by the river"
+  },
+  "verse": {
+   "name": "Verse-stone",
+   "who": "the Ink-maker's words, spoken when a verse-stone is bloomed"
+  },
+  "card": {
+   "name": "",
+   "who": "a pickup card: no speaker, shown on the paper panel"
+  }
+ },
+ "scenes": [
+  {
+   "id": "pell_arrival",
+   "beat": 0,
+   "speaker": "pell",
+   "trigger": "talk to Pell on the jetty at the landing, beside the raft (first time)",
+   "where": "M_Landing",
+   "once": true,
+   "lines": [
+    "Sedge Plain. Mind the holes. They bite.",
+    "I'll pole round through the trees and wait where the brook comes out of the [wood].",
+    "If you hear someone shouting at the wind, that's the mapmaker. She's harmless. Mostly."
+   ]
+  },
+  {
+   "id": "pell_arrival_again",
+   "beat": 0,
+   "speaker": "pell",
+   "trigger": "talk to Pell on the jetty again",
+   "where": "M_Landing",
+   "once": false,
+   "lines": [
+    "Go on. I'll be at the brook by the [wood]. Ears ready."
+   ]
+  },
+  {
+   "id": "tamsin_meet",
+   "beat": 1,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin at her camp (first time)",
+   "where": "M_Tamsin_Camp",
+   "once": true,
+   "lines": [
+    "Oh! A fox. A paper fox. Are you lost as well?",
+    "Don't answer that. Nobody out here answers.",
+    "I'm Tamsin. I map this plain. Mapped it. Was mapping it.",
+    "Then the black came up in the low places, and the wind took my map clean off the frame.",
+    "Three leaves, and every one blew into a hollow. Of course it did.",
+    "The first went north, past the [Leaning Stones], toward the gully. The [Seam], I call it.",
+    "Bring it back and I'll draw you. From the good side."
+   ]
+  },
+  {
+   "id": "tamsin_rim_early",
+   "beat": 3,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin on the rim before the first leaf is found",
+   "where": "M_Tamsin_Rim",
+   "once": false,
+   "lines": [
+    "The leaf went down by the Mere's rim, just east of here. Bring it and I'll show you where we are."
+   ]
+  },
+  {
+   "id": "tamsin_meet_again",
+   "beat": 1,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin at her camp again, before leaf 1",
+   "where": "M_Tamsin_Camp",
+   "once": false,
+   "lines": [
+    "North, past the stones. The leaf is the one thing out there that isn't sedge."
+   ]
+  },
+  {
+   "id": "verse_1",
+   "beat": 2,
+   "speaker": "verse",
+   "trigger": "Bloom on the verse-stone by the first bridge; the Tie prompt follows",
+   "where": "M_Verse_1",
+   "once": true,
+   "lines": [
+    "I carried soot across this plain each spring.",
+    "Where the ground split, I strung a rope from post to post.",
+    "One straight line and two good posts make a bridge.",
+    "I made a thousand. I never made one home."
+   ]
+  },
+  {
+   "id": "leaf_1",
+   "beat": 3,
+   "speaker": "card",
+   "trigger": "pick up the first leaf on the Mere's south rim",
+   "where": "M_Leaf_1",
+   "once": true,
+   "lines": [
+    "A leaf of Tamsin's map: most of the plain, and a hole where the middle should be."
+   ]
+  },
+  {
+   "id": "tamsin_rim",
+   "beat": 3,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin at the rim (she crosses the first bridge once it is tied and waits at M_Tamsin_Rim)",
+   "where": "M_Tamsin_Rim",
+   "once": true,
+   "lines": [
+    "You tied the bridge! I walked over it with my eyes shut. Both of them.",
+    "That's my first leaf. Look: there's the [Mere], and the Knoll in the middle of it.",
+    "There used to be a road out to the Knoll. My map knows where. My map is in three pieces.",
+    "The second leaf is east, out on the island in [Kettle Hollow]. The causeway's under soot.",
+    "Soot blows away, I'm told. Do you blow?"
+   ]
+  },
+  {
+   "id": "tamsin_rim_again",
+   "beat": 3,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin at the rim again, with one leaf",
+   "where": "M_Tamsin_Rim",
+   "once": false,
+   "lines": [
+    "East, to Kettle Hollow. Blow the soot off the causeway and walk out to the island."
+   ]
+  },
+  {
+   "id": "spur_dead_end",
+   "beat": 3,
+   "speaker": "card",
+   "trigger": "reach the end of a false spur in the Mere (either spur), once",
+   "where": "causeway_spur_south / causeway_spur_east (end point)",
+   "once": true,
+   "lines": [
+    "The old road stops here, in the black. This isn't the way."
+   ]
+  },
+  {
+   "id": "leaf_2",
+   "beat": 4,
+   "speaker": "card",
+   "trigger": "pick up the second leaf on Kettle Hollow's island",
+   "where": "M_Leaf_2",
+   "once": true,
+   "lines": [
+    "The second leaf: a road leaves the rim for the Knoll, then runs off the edge of the page."
+   ]
+  },
+  {
+   "id": "tamsin_two_leaves",
+   "beat": 4,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin at the rim with two leaves",
+   "where": "M_Tamsin_Rim",
+   "once": false,
+   "lines": [
+    "Kettle Hollow! I named it. It whistles when the wind's in the south.",
+    "The last leaf went west, back over the gully, into [Ladle Hollow]. Yes, I named that one too."
+   ]
+  },
+  {
+   "id": "leaf_3",
+   "beat": 5,
+   "speaker": "card",
+   "trigger": "pick up the third leaf on Ladle Hollow's island",
+   "where": "M_Leaf_3",
+   "once": true,
+   "lines": [
+    "The third leaf: two bends, a gap, and the Knoll."
+   ]
+  },
+  {
+   "id": "tamsin_map",
+   "beat": 6,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin at the rim with all three leaves; afterwards the soot at the Mere causeway can be blown away",
+   "where": "M_Tamsin_Rim",
+   "once": true,
+   "lines": [
+    "All three! Hold still, I need your nose to pin the corner.",
+    "There. The old road goes in by the [leaning post], bends twice, and jumps a gap before the Knoll.",
+    "The soot at the start is thick. Blow hard. Then [tie] the gap the way you tied the gully.",
+    "I'd come along, but someone has to hold the map. Also I'm scared of the black. Mostly the second thing."
+   ]
+  },
+  {
+   "id": "tamsin_map_again",
+   "beat": 6,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin at the rim again, before the Knoll is restored",
+   "where": "M_Tamsin_Rim",
+   "once": false,
+   "lines": [
+    "In by the leaning post, two bends, tie the gap. I'll be right here. Holding the map. Bravely."
+   ]
+  },
+  {
+   "id": "verse_2",
+   "beat": 7,
+   "speaker": "verse",
+   "trigger": "Bloom on the verse-stone on the Knoll (it stands by the sapling; it can be read before or after the fight)",
+   "where": "M_Verse_2",
+   "once": true,
+   "lines": [
+    "I boiled this sedge for green when I was young.",
+    "The green ran out of every pot I filled.",
+    "So I began to grind a black to keep it in.",
+    "The plain kept its green without me. I should have asked it how."
+   ]
+  },
+  {
+   "id": "tamsin_after",
+   "beat": 8,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin at the rim after the plain is restored",
+   "where": "M_Tamsin_Rim",
+   "once": true,
+   "lines": [
+    "Look at it. Every hollow green right to the bottom.",
+    "I finished the map. Here's the river, all the way up past the [wood].",
+    "And here's the mountain, and here is... nothing. I have never once drawn nothing.",
+    "Somebody up there makes ink. Lots of it. I could smell it on the wind before the black came.",
+    "Take the path north-west, down to the brook. Your ferry child is waiting there. Loudly."
+   ]
+  },
+  {
+   "id": "tamsin_after_again",
+   "beat": 8,
+   "speaker": "tamsin",
+   "trigger": "talk to Tamsin again after the restoration",
+   "where": "M_Tamsin_Rim",
+   "once": false,
+   "lines": [
+    "North-west, through the trees. Come back and I'll draw you. I did say the good side. I meant it."
+   ]
+  },
+  {
+   "id": "pell_exit",
+   "beat": 9,
+   "speaker": "pell",
+   "trigger": "reach the raft on the brook pool at the edge of the wood (M_Exit); the level ends after it",
+   "where": "M_Exit",
+   "once": true,
+   "lines": [
+    "There you are. The whole plain went green behind you. I saw it from the water.",
+    "In you get. It's dark under those trees, so hold on to your ears."
+   ]
+  }
+ ],
+ "prompts": [
+  {
+   "id": "prompt_kept_out",
+   "trigger": "first time the black ground pushes Orimi back",
+   "text": "The black ground won't let you in. Look for the raised road."
+  },
+  {
+   "id": "prompt_soot_causeway",
+   "trigger": "standing at a soot bank on a causeway",
+   "text": "Soot buries the road. A [Gust] will clear it."
+  },
+  {
+   "id": "prompt_mere_locked",
+   "trigger": "Gust on the Mere's soot before Tamsin has read the map",
+   "text": "The soot here won't shift. Tamsin's map might show the way."
+  },
+  {
+   "id": "prompt_leaves",
+   "trigger": "HUD counter while leaves are out",
+   "text": "Map leaves: {n} of 3"
+  }
+ ],
+ "bead": {
+  "id": "bead_sedge_green",
+  "trigger": "the restoration ends",
+  "text": "The plain remembers its colour: [sedge green]."
+ }
+}

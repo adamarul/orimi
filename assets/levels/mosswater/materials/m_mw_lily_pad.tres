@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://b23w8p17re7fp" path="res://assets/levels/mosswater/textures/mw_lily_pad.png" id="1"]
+
+[resource]
+resource_name = "M_mw_lily_pad"
+albedo_texture = ExtResource("1")
+texture_filter = 3

@@ -1,0 +1,26 @@
+{
+  "generator": "tools/textures/render/gen_render_textures.py",
+  "command": "tools/textures/render/gen.sh",
+  "outputs": [
+    {
+      "path": "assets/textures/render/dry_streak.png",
+      "sha256": "2f619019e71ce9d59d4e9fc6383e79e7e46e2bc6c106217d648d824eab3090e9"
+    },
+    {
+      "path": "assets/textures/render/ink_noise.png",
+      "sha256": "90bc50e0cb2df2e10422291c04150734dffda5fc0db9c05da2a38f7c8951c371"
+    },
+    {
+      "path": "assets/textures/render/paper_fibres.png",
+      "sha256": "db1a16d54a84ec804543d229faf29ae974141e92f4aef51f006f748ea1a94fef"
+    },
+    {
+      "path": "assets/textures/render/paper_stain.png",
+      "sha256": "016fda8941ae0b0a20185b3aa0936ffde94a29122a5eee5573cb26fd066c61c2"
+    },
+    {
+      "path": "assets/textures/render/paper_tooth.png",
+      "sha256": "203dc20f3507a553fe00935897a46b57cebd5602a7690bb7aeb675ee136d045a"
+    }
+  ]
+}

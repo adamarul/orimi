@@ -1,0 +1,58 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b78oppbhfdjjq"
+path="res://.godot/imported/pillar_ring.glb-f36ca2b9d55b9275f6dba3d7f1b2aaeb.scn"
+
+[deps]
+
+source_file="res://assets/levels/hollow_kiln/models/pillar_ring.glb"
+dest_files=["res://.godot/imported/pillar_ring.glb-f36ca2b9d55b9275f6dba3d7f1b2aaeb.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=false
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=12
+animation/trimming=false
+animation/remove_immutable_tracks=false
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"M_pillar_ring": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/levels/hollow_kiln/materials/m_pillar_ring.tres",
+"use_external/path": "res://assets/levels/hollow_kiln/materials/m_pillar_ring.tres"
+},
+"M_pillar_ring_sacred": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/levels/hollow_kiln/materials/m_pillar_ring_sacred.tres",
+"use_external/path": "res://assets/levels/hollow_kiln/materials/m_pillar_ring_sacred.tres"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=0
+gltf/texture_map_mode=1

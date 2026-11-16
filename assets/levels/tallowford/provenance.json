@@ -1,0 +1,232 @@
+{
+ "outputs": [
+  {
+   "path": "assets/levels/tallowford/models/cloth_line.glb",
+   "sha256": "ce59b15818b4dd38fc6f9c2e3e98511acccd75aef919da31cf85d31df06fa8b9",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh cloth_line"
+  },
+  {
+   "path": "assets/levels/tallowford/models/cottage.glb",
+   "sha256": "fd24a00614e447a8972ced7072b4e154da7072ccdb656a5e52d9d5980bc3a4fd",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh cottage"
+  },
+  {
+   "path": "assets/levels/tallowford/models/drying_rack.glb",
+   "sha256": "2b22946b29d87a2655b335f3136b5ed0763a577302b1c04ae334d09446219aac",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh drying_rack"
+  },
+  {
+   "path": "assets/levels/tallowford/models/dye_vats.glb",
+   "sha256": "d09db71ff451bdb4167d1d2aa96ece97d5402e3444c7f2b8ab258d49e220adf8",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh dye_vats"
+  },
+  {
+   "path": "assets/levels/tallowford/models/fence.glb",
+   "sha256": "81b074119b3ef674c2739d558080d5707ac02c94a87b7b82dfcc47d7bdf0223f",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh fence"
+  },
+  {
+   "path": "assets/levels/tallowford/models/ford_lamp.glb",
+   "sha256": "67a4443baf5d1e6f88b77fef004ea5cde78db7973e4f872f1ffa26e8789d3dbe",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh ford_lamp"
+  },
+  {
+   "path": "assets/levels/tallowford/models/house_brindle.glb",
+   "sha256": "c5da49c8bd7fbdbb09a7ffdac9d027cf488462e22ed991ac76dacc092d8da82a",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh house_brindle"
+  },
+  {
+   "path": "assets/levels/tallowford/models/house_children.glb",
+   "sha256": "3189c6e54819a1f5981ed266e863faed8e7b3605260df1a7fe05f784410e1150",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh house_children"
+  },
+  {
+   "path": "assets/levels/tallowford/models/house_ferry.glb",
+   "sha256": "a51184015f7fa42881cc86bcde860435a7c7ff0732206618e11d562da5b955b5",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh house_ferry"
+  },
+  {
+   "path": "assets/levels/tallowford/models/house_marrow.glb",
+   "sha256": "85bee4d34b91129a346a05195818f041dead97b483aaa1af0be44cfdd352b494",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh house_marrow"
+  },
+  {
+   "path": "assets/levels/tallowford/models/house_trim.glb",
+   "sha256": "3347aaab600610739e670afdc3bc47b4b7db646e5af129a7cd3d52cf5d923210",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh house_trim"
+  },
+  {
+   "path": "assets/levels/tallowford/models/jetty.glb",
+   "sha256": "a84b1ee3d3148781370fbcaf6ca762d099f6b9c523175474268ded3045053066",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh jetty"
+  },
+  {
+   "path": "assets/levels/tallowford/models/lamp_post.glb",
+   "sha256": "3cf9b9ee194fc0683e41bdb8db2ee3b789cad435b59635f42f6dc1d64389d561",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh lamp_post"
+  },
+  {
+   "path": "assets/levels/tallowford/models/landing.glb",
+   "sha256": "3ee25410ac914c9087a308bcea019755fd10aecf54fe0e7b07acc602984ea2f4",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh landing"
+  },
+  {
+   "path": "assets/levels/tallowford/models/persimmon.glb",
+   "sha256": "dd6bed7560449880350598177c218f90c9535628b49421a49f2570c5694c9b5e",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh persimmon"
+  },
+  {
+   "path": "assets/levels/tallowford/models/shed.glb",
+   "sha256": "4c060169bd5eae3391a8ddb9871c18aa90c837073031ac4db632ff52a70074c6",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh shed"
+  },
+  {
+   "path": "assets/levels/tallowford/models/tallowford_river.glb",
+   "sha256": "0e6a2b66791c210a285f0d6eefe6147113f6b5887b0b357bbec86c22cf66f1d4",
+   "generator": "tools/levels/tallowford/make_terrain.py",
+   "command": "tools/levels/tallowford/gen.sh terrain"
+  },
+  {
+   "path": "assets/levels/tallowford/models/tallowford_terrain.glb",
+   "sha256": "abb8522ad4b2676fb64a5ae0ecfe874c160d517ba7b5d861157431c54d6e68a8",
+   "generator": "tools/levels/tallowford/make_terrain.py",
+   "command": "tools/levels/tallowford/gen.sh terrain"
+  },
+  {
+   "path": "assets/levels/tallowford/models/well.glb",
+   "sha256": "13243a9406bd62a41c67e409652423cf4f178ff84eb28e1c3d82296fff39f786",
+   "generator": "tools/levels/tallowford/make_model.py",
+   "command": "tools/levels/tallowford/gen.sh well"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/cloth_line.png",
+   "sha256": "45247ef0f2bc410386303fe3893987fdb27b40934c8f2412f84358dd8e054b87",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh cloth_line"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/cottage.png",
+   "sha256": "59dd1c1fbf8002f63d2da1c77674fc18e63e83dc33036bc6ec82a148140cfe32",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh cottage"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/drying_rack.png",
+   "sha256": "5167bc38e38d1445852ea9a4808175e6a4d82dba9f99d8211240b0a8d45b61c2",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh drying_rack"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/dye_vats.png",
+   "sha256": "d9fa807ca08f2d81516b2f5e12161056db2b296f61a67d1065a1d1e79c8ebbec",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh dye_vats"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/fence.png",
+   "sha256": "39bc977659777776648a5f18cdcb4a47b0b776016e08a1579c1c0e7c2b7b3488",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh fence"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/ford_lamp.png",
+   "sha256": "dd56d1d564b2b644d31c174f7f05da8101e3875521301d28a485e385d6027f71",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh ford_lamp"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/house_brindle.png",
+   "sha256": "5abcb81abe68a7279974aecae53d272b9ed3754f5e8e2c4943bbad4ee12348f2",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh house_brindle"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/house_children.png",
+   "sha256": "6e5a866275d7036b460ec07ea3a008bee58ac1039bcd88a47d54ce5e44004e5e",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh house_children"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/house_ferry.png",
+   "sha256": "a2f411977d6b3011326d609d4ae523d45b2cbc98ea130e4d6d93a5b4ffcab553",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh house_ferry"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/house_marrow.png",
+   "sha256": "1318cf58a8fa8ff1980276f702069036edd639f29b704c63d54a1c7c47836449",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh house_marrow"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/house_trim.png",
+   "sha256": "07f0ec112fdd86815f80912edbb1b9fe432d0736b93e7ce1557d334112082fe6",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh house_trim"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/jetty.png",
+   "sha256": "e3689bed76cbf19a52d8750f226ff280348b6bc7cfc8f19178f94d7fe8ab60c4",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh jetty"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/lamp_post.png",
+   "sha256": "4d31a985f4b2953f6b73bfd7b4a6f255a0dc0c1882c9466bcf77112099ce709c",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh lamp_post"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/landing.png",
+   "sha256": "96d4fd527f5175f2637ed17c4007c914c5aebfc3e63571ac052272c79c7ae78f",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh landing"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/persimmon.png",
+   "sha256": "0eaed277a4615fba8be529fe071797c5c17b03794cedb807690901efd40d5ee3",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh persimmon"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/shed.png",
+   "sha256": "261ce931f0c95a7bbb8f9c68273bb7fc401121a1149888fedfe2bf14854eb2e7",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh shed"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/tallowford_ground.png",
+   "sha256": "3a1c88f83ca7c3f49621a5b5800620ba390ea38adf3322b7e32a49c26742e06f",
+   "generator": "tools/levels/tallowford/paint_terrain.py",
+   "command": "tools/levels/tallowford/gen.sh terrain"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/tallowford_hills.png",
+   "sha256": "6b18551dc2f7c5b2a279d0427e9b451684d7a9f30d34f54f40f20739a28c3ab7",
+   "generator": "tools/levels/tallowford/paint_terrain.py",
+   "command": "tools/levels/tallowford/gen.sh terrain"
+  },
+  {
+   "path": "assets/levels/tallowford/textures/well.png",
+   "sha256": "37db1c6f1185c0f63f02427cb1658ac542eeb51f7e2afa877c05aa6cfabdec23",
+   "generator": "tools/levels/tallowford/paint_models.py",
+   "command": "tools/levels/tallowford/gen.sh well"
+  }
+ ]
+}

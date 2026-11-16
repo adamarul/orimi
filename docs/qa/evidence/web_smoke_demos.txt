@@ -1,0 +1,6 @@
+# Browser smoke of every scenes/dev/*_demo.tscn
+assets_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_assets_demo.md 3 criteria ok
+brush_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_brush_demo.md 3 criteria ok
+gameplay_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_gameplay_demo.md 3 criteria ok
+render_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_render_demo.md 3 criteria ok
+vfx_demo: QA_RESULT PASS docs/qa/evidence/web_smoke_vfx_demo.md 3 criteria ok

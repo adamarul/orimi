@@ -1,0 +1,16 @@
+{
+ "outputs": [
+  {
+   "path": "audio/levels/mosswater/mosswater_cursed.ogg",
+   "sha256": "a25c82d4cf7faf7d9267e5e2b59f419ed71b89bfbda17d2efb0900913270805e",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  },
+  {
+   "path": "audio/levels/mosswater/mosswater_restored.ogg",
+   "sha256": "c1feade88d13317d2d55cf922b8ff9d5245db10892a129536aecb539ecc3342c",
+   "generator": "tools/audio/level_music.py",
+   "command": "tools/assets/gen_audio.sh"
+  }
+ ]
+}

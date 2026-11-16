@@ -1,0 +1,648 @@
+[gd_scene load_steps=46 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/tallowford/tallowford.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/tallowford_terrain.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/tallowford_river.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/house_trim.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/house_marrow.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/house_brindle.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/house_children.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/house_ferry.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/cottage.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/lamp_post.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/shed.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/persimmon.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/well.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/dye_vats.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/cloth_line.tscn" id="15"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/drying_rack.tscn" id="16"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/jetty.tscn" id="17"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/landing.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://scenes/models/stepping_stone.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://scenes/models/shrine.tscn" id="20"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/models/fence.tscn" id="21"]
+[ext_resource type="PackedScene" path="res://scenes/models/reeds.tscn" id="22"]
+[ext_resource type="PackedScene" path="res://scenes/models/rocks.tscn" id="23"]
+[ext_resource type="Script" path="res://scripts/game/kit/person.gd" id="24"]
+[ext_resource type="PackedScene" path="res://scenes/models/folk/pell.tscn" id="25"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/old_trim.tscn" id="26"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/marrow.tscn" id="27"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/brindle.tscn" id="28"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/flax.tscn" id="29"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/pibbet.tscn" id="30"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/wherry.tscn" id="31"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/baker.tscn" id="32"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/netmender.tscn" id="33"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/folk/fisher.tscn" id="34"]
+[ext_resource type="Script" path="res://scripts/game/glyph_obstacle.gd" id="35"]
+[ext_resource type="Script" path="res://scripts/game/kit/sealed_fight.gd" id="36"]
+[ext_resource type="Script" path="res://scripts/game/kit/enemy_spawn.gd" id="37"]
+[ext_resource type="Script" path="res://scripts/game/kit/glyph_target.gd" id="38"]
+[ext_resource type="Script" path="res://scripts/game/kit/camera_zone.gd" id="39"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/kit/hood.tscn" id="40"]
+[ext_resource type="Script" path="res://scripts/game/kit/verse_stone.gd" id="41"]
+[ext_resource type="Script" path="res://scripts/game/kit/kindle_target.gd" id="42"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/kit/lamp_kindle.tscn" id="43"]
+[ext_resource type="PackedScene" path="res://scenes/levels/tallowford/kit/ford_lamp_kindle.tscn" id="44"]
+[ext_resource type="Script" path="res://scripts/game/kit/level_exit.gd" id="45"]
+
+[node name="Tallowford" type="Node3D"]
+script = ExtResource("1")
+level_id = &"tallowford"
+display_name = "Tallowford"
+chapter = "The Lamps of Tallowford"
+intro_text = "Tallowford lights its lamps at dusk. Tonight, not one window is lit."
+start_gloom = 0.0
+title_marker = "M_Square"
+
+[node name="Terrain" parent="." instance=ExtResource("2") groups=["level_ground"]]
+
+[node name="River" parent="." instance=ExtResource("3")]
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Dressing" type="Node3D" parent="."]
+
+[node name="HouseTrim" parent="Props" instance=ExtResource("4") groups=["level_ground"]]
+position = Vector3(14.0, 0.02, 10.0)
+rotation = Vector3(0, 2.40855, 0)
+
+[node name="HouseMarrow" parent="Props" instance=ExtResource("5") groups=["level_ground"]]
+position = Vector3(-25.0, 0.41, -8.0)
+rotation = Vector3(0, -2.39634, 0)
+
+[node name="HouseBrindle" parent="Props" instance=ExtResource("6") groups=["level_ground"]]
+position = Vector3(-14.5, 0.271, 19.5)
+rotation = Vector3(0, -0.93724, 0)
+
+[node name="HouseChildren" parent="Props" instance=ExtResource("7") groups=["level_ground"]]
+position = Vector3(-2.0, 0.049, -17.0)
+rotation = Vector3(0, -3.00895, 0)
+
+[node name="HouseFerry" parent="Props" instance=ExtResource("8") groups=["level_ground"]]
+position = Vector3(16.5, -0.006, -17.5)
+rotation = Vector3(0, -2.92692, 0)
+
+[node name="Cottage1" parent="Props" instance=ExtResource("9") groups=["level_ground"]]
+position = Vector3(-19.5, 0.329, -20.5)
+rotation = Vector3(0, -2.47139, 0)
+
+[node name="LampPost1" parent="Props" instance=ExtResource("10") groups=["level_ground"]]
+position = Vector3(-18.85, 0.329, -17.186)
+rotation = Vector3(0, -2.47139, 0)
+
+[node name="Cottage2" parent="Props" instance=ExtResource("9") groups=["level_ground"]]
+position = Vector3(2.5, 0.058, 20.0)
+rotation = Vector3(0, -0.66672, 0)
+
+[node name="LampPost2" parent="Props" instance=ExtResource("10") groups=["level_ground"]]
+position = Vector3(5.572, 0.058, 18.599)
+rotation = Vector3(0, -0.66672, 0)
+
+[node name="Cottage3" parent="Props" instance=ExtResource("9") groups=["level_ground"]]
+position = Vector3(23.0, 0.0, 14.0)
+rotation = Vector3(0, 2.11883, 0)
+
+[node name="LampPost3" parent="Props" instance=ExtResource("10") groups=["level_ground"]]
+position = Vector3(19.632, 0.0, 14.242)
+rotation = Vector3(0, 2.11883, 0)
+
+[node name="Cottage4" parent="Props" instance=ExtResource("9") groups=["level_ground"]]
+position = Vector3(-25.0, 0.408, 16.0)
+rotation = Vector3(0, -1.00356, 0)
+
+[node name="LampPost4" parent="Props" instance=ExtResource("10") groups=["level_ground"]]
+position = Vector3(-21.637, 0.408, 15.697)
+rotation = Vector3(0, -1.00356, 0)
+
+[node name="Shed1" parent="Props" instance=ExtResource("11") groups=["level_ground"]]
+position = Vector3(7.5, 0.012, -18.5)
+rotation = Vector3(0, 2.90772, 0)
+
+[node name="Shed2" parent="Props" instance=ExtResource("11") groups=["level_ground"]]
+position = Vector3(-12.5, 0.18, -15.0)
+rotation = Vector3(0, -2.67734, 0)
+
+[node name="Shed3" parent="Props" instance=ExtResource("11") groups=["level_ground"]]
+position = Vector3(-30.5, 0.564, 3.0)
+rotation = Vector3(0, -1.47655, 0)
+
+[node name="PersimmonTree" parent="Props" instance=ExtResource("12") groups=["level_ground"]]
+position = Vector3(0.0, 0.0, -2.0)
+rotation = Vector3(0, 0.34907, 0)
+
+[node name="Well1" parent="Props" instance=ExtResource("13") groups=["level_ground"]]
+position = Vector3(-6.5, 0.12, 13.5)
+rotation = Vector3(0, 2.21482, 0)
+
+[node name="DyeVats1" parent="Props" instance=ExtResource("14") groups=["level_ground"]]
+position = Vector3(-21.0, 0.35, 1.0)
+rotation = Vector3(0, -1.24966, 0)
+
+[node name="ClothLine1" parent="Props" instance=ExtResource("15") groups=["level_ground"]]
+position = Vector3(-26.0, 0.351, 4.5)
+rotation = Vector3(0, 1.309, 0)
+
+[node name="ClothLine2" parent="Props" instance=ExtResource("15") groups=["level_ground"]]
+position = Vector3(-14.8, 0.35, 6.2)
+rotation = Vector3(0, -0.61087, 0)
+
+[node name="DryingRack1" parent="Props" instance=ExtResource("16") groups=["level_ground"]]
+position = Vector3(18.0, -0.006, 5.0)
+rotation = Vector3(0, 2.00713, 0)
+
+[node name="DryingRack2" parent="Props" instance=ExtResource("16") groups=["level_ground"]]
+position = Vector3(19.2, 0.011, 8.4)
+rotation = Vector3(0, 1.74533, 0)
+
+[node name="DryingRack3" parent="Props" instance=ExtResource("16") groups=["level_ground"]]
+position = Vector3(-9.5, 0.152, -12.5)
+rotation = Vector3(0, 0.17453, 0)
+
+[node name="Jetty1" parent="Props" instance=ExtResource("17") groups=["level_ground"]]
+position = Vector3(25.0, 0.15, -5.5)
+
+[node name="Landing1" parent="Props" instance=ExtResource("18") groups=["level_ground"]]
+position = Vector3(26.0, 0.15, 27.0)
+
+[node name="SteppingStone1" parent="Props" instance=ExtResource("19") groups=["level_ground"]]
+position = Vector3(26.017, -0.12, -23.5)
+
+[node name="SteppingStone2" parent="Props" instance=ExtResource("19") groups=["level_ground"]]
+position = Vector3(26.85, -0.12, -23.7)
+rotation = Vector3(0, 0.71558, 0)
+
+[node name="SteppingStone3" parent="Props" instance=ExtResource("19") groups=["level_ground"]]
+position = Vector3(27.683, -0.12, -23.9)
+rotation = Vector3(0, 1.43117, 0)
+
+[node name="Shrine1" parent="Props" instance=ExtResource("20") groups=["level_ground"]]
+position = Vector3(20.5, 0.147, 30.5)
+rotation = Vector3(0, 0.28623, 0)
+scale = Vector3(0.85, 0.85, 0.85)
+
+[node name="Fence1" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(-31.0, 0.577, 9.5)
+rotation = Vector3(0, -0.24435, 0)
+scale = Vector3(1.031, 1.031, 1.031)
+
+[node name="Fence2" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(-7.0, 0.187, 25.375)
+rotation = Vector3(0, -0.185, 0)
+scale = Vector3(1.017, 1.017, 1.017)
+
+[node name="Fence3" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(-3.0, 0.206, 26.125)
+rotation = Vector3(0, -0.185, 0)
+scale = Vector3(1.017, 1.017, 1.017)
+
+[node name="Fence4" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(1.0, 0.187, 26.25)
+rotation = Vector3(0, 0.12392, 0)
+scale = Vector3(1.008, 1.008, 1.008)
+
+[node name="Fence5" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(5.0, 0.102, 25.75)
+rotation = Vector3(0, 0.12392, 0)
+scale = Vector3(1.008, 1.008, 1.008)
+
+[node name="Fence6" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(-33.083, 0.59, -3.667)
+rotation = Vector3(0, 1.62141, 0)
+scale = Vector3(0.834, 0.834, 0.834)
+
+[node name="Fence7" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(-33.25, 0.565, -7.0)
+rotation = Vector3(0, 1.62141, 0)
+scale = Vector3(0.834, 0.834, 0.834)
+
+[node name="Fence8" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(-33.417, 0.588, -10.333)
+rotation = Vector3(0, 1.62141, 0)
+scale = Vector3(0.834, 0.834, 0.834)
+
+[node name="Fence9" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(19.5, 0.078, -25.0)
+rotation = Vector3(0, 2.76111, 0)
+scale = Vector3(1.346, 1.346, 1.346)
+
+[node name="Fence10" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(8.25, 0.038, -24.75)
+rotation = Vector3(0, 3.00022, 0)
+scale = Vector3(0.884, 0.884, 0.884)
+
+[node name="Fence11" parent="Props" instance=ExtResource("21") groups=["level_ground"]]
+position = Vector3(4.75, -0.022, -25.25)
+rotation = Vector3(0, 3.00022, 0)
+scale = Vector3(0.884, 0.884, 0.884)
+
+[node name="Reeds1" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(27.385, -0.145, 5.656)
+rotation = Vector3(0, 5.03877, 0)
+scale = Vector3(0.87, 0.87, 0.87)
+
+[node name="Reeds2" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(27.673, -0.072, 22.041)
+rotation = Vector3(0, 5.66883, 0)
+scale = Vector3(0.991, 0.991, 0.991)
+
+[node name="Reeds3" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(26.309, 0.001, 11.702)
+rotation = Vector3(0, 4.18181, 0)
+scale = Vector3(0.853, 0.853, 0.853)
+
+[node name="Reeds4" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(27.429, -0.097, -1.132)
+rotation = Vector3(0, 3.14334, 0)
+scale = Vector3(1.183, 1.183, 1.183)
+
+[node name="Reeds5" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(28.017, -0.231, -10.304)
+rotation = Vector3(0, 3.28122, 0)
+scale = Vector3(1.056, 1.056, 1.056)
+
+[node name="Reeds6" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(26.65, 0.012, -15.394)
+rotation = Vector3(0, 3.08923, 0)
+scale = Vector3(1.07, 1.07, 1.07)
+
+[node name="Reeds7" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(26.572, -0.007, 10.938)
+rotation = Vector3(0, 1.19904, 0)
+scale = Vector3(0.984, 0.984, 0.984)
+
+[node name="Reeds8" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(28.126, -0.263, -9.567)
+rotation = Vector3(0, 1.39103, 0)
+scale = Vector3(1.185, 1.185, 1.185)
+
+[node name="Reeds9" parent="Dressing" instance=ExtResource("22")]
+position = Vector3(28.013, -0.142, 22.822)
+rotation = Vector3(0, 4.64607, 0)
+scale = Vector3(0.817, 0.817, 0.817)
+
+[node name="Rocks1" parent="Props" instance=ExtResource("23") groups=["level_ground"]]
+position = Vector3(-31.0, 0.585, -20.0)
+rotation = Vector3(0, 5.15396, 0)
+scale = Vector3(1.2, 1.2, 1.2)
+
+[node name="Rocks2" parent="Props" instance=ExtResource("23") groups=["level_ground"]]
+position = Vector3(-34.0, 0.678, 18.0)
+rotation = Vector3(0, 1.73311, 0)
+
+[node name="Rocks3" parent="Props" instance=ExtResource("23") groups=["level_ground"]]
+position = Vector3(10.5, 0.043, -27.0)
+rotation = Vector3(0, 2.36318, 0)
+scale = Vector3(0.8, 0.8, 0.8)
+
+[node name="Rocks4" parent="Props" instance=ExtResource("23") groups=["level_ground"]]
+position = Vector3(-20.0, 0.515, 24.5)
+rotation = Vector3(0, 2.1869, 0)
+scale = Vector3(0.9, 0.9, 0.9)
+
+[node name="Rocks5" parent="Props" instance=ExtResource("23") groups=["level_ground"]]
+position = Vector3(28.0, 0.121, -30.0)
+rotation = Vector3(0, 6.1104, 0)
+scale = Vector3(1.1, 1.1, 1.1)
+
+[node name="Rocks6" parent="Props" instance=ExtResource("23") groups=["level_ground"]]
+position = Vector3(24.0, 0.0, 12.0)
+rotation = Vector3(0, 2.69828, 0)
+scale = Vector3(0.7, 0.7, 0.7)
+
+[node name="Rocks7" parent="Props" instance=ExtResource("23") groups=["level_ground"]]
+position = Vector3(-29.5, 0.51, -15.0)
+rotation = Vector3(0, 3.13985, 0)
+scale = Vector3(0.8, 0.8, 0.8)
+
+[node name="People" type="Node3D" parent="."]
+
+[node name="Pell" type="Node3D" parent="People"]
+position = Vector3(25.5, 0.05, 25.0)
+rotation = Vector3(0, 0.72431, 0)
+script = ExtResource("24")
+display_name = "Pell"
+talk_id = &"pell"
+model_scene = ExtResource("25")
+talk_by_flag = {"lit_trim": "pell_idle_2", "lit_ford": "pell_ready"}
+bark_on_flag = {"hood_cleared": "hood_off"}
+
+[node name="Trim" type="Node3D" parent="People"]
+position = Vector3(11.908, 0.02, 12.624)
+rotation = Vector3(0, 2.40855, 0)
+script = ExtResource("24")
+display_name = "Old Trim"
+talk_id = &"trim"
+model_scene = ExtResource("26")
+faded = true
+wake_flag = &"lit_trim"
+talk_by_flag = {"lit_ford": "trim_end"}
+
+[node name="Marrow" type="Node3D" parent="People"]
+position = Vector3(-22.649, 0.41, -5.748)
+rotation = Vector3(0, -2.39634, 0)
+script = ExtResource("24")
+display_name = "Marrow"
+talk_id = &"marrow"
+model_scene = ExtResource("27")
+faded = true
+wake_flag = &"lit_marrow"
+talk_by_flag = {"lit_ford": "marrow_end"}
+bark_on_flag = {"thorns_cut": "vats_cut"}
+
+[node name="Brindle" type="Node3D" parent="People"]
+position = Vector3(-12.159, 0.271, 17.535)
+rotation = Vector3(0, -0.93724, 0)
+script = ExtResource("24")
+display_name = "Brindle"
+talk_id = &"brindle"
+model_scene = ExtResource("28")
+faded = true
+wake_flag = &"lit_brindle"
+talk_by_flag = {"lit_ford": "brindle_end"}
+bark_on_flag = {"well_cleared": "well_cleared"}
+
+[node name="Flax" type="Node3D" parent="People"]
+position = Vector3(-1.346, 0.049, -13.607)
+rotation = Vector3(0, -3.00895, 0)
+script = ExtResource("24")
+display_name = "Flax"
+talk_id = &"children"
+model_scene = ExtResource("29")
+faded = true
+wake_flag = &"lit_children"
+talk_by_flag = {"lit_ford": "children_end"}
+bark_on_flag = {"persimmon_bloomed": "tree_bloomed"}
+
+[node name="Pibbet" type="Node3D" parent="People"]
+position = Vector3(-2.238, 0.03, -11.218)
+rotation = Vector3(0, -2.57262, 0)
+script = ExtResource("24")
+display_name = "Pibbet"
+talk_id = &"children"
+model_scene = ExtResource("30")
+faded = true
+wake_flag = &"lit_children"
+talk_by_flag = {"lit_ford": "children_end"}
+
+[node name="Wherry" type="Node3D" parent="People"]
+position = Vector3(17.365, -0.006, -14.464)
+rotation = Vector3(0, -2.92692, 0)
+script = ExtResource("24")
+display_name = "Aunt Wherry"
+talk_id = &"wherry"
+model_scene = ExtResource("31")
+faded = true
+wake_flag = &"fight_jetty"
+talk_by_flag = {"lit_ford": "wherry_end"}
+bark_on_flag = {"lit_ferry": "ferry_lamp_lit"}
+
+[node name="Baker" type="Node3D" parent="People"]
+position = Vector3(-6.5, 0.0, 3.5)
+rotation = Vector3(0, -0.86917, 0)
+script = ExtResource("24")
+display_name = "The baker"
+talk_id = &"baker"
+model_scene = ExtResource("32")
+faded = true
+wake_flag = &"lit_ford"
+talk_by_flag = {"lit_ford": "baker_end"}
+
+[node name="NetMender" type="Node3D" parent="People"]
+position = Vector3(7.0, 0.0, -1.0)
+rotation = Vector3(0, 1.42942, 0)
+script = ExtResource("24")
+display_name = "The net-mender"
+talk_id = &"netmender"
+model_scene = ExtResource("33")
+faded = true
+wake_flag = &"lit_ford"
+talk_by_flag = {"lit_ford": "netmender_end"}
+
+[node name="Fisher" type="Node3D" parent="People"]
+position = Vector3(5.5, 0.0, -9.0)
+rotation = Vector3(0, 2.47488, 0)
+script = ExtResource("24")
+display_name = "The old fisher"
+talk_id = &"fisher"
+model_scene = ExtResource("34")
+faded = true
+wake_flag = &"lit_ford"
+talk_by_flag = {"lit_ford": "fisher_end"}
+
+[node name="Kit" type="Node3D" parent="."]
+
+[node name="VatThorns" type="StaticBody3D" parent="Kit"]
+position = Vector3(-18.426, 0.35, 0.632)
+rotation = Vector3(0, -1.4289, 0)
+script = ExtResource("35")
+glyph = &"slash"
+cleared_flag = &"thorns_cut"
+width = 4.5
+height = 2.4
+hint_id = &"tf_thorns"
+hint_text = "Ink thorns bind the vats. Cut straight across them: %s."
+
+[node name="WellSoot" type="StaticBody3D" parent="Kit"]
+position = Vector3(-6.5, 0.12, 13.5)
+script = ExtResource("35")
+glyph = &"gust"
+cleared_flag = &"well_cleared"
+width = 2.2
+height = 1.8
+hint_id = &"tf_soot"
+hint_text = "Soot chokes the well. Blow it away: %s."
+
+[node name="JettyFight" type="Node3D" parent="Kit"]
+position = Vector3(19.5, 0.1, -5.5)
+script = ExtResource("36")
+fight_id = &"jetty"
+radius = 5.0
+requires_flags = PackedStringArray("lit_ferry")
+
+[node name="Spawn1" type="Marker3D" parent="Kit/JettyFight"]
+position = Vector3(3.03, 0, 1.75)
+script = ExtResource("37")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn2" type="Marker3D" parent="Kit/JettyFight"]
+position = Vector3(3.45, 0, -0.61)
+script = ExtResource("37")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn3" type="Marker3D" parent="Kit/JettyFight"]
+position = Vector3(2.25, 0, -2.68)
+script = ExtResource("37")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn4" type="Marker3D" parent="Kit/JettyFight"]
+position = Vector3(1.2, 0, 3.29)
+script = ExtResource("37")
+kind = &"splotchet"
+wave = 0
+
+[node name="Spawn5" type="Marker3D" parent="Kit/JettyFight"]
+position = Vector3(-2.25, 0, 2.68)
+script = ExtResource("37")
+kind = &"splotchet"
+wave = 1
+
+[node name="Spawn6" type="Marker3D" parent="Kit/JettyFight"]
+position = Vector3(0.0, 0, -3.5)
+script = ExtResource("37")
+kind = &"splotchet"
+wave = 1
+
+[node name="Spawn7" type="Marker3D" parent="Kit/JettyFight"]
+position = Vector3(3.5, 0, 0.0)
+script = ExtResource("37")
+kind = &"reedwraith"
+wave = 1
+
+[node name="Persimmon" type="StaticBody3D" parent="Kit"]
+position = Vector3(0.0, 0.0, -2.0)
+script = ExtResource("38")
+glyphs = PackedStringArray("bloom")
+requires_flags = PackedStringArray("lit_brindle")
+flag = &"persimmon_bloomed"
+size = Vector3(2.6, 4.0, 2.6)
+hint_id = &"tf_tree"
+hint_text = "The persimmon is bare. Draw a circle round it: %s."
+
+[node name="FordCam" type="Node3D" parent="Kit"]
+position = Vector3(25.8, 0.25, -23.0)
+script = ExtResource("39")
+size = Vector3(10, 8, 10)
+mode = "follow"
+lock_pitch = true
+pitch_deg = 24.0
+distance = 4.2
+
+[node name="FordHood" type="StaticBody3D" parent="Kit"]
+position = Vector3(29.8, 5.6, -24.0)
+script = ExtResource("35")
+glyph = &"gust"
+cleared_flag = &"hood_cleared"
+width = 1.6
+height = 2.0
+model_scene = ExtResource("40")
+hint_id = &"tf_hood"
+hint_text = "A hood of soot smothers the ford-lamp. Blow it off: %s."
+
+[node name="Verse_1" type="StaticBody3D" parent="Kit"]
+position = Vector3(13.101, 0.02, 14.437)
+script = ExtResource("41")
+talk_id = &"verse_1"
+read_flag = &"verse_1_read"
+teaches = &"kindle"
+teach_text = "The stone remembers a short, firm dab that lights: %s."
+
+[node name="Verse_2" type="StaticBody3D" parent="Kit"]
+position = Vector3(24.0, 0.003, -26.0)
+script = ExtResource("41")
+talk_id = &"verse_2"
+read_flag = &"verse_2_read"
+
+[node name="Lamp_Trim" type="StaticBody3D" parent="Kit"]
+position = Vector3(10.573, 0.02, 11.49)
+rotation = Vector3(0, 2.40855, 0)
+script = ExtResource("42")
+kind = "lamp"
+lit_flag = &"lit_trim"
+requires_flags = PackedStringArray("verse_1_read")
+model_scene = ExtResource("43")
+
+[node name="Lamp_Marrow" type="StaticBody3D" parent="Kit"]
+position = Vector3(-23.901, 0.41, -4.524)
+rotation = Vector3(0, -2.39634, 0)
+script = ExtResource("42")
+kind = "lamp"
+lit_flag = &"lit_marrow"
+requires_flags = PackedStringArray("thorns_cut")
+model_scene = ExtResource("43")
+
+[node name="Lamp_Brindle" type="StaticBody3D" parent="Kit"]
+position = Vector3(-11.084, 0.271, 18.917)
+rotation = Vector3(0, -0.93724, 0)
+script = ExtResource("42")
+kind = "lamp"
+lit_flag = &"lit_brindle"
+requires_flags = PackedStringArray("well_cleared")
+model_scene = ExtResource("43")
+
+[node name="Lamp_Children" type="StaticBody3D" parent="Kit"]
+position = Vector3(-3.074, 0.049, -13.326)
+rotation = Vector3(0, -3.00895, 0)
+script = ExtResource("42")
+kind = "lamp"
+lit_flag = &"lit_children"
+requires_flags = PackedStringArray("persimmon_bloomed")
+model_scene = ExtResource("43")
+
+[node name="Lamp_Ferry" type="StaticBody3D" parent="Kit"]
+position = Vector3(15.665, -0.006, -14.044)
+rotation = Vector3(0, -2.92692, 0)
+script = ExtResource("42")
+kind = "lamp"
+lit_flag = &"lit_ferry"
+requires_flags = PackedStringArray("lit_children")
+model_scene = ExtResource("43")
+
+[node name="Lamp_Ford" type="StaticBody3D" parent="Kit"]
+position = Vector3(29.8, 0.25, -24.0)
+rotation = Vector3(0, -1.5708, 0)
+script = ExtResource("42")
+kind = "lamp"
+lit_flag = &"lit_ford"
+requires_flags = PackedStringArray("hood_cleared")
+model_scene = ExtResource("44")
+
+[node name="RaftExit" type="Node3D" parent="Kit"]
+position = Vector3(34.5, -0.35, -5.5)
+script = ExtResource("45")
+requires_flags = PackedStringArray("said_finale")
+
+[node name="FinaleCam" type="Node3D" parent="Kit"]
+position = Vector3(25.8, 0.25, -23.0)
+script = ExtResource("39")
+size = Vector3(18, 12, 18)
+mode = "fixed"
+priority = 1
+blend_time = 1.5
+view = NodePath("View")
+
+[node name="View" type="Marker3D" parent="Kit/FinaleCam"]
+position = Vector3(12.2, 7.25, -8.0)
+
+[node name="Gather" type="Node3D" parent="Kit"]
+position = Vector3(19.5, 0.1, -5.5)
+
+[node name="M_Gather_Pibbet" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(1.211, 0.0, -7.125)
+
+[node name="M_Gather_Flax" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(2.452, 0.0, -6.477)
+
+[node name="M_Gather_Trim" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(3.694, 0.0, -5.83)
+
+[node name="M_Gather_Marrow" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(4.935, 0.0, -5.183)
+
+[node name="M_Gather_Wherry" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(6.176, 0.0, -4.535)
+
+[node name="M_Gather_Brindle" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(1.138, 0.0, -5.471)
+
+[node name="M_Gather_Baker" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(2.379, 0.0, -4.824)
+
+[node name="M_Gather_NetMender" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(3.621, 0.0, -4.176)
+
+[node name="M_Gather_Fisher" type="Marker3D" parent="Kit/Gather"]
+position = Vector3(4.862, 0.0, -3.529)

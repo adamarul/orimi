@@ -1,0 +1,6 @@
+# Shader uniform documentation
+docs present: tests/_plant/PLANT_SHADERS.md; absent: none
+shaders: 1, uniforms: 2, undocumented: 0
+
+ok        tests/_plant/plant.gdshader: plant_documented
+ok        tests/_plant/plant.gdshader: plant_undocumented

@@ -1,0 +1,14 @@
+{
+ "assets/levels/sedge_plain/folk/tamsin.glb": {
+  "loops": [
+   "idle",
+   "talk",
+   "walk",
+   "faded"
+  ],
+  "texture": "assets/levels/sedge_plain/folk/tamsin.png",
+  "textures": [
+   "assets/levels/sedge_plain/folk/tamsin_faded.png"
+  ]
+ }
+}

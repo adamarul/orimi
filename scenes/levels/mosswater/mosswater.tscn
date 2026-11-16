@@ -1,0 +1,550 @@
+[gd_scene load_steps=24 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/mosswater/mosswater.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/person.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/levels/mosswater/folk/fenn.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/verse_stone.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/lantern_fruit.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/levels/mosswater/models/mw_lantern_fruit.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/brazier.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/levels/mosswater/models/mw_brazier.tscn" id="8"]
+[ext_resource type="Script" path="res://scripts/game/kit/sealed_fight.gd" id="9"]
+[ext_resource type="Script" path="res://scripts/game/kit/enemy_spawn.gd" id="10"]
+[ext_resource type="PackedScene" path="res://scenes/levels/mosswater/enemies/sootflit.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/soot_bank.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/thorn_gate.tscn" id="13"]
+[ext_resource type="Script" path="res://scripts/game/kit/tie_post.gd" id="14"]
+[ext_resource type="Script" path="res://scripts/game/kit/deep_water.gd" id="15"]
+[ext_resource type="Script" path="res://scripts/levels/mosswater/mw_pond_ink.gd" id="16"]
+[ext_resource type="Script" path="res://scripts/game/kit/camera_zone.gd" id="17"]
+[ext_resource type="Script" path="res://scripts/game/cursed_zone.gd" id="18"]
+[ext_resource type="Script" path="res://scripts/game/bloom_target.gd" id="19"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/checkpoint.tscn" id="20"]
+[ext_resource type="PackedScene" path="res://scenes/game/kit/level_exit.tscn" id="21"]
+[ext_resource type="Script" path="res://scripts/game/kit/glyph_target.gd" id="22"]
+[ext_resource type="PackedScene" path="res://scenes/levels/mosswater/models/mw_lily.tscn" id="23"]
+
+[node name="Mosswater" type="Node3D"]
+script = ExtResource("1")
+level_id = &"mosswater"
+display_name = "Mosswater Wood"
+chapter = "The Three Still Ponds"
+intro_text = "Old forest on a slope, and a stream that falls through three ponds. The ponds have gone black and still, and under the canopy it is nearly dark."
+title_marker = "M_PondMid"
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="M_Spawn" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.477, 0.313, 34.648)
+
+[node name="M_Raft" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.144, -0.35, 37.901)
+
+[node name="M_DarkHollow" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.385, 1.052, 36.204)
+
+[node name="M_FennHut" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.021, 1.1, 34.083)
+
+[node name="M_Fenn_1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.415, 1.1, 25.88)
+
+[node name="M_Brazier" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.112, 1.1, 26.163)
+
+[node name="M_Verse_1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.335, 1.1, 21.355)
+
+[node name="M_Wheel" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.466, 0.55, 14.566)
+
+[node name="M_WheelView" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.193, 1.1, 19.799)
+
+[node name="M_PondLow" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.556, 0.55, 11.314)
+
+[node name="M_PondMid" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.475, 6.55, -3.889)
+
+[node name="M_PondHigh" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.506, 12.55, -24.749)
+
+[node name="M_StairTree" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.707, 1.1, 11.455)
+
+[node name="M_StairTop" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.849, 7, 8.485)
+
+[node name="M_Lily_1" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.677, 6.55, 4.101)
+
+[node name="M_Lily_2" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101, 6.55, 0.99)
+
+[node name="M_Lily_3" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.243, 6.55, -2.263)
+
+[node name="M_Island" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.354, 6.72, -4.596)
+
+[node name="M_TiePost_A" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.424, 6.679, -6.364)
+
+[node name="M_Log" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.202, 6.557, -6.293)
+
+[node name="M_LogEnd_Jammed" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.091, 6.55, -1.98)
+
+[node name="M_LogEnd_Bridge" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.081, 7, -12.021)
+
+[node name="M_TiePost_B" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.374, 7, -13.294)
+
+[node name="M_Weir" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.374, 6.55, -1.697)
+
+[node name="M_Flyers_Mid" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.354, 10.75, -4.596)
+
+[node name="M_Fenn_2" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.111, 7, -14.708)
+
+[node name="M_Thorns" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.374, 7, -4.455)
+
+[node name="M_MossLantern" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.698, 9.9, -2.121)
+
+[node name="M_SootBank" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.711, 13, -5.549)
+
+[node name="M_TiePost_C" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.121, 13, -8.626)
+
+[node name="M_TiePost_D" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.377, 13, -12.801)
+
+[node name="M_Notch" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.496, 11.8, -10.96)
+
+[node name="M_DamFight" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.98, 13, -18.173)
+
+[node name="M_Dam" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.859, 13, -19.516)
+
+[node name="M_Sluice" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.455, 13, -14.92)
+
+[node name="M_Verse_2" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.566, 13, -37.76)
+
+[node name="M_Fenn_3" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.072, 13, -34.931)
+
+[node name="M_Willow" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.224, 13, -32.88)
+
+[node name="M_Spring" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.113, 13.15, -33.234)
+
+[node name="M_Exit" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.193, 13, -35.355)
+
+[node name="People" type="Node3D" parent="."]
+
+[node name="Pell" parent="People" instance=ExtResource("2")]
+transform = Transform3D(0.5718, 0, 0.8204, 0, 1, 0, -0.8204, 0, 0.5718, 39.5772, 0.0147, 36.1119)
+display_name = "Pell"
+talk_id = "pell"
+model_name = "folk/pell"
+
+[node name="Fenn" parent="People" instance=ExtResource("2")]
+transform = Transform3D(-0.961, 0, -0.2765, 0, 1, 0, 0.2765, 0, -0.961, 15.415, 1.1, 25.88)
+display_name = "Fenn"
+talk_id = "fenn"
+model_scene = ExtResource("3")
+hide_flag = &"reached_cp_stair_top"
+bark_on_flag = {"wheel_freed": "fenn_wheel"}
+
+[node name="FennLedge" parent="People" instance=ExtResource("2")]
+transform = Transform3D(-0.9648, 0, -0.263, 0, 1, 0, 0.263, 0, -0.9648, -3.111, 7, -14.708)
+display_name = "Fenn"
+talk_id = "fenn_ledge"
+model_scene = ExtResource("3")
+show_flag = &"reached_cp_stair_top"
+hide_flag = &"fight_dam"
+bark_on_flag = {"reached_cp_stair_top": "fenn_call", "lily_3_open": "fenn_log", "tied_log": "fenn_tied"}
+
+[node name="FennWillow" parent="People" instance=ExtResource("2")]
+transform = Transform3D(-0.3163, 0, 0.9487, 0, 1, 0, -0.9487, 0, -0.3163, -21.072, 13, -34.931)
+display_name = "Fenn"
+talk_id = "fenn_willow"
+model_scene = ExtResource("3")
+show_flag = &"fight_dam"
+talk_by_flag = {"restored_spring": "fenn_farewell"}
+bark_on_flag = {"water_runs": "fenn_end"}
+
+[node name="Verse_1" parent="People" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.335, 1.1, 21.355)
+talk_id = "verse_1"
+
+[node name="Verse_2" parent="People" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.566, 13, -37.76)
+talk_id = "verse_2"
+
+[node name="Lanterns" type="Node3D" parent="."]
+
+[node name="LF01" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.375, 3.083, 34.224)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf01"
+start_lit = true
+
+[node name="LF02" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.022, 3.387, 35.355)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf02"
+
+[node name="LF03" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.93, 3.583, 35.921)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf03"
+
+[node name="LF04" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.284, 3.7, 36.062)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf04"
+
+[node name="LF05" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.001, 3.7, 30.971)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf05"
+
+[node name="LF06" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.89, 3.679, 18.95)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf06"
+
+[node name="LF07" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.283, 3.7, 16.405)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf07"
+
+[node name="LF08" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96, 9.6, 8.768)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf08"
+
+[node name="LF09" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.414, 9.225, -5.091)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf09"
+
+[node name="LF10" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.698, 9.6, -2.121)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf10"
+
+[node name="LF11" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.728, 15.183, -12.162)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf11"
+
+[node name="LF12" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.364, 15.6, -24.183)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf12"
+
+[node name="LF13" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.627, 15.6, -35.214)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf13"
+
+[node name="LF14" parent="Lanterns" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.536, 15.6, -37.901)
+model_scene = ExtResource("6")
+lit_flag = &"lit_lf14"
+
+[node name="Brazier" parent="Lanterns" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.112, 1.1, 26.163)
+model_scene = ExtResource("8")
+start_lit = true
+
+[node name="Obstacles" type="Node3D" parent="."]
+
+[node name="WheelSoot" parent="Obstacles" instance=ExtResource("12")]
+transform = Transform3D(-0.9717, 0, 0.2364, 0, 1, 0, -0.2364, 0, -0.9717, 24.466, 0.55, 14.566)
+width = 3.2
+height = 2.6
+cleared_flag = &"wheel_freed"
+hint_id = &"mw_wheel"
+hint_text = "Soot packs the paddles. A %s could clear them."
+hint_distance = 7
+
+[node name="Thorns" parent="Obstacles" instance=ExtResource("13")]
+transform = Transform3D(0.7071, 0, -0.7071, 0, 1, 0, 0.7071, 0, 0.7071, -12.374, 7, -4.455)
+width = 4.4
+cleared_flag = &"thorns_cut"
+
+[node name="SootBank" parent="Obstacles" instance=ExtResource("12")]
+transform = Transform3D(0.8884, 0, -0.4591, 0, 1, 0, 0.4591, 0, 0.8884, -17.711, 13, -5.549)
+width = 3.6
+height = 2.8
+cleared_flag = &"soot_cleared"
+
+[node name="Lilies" type="Node3D" parent="."]
+
+[node name="Lily_1" type="StaticBody3D" parent="Lilies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.677, 6.55, 4.101)
+script = ExtResource("22")
+glyphs = PackedStringArray("bloom")
+flag = &"lily_1_open"
+model_scene = ExtResource("23")
+hint_id = &"mw_lily"
+hint_text = "The bud is waiting for a sun. %s it."
+hint_distance = 5
+
+[node name="Lily_2" type="StaticBody3D" parent="Lilies"]
+transform = Transform3D(0.7986, 0, 0.6018, 0, 1, 0, -0.6018, 0, 0.7986, -4.101, 6.55, 0.99)
+script = ExtResource("22")
+glyphs = PackedStringArray("bloom")
+flag = &"lily_2_open"
+model_scene = ExtResource("23")
+
+[node name="Lily_3" type="StaticBody3D" parent="Lilies"]
+transform = Transform3D(0.2756, 0, 0.9613, 0, 1, 0, -0.9613, 0, 0.2756, -4.243, 6.55, -2.263)
+script = ExtResource("22")
+glyphs = PackedStringArray("bloom")
+flag = &"lily_3_open"
+model_scene = ExtResource("23")
+
+[node name="Ties" type="Node3D" parent="."]
+
+[node name="Log" type="Node3D" parent="Ties"]
+
+[node name="LogFree" type="Marker3D" parent="Ties/Log"]
+transform = Transform3D(0.7613, 0.0333, 0.6476, 0, 0.9987, -0.0513, -0.6484, 0.0391, 0.7603, -1.202, 6.1, -6.293)
+
+[node name="PostA" type="StaticBody3D" parent="Ties/Log"]
+transform = Transform3D(0.8137, 0, 0.5812, 0, 1, 0, -0.5812, 0, 0.8137, -0.424, 6.679, -6.364)
+script = ExtResource("14")
+partner = NodePath("../PostB")
+action = "pull"
+pull_target = NodePath("../../../Props/log_1")
+pull_to = NodePath("../LogFree")
+pull_to_ground = false
+tied_flag = &"tied_log"
+
+[node name="PostB" type="StaticBody3D" parent="Ties/Log"]
+transform = Transform3D(-0.8137, 0, -0.5812, 0, 1, 0, 0.5812, 0, -0.8137, -5.374, 7, -13.294)
+script = ExtResource("14")
+
+[node name="Gap" type="Node3D" parent="Ties"]
+
+[node name="PostA" type="StaticBody3D" parent="Ties/Gap"]
+transform = Transform3D(0.7445, 0, -0.6676, 0, 1, 0, 0.6676, 0, 0.7445, -16.121, 13, -8.626)
+script = ExtResource("14")
+partner = NodePath("../PostB")
+tied_flag = &"tied_gap"
+action = "bridge"
+
+[node name="PostB" type="StaticBody3D" parent="Ties/Gap"]
+transform = Transform3D(-0.7445, 0, 0.6676, 0, 1, 0, -0.6676, 0, -0.7445, -12.377, 13, -12.801)
+script = ExtResource("14")
+
+[node name="Fights" type="Node3D" parent="."]
+
+[node name="Fight_Hollow" type="Node3D" parent="Fights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.385, 1.052, 36.204)
+script = ExtResource("9")
+fight_id = &"hollow"
+radius = 5
+start_flag = &"lit_lf03"
+
+[node name="Spawn_0" type="Marker3D" parent="Fights/Fight_Hollow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98, -0.069, 0.283)
+script = ExtResource("10")
+kind = &"splotchet"
+
+[node name="Spawn_1" type="Marker3D" parent="Fights/Fight_Hollow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.283, 0.037, -2.263)
+script = ExtResource("10")
+kind = &"splotchet"
+
+[node name="Spawn_2" type="Marker3D" parent="Fights/Fight_Hollow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.697, 0.013, 1.131)
+script = ExtResource("10")
+kind = &"splotchet"
+
+[node name="Fight_Dam" type="Node3D" parent="Fights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.98, 13, -18.173)
+script = ExtResource("9")
+fight_id = &"dam"
+radius = 4
+requires_flags = PackedStringArray("tied_gap")
+
+[node name="Spawn_0" type="Marker3D" parent="Fights/Fight_Dam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353, 0, 3.182)
+script = ExtResource("10")
+wave = 0
+kind = &"splotchet"
+
+[node name="Spawn_1" type="Marker3D" parent="Fights/Fight_Dam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.182, 0, -0.353)
+script = ExtResource("10")
+wave = 0
+kind = &"splotchet"
+
+[node name="Spawn_2" type="Marker3D" parent="Fights/Fight_Dam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.182, 0, -0.353)
+script = ExtResource("10")
+wave = 0
+kind = &"splotchet"
+
+[node name="Spawn_3" type="Marker3D" parent="Fights/Fight_Dam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353, 0, -3.182)
+script = ExtResource("10")
+wave = 0
+kind = &"splotchet"
+
+[node name="Spawn_4" type="Marker3D" parent="Fights/Fight_Dam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("10")
+wave = 0
+enemy_scene = ExtResource("11")
+
+[node name="Spawn_5" type="Marker3D" parent="Fights/Fight_Dam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.121, 0, 2.122)
+script = ExtResource("10")
+wave = 1
+enemy_scene = ExtResource("11")
+
+[node name="Spawn_6" type="Marker3D" parent="Fights/Fight_Dam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.122, 0, -2.121)
+script = ExtResource("10")
+wave = 1
+enemy_scene = ExtResource("11")
+
+[node name="Spawn_7" type="Marker3D" parent="Fights/Fight_Dam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.121, 0, -2.121)
+script = ExtResource("10")
+wave = 1
+kind = &"reedwraith"
+
+[node name="Roam_Shore_0" type="Marker3D" parent="Fights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.081, 1.1, 22.91)
+script = ExtResource("10")
+kind = &"splotchet"
+
+[node name="Roam_Shore_1" type="Marker3D" parent="Fights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.828, 1.1, 21.496)
+script = ExtResource("10")
+kind = &"splotchet"
+
+[node name="Roam_Island_0" type="Marker3D" parent="Fights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.182, 4.95, -7.425)
+script = ExtResource("10")
+enemy_scene = ExtResource("11")
+
+[node name="Roam_Island_1" type="Marker3D" parent="Fights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.475, 4.95, -1.768)
+script = ExtResource("10")
+enemy_scene = ExtResource("11")
+
+[node name="Water" type="Node3D" parent="."]
+
+[node name="PondLow" type="Node3D" parent="Water"]
+transform = Transform3D(-0.7071, 0, 0.7071, 0, 1, 0, -0.7071, 0, -0.7071, 15.556, 0.55, 11.314)
+script = ExtResource("15")
+size = Vector3(16, 2.6, 20)
+show_surface = false
+sink = 0.1
+bank_height = 0.03
+flag = &"fell_in_pond"
+
+[node name="PondMid" type="Node3D" parent="Water"]
+transform = Transform3D(-0.7071, 0, 0.7071, 0, 1, 0, -0.7071, 0, -0.7071, -2.475, 6.55, -3.889)
+script = ExtResource("15")
+size = Vector3(14, 2.6, 28)
+show_surface = false
+sink = 0.1
+bank_height = 0.03
+flag = &"fell_in_pond"
+
+[node name="PondHigh" type="Node3D" parent="Water"]
+transform = Transform3D(-0.7071, 0, 0.7071, 0, 1, 0, -0.7071, 0, -0.7071, -20.506, 12.55, -24.749)
+script = ExtResource("15")
+size = Vector3(16, 2.6, 24)
+show_surface = false
+sink = 0.1
+bank_height = 0.03
+flag = &"fell_in_pond"
+
+[node name="Curse" type="Node3D" parent="."]
+
+[node name="InkLow" type="Node3D" parent="Curse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.556, 0.55, 11.314)
+script = ExtResource("16")
+radius = 11.5
+
+[node name="InkMid" type="Node3D" parent="Curse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.475, 6.55, -3.889)
+script = ExtResource("16")
+radius = 12
+
+[node name="InkHigh" type="Node3D" parent="Curse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.506, 12.55, -24.749)
+script = ExtResource("16")
+radius = 12
+
+[node name="Zone_spring" type="Node3D" parent="Curse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.224, 13, -32.88)
+script = ExtResource("18")
+zone_id = &"spring"
+display_name = "the spring"
+radius = 6
+target_kind = "none"
+requires_flags = PackedStringArray("fight_dam")
+finale = true
+
+[node name="Willow" type="StaticBody3D" parent="Curse/Zone_spring"]
+script = ExtResource("19")
+model_name = ""
+
+[node name="FinaleCam" type="Node3D" parent="Curse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 13, -32)
+script = ExtResource("17")
+size = Vector3(28, 14, 28)
+mode = "fixed"
+priority = 1
+blend_time = 1.5
+view = NodePath("View")
+
+[node name="View" type="Marker3D" parent="Curse/FinaleCam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 4.5, 12.5)
+
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="CP_Brazier" parent="Checkpoints" instance=ExtResource("20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.615, 1.1, 27.08)
+
+[node name="CP_StairTop" parent="Checkpoints" instance=ExtResource("20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351, 7, 9.685)
+
+[node name="CP_NorthShore" parent="Checkpoints" instance=ExtResource("20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.911, 7, -13.508)
+
+[node name="CP_GullyTop" parent="Checkpoints" instance=ExtResource("20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.921, 13, -7.426)
+
+[node name="CP_Willow" parent="Checkpoints" instance=ExtResource("20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.366, 13, -36.56)
+
+[node name="Exit" parent="Checkpoints" instance=ExtResource("21")]
+transform = Transform3D(0.9694, 0, 0.2456, 0, 1, 0, -0.2456, 0, 0.9694, -22.3126, 12.55, -31.88)
+requires_flags = PackedStringArray("water_runs")
+radius = 2.5

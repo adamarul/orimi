@@ -1,0 +1,336 @@
+# opening http://127.0.0.1:62363/index.html?scene=res://scenes/dev/brush_demo.tscn
+[console.log] Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+[console.log] OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL
+[console.log] Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support.
+[console.log] ORIMI_BOOT t=10.27s options={"scene":"res://scenes/dev/brush_demo.tscn"}
+[console.log] ORIMI_FIRST_FRAME t=29.05s scene=res://scenes/dev/brush_demo.tscn renderer=gl_compatibility driver=opengl3 adapter=WebKit WebGL api=OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) display=web
+[console.log] BRUSH_DEMO {"event":"layout","targets":{"bloom":[396.9,353.3],"gust":[883.1,353.3],"kindle":[478.1,467.5],"slash":[640.0,353.3],"tie_a":[745.1,452.2],"tie_b":[1013.6,452.2]},"viewport":[1280.0,720.0]}
+# webgl ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)
+[console.log] BRUSH_DEMO {"event":"capture_requested"}
+# pointer lock after click: true
+[console.log] BRUSH_DEMO {"event":"brush_opened","mouse_mode":0,"mover":[-1.72,2.89,-3.5],"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"target_reacted","glyph":"bloom","order":-1,"target":"Sapling"}
+[console.log] QA:{"data":{"glyph":"bloom","ink":83.7,"score":0.95,"targets":["Sapling"]},"tag":"glyph_cast"}
+[console.log] BRUSH_DEMO {"event":"glyph_cast","features":{"angle":5.505,"corner":50.253,"cv":0.052,"gap":0.032,"length":0.813,"loop_turn":-355.452,"size":0.265,"straight":0.032,"turn":-359.673},"glyph":"bloom","ink_cost":16.3,"input":{"duration":0.917,"events":64,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":934.28,"width_max":20.872,"width_min":13.186},"score":0.948,"targets":["Sapling"],"world_center":[-3.12,1.32,0.7],"world_dir":[-0.9,0.0,0.44],"world_points":40}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":2,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":2,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"brush_closed","mouse_mode":2,"mover_moved_while_open":0.0,"paused":false}
+[console.log] BRUSH_DEMO {"event":"resumed","mover_moved_after":0.865412354469299}
+# bloom {"key":"shift","hold_ms":200,"pointer_lock_before":true,"opened":{"paused":true,"mouse_mode":0},"pointer_lock_while_open":false,"duration_ms":911,"frozen_checks":5,"mover_moved_while_open":0,"result":"bloom","score":0.948,"targets":["Sapling"],"input":{"duration":0.917,"events":64,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":934.28,"width_max":20.872,"width_min":13.186},"closed":{"paused":false,"mouse_mode":2},"mover_moved_after":0.865412354469299,"reacted":true,"pointer_lock_after":true,"ok":true}
+[console.log] BRUSH_DEMO {"event":"brush_opened","mouse_mode":0,"mover":[-0.11,2.63,-3.8],"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"target_reacted","glyph":"slash","order":-1,"target":"Thorns"}
+[console.log] QA:{"data":{"glyph":"slash","ink":85.9,"score":0.99,"targets":["Thorns"]},"tag":"glyph_cast"}
+[console.log] BRUSH_DEMO {"event":"glyph_cast","features":{"angle":2.304,"corner":2.858,"cv":0.576,"gap":0.999,"length":0.445,"loop_turn":0.0,"size":0.444,"straight":0.999,"turn":-6.673},"glyph":"slash","ink_cost":8.9,"input":{"duration":0.181,"events":13,"pen":true,"pressure_max":0.939,"pressure_min":0.25,"speed_max":2483.9,"width_max":18.65,"width_min":4.195},"score":0.995,"targets":["Thorns"],"world_center":[0.0,1.27,0.7],"world_dir":[0.99,0.0,-0.11],"world_points":40}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":2,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"brush_closed","mouse_mode":2,"mover_moved_while_open":0.0,"paused":false}
+[console.log] BRUSH_DEMO {"event":"resumed","mover_moved_after":1.0784387588501}
+# slash {"key":"q","hold_ms":200,"pointer_lock_before":true,"opened":{"paused":true,"mouse_mode":0},"pointer_lock_while_open":false,"duration_ms":175,"frozen_checks":2,"mover_moved_while_open":0,"result":"slash","score":0.995,"targets":["Thorns"],"input":{"duration":0.181,"events":13,"pen":true,"pressure_max":0.939,"pressure_min":0.25,"speed_max":2483.9,"width_max":18.65,"width_min":4.195},"closed":{"paused":false,"mouse_mode":2},"mover_moved_after":1.0784387588501,"reacted":true,"pointer_lock_after":true,"ok":true}
+[console.log] BRUSH_DEMO {"event":"brush_opened","mouse_mode":0,"mover":[1.63,2.3,-3.54],"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"target_reacted","glyph":"gust","order":-1,"target":"Soot"}
+[console.log] QA:{"data":{"glyph":"gust","ink":85.3,"score":0.94,"targets":["Soot"]},"tag":"glyph_cast"}
+[console.log] BRUSH_DEMO {"event":"glyph_cast","features":{"angle":0.209,"corner":88.856,"cv":0.511,"gap":0.412,"length":0.586,"loop_turn":-270.515,"size":0.242,"straight":0.412,"turn":-363.526},"glyph":"gust","ink_cost":11.8,"input":{"duration":0.918,"events":66,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":618.412,"width_max":22.792,"width_min":13.706},"score":0.942,"targets":["Soot"],"world_center":[3.2,0.65,0.7],"world_dir":[0.34,0.0,0.94],"world_points":40}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":2,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"brush_closed","mouse_mode":2,"mover_moved_while_open":0.0,"paused":false}
+[console.log] BRUSH_DEMO {"event":"resumed","mover_moved_after":0.625842750072479}
+# gust {"key":"rmb","hold_ms":200,"pointer_lock_before":true,"opened":{"paused":true,"mouse_mode":0},"pointer_lock_while_open":false,"duration_ms":911,"frozen_checks":5,"mover_moved_while_open":0,"result":"gust","score":0.942,"targets":["Soot"],"input":{"duration":0.918,"events":66,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":618.412,"width_max":22.792,"width_min":13.706},"closed":{"paused":false,"mouse_mode":2},"mover_moved_after":0.625842750072479,"reacted":true,"pointer_lock_after":true,"ok":true}
+[console.log] BRUSH_DEMO {"event":"brush_opened","mouse_mode":0,"mover":[2.19,2.65,-2.94],"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"target_reacted","glyph":"kindle","order":-1,"target":"Lamp"}
+[console.log] QA:{"data":{"glyph":"kindle","ink":93.2,"score":0.94,"targets":["Lamp"]},"tag":"glyph_cast"}
+[console.log] BRUSH_DEMO {"event":"glyph_cast","features":{"duration":0.164,"length":0.003,"size":0.003},"glyph":"kindle","ink_cost":3.2,"input":{"duration":0.164,"events":12,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":70.771,"width_max":19.064,"width_min":18.602},"score":0.941,"targets":["Lamp"],"world_center":[-1.32,1.44,3.85],"world_dir":[1.0,0.0,0.0],"world_points":1}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":2,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":2,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"brush_closed","mouse_mode":2,"mover_moved_while_open":0.0,"paused":false}
+[console.log] BRUSH_DEMO {"event":"resumed","mover_moved_after":0.548408448696136}
+# kindle {"key":"shift","hold_ms":200,"pointer_lock_before":true,"opened":{"paused":true,"mouse_mode":0},"pointer_lock_while_open":false,"duration_ms":159,"frozen_checks":2,"mover_moved_while_open":0,"result":"kindle","score":0.941,"targets":["Lamp"],"input":{"duration":0.164,"events":12,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":70.771,"width_max":19.064,"width_min":18.602},"closed":{"paused":false,"mouse_mode":2},"mover_moved_after":0.548408448696136,"reacted":true,"pointer_lock_after":true,"ok":true}
+[console.log] BRUSH_DEMO {"event":"brush_opened","mouse_mode":0,"mover":[1.15,2.87,-2.32],"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"target_reacted","glyph":"tie","order":0,"target":"PostA"}
+[console.log] BRUSH_DEMO {"event":"target_reacted","glyph":"tie","order":1,"target":"PostB"}
+[console.log] QA:{"data":{"glyph":"tie","ink":88.5,"score":0.99,"targets":["PostA","PostB"]},"tag":"glyph_cast"}
+[console.log] BRUSH_DEMO {"event":"glyph_cast","features":{"angle":0.463,"corner":2.886,"cv":0.576,"gap":0.998,"length":0.374,"loop_turn":0.0,"size":0.373,"straight":0.998,"turn":-2.836},"glyph":"tie","ink_cost":11.5,"input":{"duration":0.469,"events":31,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":954.468,"width_max":22.039,"width_min":15.005},"score":0.992,"targets":["PostA","PostB"],"world_center":[3.13,0.0,1.02],"world_dir":[1.0,0.0,0.0],"world_points":40}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":2,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"brush_closed","mouse_mode":2,"mover_moved_while_open":0.0,"paused":false}
+[console.log] BRUSH_DEMO {"event":"resumed","mover_moved_after":1.04864919185638}
+# tie {"key":"q","hold_ms":200,"pointer_lock_before":true,"opened":{"paused":true,"mouse_mode":0},"pointer_lock_while_open":false,"duration_ms":461,"frozen_checks":3,"mover_moved_while_open":0,"result":"tie","score":0.992,"targets":["PostA","PostB"],"input":{"duration":0.469,"events":31,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":954.468,"width_max":22.039,"width_min":15.005},"closed":{"paused":false,"mouse_mode":2},"mover_moved_after":1.04864919185638,"reacted":true,"pointer_lock_after":true,"ok":true}
+[console.log] BRUSH_DEMO {"event":"brush_opened","mouse_mode":0,"mover":[-0.79,2.4,-2.25],"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":0,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"target_reacted","glyph":"bloom","order":-1,"target":"Sapling"}
+[console.log] QA:{"data":{"glyph":"bloom","ink":83.5,"score":0.95,"targets":["Sapling"]},"tag":"glyph_cast"}
+[console.log] BRUSH_DEMO {"event":"glyph_cast","features":{"angle":5.505,"corner":50.073,"cv":0.052,"gap":0.032,"length":0.813,"loop_turn":-355.049,"size":0.265,"straight":0.032,"turn":-359.763},"glyph":"bloom","ink_cost":16.3,"input":{"duration":0.917,"events":64,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":1020.224,"width_max":21.293,"width_min":13.173},"score":0.948,"targets":["Sapling"],"world_center":[-3.12,1.32,0.7],"world_dir":[-0.9,0.0,0.44],"world_points":40}
+[console.log] BRUSH_DEMO {"event":"frozen_check","mouse_mode":2,"mover_moved":0.0,"paused":true}
+[console.log] BRUSH_DEMO {"event":"brush_closed","mouse_mode":2,"mover_moved_while_open":0.0,"paused":false}
+[console.log] BRUSH_DEMO {"event":"resumed","mover_moved_after":0.903956532478333}
+# bloom_long_hold {"key":"shift","hold_ms":6000,"pointer_lock_before":true,"opened":{"paused":true,"mouse_mode":0},"pointer_lock_while_open":false,"duration_ms":913,"frozen_checks":28,"mover_moved_while_open":0,"result":"bloom","score":0.948,"targets":["Sapling"],"input":{"duration":0.917,"events":64,"pen":true,"pressure_max":0.95,"pressure_min":0.25,"speed_max":1020.224,"width_max":21.293,"width_min":13.173},"closed":{"paused":false,"mouse_mode":2},"mover_moved_after":0.903956532478333,"reacted":true,"pointer_lock_after":true,"ok":true}
+# summary {
+  "pointer": "pen",
+  "rate_hz": 125,
+  "glyphs": {
+    "bloom": {
+      "key": "shift",
+      "hold_ms": 200,
+      "pointer_lock_before": true,
+      "opened": {
+        "paused": true,
+        "mouse_mode": 0
+      },
+      "pointer_lock_while_open": false,
+      "duration_ms": 911,
+      "frozen_checks": 5,
+      "mover_moved_while_open": 0,
+      "result": "bloom",
+      "score": 0.948,
+      "targets": [
+        "Sapling"
+      ],
+      "input": {
+        "duration": 0.917,
+        "events": 64,
+        "pen": true,
+        "pressure_max": 0.95,
+        "pressure_min": 0.25,
+        "speed_max": 934.28,
+        "width_max": 20.872,
+        "width_min": 13.186
+      },
+      "closed": {
+        "paused": false,
+        "mouse_mode": 2
+      },
+      "mover_moved_after": 0.865412354469299,
+      "reacted": true,
+      "pointer_lock_after": true,
+      "ok": true
+    },
+    "slash": {
+      "key": "q",
+      "hold_ms": 200,
+      "pointer_lock_before": true,
+      "opened": {
+        "paused": true,
+        "mouse_mode": 0
+      },
+      "pointer_lock_while_open": false,
+      "duration_ms": 175,
+      "frozen_checks": 2,
+      "mover_moved_while_open": 0,
+      "result": "slash",
+      "score": 0.995,
+      "targets": [
+        "Thorns"
+      ],
+      "input": {
+        "duration": 0.181,
+        "events": 13,
+        "pen": true,
+        "pressure_max": 0.939,
+        "pressure_min": 0.25,
+        "speed_max": 2483.9,
+        "width_max": 18.65,
+        "width_min": 4.195
+      },
+      "closed": {
+        "paused": false,
+        "mouse_mode": 2
+      },
+      "mover_moved_after": 1.0784387588501,
+      "reacted": true,
+      "pointer_lock_after": true,
+      "ok": true
+    },
+    "gust": {
+      "key": "rmb",
+      "hold_ms": 200,
+      "pointer_lock_before": true,
+      "opened": {
+        "paused": true,
+        "mouse_mode": 0
+      },
+      "pointer_lock_while_open": false,
+      "duration_ms": 911,
+      "frozen_checks": 5,
+      "mover_moved_while_open": 0,
+      "result": "gust",
+      "score": 0.942,
+      "targets": [
+        "Soot"
+      ],
+      "input": {
+        "duration": 0.918,
+        "events": 66,
+        "pen": true,
+        "pressure_max": 0.95,
+        "pressure_min": 0.25,
+        "speed_max": 618.412,
+        "width_max": 22.792,
+        "width_min": 13.706
+      },
+      "closed": {
+        "paused": false,
+        "mouse_mode": 2
+      },
+      "mover_moved_after": 0.625842750072479,
+      "reacted": true,
+      "pointer_lock_after": true,
+      "ok": true
+    },
+    "kindle": {
+      "key": "shift",
+      "hold_ms": 200,
+      "pointer_lock_before": true,
+      "opened": {
+        "paused": true,
+        "mouse_mode": 0
+      },
+      "pointer_lock_while_open": false,
+      "duration_ms": 159,
+      "frozen_checks": 2,
+      "mover_moved_while_open": 0,
+      "result": "kindle",
+      "score": 0.941,
+      "targets": [
+        "Lamp"
+      ],
+      "input": {
+        "duration": 0.164,
+        "events": 12,
+        "pen": true,
+        "pressure_max": 0.95,
+        "pressure_min": 0.25,
+        "speed_max": 70.771,
+        "width_max": 19.064,
+        "width_min": 18.602
+      },
+      "closed": {
+        "paused": false,
+        "mouse_mode": 2
+      },
+      "mover_moved_after": 0.548408448696136,
+      "reacted": true,
+      "pointer_lock_after": true,
+      "ok": true
+    },
+    "tie": {
+      "key": "q",
+      "hold_ms": 200,
+      "pointer_lock_before": true,
+      "opened": {
+        "paused": true,
+        "mouse_mode": 0
+      },
+      "pointer_lock_while_open": false,
+      "duration_ms": 461,
+      "frozen_checks": 3,
+      "mover_moved_while_open": 0,
+      "result": "tie",
+      "score": 0.992,
+      "targets": [
+        "PostA",
+        "PostB"
+      ],
+      "input": {
+        "duration": 0.469,
+        "events": 31,
+        "pen": true,
+        "pressure_max": 0.95,
+        "pressure_min": 0.25,
+        "speed_max": 954.468,
+        "width_max": 22.039,
+        "width_min": 15.005
+      },
+      "closed": {
+        "paused": false,
+        "mouse_mode": 2
+      },
+      "mover_moved_after": 1.04864919185638,
+      "reacted": true,
+      "pointer_lock_after": true,
+      "ok": true
+    },
+    "bloom_long_hold": {
+      "key": "shift",
+      "hold_ms": 6000,
+      "pointer_lock_before": true,
+      "opened": {
+        "paused": true,
+        "mouse_mode": 0
+      },
+      "pointer_lock_while_open": false,
+      "duration_ms": 913,
+      "frozen_checks": 28,
+      "mover_moved_while_open": 0,
+      "result": "bloom",
+      "score": 0.948,
+      "targets": [
+        "Sapling"
+      ],
+      "input": {
+        "duration": 0.917,
+        "events": 64,
+        "pen": true,
+        "pressure_max": 0.95,
+        "pressure_min": 0.25,
+        "speed_max": 1020.224,
+        "width_max": 21.293,
+        "width_min": 13.173
+      },
+      "closed": {
+        "paused": false,
+        "mouse_mode": 2
+      },
+      "mover_moved_after": 0.903956532478333,
+      "reacted": true,
+      "pointer_lock_after": true,
+      "ok": true
+    }
+  },
+  "chrome": "Chrome/157.0.8103.51",
+  "webgl": "ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 (0x00002206) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "pointer_lock_before": true,
+  "problems": [],
+  "passed": true
+}

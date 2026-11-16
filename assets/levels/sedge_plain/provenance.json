@@ -1,0 +1,211 @@
+{
+ "generator": "tools/levels/sedge_plain/gen_all.sh",
+ "command": "tools/levels/sedge_plain/gen_all.sh",
+ "outputs": [
+  {
+   "path": "assets/levels/sedge_plain/props/bridge_wreck.glb",
+   "sha256": "6cdbded218de08ab3858ab39da34946c5bd28833c8341a2334c4dc910097bb1f",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/landing_stage.glb",
+   "sha256": "ef4bdeb59a1ae3ae83817e8211cca2ad61a9170a157f3e3f6f4d2892de193c7c",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/map_leaf.glb",
+   "sha256": "91266279a08ee34760b98376b634705695c2826a490192cd80b773deb37e8256",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/stone_capped.glb",
+   "sha256": "f85f91d66c84ffef0c3a855fb24eebe7f501bb59fdced8d5b6c6ae40b78b9377",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/stone_fallen.glb",
+   "sha256": "a4bde47eb5d0f430f83d10feb50f13eb437309a618989862d8eafd1ccf93f8cb",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/stone_lean.glb",
+   "sha256": "995eea52f0030483a1421aadb3b6bf189eee7d1ccc41b549baba16e331b1cf6b",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/stone_tall.glb",
+   "sha256": "473aa6601c086ca696c848f757543fe0ef1a3f9cfbebd469ee64ca99bed43d11",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/tamsin_camp.glb",
+   "sha256": "e01e6a5b045ea435f4f0f41ce02b2d9ca235bdf241a699ff64ca64a584a15447",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/tie_post.glb",
+   "sha256": "d03641b141a07e6932dab426744559af724e1f0927db31038cac48ee685f0702",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/props/wood_tree.glb",
+   "sha256": "ae1fba20c2f10fcaa6ef8d632eb95875fa1109a3b5e12751a547b406cdc646f1",
+   "generator": "tools/levels/sedge_plain/make_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_00.glb",
+   "sha256": "c489f532cbbc0b3240373c8db7e1c7554dd346aeabcdc65c1c116e71e495a7da",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_01.glb",
+   "sha256": "8f92b555af818bb2f81c3e9ac5014bc4849912c5aa30f0a6c0587ac572c554d0",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_02.glb",
+   "sha256": "83000da55abcecb1bfad112c932972fe0ea2a877b6f57e23c100dbf2e51a8a13",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_03.glb",
+   "sha256": "980b11f8fcd2ad077e3f5fb0861cb60b25b271397c413a5b94dd03fc0667b09e",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_10.glb",
+   "sha256": "94f12c06f47363cfbfaf50a96b806e5deafb377cfd947242785243d3273c81ab",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_11.glb",
+   "sha256": "0bf1cfe61a85f4200013351aeeaf79c4b7a83207197895ff32c29c3c866ff2b4",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_12.glb",
+   "sha256": "e62d813cb27a6357f8a9dc2cfd34b48803281b28b9e0983129b2679d3250c9d1",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_13.glb",
+   "sha256": "e314024c94864fb32edcaca2a20c2d78e8903fbfa1eba9dd925962d3f1c54833",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_20.glb",
+   "sha256": "f4772536f7f480f6ece1853e3cfc8b119b06792192c57547b6854fb49cb0b742",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_21.glb",
+   "sha256": "da7f8471d2e0b7bdcb4435f09719082bf1a1a90f211563b548d3f18b45c7cc79",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_22.glb",
+   "sha256": "3c5a5b00da16b589fbc7f6c1e162e9952436a70ca2bd0bd25be745183a316c85",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_23.glb",
+   "sha256": "da8da19ac172aa89e6eaf48532b1fd9b043403c020f2cb1d8c24d72c65ba6316",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_30.glb",
+   "sha256": "3dd177d5a9553675ba01d072ce00689afab01ca1518fc288dff21ce9bcd51171",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_31.glb",
+   "sha256": "f071b7968b72e943f1f44fa02acb8892eddada48d5156c2870c9119347eaa733",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_32.glb",
+   "sha256": "71c2853f37820775557ce19a67cf7f68d7041eb2e7fbc01f91a6f7c0bdbb4c88",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_33.glb",
+   "sha256": "5c13b4445e4bfaf411dbe6f02d79d4d84af8d0302a4f45514715c09b25408d4d",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/hills.glb",
+   "sha256": "b38dc06d0b21b6535639cf0090223e43ab6dece3dfae588df3b0637a281e138f",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/river.glb",
+   "sha256": "7d5d160b8d83986e311a6e34067f5bcb0de660e7b862ef7fc9fa5d44ca77f02e",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/safe.glb",
+   "sha256": "a3f0b8f69c4df9d1a61e861af88df3e62ee0ccaae87690fb41baaa3d05583cc1",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/bridge_wreck.png",
+   "sha256": "124ae1b750fc27994bfd77fd9037a7724c91a2788ed723f53aa62ccb9afa7c13",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/ground.png",
+   "sha256": "9b7256842d23faa41128f4785669f3456c974f28d16b578bf5c45d7d87be7499",
+   "generator": "tools/levels/sedge_plain/paint_ground.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/hills.png",
+   "sha256": "4cf07920f90c2ff39e2b3662586bf3ef355e45b848a5325370e5b07170f17ac0",
+   "generator": "tools/levels/sedge_plain/paint_ground.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/landing_stage.png",
+   "sha256": "63d7617ea96e676e8165de64568298361f7d85fc6ac23ed6c347f8f3222fcbc4",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/map_leaf.png",
+   "sha256": "0de78e6d1aa7c9a8d903c5b144bbaac2cf69f6de7020a009ee548bd39aacea1e",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/stone_capped.png",
+   "sha256": "df411aa775519df28c6f6321034b0091306db6afd7cb8d499eb78c5ab423d36f",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/stone_fallen.png",
+   "sha256": "491de16ce1c79208c6f6be5c8218dd5cefaf8cf483d0d47dfca3efe1ae0ec1d4",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/stone_lean.png",
+   "sha256": "742fe38e5b6674e7eb51cc06fb2e498ac64065a29c1142466413d2d9ed8169fd",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/stone_tall.png",
+   "sha256": "f100531fbbad577ac2d3746d60492074ab832d91d173714914c3591f5effed9c",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/tamsin_camp.png",
+   "sha256": "8fac41d58d728b366c6d6152dec994eb843dbee51093bced1b354805d3051bfc",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/tie_post.png",
+   "sha256": "aeb819d7d6a8b5dc2cf6c24a39ac79402aba52558724593204829d3b0a0ce4c4",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/textures/wood_tree.png",
+   "sha256": "dfa84fd4e783bc6f6fa3c8dad665874e9bb1caff8fd8e62da4e08cd8afda6a86",
+   "generator": "tools/levels/sedge_plain/paint_props.py"
+  }
+ ]
+}

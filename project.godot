@@ -1,0 +1,163 @@
+; Engine configuration file.
+; Edit through the Godot editor where possible; this file is owned by the lead.
+
+config_version=5
+
+[application]
+
+config/name="Orimi: The Unfaded Vale"
+run/main_scene="res://scenes/boot.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="res://ui/icon.png"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="orimi"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="forward_plus"
+renderer/rendering_method.web="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+
+[autoload]
+
+Controls="*res://scripts/core/controls.gd"
+Events="*res://scripts/core/events.gd"
+Settings="*res://scripts/core/settings.gd"
+CurseField="*res://scripts/render/curse_field.gd"
+Post="*res://scenes/render/post_chain.tscn"
+Vfx="*res://scripts/vfx/vfx_director.gd"
+Audio="*res://scripts/audio/audio_director.gd"
+Brush="*res://scenes/brush/brush_layer.tscn"
+Game="*res://scripts/game/game.gd"
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
+3d_physics/layer_3="enemy"
+3d_physics/layer_4="brush_target"
+3d_physics/layer_5="trigger"
+3d_physics/layer_6="player_hit"
+3d_physics/layer_7="enemy_hit"
+
+[shader_globals]
+
+paper_intensity={
+"type": "float",
+"value": 0.5
+}
+curse_zone_0={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+curse_zone_1={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+curse_zone_2={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+curse_zone_3={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+curse_amount={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+valley_gloom={
+"type": "float",
+"value": 1.0
+}
+wind={
+"type": "vec4",
+"value": Vector4(1, 0, 0.3, 0.4)
+}
+player_world_pos={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+light_field={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_shade={
+"type": "vec4",
+"value": Vector4(0.3, 0.31, 0.39, 200)
+}
+light_tint={
+"type": "vec4",
+"value": Vector4(1, 0.93, 0.8, 0.35)
+}
+light_pool_0={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_pool_1={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_pool_2={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_pool_3={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_pool_4={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_pool_5={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_pool_6={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_pool_7={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_tint_0={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_tint_1={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_tint_2={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_tint_3={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_tint_4={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_tint_5={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_tint_6={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+light_tint_7={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}

@@ -1,0 +1,757 @@
+{
+	"spawn_facing": "Mender",
+	"warps": {
+		"M_PastTies": {
+			"flags": [
+				"talked_mender",
+				"read_verse_stone",
+				"gust_bellows",
+				"drift_cleared",
+				"thorns_cut",
+				"fight_knot",
+				"reached_island_checkpoint",
+				"lit_island_lamp",
+				"tied_post_a",
+				"tied_bridge"
+			],
+			"face": "Bridge",
+			"route_from": "bridge_tied"
+		}
+	},
+	"hints": [
+		{
+			"id": "example_snare",
+			"near": [
+				12.5,
+				0,
+				31
+			],
+			"radius": 3.5,
+			"text": "Two posts and a kite drifting between them: tie them with a %s.",
+			"glyph": "tie",
+			"until": "caught_snare_a"
+		},
+		{
+			"id": "example_pond",
+			"flag": "fell_in_pond",
+			"text": "Orimi is paper. Deep water sends her back to the bank."
+		}
+	],
+	"barks": {
+		"picked_map_leaf": "leaf_found"
+	},
+	"objectives": [
+		{
+			"text": "Talk to the Mender",
+			"flag": "talked_mender"
+		},
+		{
+			"text": "Read the verse-stone",
+			"flag": "read_verse_stone"
+		},
+		{
+			"text": "Work the bellows to blow the soot drift away",
+			"flag": "drift_cleared"
+		},
+		{
+			"text": "Cut the thorns",
+			"flag": "thorns_cut"
+		},
+		{
+			"text": "Win the sealed fight",
+			"flag": "fight_knot"
+		},
+		{
+			"text": "Cross the mire to the island",
+			"flag": "reached_island_checkpoint"
+		},
+		{
+			"text": "Light the lamp on the island",
+			"flag": "lit_island_lamp"
+		},
+		{
+			"text": "Tie the posts to drag the boulder aside",
+			"flag": "tied_post_a"
+		},
+		{
+			"text": "Tie a rope bridge",
+			"flag": "tied_bridge"
+		},
+		{
+			"text": "Wake the little grove",
+			"flag": "restored_grove"
+		},
+		{
+			"text": "Speak to Sorrel",
+			"flag": "talked_greyed"
+		},
+		{
+			"text": "Find Pell by the raft",
+			"flag": "talked_pell"
+		},
+		{
+			"text": "Find the leaf on the ledge",
+			"flag": "picked_map_leaf"
+		},
+		{
+			"text": "Take the raft home",
+			"flag": "exit_reached"
+		}
+	],
+	"lines": {
+		"mender": [
+			{
+				"text": "Ah, the paper fox. Thorns have grown over the path again."
+			},
+			{
+				"text": "Take up your brush and cut straight across them with a *Slash*."
+			},
+			{
+				"text": "Beyond them a knot of black cord is drifting. Touch it and it will close a ring round you."
+			}
+		],
+		"mender_again": [
+			{
+				"text": "The grove is past the knot. A *Bloom* round the sapling wakes it."
+			}
+		],
+		"greyed_faded": [
+			{
+				"who": "",
+				"text": "Sorrel stands grey and still, like a figure nobody has painted yet."
+			}
+		],
+		"greyed": [
+			{
+				"text": "Oh! The grove is green again. I could not move while it was grey."
+			},
+			{
+				"text": "Thank you, little fox. Tell the Mender I am awake."
+			}
+		],
+		"verse_stone": [
+			{
+				"text": "This stone was set here to show how a verse-stone speaks."
+			},
+			{
+				"text": "Bloom it and its lines appear, one at a time."
+			},
+			{
+				"text": "Key words come in the *accent colour*."
+			},
+			{
+				"text": "When the last line ends, the stone sets its flag."
+			}
+		],
+		"mender_bark": [
+			{
+				"text": "Over here, little fox!"
+			}
+		],
+		"mender_after": [
+			{
+				"text": "The grove is green again. Sorrel will be glad."
+			}
+		],
+		"greyed_wakes": [
+			{
+				"text": "Oh! I can move again!"
+			}
+		],
+		"pell": [
+			{
+				"text": "Raft's tied up at the bank. Hop on when you're ready."
+			}
+		],
+		"pell_arrives": [
+			{
+				"who": "Pell",
+				"text": "Here we are. I'll wait by the raft."
+			}
+		],
+		"pell_leaves": [
+			{
+				"who": "Pell",
+				"text": "All aboard, little fox. Mind the edge."
+			}
+		],
+		"leaf_found": [
+			{
+				"text": "A leaf of somebody's map, folded small. Pell will know whose."
+			}
+		]
+	},
+	"autoplay": {
+		"chain": [],
+		"route": [
+			{
+				"talk": "Mender"
+			},
+			{
+				"stage": "talked"
+			},
+			{
+				"cast": "bloom",
+				"target": "VerseStone",
+				"before": 3.5,
+				"flag": "read_verse_stone"
+			},
+			{
+				"stage": "verse_stone"
+			},
+			{
+				"cast": "gust",
+				"target": "Bellows",
+				"before": 4.5,
+				"flag": "gust_bellows"
+			},
+			{
+				"wait": 1
+			},
+			{
+				"expect_flag": "drift_cleared"
+			},
+			{
+				"stage": "bellows"
+			},
+			{
+				"cast": "slash",
+				"target": "ThornGate",
+				"before": 5,
+				"from": "M_Spawn",
+				"flag": "thorns_cut"
+			},
+			{
+				"stage": "thorns"
+			},
+			{
+				"stage": "knot_view"
+			},
+			{
+				"fight": "Knot",
+				"finish": true,
+				"start_stage": "ring_rise"
+			},
+			{
+				"expect_flag": "fight_knot"
+			},
+			{
+				"stage": "fight_won"
+			},
+			{
+				"go": "M_MireEdge"
+			},
+			{
+				"probe_cursed": "Mire",
+				"toward": [
+					12,
+					0,
+					-3
+				]
+			},
+			{
+				"go": "M_MireEdge"
+			},
+			{
+				"go": [
+					11,
+					0,
+					3.5
+				]
+			},
+			{
+				"go": "M_Island"
+			},
+			{
+				"stage": "island"
+			},
+			{
+				"cast": "kindle",
+				"target": "IslandLamp",
+				"flag": "lit_island_lamp"
+			},
+			{
+				"stage": "lamp_lit"
+			},
+			{
+				"expect_flag": "reached_island_checkpoint"
+			},
+			{
+				"go": [
+					11,
+					0,
+					3.5
+				]
+			},
+			{
+				"go": "M_MireEdge"
+			},
+			{
+				"go": [
+					-8.5,
+					0,
+					9
+				]
+			},
+			{
+				"tie": [
+					"BoulderTie/PostA",
+					"BoulderTie/PostB"
+				],
+				"flag": "tied_post_a"
+			},
+			{
+				"wait": 1.8
+			},
+			{
+				"stage": "boulder_pulled"
+			},
+			{
+				"go": [
+					-10,
+					0,
+					-4
+				]
+			},
+			{
+				"go": [
+					-24,
+					0,
+					-3.5
+				]
+			},
+			{
+				"probe_water": "Shore",
+				"toward": [
+					-24,
+					0,
+					6
+				],
+				"hold": 2
+			},
+			{
+				"stage": "shore"
+			},
+			{
+				"go": [
+					-18,
+					0,
+					-4
+				]
+			},
+			{
+				"go": [
+					-9,
+					0,
+					-24
+				]
+			},
+			{
+				"go": [
+					-20,
+					5,
+					-24
+				]
+			},
+			{
+				"fight": "Knoll",
+				"start_stage": "knoll_ring"
+			},
+			{
+				"expect_flag": "fight_knoll"
+			},
+			{
+				"stage": "knoll_won"
+			},
+			{
+				"go": [
+					-9,
+					0,
+					-24
+				]
+			},
+			{
+				"go": [
+					-10,
+					0,
+					-4
+				]
+			},
+			{
+				"tie": [
+					"Bridge/PostA",
+					"Bridge/PostB"
+				],
+				"before": 5,
+				"flag": "tied_bridge"
+			},
+			{
+				"wait": 0.35
+			},
+			{
+				"stage": "rope_drawn"
+			},
+			{
+				"wait": 1.6
+			},
+			{
+				"stage": "bridge_tied"
+			},
+			{
+				"look": [
+					-13,
+					0.5,
+					3
+				],
+				"pitch": -14
+			},
+			{
+				"stage": "boulder_aside"
+			},
+			{
+				"go": "Grove",
+				"before": 7
+			},
+			{
+				"go": [
+					0,
+					0,
+					-12
+				]
+			},
+			{
+				"wait": 1
+			},
+			{
+				"stage": "flyer"
+			},
+			{
+				"fight": "Grove"
+			},
+			{
+				"bloom_zone": "Grove"
+			},
+			{
+				"stage": "grove_restored"
+			},
+			{
+				"wait_flag": "restored_grove",
+				"timeout": 6
+			},
+			{
+				"talk": "Greyed"
+			},
+			{
+				"stage": "spoke"
+			},
+			{
+				"talk": "Mender"
+			},
+			{
+				"expect_flag": "talked_mender"
+			},
+			{
+				"talk": "Pell"
+			},
+			{
+				"stage": "pell"
+			},
+			{
+				"go": [
+					5,
+					0,
+					28.4
+				]
+			},
+			{
+				"jump": true,
+				"hold": 0.35,
+				"toward": [
+					5,
+					0,
+					31
+				]
+			},
+			{
+				"expect_above": 0.9
+			},
+			{
+				"wait_flag": "picked_map_leaf",
+				"timeout": 3
+			},
+			{
+				"expect_bark": "leaf_found"
+			},
+			{
+				"stage": "ledge"
+			},
+			{
+				"go": [
+					9,
+					0,
+					31.5
+				]
+			},
+			{
+				"probe_water": "Pond",
+				"toward": [
+					9,
+					0,
+					28
+				]
+			},
+			{
+				"expect_prompt": "example_pond",
+				"timeout": 4
+			},
+			{
+				"stage": "pond"
+			},
+			{
+				"expect_flag": "fell_in_pond"
+			},
+			{
+				"go": [
+					12.5,
+					0,
+					31
+				]
+			},
+			{
+				"expect_prompt": "example_snare"
+			},
+			{
+				"stage": "tie_hint"
+			},
+			{
+				"tie": [
+					"SnareA",
+					"SnareB"
+				],
+				"flag": "tied_snare_a"
+			},
+			{
+				"wait_flag": "caught_snare_a",
+				"timeout": 6
+			},
+			{
+				"wait": 0.6
+			},
+			{
+				"look": [
+					14,
+					1,
+					23
+				],
+				"pitch": -12
+			},
+			{
+				"stage": "kite_caught"
+			},
+			{
+				"go": [
+					19,
+					0,
+					30
+				]
+			},
+			{
+				"go": [
+					21.8,
+					0,
+					30
+				]
+			},
+			{
+				"jump": true,
+				"hold": 0.35,
+				"toward": [
+					23.5,
+					0,
+					30
+				]
+			},
+			{
+				"expect_above": 0.9
+			},
+			{
+				"wait": 1.5
+			},
+			{
+				"probe_rising": "Sump",
+				"toward": [
+					21,
+					0,
+					30
+				]
+			},
+			{
+				"expect_above": 0.9
+			},
+			{
+				"stage": "sump_lifted"
+			},
+			{
+				"jump": true,
+				"hold": 0.35,
+				"toward": [
+					26.5,
+					0,
+					30
+				]
+			},
+			{
+				"go": [
+					26.5,
+					0,
+					34.5
+				]
+			},
+			{
+				"go": [
+					7.5,
+					0,
+					34.5
+				]
+			},
+			{
+				"go": [
+					7.5,
+					0,
+					33.5
+				]
+			},
+			{
+				"go": [
+					1,
+					0,
+					33.5
+				]
+			},
+			{
+				"go": [
+					1,
+					0,
+					31
+				]
+			},
+			{
+				"go": [
+					-2.5,
+					0,
+					33
+				]
+			},
+			{
+				"go": [
+					-3.3,
+					0,
+					33
+				]
+			},
+			{
+				"look_away": "Pillar"
+			},
+			{
+				"wait": 1.2
+			},
+			{
+				"stage": "pillar_fade"
+			},
+			{
+				"go": [
+					-8,
+					0,
+					33
+				]
+			},
+			{
+				"stage": "tunnel"
+			},
+			{
+				"expect_height": "TunnelCheckpoint",
+				"y": 0
+			},
+			{
+				"wait_flag": "reached_tunnel_checkpoint",
+				"timeout": 4
+			},
+			{
+				"go": [
+					-13.5,
+					0,
+					33
+				]
+			},
+			{
+				"cast_blocked": "gust",
+				"target": "HiddenBellows",
+				"flag": "gust_hidden_bellows"
+			},
+			{
+				"stage": "glyph_blocked"
+			},
+			{
+				"wait": 1.5
+			},
+			{
+				"expect_calm": "Splotchet_Penned"
+			},
+			{
+				"go": [
+					-8,
+					0,
+					33
+				]
+			},
+			{
+				"go": [
+					-2.5,
+					0,
+					33
+				]
+			},
+			{
+				"go": [
+					-1,
+					0,
+					29
+				]
+			},
+			{
+				"go": "Exit"
+			},
+			{
+				"wait_flag": "exit_reached",
+				"timeout": 10
+			}
+		]
+	},
+	"safe_ground": {
+		"Mire": [
+			{
+				"path": [
+					"M_MireEdge",
+					[
+						11,
+						0,
+						3.5
+					],
+					"M_Island"
+				],
+				"width": 2.2
+			},
+			{
+				"circle": "M_Island",
+				"radius": 2.2
+			}
+		]
+	},
+	"complete_on_objectives": false,
+	"raft": {
+		"water": 0,
+		"arrive": "M_RaftArrive",
+		"arrive_talk": "pell_arrives",
+		"talk": "pell_leaves"
+	}
+}

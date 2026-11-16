@@ -1,0 +1,58 @@
+{
+  "generator": "tools/textures/vfx/gen_vfx_textures.py",
+  "command": "tools/textures/vfx/gen_vfx_textures.sh",
+  "outputs": [
+    {
+      "path": "assets/textures/vfx/clouds.png",
+      "sha256": "40279a51bbc26bc2682b9daf9c2f8daf009912ff1300f331747c485b620cac0b"
+    },
+    {
+      "path": "assets/textures/vfx/curls.png",
+      "sha256": "9448ef9fd89d2078d4527735fd6c8a856ea395c0d26d6b887e891c4ab40f753e"
+    },
+    {
+      "path": "assets/textures/vfx/flowers.png",
+      "sha256": "a5d5cfc3957a67233603aa50b7a4269e2bcdf0adaba23b144e73cd99220afb27"
+    },
+    {
+      "path": "assets/textures/vfx/foliage.png",
+      "sha256": "fde6ee0110143ae7bd07d19c5b7a0f0484f51927d515ca843dc4fb2115e57301"
+    },
+    {
+      "path": "assets/textures/vfx/ink_splats.png",
+      "sha256": "f4b3e71caf7e3cfd1fe6784c296a8655c7a339f4188f02d070e1fd9c36aa9c79"
+    },
+    {
+      "path": "assets/textures/vfx/mist.png",
+      "sha256": "090672f3d0d4a8ce98eebc960b5b84ad12c86b7d8561966a3139471d25a1b1fe"
+    },
+    {
+      "path": "assets/textures/vfx/noise.png",
+      "sha256": "7c1c72f9441df603455246e43d151fb53be9d165d7b715b4a2a2636cc19a765a"
+    },
+    {
+      "path": "assets/textures/vfx/petals.png",
+      "sha256": "b59198e37de781d3214b872b1d0d97a987699ea596601e2cfa5079e6b7922f31"
+    },
+    {
+      "path": "assets/textures/vfx/ribbon.png",
+      "sha256": "51077c309a6591140be0ee18cc385e72eca0a38fea7248cfab433893cce2389d"
+    },
+    {
+      "path": "assets/textures/vfx/ripples.png",
+      "sha256": "d36ea9bd20b82263e433a38d7004fbf15f88534003661ff80d94a7a08fc3ee6e"
+    },
+    {
+      "path": "assets/textures/vfx/soot.png",
+      "sha256": "371a36515b76be1a990f38ae9229b33408be57e4889b148ae373f9ded9485c89"
+    },
+    {
+      "path": "assets/textures/vfx/sparks.png",
+      "sha256": "3bfe0a6002deefcb362760535f1ef19b0f30c1f47fae2752692bbe83eb14fd54"
+    },
+    {
+      "path": "assets/textures/vfx/water_cells.png",
+      "sha256": "67a13b94e36a8d26b058a6adca5dcf426d12652e7cbbf7e0f71d654464124a90"
+    }
+  ]
+}
