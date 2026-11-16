@@ -134,7 +134,7 @@ func _apply_mesh(mi: MeshInstance3D) -> void:
 				return
 		mi.set_meta(SOURCE_META, sources)
 	mi.material_override = null
-	var size := mi.mesh.get_aabb().size * mi.global_transform.basis.get_scale()
+	var size := mi.mesh.get_aabb().size * (mi.global_transform if mi.is_inside_tree() else mi.transform).basis.get_scale()
 	var ground := maxf(size.x, size.z) > GROUND_SIZE
 	for i in count:
 		var src: Material = sources[i]
