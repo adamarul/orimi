@@ -274,6 +274,14 @@
 				"stage": "lamp_lit"
 			},
 			{
+				"cast": "kindle",
+				"target": "IslandFruit",
+				"flag": "lit_island_fruit"
+			},
+			{
+				"stage": "fruit_lit"
+			},
+			{
 				"expect_flag": "reached_island_checkpoint"
 			},
 			{

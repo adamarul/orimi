@@ -20,6 +20,10 @@ signal kindled
 @export var light_color: Color = Color("ffcf7a")
 @export var light_range: float = 7.0
 @export var light_energy: float = 1.6
+## How much of its own colour the model keeps in a dark or drained place (InkLook.light_keep):
+## 0 follows the place, 1 is untouched. -1 = automatic: 0.6 for a lantern-fruit (it glows on
+## its branch even unlit), the ink look's own default for lamps and braziers.
+@export_range(-1.0, 1.0) var light_keep: float = -1.0
 
 var lit := false
 var model: Node3D
@@ -39,6 +43,12 @@ func _ready() -> void:
 	else:
 		model = ModelKit.load_model(kind, ModelKit.kindle.bind(kind))
 	add_child(model)
+	var keep := light_keep if light_keep >= 0.0 else (0.6 if kind == "lantern_fruit" else -1.0)
+	var look := ModelKit.ink_look(model)
+	if look != null and keep >= 0.0:
+		look.light_keep = keep
+		look.apply()
+		Game.qa_log("kindle_look", {"target": String(name), "kind": kind, "light_keep": keep})
 	var wick_node := model.find_child("Wick", true, false) as Node3D
 	if wick_node != null:
 		_wick = wick_node.position
