@@ -51,6 +51,7 @@ var _title_buttons: VBoxContainer
 var _title_list: VBoxContainer
 var _title_progress: InkProgress
 var _title_status: Label
+var _title_beads: BeadCord
 var _intro: Control
 var _intro_text: RichTextLabel
 var _end: Control
@@ -136,8 +137,8 @@ func _build_menus() -> void:
 	panel.seed_value = 12
 	panel.ragged = 10.0
 	panel.stains = 7
-	panel.position = Vector2(70, 90)
-	panel.size = Vector2(540, 500)
+	panel.position = Vector2(70, 70)
+	panel.size = Vector2(580, 586)
 	_title.add_child(panel)
 	var v := VBoxContainer.new()
 	v.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -150,6 +151,9 @@ func _build_menus() -> void:
 	v.add_child(UiKit.label("Orimi", 96))
 	v.add_child(UiKit.label("The Unfaded Vale", 32, Palette.VERMILION_DEEP))
 	v.add_child(UiKit.label("Book One: Upriver", 18, Palette.SEPIA))
+	_title_beads = BeadCord.new()
+	_title_beads.bead_radius = 9.0
+	v.add_child(_title_beads)
 	var spacer := Control.new()
 	spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -357,10 +361,13 @@ func _build_title_buttons() -> void:
 	for c in _title_buttons.get_children():
 		c.queue_free()
 	var any_done: bool = not (Game.progress["completed"] as Array).is_empty()
-	var first := _title_button(_title_buttons, "Continue" if any_done else "Begin", start_game)
+	var shown := String(LevelRegistry.find(title_level_id()).get("name", title_level_id()))
+	var first := _title_button(_title_buttons, ("Continue: %s" if any_done else "Begin: %s") % shown, start_game)
+	_title_button(_title_buttons, "Chapters", _show_chapters)
 	if any_done:
-		_title_button(_title_buttons, "Chapters", _show_chapters)
 		_title_button(_title_buttons, "Begin anew", new_journey)
+	_title_beads.refresh()
+	Game.qa_log("title_menu", {"first": first.text, "beads": Game.bead_colors().size()})
 	first.grab_focus()
 	_title_buttons.visible = true
 
@@ -382,17 +389,38 @@ func _show_chapters() -> void:
 		c.queue_free()
 	var levels := LevelRegistry.levels()
 	var first: Button = null
+	var rows := []
 	for i in levels.size():
 		var e: Dictionary = levels[i]
 		var id := StringName(e["id"])
-		var open := i == 0 or Game.is_level_completed(StringName(levels[i - 1]["id"])) or Game.is_level_completed(id)
-		var b := _title_button(_title_list, "%d. %s" % [i + 1, String(e.get("name", id))], choose_level.bind(id))
-		b.add_theme_font_size_override("font_size", 22)
+		var done := Game.is_level_completed(id)
+		var open := i == 0 or done or Game.is_level_completed(StringName(levels[i - 1]["id"]))
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 10)
+		_title_list.add_child(row)
+		var dot := Control.new()
+		dot.custom_minimum_size = Vector2(22, 22)
+		dot.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		var bead := Color(String(e.get("bead_color", "#efe6d2")))
+		dot.draw.connect(func() -> void:
+			if done:
+				dot.draw_circle(Vector2(11, 11), 8.0, bead)
+				dot.draw_arc(Vector2(11, 11), 8.0, 0.0, TAU, 24, Palette.INK, 1.6, true)
+			else:
+				dot.draw_arc(Vector2(11, 11), 5.0, 0.0, TAU, 20, UiKit.INK_FAINT, 1.3, true))
+		row.add_child(dot)
+		var b := _title_button(row, "%d. %s" % [i + 1, String(e.get("name", id))], choose_level.bind(id))
+		b.add_theme_font_size_override("font_size", 21)
 		b.disabled = not open
-		if Game.is_level_completed(id):
-			b.text += "   (%s bead)" % String(e.get("bead", ""))
+		if done:
+			b.tooltip_text = "The %s bead" % String(e.get("bead", ""))
+		var chapter := UiKit.label(String(e.get("chapter", "")) + ("" if open else "  ·  locked"), 15, Palette.SEPIA if open else UiKit.INK_FAINT)
+		chapter.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		row.add_child(chapter)
+		rows.append({"id": String(id), "open": open, "bead": done})
 		if first == null and open:
 			first = b
+	Game.qa_log("title_chapters", {"rows": rows})
 	_title_button(_title_list, "Back", func() -> void:
 		_title_list.visible = false
 		_title_buttons.visible = true

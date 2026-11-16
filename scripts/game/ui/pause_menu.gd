@@ -24,6 +24,8 @@ const GLYPHS := [
 var _pages: Dictionary = {}
 var _paper_buttons: Array[Button] = []
 var _first: Button
+var _beads: BeadCord
+var _bead_count: Label
 var _syncing := false
 
 
@@ -69,8 +71,16 @@ func _ready() -> void:
 	var sub := UiKit.label("the world holds still", 17, Palette.SEPIA)
 	nav.add_child(sub)
 	var gap := Control.new()
-	gap.custom_minimum_size = Vector2(0, 18)
+	gap.custom_minimum_size = Vector2(0, 10)
 	nav.add_child(gap)
+	_beads = BeadCord.new()
+	_beads.bead_radius = 9.0
+	nav.add_child(_beads)
+	_bead_count = UiKit.label("", 16, Palette.SEPIA)
+	nav.add_child(_bead_count)
+	var gap1 := Control.new()
+	gap1.custom_minimum_size = Vector2(0, 8)
+	nav.add_child(gap1)
 	_first = _nav_button(nav, "Resume", func() -> void: Game.resume_game())
 	_nav_button(nav, "Settings", _show_page.bind("settings"))
 	_nav_button(nav, "Controls", _show_page.bind("controls"))
@@ -101,6 +111,9 @@ func _ready() -> void:
 func open() -> void:
 	visible = true
 	_sync_paper()
+	_beads.refresh()
+	var held := Game.bead_colors().size()
+	_bead_count.text = "%d of %d beads on Orimi's cord" % [held, LevelRegistry.levels().size()] if held > 0 else "No beads on Orimi's cord yet"
 	_show_page("settings")
 	_first.grab_focus()
 

@@ -108,6 +108,12 @@ func _run() -> void:
 		_load_chain()
 		await _wait(0.8)
 		await _stage("spawn" if id == "hazewater" else id + "_spawn")
+		if only_one and String(Boot.opt("beads_check", "0")) == "1":
+			# beads_check=1 (with level=, usually completed=): the beads in the HUD, on Orimi's cord
+			# close up, and on the pause screen.
+			await _show_beads()
+			_finish()
+			return
 		if only_one and String(Boot.opt("end_card", "0")) == "1":
 			# end_card=1 (with level=): straight to this level's end card, to check its text.
 			main._show_end(_level)
@@ -136,6 +142,31 @@ func _run() -> void:
 	elif not only_one:
 		_fail("end card never shown")
 	_finish()
+
+
+func _show_beads() -> void:
+	await _stage("hud_beads")
+	# Each shot is taken a moment after its QA line (in the browser, by the page): hold the view.
+	await _wait(1.2)
+	var on_cord := _player.find_children("CordBead*", "MeshInstance3D", true, false)
+	var at := _player.global_position + Vector3.UP * 0.62
+	if not on_cord.is_empty():
+		at = Vector3.ZERO
+		for b: Node in on_cord:
+			at += (b as Node3D).global_position
+		at /= on_cord.size()
+	var front := -_player.global_basis.z
+	_level.camera.cinematic_to(at + front * 0.95 + _player.global_basis.x * 0.35 + Vector3.UP * 0.2, at, 0.01)
+	await _wait(0.8)
+	await _stage("cord_beads")
+	await _wait(1.2)
+	_level.camera.release()
+	Game.pause_game()
+	await _wait(0.8)
+	await _stage("pause_beads")
+	await _wait(1.2)
+	Game.resume_game()
+	Game.qa_log("beads_shown", {"beads": Game.bead_colors().size(), "on_cord": on_cord.size()})
 
 
 ## The route steps after the warp's route_from stage (level.json warps.<marker>.route_from).

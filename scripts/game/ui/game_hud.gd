@@ -1,6 +1,7 @@
 class_name GameHud
 extends CanvasLayer
-## In-play interface: health petals and the ink pot on a torn paper scrap, tutorial prompts,
+## In-play interface: health petals, the ink pot and the beads on Orimi's cord on a torn paper scrap,
+## tutorial prompts,
 ## the zone-restored banner, and a hint when the mouse is not captured. Owner: gameplay.
 
 const INK_POT_SCENE := "res://scenes/brush/ink_pot.tscn"
@@ -8,6 +9,7 @@ const GLYPH_CARD_SCENE := "res://scenes/brush/glyph_card.tscn"
 
 var petals: PetalHealth
 var ink_pot: Control
+var beads: BeadCord
 var prompt_panel: PaperPanel
 var prompt_text: RichTextLabel
 var prompt_icon: GlyphIcon
@@ -35,7 +37,7 @@ func _ready() -> void:
 	var status := PaperPanel.new()
 	status.seed_value = 3
 	status.position = Vector2(14, 10)
-	status.size = Vector2(214, 128)
+	status.size = Vector2(214, 152)
 	status.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_root.add_child(status)
 	petals = PetalHealth.new()
@@ -51,6 +53,10 @@ func _ready() -> void:
 	ink_pot.size = Vector2(84, 96)
 	ink_pot.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	status.add_child(ink_pot)
+	beads = BeadCord.new()
+	beads.bead_radius = 7.0
+	beads.position = Vector2(22, 118)
+	status.add_child(beads)
 
 	prompt_panel = PaperPanel.new()
 	prompt_panel.seed_value = 9
@@ -127,6 +133,7 @@ func reset() -> void:
 	petals.set_health(OrimiPlayer.MAX_HP, OrimiPlayer.MAX_HP)
 	hide_prompt()
 	banner.visible = false
+	beads.refresh()
 	Events.ink_changed.emit(Brush.ink, Brush.ink_max)
 
 
