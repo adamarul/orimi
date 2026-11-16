@@ -172,6 +172,7 @@ The post chain affects the 3D world only; the HUD and menus draw above it.
 | wind | vec4 | vfx (env) | xyz direction, w strength |
 | player_world_pos | vec3 | gameplay | the player's position, for foliage bending and wake effects |
 | light_field, light_shade, light_tint, light_pool_0..7, light_tint_0..7 | see docs/SHADERS.md | render (`LightPools`) | light pools: lamplight that brings colour back in a drained place, and darkness pushed back by lit lamps. A level adds a `LightPools` node (scripts/render/light_pools.gd) and never sets these itself. Off by default |
+| curse_restored_0..3 | vec4 each | render (`CurseField`) | places restored earlier in this level, remembered after their curse slot is freed so ground ink marks stay light there. Cleared when the level changes. Nobody else sets these |
 
 ## Events (scripts/core/events.gd)
 
