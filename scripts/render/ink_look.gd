@@ -19,7 +19,7 @@ const SACRED_SUFFIX := "_sacred"
 const SOURCE_META := &"ink_source_materials"
 ## A textured mesh wider than this (metres) is ground: its painted dark marks are drawn as crisp
 ## ink that lightens once the place is restored (ink_toon's ground_marks).
-const GROUND_SIZE := 40.0
+const GROUND_SIZE := 30.0
 
 ## Line and band presets. "world": heavy pure-black one-sided strokes (1.5 to 4 %H).
 ## "character": softer warm-grey line (0.5 to 1.2 %H), broken in places.
