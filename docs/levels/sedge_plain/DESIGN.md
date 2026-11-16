@@ -241,7 +241,7 @@ level=sedge_plain` plays the same route.
 ## Look-dev
 
 `scenes/levels/sedge_plain/lookdev.tscn` shows the terrain, the dressing, Tamsin and the card
-foliage, which is 700 cards per tile across 16 tiles (11,290 cards). Boot options are listed at
+foliage, which is 700 cards per 36 m foliage tile across 16 tiles (11,290 cards). Boot options are listed at
 the top of `scripts/levels/sedge_plain/lookdev.gd`.
 
 - Desktop: [lookdev_desktop.jpg](lookdev_desktop.jpg) (landing, camp, stones, knoll, rim and
@@ -253,8 +253,12 @@ the top of `scripts/levels/sedge_plain/lookdev.gd`.
 
 ## Budget
 
-- **Terrain:** 16 ground tiles of 2,592 tris each, hills at 4,338, the safe skin at 1,394 and
+- **Terrain:** 36 ground tiles (a 6x6 grid) of 2,504 to 2,720 tris each, counting the visual mesh
+  and its collision copy against QA's 5,000 per asset; hills at 4,338, the safe skin at 1,394 and
   the river at 240.
+- **First sights:** the browser compiles a shader the first time it draws with it, so the level
+  draws each fight, zone, enemy kind and a tied rope once behind the loading screen
+  (`_warm_first_sights` in sedge_plain.gd). Without it the first frame at the Knoll took 5 to 7 s.
 - **Props:** 68 to 692 tris each. Tamsin is 552.
 - **Textures:** ground 2048², hills 1024², props 512² (tamsin_camp is 1024², map_leaf is 256²).
 - **Size added to the export:** about 2.2 MB in index.pck (2.09 MB of imported resources with
