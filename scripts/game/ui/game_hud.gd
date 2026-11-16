@@ -37,7 +37,7 @@ func _ready() -> void:
 	var status := PaperPanel.new()
 	status.seed_value = 3
 	status.position = Vector2(14, 10)
-	status.size = Vector2(214, 152)
+	status.size = Vector2(214, 160)
 	status.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_root.add_child(status)
 	petals = PetalHealth.new()
@@ -54,8 +54,8 @@ func _ready() -> void:
 	ink_pot.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	status.add_child(ink_pot)
 	beads = BeadCord.new()
-	beads.bead_radius = 7.0
-	beads.position = Vector2(22, 118)
+	beads.bead_radius = 10.0
+	beads.position = Vector2(18, 118)
 	status.add_child(beads)
 
 	prompt_panel = PaperPanel.new()
