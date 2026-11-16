@@ -73,6 +73,22 @@ curse_amount={
 "type": "vec4",
 "value": Vector4(0, 0, 0, 0)
 }
+curse_restored_0={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+curse_restored_1={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+curse_restored_2={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
+curse_restored_3={
+"type": "vec4",
+"value": Vector4(0, 0, 0, 0)
+}
 valley_gloom={
 "type": "float",
 "value": 1.0

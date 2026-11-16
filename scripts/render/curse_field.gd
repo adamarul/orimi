@@ -8,6 +8,9 @@ extends Node
 ## has passed the rim at amount 0. Raising the amount again re-curses from the rim inward.
 
 const MAX_ZONES := 4
+## Added by render: places whose curse was lifted in the current level, remembered after their
+## area gives up its slot (curse_restored_0..3), so ground marks stay lighter there.
+const MAX_RESTORED := 4
 const WALL_SHADER := preload("res://shaders/render/curse_wall.gdshader")
 const NOISE_TEX := preload("res://assets/textures/render/ink_noise.png")
 
@@ -27,6 +30,8 @@ var _tweens: Array[Tween] = [null, null, null, null]
 var _gloom_tween: Tween
 var _walls: Array[MeshInstance3D] = []
 var _walls_dirty := false
+var _restored: Array[Vector4] = []
+var _restored_level := 0
 
 
 func _ready() -> void:
@@ -141,6 +146,8 @@ func _kill(slot: int) -> void:
 
 func _set_amount(value: float, slot: int) -> void:
 	_amounts[slot] = value
+	if value <= 0.0 and _radii[slot] > 0.0:
+		_remember_restored(_centers[slot], _radii[slot])
 	_push()
 	_walls[slot].visible = walls_enabled and _radii[slot] > 0.0 and value > 0.0
 
@@ -152,7 +159,30 @@ func _update_walls() -> void:
 	_walls_dirty = true
 
 
+func _remember_restored(center: Vector3, radius: float) -> void:
+	_check_level()
+	for i in _restored.size():
+		if Vector3(_restored[i].x, _restored[i].y, _restored[i].z).distance_to(center) < 0.5:
+			_restored.remove_at(i)
+			break
+	_restored.append(Vector4(center.x, center.y, center.z, radius))
+	if _restored.size() > MAX_RESTORED:
+		_restored.pop_front()
+
+
+## The remembered places belong to one level; a new level starts with none.
+func _check_level() -> bool:
+	var id := Game.level.get_instance_id() if is_instance_valid(Game.level) else 0
+	if id == _restored_level:
+		return false
+	_restored_level = id
+	_restored.clear()
+	return true
+
+
 func _physics_process(_delta: float) -> void:
+	if _check_level():
+		_push()
 	if not _walls_dirty:
 		return
 	_walls_dirty = false
@@ -232,3 +262,6 @@ func _push() -> void:
 	RenderingServer.global_shader_parameter_set(
 		&"curse_amount", Vector4(_amounts[0], _amounts[1], _amounts[2], _amounts[3]))
 	RenderingServer.global_shader_parameter_set(&"valley_gloom", valley_gloom)
+	for i in MAX_RESTORED:
+		RenderingServer.global_shader_parameter_set(StringName("curse_restored_%d" % i),
+				_restored[i] if i < _restored.size() else Vector4.ZERO)

@@ -22,6 +22,11 @@ global uniform vec4 curse_zone_2;
 global uniform vec4 curse_zone_3;
 global uniform vec4 curse_amount;
 global uniform float valley_gloom;
+// xyz centre, w radius of places whose curse was lifted in this level (0 = unused).
+global uniform vec4 curse_restored_0;
+global uniform vec4 curse_restored_1;
+global uniform vec4 curse_restored_2;
+global uniform vec4 curse_restored_3;
 global uniform vec4 wind;
 // Light pools (LightPools, scripts/render/light_pools.gd): x drained, y darkness, z warmth,
 // w 1 while any pool is lit. light_shade: rgb multiplier at full darkness, a the view distance
@@ -268,8 +273,11 @@ float ink_restored_zone(vec3 world_pos, vec4 zone, float amount) {
 }
 
 float ink_restored(vec3 world_pos) {
-	return max(max(ink_restored_zone(world_pos, curse_zone_0, curse_amount.x), ink_restored_zone(world_pos, curse_zone_1, curse_amount.y)),
+	float now = max(max(ink_restored_zone(world_pos, curse_zone_0, curse_amount.x), ink_restored_zone(world_pos, curse_zone_1, curse_amount.y)),
 			max(ink_restored_zone(world_pos, curse_zone_2, curse_amount.z), ink_restored_zone(world_pos, curse_zone_3, curse_amount.w)));
+	float past = max(max(ink_restored_zone(world_pos, curse_restored_0, 0.0), ink_restored_zone(world_pos, curse_restored_1, 0.0)),
+			max(ink_restored_zone(world_pos, curse_restored_2, 0.0), ink_restored_zone(world_pos, curse_restored_3, 0.0)));
+	return max(now, past);
 }
 
 // 0..1 closeness to the boundary of the cursed zone world_pos is in: 1 at the rim, falling to 0
