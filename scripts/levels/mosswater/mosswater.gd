@@ -76,6 +76,7 @@ func _build(progress: Callable) -> void:
 	_ease_dark(0.0)
 	for n: Node in find_children("Lily_*", "GlyphTarget", true, false):
 		MwBuilder.anim((n as GlyphTarget).model, "bud")
+		n.add_to_group(Sootflit.PAD_GROUP)
 	var log_node := _prop("log")
 	if log_node != null:
 		log_node.add_child(_log_walk())

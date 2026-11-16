@@ -745,15 +745,7 @@
 				"flag": "lily_2_open"
 			},
 			{
-				"go": [
-					-3.95,
-					6.55,
-					2.12
-				]
-			},
-			{
 				"jump": true,
-				"hold": 0.25,
 				"toward": "M_Lily_2"
 			},
 			{
@@ -766,15 +758,7 @@
 				"flag": "lily_3_open"
 			},
 			{
-				"go": [
-					-4.19,
-					6.55,
-					-1.01
-				]
-			},
-			{
 				"jump": true,
-				"hold": 0.25,
 				"toward": "M_Lily_3"
 			},
 			{
@@ -784,15 +768,7 @@
 				"stage": "lilies_open"
 			},
 			{
-				"go": [
-					-2.53,
-					6.55,
-					-3.29
-				]
-			},
-			{
 				"jump": true,
-				"hold": 0.25,
 				"toward": "M_Island"
 			},
 			{

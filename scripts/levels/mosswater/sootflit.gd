@@ -22,6 +22,9 @@ const DOWNED_TIME := 3.0
 const DRIFT := 6.0
 ## It dives only while Orimi is this close to home (flat metres), so a pack keeps to its own place.
 const DIVE_REACH := 10.0
+## Lily pads (the level puts them in this group) and how far round each a dive leaves Orimi alone.
+const PAD_GROUP := &"mw_lily_pad"
+const PAD_REACH := 1.6
 
 var state := CIRCLE
 var _timer := 0.0
@@ -160,6 +163,19 @@ func _on_blocked(_source: StringName) -> void:
 		look.flash(Palette.IVORY, 0.08)
 
 
+## Fair game: Orimi on her feet on solid ground. Never mid-jump, and never on a lily pad (a
+## 2.4 m disc over deep water, where she stands still to Bloom the next bud): a dive there could
+## only throw her in.
+func _fair_target(p: Node3D) -> bool:
+	if p is CharacterBody3D and not (p as CharacterBody3D).is_on_floor():
+		return false
+	for pad: Node in get_tree().get_nodes_in_group(PAD_GROUP):
+		var at := (pad as Node3D).global_position
+		if Vector2(p.global_position.x - at.x, p.global_position.z - at.z).length() < PAD_REACH:
+			return false
+	return true
+
+
 func _think(delta: float) -> void:
 	_timer -= delta
 	_dive_cd -= delta
@@ -169,7 +185,7 @@ func _think(delta: float) -> void:
 			_angle += _turn * ORBIT_SPEED / ORBIT_RADIUS * delta
 			var bob := sin(_angle * 2.3) * 0.35
 			_fly_toward(_orbit_centre() + Vector3(cos(_angle) * ORBIT_RADIUS, bob, sin(_angle) * ORBIT_RADIUS), delta)
-			if aggro and p != null and _dive_cd <= 0.0 and Vector2(p.global_position.x - home.x, p.global_position.z - home.z).length() < DIVE_REACH and _take_attack_token():
+			if aggro and p != null and _dive_cd <= 0.0 and _fair_target(p) and Vector2(p.global_position.x - home.x, p.global_position.z - home.z).length() < DIVE_REACH and _take_attack_token():
 				_timer = WINDUP_TIME
 				_go(WINDUP, &"dive")
 		WINDUP:
