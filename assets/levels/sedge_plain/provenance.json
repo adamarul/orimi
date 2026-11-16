@@ -254,7 +254,7 @@
   },
   {
    "path": "assets/levels/sedge_plain/textures/ground.png",
-   "sha256": "9b7256842d23faa41128f4785669f3456c974f28d16b578bf5c45d7d87be7499",
+   "sha256": "39d14fc8df212bbd7664282cbe9b8f3c84c5b792a8ad788aafa1b76fc54121ed",
    "generator": "tools/levels/sedge_plain/paint_ground.py"
   },
   {
