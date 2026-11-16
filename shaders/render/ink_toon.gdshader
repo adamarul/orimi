@@ -10,8 +10,12 @@ render_mode unshaded, cull_back, depth_draw_opaque, shadows_disabled, fog_disabl
 
 group_uniforms fill;
 uniform vec4 albedo_color : source_color = vec4(0.937, 0.902, 0.824, 1.0);
-uniform sampler2D albedo_tex : filter_linear_mipmap, repeat_enable, hint_default_white;
+uniform sampler2D albedo_tex : filter_linear_mipmap_anisotropic, repeat_enable, hint_default_white;
 uniform bool use_texture = false;
+uniform bool ground_marks = false;
+uniform float mark_cut : hint_range(0.0, 1.0) = 0.22;
+uniform float mark_halo : hint_range(0.0, 1.0) = 0.5;
+uniform float restored_marks : hint_range(0.0, 1.0) = 0.35;
 uniform bool has_vertex_color = false;
 group_uniforms;
 
@@ -94,8 +98,19 @@ void fragment() {
 	}
 
 	vec3 base = ink_in(albedo_color.rgb);
+	float mark = 0.0;
 	if (use_texture) {
-		base *= texture(albedo_tex, UV).rgb;
+		vec3 t = texture(albedo_tex, UV).rgb;
+		if (ground_marks) {
+			// painted dark marks on a map-sized ground texture: a crisp ink edge at mark_cut instead
+			// of the magnified, blurred texels, and the blurred halo lifted back to ground colour
+			float l = ink_luma(t);
+			float w = max(fwidth(l), 0.01);
+			mark = 1.0 - smoothstep(mark_cut - w, mark_cut + w, l);
+			t *= max(mark_halo / max(l, 0.02), 1.0);
+			mark *= mix(1.0, restored_marks, max(1.0 - valley_gloom, ink_restored(v_world)));
+		}
+		base *= t;
 	}
 
 	// faceted normal from derivatives (view space -> world)
@@ -112,6 +127,7 @@ void fragment() {
 	float lo = 1.0 - smoothstep(band_low_cut - aa, band_low_cut + aa, ndl);
 	vec3 c = base * mix(1.0, band_high, hi);
 	c = mix(c, base * band_low * shadow_tint, lo);
+	c = mix(c, INK_BLACK, mark);
 
 	float dist = length(VERTEX);
 	float rag = texture(noise_tex, v_world.xz * 0.09 + vec2(TIME * 0.004, 0.0)).g * 0.6

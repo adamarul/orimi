@@ -257,6 +257,21 @@ void ink_curse(vec3 world_pos, float rag, float rim_world,
 	ink_curse_zone(world_pos, curse_zone_3, curse_amount.w, rag, rim_world, inside, wall, rim, front_edge);
 }
 
+// 0..1 how restored world_pos is: inside a zone whose curse has been lifted (amount 0), 1.
+float ink_restored_zone(vec3 world_pos, vec4 zone, float amount) {
+	if (zone.w <= 0.0) {
+		return 0.0;
+	}
+	float vert;
+	float d = ink_curse_reach(world_pos, zone, vert);
+	return (1.0 - smoothstep(zone.w - 1.0, zone.w, d)) * vert * (1.0 - clamp(amount, 0.0, 1.0));
+}
+
+float ink_restored(vec3 world_pos) {
+	return max(max(ink_restored_zone(world_pos, curse_zone_0, curse_amount.x), ink_restored_zone(world_pos, curse_zone_1, curse_amount.y)),
+			max(ink_restored_zone(world_pos, curse_zone_2, curse_amount.z), ink_restored_zone(world_pos, curse_zone_3, curse_amount.w)));
+}
+
 // 0..1 closeness to the boundary of the cursed zone world_pos is in: 1 at the rim, falling to 0
 // by width metres inside. 0 outside every zone. For the red light that pools near the black mass.
 float ink_curse_edge(vec3 world_pos, float width) {
