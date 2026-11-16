@@ -2,21 +2,18 @@
 
 One entry per finding. Severity: blocker (a DoD line cannot pass), high, medium, low.
 Status: open until the lead closes it. Gate run these come from: docs/qa/evidence/dod.md (the
-final gate on d0685c3, ws/qa with main 887d424 merged; browser build exported from that commit).
-Every finding below was re-judged on 2026-11-16 from fresh browser captures and QA logs (the gates
-on 2f8ed3e and 05e935a/d0685c3). Level-row stage shots named below but not in docs/qa/evidence (the
-gate publishes every third) are full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/.
+final gate on 312543b, ws/qa with main 8d0f362 merged; browser build exported from that commit;
+35 PASS, 0 FAIL). Every finding below was re-judged from that gate's fresh browser captures and QA
+logs. Level-row stage shots named below but not in docs/qa/evidence (the gate publishes every third)
+are full-size on the QA machine under .userdata/qa/full/docs/qa/evidence/.
 
 ## Open, by owner
 
 | Owner | Findings |
 | - | - |
-| Mosswater (with gameplay's autoplay) | F-029 the route step at PondMid and the stair tree fails about half the time (fails DoD 5's book row, and with it DoD 3's stack row); F-023 a: the camera behind rocks at the waterwheel |
-| Sedge Plain (or render) | F-021: low views of the path still smear the tuft marks into soft dark streaks |
-| gameplay | F-022: after a reload, Continue shows the WASD card again |
+| Sedge Plain (or render) | F-021: low views of the road still smear the tuft marks into soft dark streaks (low, visual; no gate row) |
 
-Closed on 2026-11-16 after re-judging: F-015, F-016, F-017, F-018, F-019, F-020, F-023 b to d,
-F-024, F-025, F-026, F-027, F-028.
+Closed on 2026-11-16 and 2026-11-17 after re-judging: F-015 to F-020, F-022 to F-029.
 
 ## F-015 Clouds read close to the reference game's signature cloud (closed 2026-11-16 by QA: redrawn by vfx in c5ff452, seen in the 940acaa gate; DoD 7, visual)
 
@@ -57,6 +54,7 @@ F-024, F-025, F-026, F-027, F-028.
 
 ## F-021 Blurred dark smudges over the ground (open, low; visual; narrowed to Sedge Plain)
 
+- **Re-judged on 312543b:** unchanged on Sedge Plain: soft dark streaks along the road at a low camera (web_level_sedge_plain_east, and the Continue capture web_resume_tallowford_continued.jpg). Hazewater stays crisp. It is the one open finding; no gate row depends on it.
 - **Re-judged:** Hazewater's ground marks are now crisp ink flecks and lighten where restored (stack web_01 to web_09, the six paper screenshots). On Sedge Plain the low path views still show soft, smeared dark streaks along the road (web_level_sedge_plain_west, _sedge_plain_spawn, _east).
 - **What:** soft, motion-blurred black blots lie over the ground in nearly every outdoor capture of
   Hazewater and Sedge Plain (docs/qa/stack/web_01 to web_09; web_level_sedge_plain_*), also after a
@@ -64,8 +62,9 @@ F-024, F-025, F-026, F-027, F-028.
   file.
 - **Owner:** render or vfx (whichever draws ground decals or soot flecks).
 
-## F-022 The control prompts come back in every level (open, low; gameplay; narrowed to Continue)
+## F-022 The control prompts came back in every level (closed 2026-11-17; gameplay)
 
+- **Re-judged on 312543b:** after a reload, Continue opens Sedge Plain and the Hollow Kiln with no control card (web_resume_tallowford_continued.jpg, web_resume_mosswater_continued.jpg) and Tallowford with only the talk card; the book run shows move, jump and fight once each.
 - **Re-judged:** in one sitting each control prompt now shows once in the whole book (move, jump and fight once each in the book run's QA log). After a page reload, Continue shows the "WASD to run" card again at the start of the level although the loaded save lists taught: move, jump, fight (web_resume_tallowford_continued.jpg, web_resume_mosswater_continued.jpg; progress_loaded in their consoles).
 - **What:** in the book run the "move" (WASD), "jump" (Space to leap) and "fight" prompts each show 5
   times, once per level (QA log, web_full console). "Space to leap" also stays up through the first
@@ -73,8 +72,9 @@ F-024, F-025, F-026, F-027, F-028.
   (web_perf_kiln_fight.jpg).
 - **Owner:** gameplay (show each control prompt once per save).
 
-## F-023 Mosswater: camera, arrival backdrop, lantern-fruit (a open; b, c, d closed 2026-11-16; visual)
+## F-023 Mosswater: camera, arrival backdrop, lantern-fruit (closed 2026-11-17; visual)
 
+- **Re-judged on 312543b:** (a) at the waterwheel Orimi, Fenn's camp and the pond are in view, with the foliage off to the side (web_level_mosswater_wheel).
 - **Re-judged:** (a) the gully foot is fixed (Orimi framed on the ledge), but at the waterwheel the
   camera still looks through a heap of grey rock shapes that fill two thirds of the screen
   (web_level_mosswater_wheel). (b) the first view now shows the wood and the hill, no white plane.
@@ -137,8 +137,9 @@ F-024, F-025, F-026, F-027, F-028.
 - **Owner:** render.
 - **Re-judged:** fixed in 887d424 with that form; desktop_scenes (6 of 6) and web_smoke_demos (5 of 5) pass on 05e935a and d0685c3.
 
-## F-029 Mosswater: the autoplay route fails at PondMid and the stair tree about half the time (open, high; DoD 5, and DoD 3 through it)
+## F-029 Mosswater: the autoplay route failed at PondMid and the stair tree about half the time (closed 2026-11-17; DoD 5)
 
+- **Re-judged on 312543b:** fixed by Mosswater in 8d0f362 (route points off deep water, Sootflits dive only at Orimi on solid ground, island Sootflits within 9 m). web_full and web_level_mosswater pass with no unreachable point; deep-water returns fell from up to 130 per run to 4 and 5.
 - **What:** web_level_mosswater and the book run's Mosswater part sometimes end a route step with
   "could not reach": [-2.53, 5.45, -3.29] and [-0.35, 6.68, -4.6] by PondMid, or [-2.7, 6.98, 6.4]
   by the stair tree. The level still completes (exit_reached, bead), but the gate requires no failed

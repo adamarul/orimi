@@ -1,46 +1,46 @@
-# 94 console lines. Marker and problem lines first, then the last 40 lines.
+# 95 console lines. Marker and problem lines first, then the last 40 lines.
 # Full log (not committed): .userdata/qa/logs/web_selftest_level_defect_console.txt
-   1.06 # url http://127.0.0.1:50851/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&autoplay=1&level=example&defect=level_fail
-  23.45 [log] QA:{"data":{"level":"example","what":"planted level_fail"},"tag":"autoplay_fail"}
-  23.45 [log] QA:{"data":{"failures":["planted level_fail"],"levels":["example"],"passed":false},"tag":"autoplay_end"}
+   0.82 # url http://127.0.0.1:52524/index.html?scene=res%3A%2F%2Ftests%2Fqa%2Fqa_host.tscn&target=res%3A%2F%2Ftests%2Ffixtures%2Fqa_fixture.tscn&autoplay=1&level=example&defect=level_fail
+  22.40 [log] QA:{"data":{"level":"example","what":"planted level_fail"},"tag":"autoplay_fail"}
+  22.40 [log] QA:{"data":{"failures":["planted level_fail"],"levels":["example"],"passed":false},"tag":"autoplay_end"}
 # ...
-  20.21 [log] QA:{"data":{"step":"[\"glyph\", &\"slash\"]"},"tag":"glyph"}
-  20.26 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  20.61 [log] QA:{"data":{"glyph":"bloom","ink":100.0,"score":1.0,"targets":[]},"tag":"glyph_cast"}
-  20.61 [log] QAPROBE:{"args":["bloom",{"glyph":"bloom","score":1.0,"targets":[]}],"name":"glyph_cast","t":15370,"tag":"evt"}
-  20.61 [log] QA:{"data":{"step":"[\"glyph\", &\"bloom\"]"},"tag":"glyph"}
-  20.77 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  21.02 [log] QA:{"data":{"center":[0.0,0.0,0.0],"radius":16.0,"zone":"zone_b"},"tag":"zone_restore_started"}
-  21.02 [log] QAPROBE:{"args":["zone_b",[0.0,0.0,0.0],16.0],"name":"zone_restore_started","t":15772,"tag":"evt"}
-  21.02 [log] QA:{"data":{"restored":["zone_a","zone_b"],"zone":"zone_b"},"tag":"zone_restored"}
-  21.02 [log] QAPROBE:{"args":["zone_b"],"name":"zone_restored","t":15772,"tag":"evt"}
-  21.02 [log] QA:{"data":{"step":"[\"zone\", &\"zone_b\"]"},"tag":"zone"}
-  21.28 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  21.42 [log] QAPROBE:{"args":[100.0,100.0],"name":"ink_changed","t":16173,"tag":"evt"}
-  21.42 [log] QA:{"data":{"alive":0,"at":[0.0,0.0,50.0],"kind":"splotchet"},"tag":"enemy_died"}
-  21.42 [log] QAPROBE:{"args":[{"class":"CharacterBody3D","groups":["player"],"node":"FixturePlayer","pos":[0.0,0.0,50.0]},"splotchet",[0.0,0.0,50.0]],"name":"enemy_died","t":16174,"tag":"evt"}
-  21.42 [log] QA:{"data":{"step":"[\"enemy\", &\"splotchet\"]"},"tag":"enemy"}
-  21.79 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  21.82 [log] QAPROBE:{"args":[100.0,100.0],"name":"ink_changed","t":16577,"tag":"evt"}
-  21.82 [log] QA:{"data":{"alive":0,"at":[0.0,0.0,50.0],"kind":"reedwraith"},"tag":"enemy_died"}
-  21.82 [log] QAPROBE:{"args":[{"class":"CharacterBody3D","groups":["player"],"node":"FixturePlayer","pos":[0.0,0.0,50.0]},"reedwraith",[0.0,0.0,50.0]],"name":"enemy_died","t":16577,"tag":"evt"}
-  21.82 [log] QA:{"data":{"step":"[\"enemy\", &\"reedwraith\"]"},"tag":"enemy"}
-  22.23 [log] QA:{"data":{"glyph":"bloom","ink":100.0,"score":1.0,"targets":[]},"tag":"glyph_cast"}
-  22.23 [log] QAPROBE:{"args":["bloom",{"glyph":"bloom","score":1.0,"targets":[]}],"name":"glyph_cast","t":16981,"tag":"evt"}
-  22.23 [log] QA:{"data":{"step":"[\"glyph\", &\"bloom\"]"},"tag":"glyph"}
-  22.29 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  22.63 [log] ORIMI_AUDIO music=finale fade=2.0
-  22.77 [log] QA:{"data":{"center":[0.0,6.0,-42.0]},"tag":"finale_started"}
-  22.77 [log] QAPROBE:{"args":[[0.0,6.0,-42.0]],"name":"finale_started","t":17530,"tag":"evt"}
-  22.77 [log] QA:{"data":{"step":"[\"finale\"]"},"tag":"finale"}
-  22.81 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  23.05 [log] QA:{"data":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.0,0.0],"deaths":0,"enemies_alive":0,"fps":144.0,"god":false,"hp":null,"ink":100.0,"ink_max":100.0,"kills":4,"level":"","max_hp":null,"player_pos":[0.0,0.0,50.0],"restored_zones":["zone_a","zone_b"],"state":"playing","t":17.8}," [cut]
-  23.05 [log] QAPROBE:{"args":[],"name":"valley_restored","t":17805,"tag":"evt"}
-  23.05 [log] QA:{"data":{"step":"[\"restored\"]"},"tag":"restored"}
-  23.31 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":123.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
-  23.45 [log] QAPROBE:{"args":["ended"],"name":"game_state_changed","t":18206,"tag":"evt"}
-  23.45 [log] QA:{"data":{"step":"[\"state\", &\"ended\"]"},"tag":"state"}
-  23.45 [log] QA:{"data":{"level":"example","what":"planted level_fail"},"tag":"autoplay_fail"}
-  23.45 [log] QA:{"data":{"failures":["planted level_fail"],"levels":["example"],"passed":false},"tag":"autoplay_end"}
-  23.82 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":123.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"ended"},"game_state":"ended","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false,"pl [cut]
-  24.33 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"ended"},"game_state":"ended","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false,"pl [cut]
+  19.19 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":135.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  19.56 [log] QA:{"data":{"glyph":"bloom","ink":100.0,"score":1.0,"targets":[]},"tag":"glyph_cast"}
+  19.56 [log] QAPROBE:{"args":["bloom",{"glyph":"bloom","score":1.0,"targets":[]}],"name":"glyph_cast","t":14282,"tag":"evt"}
+  19.56 [log] QA:{"data":{"step":"[\"glyph\", &\"bloom\"]"},"tag":"glyph"}
+  19.70 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  19.96 [log] QA:{"data":{"center":[0.0,0.0,0.0],"radius":16.0,"zone":"zone_b"},"tag":"zone_restore_started"}
+  19.96 [log] QAPROBE:{"args":["zone_b",[0.0,0.0,0.0],16.0],"name":"zone_restore_started","t":14685,"tag":"evt"}
+  19.96 [log] QA:{"data":{"restored":["zone_a","zone_b"],"zone":"zone_b"},"tag":"zone_restored"}
+  19.96 [log] QAPROBE:{"args":["zone_b"],"name":"zone_restored","t":14686,"tag":"evt"}
+  19.96 [log] QA:{"data":{"step":"[\"zone\", &\"zone_b\"]"},"tag":"zone"}
+  20.20 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  20.36 [log] QAPROBE:{"args":[100.0,100.0],"name":"ink_changed","t":15087,"tag":"evt"}
+  20.36 [log] QA:{"data":{"alive":0,"at":[0.0,0.0,50.0],"kind":"splotchet"},"tag":"enemy_died"}
+  20.36 [log] QAPROBE:{"args":[{"class":"CharacterBody3D","groups":["player"],"node":"FixturePlayer","pos":[0.0,0.0,50.0]},"splotchet",[0.0,0.0,50.0]],"name":"enemy_died","t":15088,"tag":"evt"}
+  20.36 [log] QA:{"data":{"step":"[\"enemy\", &\"splotchet\"]"},"tag":"enemy"}
+  20.71 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  20.77 [log] QAPROBE:{"args":[100.0,100.0],"name":"ink_changed","t":15490,"tag":"evt"}
+  20.77 [log] QA:{"data":{"alive":0,"at":[0.0,0.0,50.0],"kind":"reedwraith"},"tag":"enemy_died"}
+  20.77 [log] QAPROBE:{"args":[{"class":"CharacterBody3D","groups":["player"],"node":"FixturePlayer","pos":[0.0,0.0,50.0]},"reedwraith",[0.0,0.0,50.0]],"name":"enemy_died","t":15491,"tag":"evt"}
+  20.77 [log] QA:{"data":{"step":"[\"enemy\", &\"reedwraith\"]"},"tag":"enemy"}
+  21.17 [log] QA:{"data":{"glyph":"bloom","ink":100.0,"score":1.0,"targets":[]},"tag":"glyph_cast"}
+  21.17 [log] QAPROBE:{"args":["bloom",{"glyph":"bloom","score":1.0,"targets":[]}],"name":"glyph_cast","t":15894,"tag":"evt"}
+  21.17 [log] QA:{"data":{"step":"[\"glyph\", &\"bloom\"]"},"tag":"glyph"}
+  21.22 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  21.58 [log] ORIMI_AUDIO music=finale fade=2.0
+  21.70 [log] QA:{"data":{"center":[0.0,6.0,-42.0]},"tag":"finale_started"}
+  21.70 [log] QAPROBE:{"args":[[0.0,6.0,-42.0]],"name":"finale_started","t":16426,"tag":"evt"}
+  21.70 [log] QA:{"data":{"step":"[\"finale\"]"},"tag":"finale"}
+  21.73 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  22.00 [log] QA:{"data":{"autoplay":false,"beads":0,"checkpoint":[0.0,0.0,0.0],"deaths":0,"enemies_alive":0,"fps":144.0,"god":false,"hp":null,"ink":100.0,"ink_max":100.0,"kills":4,"level":"","max_hp":null,"player_pos":[0.0,0.0,50.0],"restored_zones":["zone_a","zone_b"],"state":"playing","t":16.72}, [cut]
+  22.00 [log] QAPROBE:{"args":[],"name":"valley_restored","t":16718,"tag":"evt"}
+  22.00 [log] QA:{"data":{"step":"[\"restored\"]"},"tag":"restored"}
+  22.24 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"playing"},"game_state":"playing","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false [cut]
+  22.40 [log] QAPROBE:{"args":["ended"],"name":"game_state_changed","t":17119,"tag":"evt"}
+  22.40 [log] QA:{"data":{"step":"[\"state\", &\"ended\"]"},"tag":"state"}
+  22.40 [log] QA:{"data":{"level":"example","what":"planted level_fail"},"tag":"autoplay_fail"}
+  22.40 [log] QA:{"data":{"failures":["planted level_fail"],"levels":["example"],"passed":false},"tag":"autoplay_end"}
+  22.75 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":126.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"ended"},"game_state":"ended","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false,"pl [cut]
+  23.26 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":126.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"ended"},"game_state":"ended","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false,"pl [cut]
+  23.83 [log] QAPROBE:{"brush_enabled":true,"brush_open":false,"cam":{"fov":58.0,"pitch":-18.0000005008956,"pos":[0.0,3.454,55.706],"yaw":0.0},"fps":144.0,"game":{"player_pos":[0.0,0.0,50.0],"state":"ended"},"game_state":"ended","ink":100.0,"ink_max":100.0,"mouse_mode":0,"paper":1,"paused":false,"pl [cut]
