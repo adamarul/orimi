@@ -23,6 +23,9 @@ const PROMPTS := {
 	&"sealed": ["The ink has closed a ring around you. Nothing leaves until every one of them is gone.", &"", 6.0],
 	&"cursed_ground": ["The spilled ink burns. Keep to the clean ground.", &"", 5.0],
 }
+## Prompts that teach a control: each shows once per save (Game.teach), never over a fight or a
+## talk, and leaves as soon as the control has been used once.
+const CONTROL_PROMPTS: Array[StringName] = [&"move", &"jump", &"fight"]
 const KEY_WORDS := {&"slash": "Slash", &"bloom": "Bloom", &"gust": "Gust", &"kindle": "Kindle", &"tie": "Tie"}
 
 var world: Node3D
@@ -90,6 +93,7 @@ func _ready() -> void:
 	Events.brush_closed.connect(func() -> void: _brush_closed_at = _now())
 	Events.zone_restored.connect(_on_zone_restored)
 	Events.enemy_unveiled.connect(func(_e: Node3D) -> void: hud.hide_prompt(&"veil"))
+	Events.player_attacked.connect(func(_a: StringName, _o: Transform3D) -> void: hud.hide_prompt(&"fight"))
 	Game.apply_beads()
 	if Game.start_level != &"" and not LevelRegistry.find(Game.start_level).is_empty():
 		_start_direct(Game.start_level)
@@ -478,7 +482,7 @@ func _begin_play(warp: String) -> void:
 	Game.set_state(Game.STATE_PLAYING)
 	Game.capture_mouse()
 	_was_captured = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
-	_prompt(&"move")
+	_teach(&"move")
 	Game.qa_log("play_started", Game.debug_snapshot())
 
 
@@ -676,6 +680,8 @@ func _process(delta: float) -> void:
 	if Game.state == Game.STATE_TITLE and is_instance_valid(level) and level.built:
 		_title_time += delta
 		_update_title_camera(_title_time)
+	if hud.prompt_id in CONTROL_PROMPTS and Game.state == Game.STATE_TALK:
+		hud.hide_prompt()
 	if Game.state == Game.STATE_PLAYING:
 		_watch_capture()
 		_direct_prompts()
@@ -749,9 +755,17 @@ func _direct_prompts() -> void:
 	if not is_instance_valid(p):
 		return
 	var pos := p.global_position
-	if _shown.has(&"move") and not _shown.has(&"jump") and pos.distance_to(_spawn_pos) > 5.0 and hud.prompt_id in [&"", &"move"]:
-		_prompt(&"jump")
-	if not _shown.has(&"fight") or not _shown.has(&"veil"):
+	var fighting := _in_fight(pos)
+	match hud.prompt_id:
+		&"move":
+			if pos.distance_to(_spawn_pos) > 3.0 or fighting:
+				hud.hide_prompt()
+		&"jump":
+			if (not p.is_on_floor() and p.velocity.y > 1.0) or fighting:
+				hud.hide_prompt()
+	if Game.taught(&"move") and not Game.taught(&"jump") and not fighting and pos.distance_to(_spawn_pos) > 5.0 and hud.prompt_id == &"":
+		_teach(&"jump")
+	if not Game.taught(&"fight") or not _shown.has(&"veil"):
 		for e: Node in get_tree().get_nodes_in_group(Layers.GROUP_ENEMY):
 			var enemy := e as EnemyBase
 			if enemy == null or enemy.global_position.distance_to(pos) > 12.0:
@@ -759,8 +773,28 @@ func _direct_prompts() -> void:
 			if enemy is Reedwraith and (enemy as Reedwraith).veiled and not _shown.has(&"veil"):
 				_prompt(&"veil")
 				_hint_at[&"veil"] = _now()
-			elif enemy is Splotchet and enemy.aggro and not _shown.has(&"fight"):
-				_prompt(&"fight")
+			elif enemy is Splotchet and enemy.aggro and not Game.taught(&"fight"):
+				_teach(&"fight")
+
+
+## A control prompt, the first time on this save.
+func _teach(id: StringName) -> void:
+	if Game.taught(id):
+		return
+	Game.teach(id)
+	_prompt(id)
+
+
+## True while a sealed fight runs or an ink-spawn near Orimi is after her.
+func _in_fight(pos: Vector3) -> bool:
+	for f: Node in get_tree().get_nodes_in_group(&"sealed_fight"):
+		if f.get(&"started") and not f.get(&"done"):
+			return true
+	for e: Node in get_tree().get_nodes_in_group(Layers.GROUP_ENEMY):
+		var enemy := e as EnemyBase
+		if enemy != null and enemy.aggro and enemy.global_position.distance_to(pos) < 14.0:
+			return true
+	return false
 
 
 func _on_zone_restored(zone_id: StringName) -> void:

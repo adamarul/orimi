@@ -36,8 +36,9 @@ var level: Level = null
 ## The same node as level, kept for older callers.
 var valley: Node3D = null
 ## Saved between sessions (user://progress.json, IndexedDB and localStorage in the browser):
-## {"completed": [level ids], "current": level id to continue from}.
-var progress: Dictionary = {"completed": [], "current": ""}
+## {"completed": [level ids], "current": level id to continue from, "taught": [control prompt ids
+## already shown]}.
+var progress: Dictionary = {"completed": [], "current": "", "taught": []}
 ## level=<id>: start straight in that level (and autoplay only that level).
 var start_level: StringName = &""
 ## Zone ids restored so far this run, in order.
@@ -191,6 +192,7 @@ func load_progress() -> void:
 	if parsed is Dictionary:
 		progress["completed"] = (parsed as Dictionary).get("completed", [])
 		progress["current"] = String((parsed as Dictionary).get("current", ""))
+		progress["taught"] = (parsed as Dictionary).get("taught", [])
 	var info := progress.duplicate()
 	info["from"] = from
 	qa_log("progress_loaded", info)
@@ -212,7 +214,7 @@ func save_progress() -> void:
 
 
 func reset_progress(save: bool = true) -> void:
-	progress = {"completed": [], "current": ""}
+	progress = {"completed": [], "current": "", "taught": []}
 	if save:
 		save_progress()
 	apply_beads()
@@ -229,6 +231,19 @@ func mark_level_complete(id: StringName, next_id: StringName) -> void:
 	progress["current"] = String(next_id)
 	save_progress()
 	apply_beads()
+
+
+## True once the control prompt id has been shown on this save.
+func taught(id: StringName) -> bool:
+	return String(id) in progress["taught"]
+
+
+## Record that the control prompt id has been shown, so no later level shows it again.
+func teach(id: StringName) -> void:
+	if taught(id):
+		return
+	(progress["taught"] as Array).append(String(id))
+	save_progress()
 
 
 ## One colour per completed level that has a bead, in registry order.

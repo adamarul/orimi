@@ -164,6 +164,8 @@ func show_prompt(id: StringName, bbcode: String, glyph: StringName = &"", durati
 func hide_prompt(id: StringName = &"") -> void:
 	if id != &"" and id != prompt_id:
 		return
+	if prompt_id != &"":
+		Game.qa_log("prompt_hidden", {"id": String(prompt_id)})
 	prompt_panel.visible = false
 	prompt_id = &""
 
