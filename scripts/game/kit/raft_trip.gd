@@ -7,7 +7,8 @@ extends Node3D
 ## stay moored. Each way is about five seconds plus the lines; skip() ends it at once. The level
 ## only supplies data in level.json "raft" (docs/LEVEL_KIT.md). Owner: gameplay.
 
-## A moment worth a shot: raft_framed, raft_in, raft_off (departure), raft_arrives, landed (arrival).
+## A moment worth a shot: raft_unfaded (the paper clears after Orimi is set on the bank), raft_framed,
+## raft_in, raft_off (departure), raft_arrives, landed (arrival).
 signal moment(stage: String)
 
 const GLIDE := 5.0
@@ -67,11 +68,16 @@ func depart() -> void:
 	_colliders(raft, false)
 	pell = _find_pell()
 	var board := _point(d, "board", moor.origin + _flat(p.global_position - moor.origin).normalized() * 2.6)
-	if _flat(p.global_position - board).length() > 6.0:
+	var moved := _flat(p.global_position - board).length() > 6.0
+	if moved:
 		await Game.main.fade(1.0, 0.35)
 		p.teleport(board + Vector3.UP * 0.05, atan2(-(moor.origin - board).x, -(moor.origin - board).z))
+	# Behind the paper the camera cuts straight to the bank; in plain view it glides there.
+	_frame(moor, p.global_position, 0.0 if moved else 0.6)
+	if moved:
+		await get_tree().process_frame
 		await Game.main.fade(0.0, 0.35)
-	_frame(moor, p.global_position)
+		_emit("raft_unfaded")
 	if not skipping:
 		get_tree().create_timer(0.8).timeout.connect(_emit.bind("raft_framed"))
 	if own:
@@ -249,7 +255,7 @@ func _colliders(n: Node, on: bool) -> void:
 ## Orimi; if no such spot is clear it tries the river side and pulls back along the river, then
 ## settles for the first spot that at least sees the raft, and last of all looks down from high
 ## above. Every level's bank is different, so nothing here trusts the data's heights.
-func _frame(moor_xf: Transform3D, bank: Vector3) -> void:
+func _frame(moor_xf: Transform3D, bank: Vector3, blend: float = 0.6) -> void:
 	var cam := level.camera
 	var moor := moor_xf.origin
 	var out := _flat(bank - moor)
@@ -287,7 +293,9 @@ func _frame(moor_xf: Transform3D, bank: Vector3) -> void:
 		pick = _lift(spots[raft_only])
 		why = "%d raft only" % raft_only
 	Game.qa_log("raft_camera", {"spot": why, "at": Game._v(pick), "refused": refused})
-	cam.cinematic_to(pick, look, 0.6)
+	cam.cinematic_to(pick, look, blend)
+	if blend <= 0.0:
+		cam.global_transform = Transform3D(Basis.IDENTITY, pick).looking_at(look, Vector3.UP)
 
 
 ## A camera spot raised to stand at least 1.6 m over the ground and 1.5 m over the water under it.
