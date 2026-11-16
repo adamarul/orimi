@@ -39,6 +39,8 @@ chain, `#1b1a1c` to `#151417` (both outside 4/255).
 | `curse_zone_0`, `curse_zone_1`, `curse_zone_2`, `curse_zone_3` | global uniforms | xyz centre, w radius of each cursed sphere (CurseField). |
 | `curse_amount` | global uniform | Per-zone curse, 0 clean to 1 cursed (CurseField). |
 | `valley_gloom` | global uniform | Valley-wide dullness, 1 until the tree is restored (CurseField). |
+| `curse_restored_0`, `curse_restored_1`, `curse_restored_2`, `curse_restored_3` | global uniforms vec4 | xyz centre, w radius of the last four places whose curse was lifted in this level (CurseField keeps them after the area gives up its slot; 0 = unused). |
+| `ink_restored(world_pos)` | `float` | 0..1 how restored a position is: inside a zone animating back to colour, or a remembered restored place. |
 | `wind` | global uniform | xyz direction, w strength (vfx). |
 | `INK_LINEAR_PIPELINE` | define | 1 in Forward+ / Mobile, 0 in Compatibility. |
 | `INK_PAPER`, `INK_PARCHMENT`, `INK_SEPIA`, `INK_BLACK`, `INK_CURSE_RED`, `INK_CURSE_INK`, `INK_VERMILION`, `INK_GOLD` | `const vec3` | Palette colours as sRGB values (same numbers as `scripts/core/palette.gd`). |
@@ -68,8 +70,12 @@ the scene. Faceted from screen-space derivatives (meshes keep smooth normals for
 | Uniform | Range | Default | Meaning | Set by |
 | - | - | - | - | - |
 | `albedo_color` | colour | ivory `#efe6d2` | Flat fill colour, multiplied by the texture. | InkLook, from the source material's `albedo_color` |
-| `albedo_tex` | texture | white | Painted albedo, sampled raw (treated as sRGB). | InkLook, from `albedo_texture` |
+| `albedo_tex` | texture | white | Painted albedo, sampled raw (treated as sRGB), anisotropic so ground stays sharp at grazing angles. | InkLook, from `albedo_texture` |
 | `use_texture` | bool | false | Whether `albedo_tex` is used. | InkLook |
+| `ground_marks` | bool | false | The texture is a map-sized ground painting: its dark marks (luma under `mark_cut`) are drawn as crisp ink instead of magnified, blurred texels, the blurred halo around them is lifted back to ground colour, and they lighten to `restored_marks` where the place is restored (`valley_gloom` 0 or `ink_restored`). Set by InkLook on textured meshes wider than 30 m (`GROUND_SIZE`). | InkLook |
+| `mark_cut` | 0..1 | 0.22 | Texture luma below which a pixel is an ink mark; lower gives fewer, smaller marks. | default |
+| `mark_halo` | 0..1 | 0.5 | Luma the blurred halo around a mark is lifted to. | default |
+| `restored_marks` | 0..1 | 0.35 | Mark strength in a restored place. | default |
 | `has_vertex_color` | bool | false | The mesh has a colour attribute (G drives wind). | InkLook, from the surface format |
 | `light_dir` | world vector | (-0.45, 0.8, 0.4) | The fixed light for the three bands (upper left, toward the camera). | default |
 | `band_high_cut` | -1..1 | 0.55 | N·L above which the highlight band starts. | default |
