@@ -6,7 +6,8 @@ extends Node
 ## it through the real systems: Orimi steered by the player's AI inputs, real tail swipes,
 ## glyphs drawn as strokes through Brush.inject_stroke. Prints a QA line at every stage and a
 ## summary at the end. Options: shots=<dir> (desktop: a screenshot per stage),
-## autoplay_quit=1 (quit when done, exit code 1 on failure). Owner: gameplay.
+## autoplay_quit=1 (quit when done, exit code 1 on failure), fight_shots=1 (a stage
+## <fight>_ring as each sealed fight starts, where the route names no start_stage). Owner: gameplay.
 
 const STAGE_TIMEOUT := 150.0
 
@@ -264,7 +265,8 @@ func _step(s: Dictionary) -> void:
 	elif s.has("talk"):
 		await _talk(_target(s["talk"]))
 	elif s.has("fight"):
-		await _fight(_target(s["fight"]), bool(s.get("finish", false)), String(s.get("start_stage", "")))
+		await _fight(_target(s["fight"]), bool(s.get("finish", false)), String(s.get("start_stage",
+			"%s_ring" % s["fight"] if String(Boot.opt("fight_shots", "0")) == "1" else "")))
 	elif s.has("bloom_zone"):
 		await _bloom_zone(_target(s["bloom_zone"]) as CursedZone)
 	elif s.has("wait_flag"):

@@ -696,7 +696,8 @@ Boot options for testing: `level=<id>` (straight into a level; with `autoplay=1`
 `warp=<marker>`, `fresh=1` (forget progress), `god=1`, `completed=<id>,<id>` (a save that has
 finished those levels), `end_card=1` (with `level=` and `autoplay=1`: straight to the level's
 end card), `beads_check=1` (with `level=` and `autoplay=1`: shots of the beads in the HUD, on
-the cord and on the pause screen).
+the cord and on the pause screen), `fight_shots=1` (with `autoplay=1`: a stage `<fight>_ring` as
+each sealed fight starts, where the route names no `start_stage`).
 
 ## 10. The autoplay route
 
