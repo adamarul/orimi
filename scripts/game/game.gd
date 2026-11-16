@@ -19,6 +19,8 @@ const STATE_TALK := &"talk"
 
 const MAIN_SCENE := "res://scenes/game/main.tscn"
 const SAVE_PATH := "user://progress.json"
+## The browser's copy of the save, in localStorage (read first, written first).
+const WEB_SAVE_KEY := "orimi_progress"
 ## Maximum ink grows by this much for each bead on Orimi's cord.
 const INK_PER_BEAD := 20.0
 const BASE_INK := 100.0
@@ -33,9 +35,10 @@ var main: Node = null
 var level: Level = null
 ## The same node as level, kept for older callers.
 var valley: Node3D = null
-## Saved between sessions (user://progress.json, IndexedDB in the browser):
-## {"completed": [level ids], "current": level id to continue from}.
-var progress: Dictionary = {"completed": [], "current": ""}
+## Saved between sessions (user://progress.json, IndexedDB and localStorage in the browser):
+## {"completed": [level ids], "current": level id to continue from, "taught": [control prompt ids
+## already shown], "stats": {level id: {"time", "kills", "deaths"} of its latest completion}}.
+var progress: Dictionary = {"completed": [], "current": "", "taught": [], "stats": {}}
 ## level=<id>: start straight in that level (and autoplay only that level).
 var start_level: StringName = &""
 ## Zone ids restored so far this run, in order.
@@ -174,27 +177,45 @@ func hint(id: StringName) -> void:
 # --- progress -----------------------------------------------------------------------------
 
 func load_progress() -> void:
-	if not FileAccess.file_exists(SAVE_PATH):
+	var text := ""
+	var from := "localStorage"
+	if OS.has_feature("web"):
+		var stored: Variant = JavaScriptBridge.eval("localStorage.getItem(%s)" % JSON.stringify(WEB_SAVE_KEY), true)
+		if stored is String:
+			text = stored
+	if text == "" and FileAccess.file_exists(SAVE_PATH):
+		text = FileAccess.get_file_as_string(SAVE_PATH)
+		from = "file"
+	if text == "":
 		return
-	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(SAVE_PATH))
+	var parsed: Variant = JSON.parse_string(text)
 	if parsed is Dictionary:
 		progress["completed"] = (parsed as Dictionary).get("completed", [])
 		progress["current"] = String((parsed as Dictionary).get("current", ""))
-	qa_log("progress_loaded", progress)
+		progress["taught"] = (parsed as Dictionary).get("taught", [])
+		progress["stats"] = (parsed as Dictionary).get("stats", {})
+	var info := progress.duplicate()
+	info["from"] = from
+	qa_log("progress_loaded", info)
 
 
 func save_progress() -> void:
+	var text := JSON.stringify(progress)
+	# In the browser user:// reaches IndexedDB seconds after the file closes (F-016); localStorage
+	# is written before this returns, so a tab closed straight after a bead keeps it.
+	if OS.has_feature("web"):
+		JavaScriptBridge.eval("localStorage.setItem(%s, %s)" % [JSON.stringify(WEB_SAVE_KEY), JSON.stringify(text)], true)
 	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if f == null:
 		push_warning("Game: could not save progress (%s)" % error_string(FileAccess.get_open_error()))
 		return
-	f.store_string(JSON.stringify(progress))
+	f.store_string(text)
 	f.close()
 	qa_log("progress_saved", progress)
 
 
 func reset_progress(save: bool = true) -> void:
-	progress = {"completed": [], "current": ""}
+	progress = {"completed": [], "current": "", "taught": [], "stats": {}}
 	if save:
 		save_progress()
 	apply_beads()
@@ -209,8 +230,35 @@ func mark_level_complete(id: StringName, next_id: StringName) -> void:
 	if not String(id) in progress["completed"]:
 		(progress["completed"] as Array).append(String(id))
 	progress["current"] = String(next_id)
+	(progress["stats"] as Dictionary)[String(id)] = {"time": int((Time.get_ticks_msec() - run_started_msec) / 1000), "kills": kills, "deaths": deaths}
 	save_progress()
 	apply_beads()
+
+
+## True once the control prompt id has been shown on this save.
+func taught(id: StringName) -> bool:
+	return String(id) in progress["taught"]
+
+
+## Record that the control prompt id has been shown, so no later level shows it again.
+func teach(id: StringName) -> void:
+	if taught(id):
+		return
+	(progress["taught"] as Array).append(String(id))
+	save_progress()
+
+
+## Time, kills and deaths summed over the book's levels, or {} until every one has been finished.
+func book_totals() -> Dictionary:
+	var out := {"time": 0, "kills": 0, "deaths": 0, "levels": 0}
+	for entry: Dictionary in LevelRegistry.levels():
+		var s: Variant = (progress["stats"] as Dictionary).get(String(entry["id"]))
+		if not s is Dictionary:
+			return {}
+		for k: String in ["time", "kills", "deaths"]:
+			out[k] += int((s as Dictionary).get(k, 0))
+		out["levels"] += 1
+	return out
 
 
 ## One colour per completed level that has a bead, in registry order.

@@ -3,7 +3,10 @@
 // screenshot at every QA "stage" line. Built on the same server and Chrome setup as
 // tools/smoke_web.cjs.
 //
-//   tools/game/web_autoplay.sh [--out DIR] [--timeout S] [--headed] [key=value ...]
+//   tools/game/web_autoplay.sh [--out DIR] [--timeout S] [--headed] [--reload-on TAG [--reload-delay MS]] [key=value ...]
+// --reload-on: once the QA line TAG appears, wait MS (default 1000), close the tab and open the game
+// in a new tab without autoplay; the run ends at the title (title_ready), so qa.jsonl shows what
+// the reload found.
 //
 // Writes DIR/console.txt (sanitised), DIR/qa.jsonl (the QA lines), DIR/NN_<stage>.png and
 // DIR/summary.json. Exit 0 only if autoplay reported PASSED with no console errors.
@@ -17,7 +20,7 @@ const toolsDir = process.env.ORIMI_TOOLS_DIR;
 const puppeteer = require(path.join(toolsDir, 'node', 'node_modules', 'puppeteer-core'));
 
 function parseArgs(argv) {
-  const opts = { out: path.join(projectRoot, 'build', 'game', 'web_autoplay'), timeout: 600, headed: false, query: new URLSearchParams() };
+  const opts = { out: path.join(projectRoot, 'build', 'game', 'web_autoplay'), timeout: 600, headed: false, reloadOn: '', reloadDelay: 1000, query: new URLSearchParams() };
   opts.query.append('scene', 'res://scenes/game/main.tscn');
   opts.query.append('autoplay', '1');
   for (let i = 0; i < argv.length; i++) {
@@ -25,6 +28,8 @@ function parseArgs(argv) {
     if (a === '--out') opts.out = path.resolve(argv[++i]);
     else if (a === '--timeout') opts.timeout = Number(argv[++i]);
     else if (a === '--headed') opts.headed = true;
+    else if (a === '--reload-on') opts.reloadOn = argv[++i];
+    else if (a === '--reload-delay') opts.reloadDelay = Number(argv[++i]);
     else if (a.includes('=')) { const eq = a.indexOf('='); opts.query.set(a.slice(0, eq), a.slice(eq + 1)); }
     else { console.error('unknown argument: ' + a); process.exit(2); }
   }
@@ -85,9 +90,12 @@ async function main() {
     browser = await puppeteer.launch({ executablePath: findChrome(), headless: !opts.headed, userDataDir: profileDir,
       defaultViewport: { width: 1280, height: 720 },
       args: ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist', '--no-first-run', '--no-default-browser-check', '--window-size=1296,860'] });
-    const page = await browser.newPage();
+    let page = await browser.newPage();
     let chain = Promise.resolve();
+    let reloadAt = 0;
+    let reloaded = false;
     let shotIndex = 0;
+    const watch = (page) => {
     page.on('console', (msg) => {
       const text = sanitize(msg.text());
       const stamp = ((Date.now() - t0) / 1000).toFixed(1);
@@ -102,20 +110,38 @@ async function main() {
           if (rec.tag === 'stage') {
             shotIndex += 1;
             const name = String(shotIndex).padStart(2, '0') + '_' + rec.data.stage + '.png';
-            chain = chain.then(() => page.screenshot({ path: path.join(opts.out, name) }).then(() => shots.push(name)).catch((e) => problems.push('screenshot ' + name + ': ' + e.message)));
+            chain = chain.then(() => page.screenshot({ path: path.join(opts.out, name) }).then(() => shots.push(name)).catch((e) => { if (!reloaded) problems.push('screenshot ' + name + ': ' + e.message); }));
           }
           if (rec.tag === 'autoplay_end') ended = rec.data;
+          if (opts.reloadOn && rec.tag === opts.reloadOn && !reloadAt) reloadAt = Date.now() + opts.reloadDelay;
+          if (reloaded && rec.tag === 'title_ready') ended = { passed: true, reloaded: true, stages: [], failures: [] };
         }
       }
     });
     page.on('pageerror', (err) => { lines.push('[pageerror] ' + err.message); problems.push('page error: ' + err.message); });
     page.on('requestfailed', (req) => problems.push('request failed: ' + req.url()));
     page.on('response', (res) => { if (res.status() >= 400) problems.push('HTTP ' + res.status() + ' ' + res.url()); });
+    };
+    watch(page);
     await page.goto(url, { waitUntil: 'load' });
     await sleep(4000);
     await page.mouse.click(640, 400);
     const deadline = Date.now() + opts.timeout * 1000;
-    while (!ended && Date.now() < deadline) await sleep(500);
+    while (!ended && Date.now() < deadline) {
+      if (reloadAt && !reloaded && Date.now() >= reloadAt) {
+        // The tab is closed and the game opened in a new one without autoplay: whatever it finds is
+        // what a player who closed the tab at that moment would find.
+        reloaded = true;
+        const stamp = Number(((Date.now() - t0) / 1000).toFixed(1));
+        lines.push('[' + stamp + 's] # reload');
+        qa.push({ tag: 'reload', data: { after: opts.reloadOn, delay_ms: opts.reloadDelay }, wall: stamp });
+        await page.close();
+        page = await browser.newPage();
+        watch(page);
+        await page.goto(server.url + 'index.html?scene=' + encodeURIComponent(opts.query.get('scene')), { waitUntil: 'load' });
+      }
+      await sleep(reloadAt && !reloaded ? 50 : 500);
+    }
     if (!ended) problems.push('autoplay did not finish within ' + opts.timeout + ' s');
     await sleep(500);
     await chain;
