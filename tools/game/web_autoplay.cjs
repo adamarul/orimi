@@ -9,7 +9,9 @@
 // in a new tab without autoplay; the run ends at the title (title_ready), so qa.jsonl shows what
 // the reload found, with a shot of the title (title.png) and of its chapter list (chapters.png).
 // --title-only: open the game without autoplay and take those two shots. --title-keys K1,K2: the
-// keys pressed on the title before the second shot (default ArrowDown,Enter).
+// keys pressed on the title before the second shot (default ArrowDown,Enter). --play-after-keys: the
+// keys start play (e.g. --title-keys Enter for Continue; clicks dismiss the intro card); once play_started, shots continued.png
+// (2.5 s in) and continued_later.png (12 s in), with the prompt lines of that time in qa.jsonl.
 //
 // Writes DIR/console.txt (sanitised), DIR/qa.jsonl (the QA lines), DIR/NN_<stage>.png and
 // DIR/summary.json. Exit 0 only if autoplay reported PASSED with no console errors.
@@ -23,7 +25,7 @@ const toolsDir = process.env.ORIMI_TOOLS_DIR;
 const puppeteer = require(path.join(toolsDir, 'node', 'node_modules', 'puppeteer-core'));
 
 function parseArgs(argv) {
-  const opts = { out: path.join(projectRoot, 'build', 'game', 'web_autoplay'), timeout: 600, headed: false, reloadOn: '', reloadDelay: 1000, titleOnly: false, titleKeys: ['ArrowDown', 'Enter'], query: new URLSearchParams() };
+  const opts = { out: path.join(projectRoot, 'build', 'game', 'web_autoplay'), timeout: 600, headed: false, reloadOn: '', reloadDelay: 1000, titleOnly: false, titleKeys: ['ArrowDown', 'Enter'], playAfterKeys: false, query: new URLSearchParams() };
   opts.query.append('scene', 'res://scenes/game/main.tscn');
   opts.query.append('autoplay', '1');
   for (let i = 0; i < argv.length; i++) {
@@ -34,6 +36,7 @@ function parseArgs(argv) {
     else if (a === '--reload-on') opts.reloadOn = argv[++i];
     else if (a === '--title-only') opts.titleOnly = true;
     else if (a === '--title-keys') opts.titleKeys = argv[++i].split(',');
+    else if (a === '--play-after-keys') opts.playAfterKeys = true;
     else if (a === '--reload-delay') opts.reloadDelay = Number(argv[++i]);
     else if (a.includes('=')) { const eq = a.indexOf('='); opts.query.set(a.slice(0, eq), a.slice(eq + 1)); }
     else { console.error('unknown argument: ' + a); process.exit(2); }
@@ -101,6 +104,7 @@ async function main() {
     let reloadAt = 0;
     let reloaded = false;
     let titleAt = 0;
+    let playAt = 0;
     let shotIndex = 0;
     const watch = (page) => {
     page.on('console', (msg) => {
@@ -122,6 +126,7 @@ async function main() {
           if (rec.tag === 'autoplay_end') ended = rec.data;
           if (opts.reloadOn && rec.tag === opts.reloadOn && !reloadAt) reloadAt = Date.now() + opts.reloadDelay;
           if ((reloaded || opts.titleOnly) && rec.tag === 'title_ready' && !titleAt) titleAt = Date.now();
+          if ((reloaded || opts.titleOnly) && rec.tag === 'play_started' && !playAt) playAt = Date.now();
         }
       }
     });
@@ -159,8 +164,25 @@ async function main() {
           await sleep(250);
         }
         await sleep(900);
-        await page.screenshot({ path: path.join(opts.out, 'chapters.png') });
-        shots.push('chapters.png');
+        if (opts.playAfterKeys) {
+          const until = Date.now() + 60000;
+          while (!playAt && Date.now() < until) {
+            await sleep(1500);
+            if (!playAt) await page.mouse.click(640, 400);
+          }
+          if (!playAt) problems.push('play did not start after the title keys');
+          else {
+            await sleep(Math.max(0, playAt + 2500 - Date.now()));
+            await page.screenshot({ path: path.join(opts.out, 'continued.png') });
+            shots.push('continued.png');
+            await sleep(Math.max(0, playAt + 12000 - Date.now()));
+            await page.screenshot({ path: path.join(opts.out, 'continued_later.png') });
+            shots.push('continued_later.png');
+          }
+        } else {
+          await page.screenshot({ path: path.join(opts.out, 'chapters.png') });
+          shots.push('chapters.png');
+        }
         ended = { passed: true, reloaded, stages: [], failures: [] };
         break;
       }
