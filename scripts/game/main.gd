@@ -26,6 +26,8 @@ const PROMPTS := {
 ## Prompts that teach a control: each shows once per save (Game.teach), never over a fight or a
 ## talk, and leaves as soon as the control has been used once.
 const CONTROL_PROMPTS: Array[StringName] = [&"move", &"jump", &"fight"]
+## The leap card waits for, and gives way to, a spot with no ink-spawn this close to Orimi.
+const LEAP_CALM_RADIUS := 16.0
 const KEY_WORDS := {&"slash": "Slash", &"bloom": "Bloom", &"gust": "Gust", &"kindle": "Kindle", &"tie": "Tie"}
 
 var world: Node3D
@@ -806,14 +808,18 @@ func _direct_prompts() -> void:
 		return
 	var pos := p.global_position
 	var fighting := _in_fight(pos)
+	var calm := not fighting
+	for e: Node in get_tree().get_nodes_in_group(Layers.GROUP_ENEMY):
+		if calm and (e as Node3D).global_position.distance_to(pos) < LEAP_CALM_RADIUS:
+			calm = false
 	match hud.prompt_id:
 		&"move":
 			if pos.distance_to(_spawn_pos) > 3.0 or fighting:
 				hud.hide_prompt()
 		&"jump":
-			if (not p.is_on_floor() and p.velocity.y > 1.0) or fighting:
+			if (not p.is_on_floor() and p.velocity.y > 1.0) or not calm:
 				hud.hide_prompt()
-	if Game.taught(&"move") and not Game.taught(&"jump") and not fighting and pos.distance_to(_spawn_pos) > 5.0 and hud.prompt_id == &"":
+	if Game.taught(&"move") and not Game.taught(&"jump") and calm and pos.distance_to(_spawn_pos) > 5.0 and hud.prompt_id == &"":
 		_teach(&"jump")
 	if not Game.taught(&"fight") or not _shown.has(&"veil"):
 		for e: Node in get_tree().get_nodes_in_group(Layers.GROUP_ENEMY):
