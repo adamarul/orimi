@@ -19,6 +19,8 @@ const STATE_TALK := &"talk"
 
 const MAIN_SCENE := "res://scenes/game/main.tscn"
 const SAVE_PATH := "user://progress.json"
+## The browser's copy of the save, in localStorage (read first, written first).
+const WEB_SAVE_KEY := "orimi_progress"
 ## Maximum ink grows by this much for each bead on Orimi's cord.
 const INK_PER_BEAD := 20.0
 const BASE_INK := 100.0
@@ -33,7 +35,7 @@ var main: Node = null
 var level: Level = null
 ## The same node as level, kept for older callers.
 var valley: Node3D = null
-## Saved between sessions (user://progress.json, IndexedDB in the browser):
+## Saved between sessions (user://progress.json, IndexedDB and localStorage in the browser):
 ## {"completed": [level ids], "current": level id to continue from}.
 var progress: Dictionary = {"completed": [], "current": ""}
 ## level=<id>: start straight in that level (and autoplay only that level).
@@ -174,21 +176,37 @@ func hint(id: StringName) -> void:
 # --- progress -----------------------------------------------------------------------------
 
 func load_progress() -> void:
-	if not FileAccess.file_exists(SAVE_PATH):
+	var text := ""
+	var from := "localStorage"
+	if OS.has_feature("web"):
+		var stored: Variant = JavaScriptBridge.eval("localStorage.getItem(%s)" % JSON.stringify(WEB_SAVE_KEY), true)
+		if stored is String:
+			text = stored
+	if text == "" and FileAccess.file_exists(SAVE_PATH):
+		text = FileAccess.get_file_as_string(SAVE_PATH)
+		from = "file"
+	if text == "":
 		return
-	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(SAVE_PATH))
+	var parsed: Variant = JSON.parse_string(text)
 	if parsed is Dictionary:
 		progress["completed"] = (parsed as Dictionary).get("completed", [])
 		progress["current"] = String((parsed as Dictionary).get("current", ""))
-	qa_log("progress_loaded", progress)
+	var info := progress.duplicate()
+	info["from"] = from
+	qa_log("progress_loaded", info)
 
 
 func save_progress() -> void:
+	var text := JSON.stringify(progress)
+	# In the browser user:// reaches IndexedDB seconds after the file closes (F-016); localStorage
+	# is written before this returns, so a tab closed straight after a bead keeps it.
+	if OS.has_feature("web"):
+		JavaScriptBridge.eval("localStorage.setItem(%s, %s)" % [JSON.stringify(WEB_SAVE_KEY), JSON.stringify(text)], true)
 	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if f == null:
 		push_warning("Game: could not save progress (%s)" % error_string(FileAccess.get_open_error()))
 		return
-	f.store_string(JSON.stringify(progress))
+	f.store_string(text)
 	f.close()
 	qa_log("progress_saved", progress)
 

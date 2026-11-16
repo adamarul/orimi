@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Plays the game in Chrome (autoplay=1) from build/web and screenshots every stage.
-#   tools/game/web_autoplay.sh [--no-export] [--out DIR] [--timeout S] [--headed] [key=value ...]
+#   tools/game/web_autoplay.sh [--no-export] [--out DIR] [--timeout S] [--headed]
+#     [--reload-on TAG [--reload-delay MS]] [key=value ...]   (see web_autoplay.cjs)
 # Exports first (tools/export_web.sh) so the run always tests the working tree. With
 # --no-export it plays the existing build, and fails if any project file is newer than it.
 source "$(dirname "$0")/../lib/common.sh"
