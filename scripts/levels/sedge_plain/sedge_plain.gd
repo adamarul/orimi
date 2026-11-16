@@ -31,6 +31,16 @@ func _build(_progress: Callable) -> void:
 	Scenery.build_mist(self)
 	Scenery.build_foliage(self, int(Boot.opt("foliage", "700")))
 	Scenery.build_wood(self)
+	# The sedge and the wood place their cards with raycasts two physics frames after they enter
+	# the tree. Wait for them, so the cards are in place before the first sights are drawn.
+	var t0 := Time.get_ticks_msec()
+	var scatters := find_children("*", "Node3D", true, false).filter(func(n: Node) -> bool: return n.get(&"snap_to_ground") == true and n.has_method(&"rebuild"))
+	for i in 600:
+		if scatters.all(func(n: Node) -> bool: return int(n.get(&"placed")) > 0):
+			break
+		await get_tree().process_frame
+	Game.qa_log("sedge_scenery_ready", {"scatters": scatters.size(), "cards": Scenery.count_cards(self), "ms": Time.get_ticks_msec() - t0})
+	await _warm_first_sights()
 	var sapling := node("Sapling_mere")
 	if sapling != null:
 		for c: Node in sapling.get_children():
@@ -68,3 +78,58 @@ func run_finale(zone: CursedZone) -> void:
 			z.restore()
 			await get_tree().create_timer(CursedZone.RESTORE_TIME * 0.6, false).timeout
 	CurseField.set_valley_gloom(0.0, 3.0)
+
+
+## The browser compiles a shader the first time it draws something with it. A tied rope (plain
+## ink material, not the toon look) was first drawn at the Knoll when a warp or a continue had
+## the Mere gap already tied, and the fight knots and rings, the enemies and the cursed zones were
+## first drawn when Orimi reached them: each held a frame for seconds (F-020). Draw each of them
+## once here, behind the loading screen, from a camera above each fight and zone.
+func _warm_first_sights() -> void:
+	var t0 := Time.get_ticks_msec()
+	CurseSlots.refresh()
+	var before := get_viewport().get_camera_3d()
+	var cam := Camera3D.new()
+	cam.name = "WarmFirstSights"
+	add_child(cam)
+	cam.make_current()
+	var kinds: Array[StringName] = []
+	for s: Node in find_children("*", "EnemySpawn", true, false):
+		if not kinds.has((s as EnemySpawn).kind):
+			kinds.append((s as EnemySpawn).kind)
+	var sights := find_children("*", "Node3D", true, false).filter(func(n: Node) -> bool: return n is CursedZone or n is SealedFight)
+	var each: Array[int] = []
+	for sight: Node3D in sights:
+		var ring = sight.get(&"ring")
+		if ring is Node3D:
+			(ring as Node3D).visible = true
+		var at := ground_at(sight.global_position)
+		var shown: Array[Node] = []
+		for i in kinds.size():
+			var e := EnemySpawn.make(kinds[i])
+			e.process_mode = Node.PROCESS_MODE_DISABLED
+			e.position = ground_at(at + Vector3((i - (kinds.size() - 1) * 0.5) * 1.6, 0.0, 1.5))
+			add_child(e)
+			e.remove_from_group(Layers.GROUP_ENEMY)
+			shown.append(e)
+		var rope := MeshInstance3D.new()
+		rope.mesh = ModelKit.cylinder(0.035, 0.035, 1.5, 5)
+		rope.material_override = ModelKit.mat(Palette.INK)
+		add_child(rope)
+		rope.global_position = ground_at(at + Vector3(0.0, 0.0, 3.0)) + Vector3.UP * 0.8
+		rope.rotation_degrees = Vector3(0.0, 0.0, 90.0)
+		shown.append(rope)
+		var eye := ground_at(at + Vector3(0.0, 0.0, 9.0)) + Vector3.UP * 5.0
+		cam.look_at_from_position(eye, at + Vector3.UP * 0.8)
+		var ts := Time.get_ticks_msec()
+		await _frames(2)
+		each.append(Time.get_ticks_msec() - ts)
+		for e in shown:
+			e.queue_free()
+		if ring is Node3D:
+			(ring as Node3D).visible = false
+	cam.queue_free()
+	if is_instance_valid(before):
+		before.make_current()
+	await _frames(1)
+	Game.qa_log("sedge_first_sights_warmed", {"sights": sights.map(func(n: Node) -> String: return String(n.name)), "each_ms": each, "kinds": kinds.size(), "ms": Time.get_ticks_msec() - t0})

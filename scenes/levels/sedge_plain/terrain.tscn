@@ -1,21 +1,41 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene load_steps=42 format=3]
 
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_00.glb" id="ground_00"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_01.glb" id="ground_01"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_02.glb" id="ground_02"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_03.glb" id="ground_03"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_04.glb" id="ground_04"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_05.glb" id="ground_05"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_10.glb" id="ground_10"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_11.glb" id="ground_11"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_12.glb" id="ground_12"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_13.glb" id="ground_13"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_14.glb" id="ground_14"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_15.glb" id="ground_15"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_20.glb" id="ground_20"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_21.glb" id="ground_21"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_22.glb" id="ground_22"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_23.glb" id="ground_23"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_24.glb" id="ground_24"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_25.glb" id="ground_25"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_30.glb" id="ground_30"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_31.glb" id="ground_31"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_32.glb" id="ground_32"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_33.glb" id="ground_33"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_34.glb" id="ground_34"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_35.glb" id="ground_35"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_40.glb" id="ground_40"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_41.glb" id="ground_41"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_42.glb" id="ground_42"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_43.glb" id="ground_43"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_44.glb" id="ground_44"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_45.glb" id="ground_45"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_50.glb" id="ground_50"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_51.glb" id="ground_51"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_52.glb" id="ground_52"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_53.glb" id="ground_53"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_54.glb" id="ground_54"]
+[ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/ground_55.glb" id="ground_55"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/hills.glb" id="hills"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/safe.glb" id="safe"]
 [ext_resource type="PackedScene" path="res://assets/levels/sedge_plain/terrain/river.glb" id="river"]
@@ -34,6 +54,10 @@
 
 [node name="Ground_03" parent="Ground" instance=ExtResource("ground_03")]
 
+[node name="Ground_04" parent="Ground" instance=ExtResource("ground_04")]
+
+[node name="Ground_05" parent="Ground" instance=ExtResource("ground_05")]
+
 [node name="Ground_10" parent="Ground" instance=ExtResource("ground_10")]
 
 [node name="Ground_11" parent="Ground" instance=ExtResource("ground_11")]
@@ -41,6 +65,10 @@
 [node name="Ground_12" parent="Ground" instance=ExtResource("ground_12")]
 
 [node name="Ground_13" parent="Ground" instance=ExtResource("ground_13")]
+
+[node name="Ground_14" parent="Ground" instance=ExtResource("ground_14")]
+
+[node name="Ground_15" parent="Ground" instance=ExtResource("ground_15")]
 
 [node name="Ground_20" parent="Ground" instance=ExtResource("ground_20")]
 
@@ -50,6 +78,10 @@
 
 [node name="Ground_23" parent="Ground" instance=ExtResource("ground_23")]
 
+[node name="Ground_24" parent="Ground" instance=ExtResource("ground_24")]
+
+[node name="Ground_25" parent="Ground" instance=ExtResource("ground_25")]
+
 [node name="Ground_30" parent="Ground" instance=ExtResource("ground_30")]
 
 [node name="Ground_31" parent="Ground" instance=ExtResource("ground_31")]
@@ -57,6 +89,34 @@
 [node name="Ground_32" parent="Ground" instance=ExtResource("ground_32")]
 
 [node name="Ground_33" parent="Ground" instance=ExtResource("ground_33")]
+
+[node name="Ground_34" parent="Ground" instance=ExtResource("ground_34")]
+
+[node name="Ground_35" parent="Ground" instance=ExtResource("ground_35")]
+
+[node name="Ground_40" parent="Ground" instance=ExtResource("ground_40")]
+
+[node name="Ground_41" parent="Ground" instance=ExtResource("ground_41")]
+
+[node name="Ground_42" parent="Ground" instance=ExtResource("ground_42")]
+
+[node name="Ground_43" parent="Ground" instance=ExtResource("ground_43")]
+
+[node name="Ground_44" parent="Ground" instance=ExtResource("ground_44")]
+
+[node name="Ground_45" parent="Ground" instance=ExtResource("ground_45")]
+
+[node name="Ground_50" parent="Ground" instance=ExtResource("ground_50")]
+
+[node name="Ground_51" parent="Ground" instance=ExtResource("ground_51")]
+
+[node name="Ground_52" parent="Ground" instance=ExtResource("ground_52")]
+
+[node name="Ground_53" parent="Ground" instance=ExtResource("ground_53")]
+
+[node name="Ground_54" parent="Ground" instance=ExtResource("ground_54")]
+
+[node name="Ground_55" parent="Ground" instance=ExtResource("ground_55")]
 
 [node name="InkLook" type="Node" parent="Ground"]
 script = ExtResource("ink")

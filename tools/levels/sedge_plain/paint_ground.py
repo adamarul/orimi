@@ -208,11 +208,13 @@ def paint_ground(out):
     # sedge tufts on open ground, leaning east with the wind
     open_ground = (rock < 0.2) & (path < 0.1) & (bank < 0.1) & (bed < 0.1) & (cw < 0.1) & (h < 6)
     ys, xs = np.nonzero(open_ground)
-    for k in rng.choice(len(xs), size=min(len(xs), 640), replace=False):
-        colour = INK_GROUND if rng.random() < 0.7 else hex_rgb("4d5a3c")
-        for _ in range(2 + int(rng.random() * 4)):
+    # Few, small and light: seen at a low angle the texture squashes each tuft into a smear, and
+    # the 3D sedge already stands on this ground.
+    for k in rng.choice(len(xs), size=min(len(xs), 220), replace=False):
+        colour = mix(INK_GROUND, SEDGE, 0.45) if rng.random() < 0.6 else hex_rgb("4d5a3c")
+        for _ in range(1 + int(rng.random() * 3)):
             u, v = xs[k] + rng.normal() * 6, ys[k] + rng.normal() * 4
-            c.tuft(u, v, 9 + rng.random() * 9, colour, 0.6 + 0.25 * rng.random(), blades=3 + int(rng.random() * 3),
+            c.tuft(u, v, 5 + rng.random() * 5, colour, 0.35 + 0.15 * rng.random(), blades=3 + int(rng.random() * 2),
                    up=-math.pi / 2 + 0.35 + (rng.random() - 0.5) * 0.4, spread=0.8)
 
     # contact strokes where stones, posts and the camp stand
@@ -229,7 +231,7 @@ def paint_ground(out):
             a0 = rng.random() * 2 * math.pi
             r = r0 + rng.random() * 0.3
             pts = [F.to_px(x + math.cos(a0 + t) * r, z + math.sin(a0 + t) * r * 0.9) for t in np.linspace(0, 1.5, 6)]
-            c.stroke(pts, 4 + rng.random() * 4, INK, 0.85, taper=(0.15, 0.5), dry=0.35)
+            c.stroke(pts, 3 + rng.random() * 2, INK, 0.6, taper=(0.15, 0.5), dry=0.35)
     c.soften(0.6)
     c.save(out)
 

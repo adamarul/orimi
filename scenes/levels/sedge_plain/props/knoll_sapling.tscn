@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://scenes/models/sapling.tscn" id="1"]
 
-[node name="GuardianSapling" type="Node3D"]
+[node name="KnollSapling" type="Node3D"]
 
 [node name="Sapling" parent="." instance=ExtResource("1")]
 transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, -0, 0, 4.5, 0, 0, 0)

@@ -14,7 +14,7 @@ extends Node3D
 
 const L := preload("res://scripts/levels/sedge_plain/sedge_layout.gd")
 const Scenery := preload("res://scripts/levels/sedge_plain/sedge_scenery.gd")
-const SAPLING := "res://scenes/levels/sedge_plain/props/guardian_sapling.tscn"
+const SAPLING := "res://scenes/levels/sedge_plain/props/knoll_sapling.tscn"
 const TERRAIN := "res://scenes/levels/sedge_plain/terrain.tscn"
 const DRESSING := "res://scenes/levels/sedge_plain/dressing.tscn"
 const SKY := "res://scenes/env/sky.tscn"

@@ -4,7 +4,7 @@
 
 Kit nodes only (docs/LEVEL_KIT.md): the Level root (scripts/levels/sedge_plain/sedge_plain.gd), the
 terrain and dressing, Pell and Tamsin (Person), the four sealed fights with their EnemySpawns, the
-three CursedZones (the Mere holds the guardian sapling and the finale), CursedGround in each hollow
+three CursedZones (the Mere holds the sapling on the Knoll and the finale), CursedGround in each hollow
 (safe shapes in level.json), the soot banks (GlyphObstacle, gust), three Tie post pairs (bridge),
 two verse-stones, checkpoints, the map leaves (invisible Checkpoint triggers until the kit has a
 pickup) and the LevelExit with Pell's raft on the brook pool. Node names are the ones level.json and

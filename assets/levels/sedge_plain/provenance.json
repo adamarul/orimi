@@ -54,82 +54,182 @@
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_00.glb",
-   "sha256": "c489f532cbbc0b3240373c8db7e1c7554dd346aeabcdc65c1c116e71e495a7da",
+   "sha256": "cd4c45a53fe67a19b805ede5468bc50dd386d0243a9fae428a16b13b2b813f10",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_01.glb",
-   "sha256": "8f92b555af818bb2f81c3e9ac5014bc4849912c5aa30f0a6c0587ac572c554d0",
+   "sha256": "01e345c35dddfe6c42c4b79e1e764a48a30fcf3c0e10e3cd717c8789c360903b",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_02.glb",
-   "sha256": "83000da55abcecb1bfad112c932972fe0ea2a877b6f57e23c100dbf2e51a8a13",
+   "sha256": "bed90b74be5dfe6d8aca29e3ae17fca7eec42fee1048f2be923ec45c2d846b35",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_03.glb",
-   "sha256": "980b11f8fcd2ad077e3f5fb0861cb60b25b271397c413a5b94dd03fc0667b09e",
+   "sha256": "f7eca640065c2ea9cd5d5e83b485d47fa8e30ff9f8dbe12f6a87aadee5e39b5b",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_04.glb",
+   "sha256": "1be488e5833a5c4ced29e3e81ee2bbae67095f8b5e6def3d567a13a1e9afff6f",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_05.glb",
+   "sha256": "3022db7b7222633854663cd2079e0553bcfdb7f58b26d0d509d978f072aba4ba",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_10.glb",
-   "sha256": "94f12c06f47363cfbfaf50a96b806e5deafb377cfd947242785243d3273c81ab",
+   "sha256": "172c4d487d6c9d2b654574f123cfb031be0ccc8f261570d61af772d9ec9bdc82",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_11.glb",
-   "sha256": "0bf1cfe61a85f4200013351aeeaf79c4b7a83207197895ff32c29c3c866ff2b4",
+   "sha256": "14cd62842097d34ba347548c0ab95c10cc2dec9310dffc91ba7c73b0e1a05225",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_12.glb",
-   "sha256": "e62d813cb27a6357f8a9dc2cfd34b48803281b28b9e0983129b2679d3250c9d1",
+   "sha256": "83605933e6920158bb7588dba2e9fb88429a6ae9826991fe09ec4a48091e0d52",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_13.glb",
-   "sha256": "e314024c94864fb32edcaca2a20c2d78e8903fbfa1eba9dd925962d3f1c54833",
+   "sha256": "0a35cb24dd390e9f96af9e1318398d98e9c9ddd159a5dd197157e949c71f115b",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_14.glb",
+   "sha256": "1ba053d0c38c390b58af31e74b5f9c67f90b9e35d8f319aaab6874f779eeed20",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_15.glb",
+   "sha256": "2377066ba7264ac6d7d16c9929ed45bc6ddd1d2427f4ddd84bd7c6a9ef9abf5f",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_20.glb",
-   "sha256": "f4772536f7f480f6ece1853e3cfc8b119b06792192c57547b6854fb49cb0b742",
+   "sha256": "4cc57c2cbae85d99b61c47f7b00a9c73e25af78a0a15f4b30821cb02b6a1d107",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_21.glb",
-   "sha256": "da7f8471d2e0b7bdcb4435f09719082bf1a1a90f211563b548d3f18b45c7cc79",
+   "sha256": "1076d1cb716cec6919619950577b021e3cff02f5aa895a5275ef3673749e4c7d",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_22.glb",
-   "sha256": "3c5a5b00da16b589fbc7f6c1e162e9952436a70ca2bd0bd25be745183a316c85",
+   "sha256": "113da019158ae41f8f099de29c4a9f75b27ca9d434f64375ecfe7d4d18981a4f",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_23.glb",
-   "sha256": "da8da19ac172aa89e6eaf48532b1fd9b043403c020f2cb1d8c24d72c65ba6316",
+   "sha256": "35a4f57eba108ce65774f0704079c9d8911b291e0712eb0c1458376b30a56646",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_24.glb",
+   "sha256": "d571c248841eaf00ee8ed545341ed088a42e8a55394af764cd49a971e5a1497b",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_25.glb",
+   "sha256": "e1154488ebbcd796094691fc251305371ce152d344553f14b4078495a49a9bb5",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_30.glb",
-   "sha256": "3dd177d5a9553675ba01d072ce00689afab01ca1518fc288dff21ce9bcd51171",
+   "sha256": "17823716105e6fbbf71e0b8de59f8ed3951991123ab88713acb6bef886d1ad78",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_31.glb",
-   "sha256": "f071b7968b72e943f1f44fa02acb8892eddada48d5156c2870c9119347eaa733",
+   "sha256": "bb3cb71a02af4869a37f1fe2addf6b2815667c31447e29bad1b9a12a0420970c",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_32.glb",
-   "sha256": "71c2853f37820775557ce19a67cf7f68d7041eb2e7fbc01f91a6f7c0bdbb4c88",
+   "sha256": "e15017e86448ced10ccd6217b316c86e127fc9d6246cb40097be364f6faf25a3",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
    "path": "assets/levels/sedge_plain/terrain/ground_33.glb",
-   "sha256": "5c13b4445e4bfaf411dbe6f02d79d4d84af8d0302a4f45514715c09b25408d4d",
+   "sha256": "9b5ac4ecd9383442677ebdee751165facf46eaeca1130ce0e8af97b94a4af43a",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_34.glb",
+   "sha256": "c2bf946a14365f3bc4843e4fa08fdf5ca4cc8b05fb8d921f12da7250d7aad479",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_35.glb",
+   "sha256": "840b82e7084632b34d71517f13d52476b6b627db0ff704081eeb5d0c325663f8",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_40.glb",
+   "sha256": "308b103800bbecca73124cd1cec9a66c756426781a3bf2c83b00268aa4da2890",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_41.glb",
+   "sha256": "bea8740821a8b10a09534b0cba83420a2802724a4eb671b12bdbb7a029d956c5",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_42.glb",
+   "sha256": "bd7b332e4c8f2c25696933d200f225c727750c311b667a427a4200a67852b2a3",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_43.glb",
+   "sha256": "d6bad62ff1a7d0e74f11d1a01b2a9d45105f4bb76b4381485e443d6edd4aeac3",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_44.glb",
+   "sha256": "7914c35fdd6b44d138f80758aeffec6da912349e0cd87d02c6619815140eac7b",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_45.glb",
+   "sha256": "0a378907c2604be003d17acc8976aa61d69adc804e37681d39e0258399351074",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_50.glb",
+   "sha256": "d5caf712c2049e7bf0c4497973a6d1202015a35cc20261dfea1eb5c343a713c7",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_51.glb",
+   "sha256": "52c03d2e3b5d335682730593bbaf30912d0fd73bdba917e8a1bdff04f14a8e32",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_52.glb",
+   "sha256": "43e8aaf98a4ac6a4899ae9f9256d8ed9d6393e9a822006248123704d8725ad85",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_53.glb",
+   "sha256": "3756b05a56951cbd953875cd9c434d306c45d35c7927c3277feac0c50ceeb085",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_54.glb",
+   "sha256": "f0bc7538c8fdab0d6debff6acb47817e3c858abbea3d9a2b4874aa38e02b5160",
+   "generator": "tools/levels/sedge_plain/make_terrain.py"
+  },
+  {
+   "path": "assets/levels/sedge_plain/terrain/ground_55.glb",
+   "sha256": "55785ee3c0b954463af746e3a44410ce88ce4a087b32bdaa9da85d05a5f8b27e",
    "generator": "tools/levels/sedge_plain/make_terrain.py"
   },
   {
@@ -154,7 +254,7 @@
   },
   {
    "path": "assets/levels/sedge_plain/textures/ground.png",
-   "sha256": "9b7256842d23faa41128f4785669f3456c974f28d16b578bf5c45d7d87be7499",
+   "sha256": "39d14fc8df212bbd7664282cbe9b8f3c84c5b792a8ad788aafa1b76fc54121ed",
    "generator": "tools/levels/sedge_plain/paint_ground.py"
   },
   {
